@@ -1,0 +1,35 @@
+{
+  "updated_at": "2026-05-25 19:23:29",
+  "companies": [
+    {
+      "code": "7203",
+      "name": "トヨタ自動車",
+      "edinet_code": "E02144",
+      "doc_id": "S100VWVY",
+      "financials": {
+        "sales": 48036704000000,
+        "operating_profit": 4795586000000,
+        "net_income": 4789755000000,
+        "total_assets": 93601350000000,
+        "equity": 36878913000000,
+        "operating_cf": 3696934000000,
+        "shares_issued": 15794987460
+      }
+    },
+    {
+      "code": "6758",
+      "name": "ソニーグループ",
+      "edinet_code": "E01777",
+      "doc_id": "S100W19Q",
+      "financials": {
+        "sales": 12957064000000,
+        "operating_profit": 1407163000000,
+        "net_income": 1159887000000,
+        "total_assets": 35293173000000,
+        "equity": 8510151000000,
+        "operating_cf": 2321675000000,
+        "shares_issued": 6149810645
+      }
+    }
+  ]
+}
