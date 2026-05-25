@@ -10,6 +10,10 @@ fetch('./data/fundamentals.json')
 
     data.companies.forEach(company => {
       const f = company.financials;
+      const filing = company.latest_filing || {};
+
+      // 決算期を「2025年3月期」形式に変換
+      const periodLabel = formatPeriod(filing.period_end);
 
       const card = document.createElement('div');
       card.className = 'company-card';
@@ -17,6 +21,10 @@ fetch('./data/fundamentals.json')
       card.innerHTML = `
         <div class="company-name">${company.name}</div>
         <div class="company-code">証券コード：${company.code}</div>
+        <div class="filing-info">
+          <span>決算期：${periodLabel}</span>
+          <span>提出日：${filing.submit_date || '不明'}</span>
+        </div>
         <div class="financials">
           <div class="financial-row">
             <span class="financial-label">売上高</span>
@@ -56,6 +64,16 @@ fetch('./data/fundamentals.json')
     document.getElementById('company-list').textContent =
       'データの読み込みに失敗しました：' + err.message;
   });
+
+// 「2025-03-31」→「2025年3月期」に変換
+function formatPeriod(periodEnd) {
+  if (!periodEnd) return '不明';
+  const parts = periodEnd.split('-');
+  if (parts.length < 2) return periodEnd;
+  const year = parts[0];
+  const month = parseInt(parts[1], 10);
+  return `${year}年${month}月期`;
+}
 
 // 金額を「兆・億・万円」単位に変換
 function formatAmount(value) {

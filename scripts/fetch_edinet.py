@@ -11,8 +11,6 @@ DOC_BASE_URL = "https://disclosure.edinet-fsa.go.jp/api/v2/documents"
 
 API_KEY = os.environ.get("EDINET_API_KEY")
 
-# 会社ごとの設定
-# タグは会社によって異なるためここで個別定義
 TARGET_COMPANIES = [
     {
         "code": "7203",
@@ -72,8 +70,20 @@ def fetch_doc_id(edinet_code):
                 and doc.get("formCode") == "030000"
             ):
                 doc_id = doc.get("docID")
-                print(f"  ✅ docID発見: {doc_id}（{target_date}）")
-                return doc_id
+                submit_datetime = doc.get("submitDateTime", "")
+                submit_date = submit_datetime[:10] if submit_datetime else None
+                period_end = doc.get("periodEnd")
+
+                print(
+                    f"  ✅ docID発見: {doc_id}"
+                    f"（提出日: {submit_date} / 決算期末: {period_end}）"
+                )
+
+                return {
+                    "doc_id": doc_id,
+                    "submit_date": submit_date,
+                    "period_end": period_end
+                }
 
     return None
 
@@ -150,10 +160,13 @@ def main():
         print(f"--- {name} ---")
 
         # docID取得
-        doc_id = fetch_doc_id(edinet_code)
-        if not doc_id:
+        filing = fetch_doc_id(edinet_code)
+        if not filing:
             print(f"  ❌ docIDが見つかりません")
             continue
+        doc_id = filing["doc_id"]
+        submit_date = filing["submit_date"]
+        period_end = filing["period_end"]
 
         # XBRLダウンロード
         zip_path = download_xbrl(doc_id, name)
@@ -168,6 +181,10 @@ def main():
             "name": name,
             "edinet_code": edinet_code,
             "doc_id": doc_id,
+            "latest_filing": {
+                "submit_date": submit_date,
+                "period_end": period_end
+            },
             "financials": financials
         })
 
@@ -179,7 +196,7 @@ def main():
         "companies": results
     }
 
-    output_path = Path("../data/fundamentals.json")
+    output_path = Path("data/fundamentals.json")
     output_path.parent.mkdir(exist_ok=True)
 
     with open(output_path, "w", encoding="utf-8") as f:

@@ -1,11 +1,15 @@
 {
-  "updated_at": "2026-05-25 19:23:29",
+  "updated_at": "2026-05-26 00:55:46",
   "companies": [
     {
       "code": "7203",
       "name": "トヨタ自動車",
       "edinet_code": "E02144",
       "doc_id": "S100VWVY",
+      "latest_filing": {
+        "submit_date": "2025-06-18",
+        "period_end": "2025-03-31"
+      },
       "financials": {
         "sales": 48036704000000,
         "operating_profit": 4795586000000,
@@ -21,6 +25,10 @@
       "name": "ソニーグループ",
       "edinet_code": "E01777",
       "doc_id": "S100W19Q",
+      "latest_filing": {
+        "submit_date": "2025-06-20",
+        "period_end": "2025-03-31"
+      },
       "financials": {
         "sales": 12957064000000,
         "operating_profit": 1407163000000,
