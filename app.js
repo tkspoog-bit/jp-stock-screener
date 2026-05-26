@@ -64,6 +64,9 @@ function renderList(sortKey) {
     if (sortKey === 'market_cap') {
       valA = a.marketCap || 0;
       valB = b.marketCap || 0;
+    } else if (['per', 'pbr', 'roe', 'roa', 'operating_margin'].includes(sortKey)) {
+      valA = a[sortKey] || 0;
+      valB = b[sortKey] || 0;
     } else {
       valA = a.financials[sortKey] || 0;
       valB = b.financials[sortKey] || 0;
