@@ -2,42 +2,17 @@ import requests
 import json
 import os
 import zipfile
-from xml.etree import ElementTree as ET
 from datetime import datetime, timedelta
 from pathlib import Path
-
-def score_context(context_ref: str, field_name: str) -> int:
-    score = 0
-
-    # IFRS優先
-    if "IFRS" in context_ref:
-        score += 3
-
-    # 連結優先
-    if "Consolidated" in context_ref:
-        score += 3
-
-    # Instant（BS系）
-    if "Instant" in context_ref:
-        score += 2
-
-    # CurrentYear優先
-    if "CurrentYear" in context_ref:
-        score += 2
-
-    # 完全一致ボーナス
-    config = TAG_CANDIDATES[field_name]
-    if context_ref in config["contexts"]:
-        score += 5
-
-    return score
+from arelle import ModelManager, FileSource
+from arelle.CntlrCmdLine import CntlrCmdLine
 
 BASE_URL = "https://disclosure.edinet-fsa.go.jp/api/v2/documents.json"
 DOC_BASE_URL = "https://disclosure.edinet-fsa.go.jp/api/v2/documents"
 
 API_KEY = os.environ.get("EDINET_API_KEY")
 
-# 候補タグ辞書（context候補順）
+# 候補タグ辞書（Arelle版・タグ名ベース）
 TAG_CANDIDATES = {
     "sales": {
         "tags": [
@@ -46,6 +21,7 @@ TAG_CANDIDATES = {
             "RevenueIFRS",
             "OperatingRevenues",
             "SalesAndFinancialServicesRevenueIFRS",
+            "OperatingRevenuesIFRS",
         ],
         "contexts": [
             "CurrentYearDuration",
@@ -87,14 +63,13 @@ TAG_CANDIDATES = {
         "contexts": [
             "CurrentYearInstant",
             "CurrentFiscalYearInstant",
-            "CurrentYearInstant_ConsolidatedMember",
-            "CurrentFiscalYearInstant_ConsolidatedMember",
-    ]
+        ]
     },
     "equity": {
         "tags": [
             "NetAssets",
             "Equity",
+            "EquityIFRS",
             "EquityAttributableToOwnersOfParentIFRS",
         ],
         "contexts": [
@@ -127,7 +102,6 @@ TAG_CANDIDATES = {
     },
 }
 
-# 対象銘柄（タグ指定不要！）
 TARGET_COMPANIES = [
     {"code": "7203", "name": "トヨタ自動車",  "edinet_code": "E02144"},
     {"code": "6758", "name": "ソニーグループ", "edinet_code": "E01777"},
@@ -135,7 +109,6 @@ TARGET_COMPANIES = [
 
 
 def fetch_doc_id(edinet_code):
-    """最新の有価証券報告書のdocIDを取得"""
     today = datetime.today()
 
     for i in range(365):
@@ -162,10 +135,7 @@ def fetch_doc_id(edinet_code):
                 submit_date = submit_datetime[:10] if submit_datetime else None
                 period_end = doc.get("periodEnd")
 
-                print(
-                    f"  ✅ docID発見: {doc_id}"
-                    f"（提出日: {submit_date} / 決算期末: {period_end}）"
-                )
+                print(f"  ✅ docID発見: {doc_id}（{submit_date} / {period_end}）")
 
                 return {
                     "doc_id": doc_id,
@@ -177,12 +147,7 @@ def fetch_doc_id(edinet_code):
 
 
 def download_xbrl(doc_id):
-    """XBRL ZIPをダウンロード"""
-    params = {
-        "type": 1,
-        "Subscription-Key": API_KEY
-    }
-
+    params = {"type": 1, "Subscription-Key": API_KEY}
     url = f"{DOC_BASE_URL}/{doc_id}"
     response = requests.get(url, params=params)
     response.raise_for_status()
@@ -195,101 +160,89 @@ def download_xbrl(doc_id):
     return zip_path
 
 
-def parse_xbrl(zip_path):
-    """XBRLをXMLとしてパース"""
+def extract_xbrl_from_zip(zip_path, doc_id):
+    """ZIPからXBRLファイルを取り出す"""
+    extract_dir = Path(f"/tmp/edinet_{doc_id}")
+    extract_dir.mkdir(exist_ok=True)
+
     with zipfile.ZipFile(zip_path, "r") as z:
-        xbrl_file = None
-        for name in z.namelist():
-            if name.endswith(".xbrl") and "PublicDoc" in name:
-                xbrl_file = name
-                break
+        z.extractall(extract_dir)
 
-        if not xbrl_file:
-            print("  ❌ .xbrlファイルが見つかりません")
-            return None
+    # XBRL/PublicDoc内の.xbrlファイルを探す
+    for xbrl_file in extract_dir.rglob("*.xbrl"):
+        if "PublicDoc" in str(xbrl_file):
+            return xbrl_file
 
-        content = z.read(xbrl_file)
+    return None
 
-    root = ET.fromstring(content)
-    return root
 
-def find_financial_value(root, field_name):
-    """候補タグ・候補contextから値を探す"""
+def extract_financials_arelle(xbrl_path):
+    """Arelleを使って財務データを抽出"""
+    print(f"  🔍 Arelle解析中...")
 
-    config = TAG_CANDIDATES[field_name]
-    tags = config["tags"]
-    contexts = config["contexts"]
+    cntlr = CntlrCmdLine()
+    cntlr.startLogging(logFileName="logToBuffer")
+    model_manager = ModelManager.initialize(cntlr)
+    model_xbrl = model_manager.load(
+        FileSource.FileSource(str(xbrl_path))
+    )
 
-    found_tags = set()
+    if model_xbrl is None:
+        print("  ❌ Arelle読み込み失敗")
+        return {}
 
-    for elem in root.iter():
-        tag_name = elem.tag.split("}")[-1]
-
-        # 存在タグを収集
-        found_tags.add(tag_name)
-
-        # 候補タグ以外スキップ
-        if tag_name not in tags:
+    # factを辞書化（タグ名 + context → 値）
+    fact_map = {}
+    for fact in model_xbrl.facts:
+        if fact.value is None:
             continue
-
-        # context完全一致
-        context_ref = elem.attrib.get("contextRef", "")
-        if context_ref not in contexts:
-            continue
-
-        text = elem.text
-        if not text:
-            continue
-
+        tag_name = fact.qname.localName
+        context_ref = fact.contextID
         try:
-            return int(float(text)), None
+            value = int(float(fact.value))
+            fact_map[(tag_name, context_ref)] = value
         except:
             continue
 
-    # 見つからなかった場合：関連タグを候補として返す
-    keywords = [
-        "sale", "revenue", "income", "profit",
-        "asset", "equity", "cash", "share",
-    ]
-    candidates = {
-        tag for tag in found_tags
-        if any(kw in tag.lower() for kw in keywords)
-    }
-
-    return None, candidates
-
-def extract_financials(root, company_code):
-    """全財務指標を抽出・未取得タグをunknown_tags.jsonに保存"""
     financials = {}
-    unknown = {}
 
-    for field_name in TAG_CANDIDATES:
-        value, candidates = find_financial_value(root, field_name)
-        if value is not None:
-            financials[field_name] = value
-            print(f"  ✅ {field_name}: {value:,}")
-        else:
+    for field_name, config in TAG_CANDIDATES.items():
+        tags = config["tags"]
+        contexts = config["contexts"]
+        found = False
+
+        for tag in tags:
+            for ctx in contexts:
+                key = (tag, ctx)
+                if key in fact_map:
+                    value = fact_map[key]
+                    financials[field_name] = value
+                    print(f"  ✅ {field_name}（{tag} / {ctx}）: {value:,}")
+                    found = True
+                    break
+            if found:
+                break
+
+        if not found:
+            # 候補タグのログ表示
+            related = [
+                f"{t}（{c}）"
+                for (t, c), v in fact_map.items()
+                if any(kw in t.lower() for kw in
+                    ["sale", "revenue", "income", "profit",
+                     "asset", "equity", "cash", "share"])
+            ][:10]
             print(f"  ⚠️  {field_name}: 見つかりません")
-            if candidates:
-                unknown[field_name] = sorted(candidates)
-
-    # unknown_tags.json に保存
-    if unknown:
-        unknown_path = Path("data/unknown_tags.json")
-        existing = {}
-        if unknown_path.exists():
-            with open(unknown_path, encoding="utf-8") as f:
-                existing = json.load(f)
-        existing[company_code] = unknown
-        with open(unknown_path, "w", encoding="utf-8") as f:
-            json.dump(existing, f, ensure_ascii=False, indent=2)
-        print(f"  📝 未取得タグを保存しました")
+            if related:
+                print(f"    🔍 関連タグ候補:")
+                for r in sorted(set(related))[:10]:
+                    print(f"      - {r}")
 
     return financials
 
 
 def main():
-    print("=== EDINET財務データ取得開始 ===\n")
+    print("=== EDINET財務データ取得開始（Arelle版）===\n")
 
     results = []
 
@@ -299,41 +252,39 @@ def main():
 
         print(f"--- {name} ---")
 
-        # docID取得
         filing = fetch_doc_id(edinet_code)
         if not filing:
             print(f"  ❌ docIDが見つかりません")
             continue
 
         doc_id = filing["doc_id"]
-        submit_date = filing["submit_date"]
-        period_end = filing["period_end"]
-
-        # XBRLダウンロード
         zip_path = download_xbrl(doc_id)
+        xbrl_path = extract_xbrl_from_zip(zip_path, doc_id)
 
-        # XMLパース
-        root = parse_xbrl(zip_path)
-        if root is None:
+        if xbrl_path is None:
+            print("  ❌ XBRLファイルが見つかりません")
             continue
 
-        # 財務データ抽出
-        financials = extract_financials(root, company["code"])
+        financials = extract_financials_arelle(xbrl_path)
+
+        if not financials:
+            print("  ❌ 財務データ取得失敗")
+            continue
+
         results.append({
             "code": company["code"],
             "name": name,
             "edinet_code": edinet_code,
             "doc_id": doc_id,
             "latest_filing": {
-                "submit_date": submit_date,
-                "period_end": period_end
+                "submit_date": filing["submit_date"],
+                "period_end": filing["period_end"]
             },
             "financials": financials
         })
 
         print()
 
-    # JSON保存
     output = {
         "updated_at": datetime.today().strftime("%Y-%m-%d %H:%M:%S"),
         "companies": results
