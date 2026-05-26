@@ -1,80 +1,2446 @@
 {
-  "updated_at": "2026-05-27 04:05:24",
+  "updated_at": "2026-05-27 05:28:54",
   "companies": [
     {
-      "code": "7203",
-      "name": "トヨタ自動車",
-      "edinet_code": "E02144",
-      "doc_id": "S100VWVY",
+      "code": "9778",
+      "name": "株式会社昴",
+      "edinet_code": "E04941",
+      "doc_id": "S100Y5RU",
       "latest_filing": {
-        "submit_date": "2025-06-18",
-        "period_end": "2025-03-31"
+        "submit_date": "2026-05-26",
+        "period_end": "2026-02-28"
       },
       "financials": {
-        "sales": 48036704000000,
-        "operating_profit": 4795586000000,
-        "net_income": 4789755000000,
-        "total_assets": 93601350000000,
-        "equity": 36878913000000,
-        "operating_cf": 3696934000000,
-        "shares_issued": 15794987460
+        "shares_issued": 693576
       }
     },
     {
-      "code": "6758",
-      "name": "ソニーグループ",
-      "edinet_code": "E01777",
-      "doc_id": "S100W19Q",
+      "code": "3080",
+      "name": "株式会社ジェーソン",
+      "edinet_code": "E03509",
+      "doc_id": "S100Y69Z",
       "latest_filing": {
-        "submit_date": "2025-06-20",
-        "period_end": "2025-03-31"
+        "submit_date": "2026-05-26",
+        "period_end": "2026-02-28"
       },
       "financials": {
-        "sales": 12957064000000,
-        "operating_profit": 1407163000000,
-        "net_income": 1159887000000,
-        "total_assets": 35293173000000,
-        "equity": 8510151000000,
-        "operating_cf": 2321675000000,
-        "shares_issued": 6149810645
+        "sales": 28604828000,
+        "operating_profit": 200884000,
+        "net_income": -201795000,
+        "total_assets": 10875017000,
+        "equity": 5931655000,
+        "operating_cf": 271335000,
+        "shares_issued": 12812000
       }
     },
     {
-      "code": "4063",
-      "name": "信越化学工業",
-      "edinet_code": "E00776",
-      "doc_id": "S100W0RG",
+      "code": "5018",
+      "name": "株式会社ＭＯＲＥＳＣＯ",
+      "edinet_code": "E01083",
+      "doc_id": "S100Y64F",
       "latest_filing": {
-        "submit_date": "2025-06-20",
-        "period_end": "2025-03-31"
+        "submit_date": "2026-05-26",
+        "period_end": "2026-02-28"
       },
       "financials": {
-        "sales": 2561249000000,
-        "operating_profit": 742105000000,
-        "net_income": 580101000000,
-        "total_assets": 5636601000000,
-        "equity": 4837585000000,
-        "operating_cf": 881934000000,
-        "shares_issued": 1984995865
+        "sales": 34871000000,
+        "operating_profit": 2367000000,
+        "net_income": 1735000000,
+        "total_assets": 40683000000,
+        "equity": 26883000000,
+        "operating_cf": 2982000000,
+        "shares_issued": 9696500
       }
     },
     {
-      "code": "9432",
-      "name": "NTT",
-      "edinet_code": "E04430",
-      "doc_id": "S100W1FL",
+      "code": "3065",
+      "name": "株式会社ライフフーズ",
+      "edinet_code": "E03490",
+      "doc_id": "S100Y57D",
       "latest_filing": {
-        "submit_date": "2025-06-20",
-        "period_end": "2025-03-31"
+        "submit_date": "2026-05-26",
+        "period_end": "2026-02-28"
       },
       "financials": {
-        "sales": 13704727000000,
-        "operating_profit": 1649571000000,
-        "net_income": 1082435000000,
-        "total_assets": 30062483000000,
-        "equity": 11344639000000,
-        "operating_cf": 2364031000000,
-        "shares_issued": 90550316400
+        "shares_issued": 3660400
+      }
+    },
+    {
+      "code": "8194",
+      "name": "株式会社ライフコーポレーション",
+      "edinet_code": "E03083",
+      "doc_id": "S100Y63D",
+      "latest_filing": {
+        "submit_date": "2026-05-26",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 848570000000,
+        "operating_profit": 26006000000,
+        "net_income": 18822000000,
+        "total_assets": 335246000000,
+        "equity": 155534000000,
+        "operating_cf": 74477000000,
+        "shares_issued": 90501600
+      }
+    },
+    {
+      "code": "9740",
+      "name": "セントラル警備保障株式会社",
+      "edinet_code": "E04799",
+      "doc_id": "S100Y6FE",
+      "latest_filing": {
+        "submit_date": "2026-05-26",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 78745171000,
+        "operating_profit": 4499638000,
+        "net_income": 2869026000,
+        "total_assets": 71736644000,
+        "equity": 44189255000,
+        "operating_cf": 5583854000,
+        "shares_issued": 14816692
+      }
+    },
+    {
+      "code": "7427",
+      "name": "エコートレーディング株式会社",
+      "edinet_code": "E02801",
+      "doc_id": "S100Y67Z",
+      "latest_filing": {
+        "submit_date": "2026-05-26",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 105811956000,
+        "operating_profit": 1110026000,
+        "net_income": 768279000,
+        "total_assets": 38899047000,
+        "equity": 12178415000,
+        "operating_cf": 3980462000,
+        "shares_issued": 6114546
+      }
+    },
+    {
+      "code": "2726",
+      "name": "株式会社パルグループホールディングス",
+      "edinet_code": "E03387",
+      "doc_id": "S100Y647",
+      "latest_filing": {
+        "submit_date": "2026-05-26",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 234704000000,
+        "operating_profit": 27144000000,
+        "net_income": 17873000000,
+        "total_assets": 164496000000,
+        "equity": 86167000000,
+        "operating_cf": 21332000000,
+        "shares_issued": 185088000
+      }
+    },
+    {
+      "code": "2747",
+      "name": "北雄ラッキー株式会社",
+      "edinet_code": "E03397",
+      "doc_id": "S100Y6GL",
+      "latest_filing": {
+        "submit_date": "2026-05-26",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "shares_issued": 1264640
+      }
+    },
+    {
+      "code": "5817",
+      "name": "ＪＭＡＣＳ株式会社",
+      "edinet_code": "E01348",
+      "doc_id": "S100Y6GG",
+      "latest_filing": {
+        "submit_date": "2026-05-26",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "shares_issued": 5791555
+      }
+    },
+    {
+      "code": "6532",
+      "name": "株式会社ベイカレント",
+      "edinet_code": "E32549",
+      "doc_id": "S100Y69G",
+      "latest_filing": {
+        "submit_date": "2026-05-26",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 148332000000,
+        "operating_profit": 50931000000,
+        "net_income": 37840000000,
+        "total_assets": 157485000000,
+        "equity": 117038000000,
+        "operating_cf": 37616000000,
+        "shares_issued": 155411410
+      }
+    },
+    {
+      "code": "2685",
+      "name": "株式会社アンドエスティＨＤ",
+      "edinet_code": "E03368",
+      "doc_id": "S100Y5ZC",
+      "latest_filing": {
+        "submit_date": "2026-05-26",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 304351000000,
+        "operating_profit": 16524000000,
+        "net_income": 9489000000,
+        "total_assets": 139688000000,
+        "equity": 81823000000,
+        "operating_cf": 20566000000,
+        "shares_issued": 48800000
+      }
+    },
+    {
+      "code": "8273",
+      "name": "株式会社イズミ",
+      "edinet_code": "E03068",
+      "doc_id": "S100Y671",
+      "latest_filing": {
+        "submit_date": "2026-05-26",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 510942000000,
+        "operating_profit": 27236000000,
+        "net_income": 17101000000,
+        "total_assets": 595383000000,
+        "equity": 307939000000,
+        "operating_cf": 64515000000,
+        "shares_issued": 71665200
+      }
+    },
+    {
+      "code": "5982",
+      "name": "株式会社マルゼン",
+      "edinet_code": "E02438",
+      "doc_id": "S100Y6B9",
+      "latest_filing": {
+        "submit_date": "2026-05-26",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 66782423000,
+        "operating_profit": 6636677000,
+        "net_income": 5216826000,
+        "total_assets": 74548496000,
+        "equity": 52292831000,
+        "operating_cf": 4805270000,
+        "shares_issued": 19780000
+      }
+    },
+    {
+      "code": "3087",
+      "name": "株式会社ドトール・日レスホールディングス",
+      "edinet_code": "E03518",
+      "doc_id": "S100Y6D7",
+      "latest_filing": {
+        "submit_date": "2026-05-26",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 159147000000,
+        "operating_profit": 10150000000,
+        "net_income": 7267000000,
+        "total_assets": 136519000000,
+        "equity": 105554000000,
+        "operating_cf": 7021000000,
+        "shares_issued": 45609761
+      }
+    },
+    {
+      "code": "7485",
+      "name": "岡谷鋼機株式会社",
+      "edinet_code": "E02553",
+      "doc_id": "S100Y5YH",
+      "latest_filing": {
+        "submit_date": "2026-05-26",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 1155774000000,
+        "operating_profit": 40457000000,
+        "net_income": 32362000000,
+        "total_assets": 1001164000000,
+        "equity": 517680000000,
+        "operating_cf": 47999000000,
+        "shares_issued": 19440000
+      }
+    },
+    {
+      "code": "6897",
+      "name": "株式会社ツインバード",
+      "edinet_code": "E02017",
+      "doc_id": "S100Y6EN",
+      "latest_filing": {
+        "submit_date": "2026-05-26",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "shares_issued": 10906300
+      }
+    },
+    {
+      "code": "3546",
+      "name": "アレンザホールディングス株式会社",
+      "edinet_code": "E32382",
+      "doc_id": "S100Y68G",
+      "latest_filing": {
+        "submit_date": "2026-05-26",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 146093000000,
+        "operating_profit": 4098000000,
+        "net_income": 2572000000,
+        "total_assets": 89567000000,
+        "equity": 33384000000,
+        "operating_cf": 10432000000,
+        "shares_issued": 30193386
+      }
+    },
+    {
+      "code": "5271",
+      "name": "株式会社トーヨーアサノ",
+      "edinet_code": "E01165",
+      "doc_id": "S100Y4LV",
+      "latest_filing": {
+        "submit_date": "2026-05-26",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 11690853000,
+        "operating_profit": 102470000,
+        "net_income": -221094000,
+        "total_assets": 14400776000,
+        "equity": 3883446000,
+        "operating_cf": 1539780000,
+        "shares_issued": 1440840
+      }
+    },
+    {
+      "code": "2687",
+      "name": "株式会社シー・ヴイ・エス・ベイエリア",
+      "edinet_code": "E03372",
+      "doc_id": "S100Y68C",
+      "latest_filing": {
+        "submit_date": "2026-05-26",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 7902050000,
+        "operating_profit": 130048000,
+        "net_income": -1139869000,
+        "total_assets": 10370262000,
+        "equity": 3125771000,
+        "operating_cf": 289456000,
+        "shares_issued": 5064000
+      }
+    },
+    {
+      "code": "3093",
+      "name": "株式会社トレジャー・ファクトリー",
+      "edinet_code": "E03520",
+      "doc_id": "S100Y644",
+      "latest_filing": {
+        "submit_date": "2026-05-26",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 48597000000,
+        "operating_profit": 4777000000,
+        "net_income": 3236000000,
+        "total_assets": 25479000000,
+        "equity": 12900000000,
+        "operating_cf": 3242000000,
+        "shares_issued": 24347800
+      }
+    },
+    {
+      "code": "9716",
+      "name": "株式会社乃村工藝社",
+      "edinet_code": "E04835",
+      "doc_id": "S100Y66D",
+      "latest_filing": {
+        "submit_date": "2026-05-26",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 162679000000,
+        "operating_profit": 12818000000,
+        "net_income": 9134000000,
+        "total_assets": 95333000000,
+        "equity": 62035000000,
+        "operating_cf": 10865000000,
+        "shares_issued": 119896588
+      }
+    },
+    {
+      "code": "3086",
+      "name": "Ｊ．フロント　リテイリング株式会社",
+      "edinet_code": "E03516",
+      "doc_id": "S100Y6K0",
+      "latest_filing": {
+        "submit_date": "2026-05-26",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 445094000000,
+        "operating_profit": 49015000000,
+        "net_income": 28079000000,
+        "total_assets": 1141567000000,
+        "equity": 428022000000,
+        "operating_cf": 66992000000,
+        "shares_issued": 270565764
+      }
+    },
+    {
+      "code": "3922",
+      "name": "株式会社ＰＲ　ＴＩＭＥＳ",
+      "edinet_code": "E31965",
+      "doc_id": "S100Y6DH",
+      "latest_filing": {
+        "submit_date": "2026-05-26",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 9546297000,
+        "operating_profit": 3622934000,
+        "net_income": 2397942000,
+        "total_assets": 11584908000,
+        "equity": 9275966000,
+        "operating_cf": 3413728000,
+        "shares_issued": 13533303
+      }
+    },
+    {
+      "code": "2300",
+      "name": "株式会社きょくとう",
+      "edinet_code": "E05278",
+      "doc_id": "S100Y6G1",
+      "latest_filing": {
+        "submit_date": "2026-05-26",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "shares_issued": 5551230
+      }
+    },
+    {
+      "code": "4763",
+      "name": "株式会社クリーク・アンド・リバー社",
+      "edinet_code": "E05096",
+      "doc_id": "S100Y6IG",
+      "latest_filing": {
+        "submit_date": "2026-05-26",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 61393938000,
+        "operating_profit": 4914413000,
+        "net_income": 4160265000,
+        "total_assets": 46806034000,
+        "equity": 19395900000,
+        "operating_cf": 2089851000,
+        "shares_issued": 23009000
+      }
+    },
+    {
+      "code": "6555",
+      "name": "株式会社ＭＳ＆Ｃｏｎｓｕｌｔｉｎｇ",
+      "edinet_code": "E20870",
+      "doc_id": "S100Y6L3",
+      "latest_filing": {
+        "submit_date": "2026-05-26",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 2584946000,
+        "operating_profit": 252089000,
+        "net_income": 172079000,
+        "total_assets": 3703773000,
+        "equity": 2914480000,
+        "operating_cf": 405705000,
+        "shares_issued": 4597400
+      }
+    },
+    {
+      "code": "9661",
+      "name": "株式会社歌舞伎座",
+      "edinet_code": "E04606",
+      "doc_id": "S100Y65X",
+      "latest_filing": {
+        "submit_date": "2026-05-26",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 3632657000,
+        "operating_profit": 378931000,
+        "net_income": 284536000,
+        "total_assets": 24326491000,
+        "equity": 11367812000,
+        "operating_cf": 705871000,
+        "shares_issued": 12170000
+      }
+    },
+    {
+      "code": "3387",
+      "name": "株式会社クリエイト・レストランツ・ホールディングス",
+      "edinet_code": "E05517",
+      "doc_id": "S100Y2PC",
+      "latest_filing": {
+        "submit_date": "2026-05-26",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 165449000000,
+        "operating_profit": 7944000000,
+        "net_income": 5218000000,
+        "total_assets": 139669000000,
+        "equity": 47888000000,
+        "operating_cf": 23002000000,
+        "shares_issued": 425628568
+      }
+    },
+    {
+      "code": "6543",
+      "name": "株式会社日宣",
+      "edinet_code": "E32951",
+      "doc_id": "S100Y6L2",
+      "latest_filing": {
+        "submit_date": "2026-05-26",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 6481269000,
+        "operating_profit": 485718000,
+        "net_income": 662459000,
+        "total_assets": 5754784000,
+        "equity": 4003126000,
+        "operating_cf": 435227000,
+        "shares_issued": 4178080
+      }
+    },
+    {
+      "code": "7611",
+      "name": "株式会社ハイデイ日高",
+      "edinet_code": "E03318",
+      "doc_id": "S100Y64B",
+      "latest_filing": {
+        "submit_date": "2026-05-26",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "shares_issued": 38147116
+      }
+    },
+    {
+      "code": "4432",
+      "name": "ウイングアーク１ｓｔ株式会社",
+      "edinet_code": "E33957",
+      "doc_id": "S100Y628",
+      "latest_filing": {
+        "submit_date": "2026-05-25",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 30945574000,
+        "operating_profit": 8989946000,
+        "net_income": 6478813000,
+        "total_assets": 73490811000,
+        "equity": 47032593000,
+        "operating_cf": 7197999000,
+        "shares_issued": 35009470
+      }
+    },
+    {
+      "code": "2670",
+      "name": "株式会社エービーシー・マート",
+      "edinet_code": "E02925",
+      "doc_id": "S100Y5F0",
+      "latest_filing": {
+        "submit_date": "2026-05-25",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 378624000000,
+        "operating_profit": 63287000000,
+        "net_income": 46521000000,
+        "total_assets": 455202000000,
+        "equity": 401000000000,
+        "operating_cf": 41814000000,
+        "shares_issued": 247618938
+      }
+    },
+    {
+      "code": "2341",
+      "name": "株式会社アルバイトタイムス",
+      "edinet_code": "E05316",
+      "doc_id": "S100Y5RZ",
+      "latest_filing": {
+        "submit_date": "2026-05-25",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 4719056000,
+        "operating_profit": 160091000,
+        "net_income": 189080000,
+        "total_assets": 3613591000,
+        "equity": 2855570000,
+        "operating_cf": 399810000,
+        "shares_issued": 27437249
+      }
+    },
+    {
+      "code": "8931",
+      "name": "和田興産株式会社",
+      "edinet_code": "E04029",
+      "doc_id": "S100Y62K",
+      "latest_filing": {
+        "submit_date": "2026-05-25",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "shares_issued": 11100000
+      }
+    },
+    {
+      "code": "2669",
+      "name": "カネ美食品株式会社",
+      "edinet_code": "E03358",
+      "doc_id": "S100Y5SJ",
+      "latest_filing": {
+        "submit_date": "2026-05-25",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "shares_issued": 10000000
+      }
+    },
+    {
+      "code": "7811",
+      "name": "中本パックス株式会社",
+      "edinet_code": "E31924",
+      "doc_id": "S100Y635",
+      "latest_filing": {
+        "submit_date": "2026-05-25",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 49635946000,
+        "operating_profit": 2961417000,
+        "net_income": 2275538000,
+        "total_assets": 40523157000,
+        "equity": 22093551000,
+        "operating_cf": 2552950000,
+        "shares_issued": 8920791
+      }
+    },
+    {
+      "code": "9982",
+      "name": "タキヒヨー株式会社",
+      "edinet_code": "E02776",
+      "doc_id": "S100Y62Z",
+      "latest_filing": {
+        "submit_date": "2026-05-25",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 63970000000,
+        "operating_profit": 1942000000,
+        "net_income": 1615000000,
+        "total_assets": 50877000000,
+        "equity": 32555000000,
+        "operating_cf": 2505000000,
+        "shares_issued": 8800000
+      }
+    },
+    {
+      "code": "2742",
+      "name": "株式会社ハローズ",
+      "edinet_code": "E03395",
+      "doc_id": "S100Y5WR",
+      "latest_filing": {
+        "submit_date": "2026-05-25",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "shares_issued": 21485400
+      }
+    },
+    {
+      "code": "8244",
+      "name": "株式会社近鉄百貨店",
+      "edinet_code": "E03021",
+      "doc_id": "S100Y5TO",
+      "latest_filing": {
+        "submit_date": "2026-05-25",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 125450000000,
+        "operating_profit": 6718000000,
+        "net_income": 3709000000,
+        "total_assets": 124749000000,
+        "equity": 45825000000,
+        "operating_cf": 15234000000,
+        "shares_issued": 40437940
+      }
+    },
+    {
+      "code": "2930",
+      "name": "株式会社北の達人コーポレーション",
+      "edinet_code": "E26549",
+      "doc_id": "S100Y5VV",
+      "latest_filing": {
+        "submit_date": "2026-05-25",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 11210259000,
+        "operating_profit": 1000995000,
+        "net_income": 695939000,
+        "total_assets": 9490331000,
+        "equity": 8047798000,
+        "operating_cf": 846352000,
+        "shares_issued": 141072000
+      }
+    },
+    {
+      "code": "2686",
+      "name": "株式会社ジーフット",
+      "edinet_code": "E03370",
+      "doc_id": "S100Y651",
+      "latest_filing": {
+        "submit_date": "2026-05-25",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 56906000000,
+        "operating_profit": -2388000000,
+        "net_income": -3257000000,
+        "total_assets": 32194000000,
+        "equity": -2359000000,
+        "operating_cf": -6723000000,
+        "shares_issued": 42581015
+      }
+    },
+    {
+      "code": "1418",
+      "name": "インターライフホールディングス株式会社",
+      "edinet_code": "E24512",
+      "doc_id": "S100Y600",
+      "latest_filing": {
+        "submit_date": "2026-05-25",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 16336273000,
+        "operating_profit": 1166863000,
+        "net_income": 828031000,
+        "total_assets": 9269141000,
+        "equity": 4676056000,
+        "operating_cf": 2228928000,
+        "shares_issued": 17010529
+      }
+    },
+    {
+      "code": "9846",
+      "name": "株式会社天満屋ストア",
+      "edinet_code": "E03146",
+      "doc_id": "S100Y4A4",
+      "latest_filing": {
+        "submit_date": "2026-05-25",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 56016467000,
+        "operating_profit": 2185042000,
+        "net_income": 1353679000,
+        "total_assets": 45506250000,
+        "equity": 27750371000,
+        "operating_cf": 2951107000,
+        "shares_issued": 11550000
+      }
+    },
+    {
+      "code": "2659",
+      "name": "株式会社サンエー",
+      "edinet_code": "E03352",
+      "doc_id": "S100Y64A",
+      "latest_filing": {
+        "submit_date": "2026-05-25",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 225485000000,
+        "operating_profit": 17070000000,
+        "net_income": 11644000000,
+        "total_assets": 217274000000,
+        "equity": 160958000000,
+        "operating_cf": 31617000000,
+        "shares_issued": 63963308
+      }
+    },
+    {
+      "code": "8167",
+      "name": "株式会社リテールパートナーズ",
+      "edinet_code": "E03094",
+      "doc_id": "S100Y650",
+      "latest_filing": {
+        "submit_date": "2026-05-25",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 268295000000,
+        "operating_profit": 6468000000,
+        "net_income": 5138000000,
+        "total_assets": 136241000000,
+        "equity": 91701000000,
+        "operating_cf": 9631000000,
+        "shares_issued": 46646059
+      }
+    },
+    {
+      "code": "6469",
+      "name": "株式会社　放電精密加工研究所",
+      "edinet_code": "E01454",
+      "doc_id": "S100Y5TC",
+      "latest_filing": {
+        "submit_date": "2026-05-25",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 14312812000,
+        "operating_profit": 1122916000,
+        "net_income": 852370000,
+        "total_assets": 19017653000,
+        "equity": 9688712000,
+        "operating_cf": 2257192000,
+        "shares_issued": 10953900
+      }
+    },
+    {
+      "code": "8125",
+      "name": "株式会社ワキタ",
+      "edinet_code": "E02618",
+      "doc_id": "S100Y60M",
+      "latest_filing": {
+        "submit_date": "2026-05-25",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 93222000000,
+        "operating_profit": 5282000000,
+        "net_income": 3548000000,
+        "total_assets": 146867000000,
+        "equity": 103175000000,
+        "operating_cf": 12482000000,
+        "shares_issued": 52021297
+      }
+    },
+    {
+      "code": "8267",
+      "name": "イオン株式会社",
+      "edinet_code": "E03061",
+      "doc_id": "S100Y5VH",
+      "latest_filing": {
+        "submit_date": "2026-05-25",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 9355439000000,
+        "operating_profit": 270459000000,
+        "net_income": 124536000000,
+        "total_assets": 15369658000000,
+        "equity": 2204267000000,
+        "operating_cf": 1126589000000,
+        "shares_issued": 2783529021
+      }
+    },
+    {
+      "code": "4735",
+      "name": "株式会社京進",
+      "edinet_code": "E05053",
+      "doc_id": "S100Y613",
+      "latest_filing": {
+        "submit_date": "2026-05-25",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 20286291000,
+        "operating_profit": 481188000,
+        "net_income": 69773000,
+        "total_assets": 22020395000,
+        "equity": 3907333000,
+        "operating_cf": -181393000,
+        "shares_issued": 8396000
+      }
+    },
+    {
+      "code": "3915",
+      "name": "株式会社テラスカイ",
+      "edinet_code": "E31453",
+      "doc_id": "S100Y60F",
+      "latest_filing": {
+        "submit_date": "2026-05-25",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 28056820000,
+        "operating_profit": 1560235000,
+        "net_income": 1738272000,
+        "total_assets": 22212445000,
+        "equity": 14967003000,
+        "operating_cf": 1763153000,
+        "shares_issued": 12918380
+      }
+    },
+    {
+      "code": "365A",
+      "name": "伊澤タオル株式会社",
+      "edinet_code": "E40674",
+      "doc_id": "S100Y66L",
+      "latest_filing": {
+        "submit_date": "2026-05-25",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "shares_issued": 10000000
+      }
+    },
+    {
+      "code": "6183",
+      "name": "株式会社ベルシステム２４ホールディングス",
+      "edinet_code": "E31896",
+      "doc_id": "S100Y5Z2",
+      "latest_filing": {
+        "submit_date": "2026-05-25",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 145826000000,
+        "operating_profit": 12652000000,
+        "net_income": 8359000000,
+        "total_assets": 169821000000,
+        "equity": 74782000000,
+        "operating_cf": 16533000000,
+        "shares_issued": 74522695
+      }
+    },
+    {
+      "code": "4270",
+      "name": "株式会社ＢｅｅＸ",
+      "edinet_code": "E36937",
+      "doc_id": "S100Y5VS",
+      "latest_filing": {
+        "submit_date": "2026-05-25",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 10626073000,
+        "operating_profit": 592601000,
+        "net_income": 454338000,
+        "total_assets": 5791697000,
+        "equity": 3095453000,
+        "operating_cf": 296809000,
+        "shares_issued": 2251300
+      }
+    },
+    {
+      "code": "2698",
+      "name": "株式会社キャンドゥ",
+      "edinet_code": "E03377",
+      "doc_id": "S100Y64P",
+      "latest_filing": {
+        "submit_date": "2026-05-25",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 87057000000,
+        "operating_profit": 1532000000,
+        "net_income": 446000000,
+        "total_assets": 32993000000,
+        "equity": 10533000000,
+        "operating_cf": 4386000000,
+        "shares_issued": 16770200
+      }
+    },
+    {
+      "code": "2872",
+      "name": "株式会社セイヒョー",
+      "edinet_code": "E00447",
+      "doc_id": "S100Y621",
+      "latest_filing": {
+        "submit_date": "2026-05-25",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "shares_issued": 1620993
+      }
+    },
+    {
+      "code": "4434",
+      "name": "株式会社サーバーワークス",
+      "edinet_code": "E31580",
+      "doc_id": "S100Y5TF",
+      "latest_filing": {
+        "submit_date": "2026-05-25",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 40006534000,
+        "operating_profit": 625262000,
+        "net_income": -600957000,
+        "total_assets": 20258946000,
+        "equity": 9735204000,
+        "operating_cf": 765814000,
+        "shares_issued": 7936261
+      }
+    },
+    {
+      "code": "9601",
+      "name": "松竹株式会社",
+      "edinet_code": "E04582",
+      "doc_id": "S100Y66K",
+      "latest_filing": {
+        "submit_date": "2026-05-25",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 98249000000,
+        "operating_profit": 6173000000,
+        "net_income": 5246000000,
+        "total_assets": 229381000000,
+        "equity": 108314000000,
+        "operating_cf": 13358000000,
+        "shares_issued": 13937857
+      }
+    },
+    {
+      "code": "3562",
+      "name": "株式会社Ｎｏ．１",
+      "edinet_code": "E33037",
+      "doc_id": "S100Y62C",
+      "latest_filing": {
+        "submit_date": "2026-05-25",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 17529922000,
+        "operating_profit": 1330464000,
+        "net_income": 719320000,
+        "total_assets": 14041705000,
+        "equity": 4407403000,
+        "operating_cf": 827009000,
+        "shares_issued": 7034700
+      }
+    },
+    {
+      "code": "9948",
+      "name": "株式会社アークス",
+      "edinet_code": "E03199",
+      "doc_id": "S100Y640",
+      "latest_filing": {
+        "submit_date": "2026-05-25",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 626957000000,
+        "operating_profit": 17632000000,
+        "net_income": 12445000000,
+        "total_assets": 300714000000,
+        "equity": 196142000000,
+        "operating_cf": 26302000000,
+        "shares_issued": 57649868
+      }
+    },
+    {
+      "code": "6506",
+      "name": "株式会社安川電機",
+      "edinet_code": "E01741",
+      "doc_id": "S100Y69H",
+      "latest_filing": {
+        "submit_date": "2026-05-25",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 542122000000,
+        "operating_profit": 47307000000,
+        "net_income": 36582000000,
+        "total_assets": 812365000000,
+        "equity": 493615000000,
+        "operating_cf": 52170000000,
+        "shares_issued": 266690497
+      }
+    },
+    {
+      "code": "323A",
+      "name": "株式会社フライヤー",
+      "edinet_code": "E40354",
+      "doc_id": "S100Y68H",
+      "latest_filing": {
+        "submit_date": "2026-05-25",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 1068695000,
+        "operating_profit": 30508000,
+        "net_income": 13305000,
+        "total_assets": 1255616000,
+        "equity": 306806000,
+        "operating_cf": 34528000,
+        "shares_issued": 3419400
+      }
+    },
+    {
+      "code": "9602",
+      "name": "東宝株式会社",
+      "edinet_code": "E04583",
+      "doc_id": "S100Y5O3",
+      "latest_filing": {
+        "submit_date": "2026-05-25",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "operating_profit": 67889000000,
+        "net_income": 53079000000,
+        "total_assets": 702934000000,
+        "equity": 532990000000,
+        "operating_cf": 65334000000,
+        "shares_issued": 176000000
+      }
+    },
+    {
+      "code": "6572",
+      "name": "オープングループ株式会社",
+      "edinet_code": "E33881",
+      "doc_id": "S100Y69Y",
+      "latest_filing": {
+        "submit_date": "2026-05-25",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 8148088000,
+        "operating_profit": 1004762000,
+        "net_income": 643136000,
+        "total_assets": 19608407000,
+        "equity": 10640162000,
+        "operating_cf": 897155000,
+        "shares_issued": 63073990
+      }
+    },
+    {
+      "code": "3935",
+      "name": "株式会社エディア",
+      "edinet_code": "E32238",
+      "doc_id": "S100Y6A9",
+      "latest_filing": {
+        "submit_date": "2026-05-25",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 4659720000,
+        "operating_profit": 444704000,
+        "net_income": 476251000,
+        "total_assets": 2786054000,
+        "equity": 1615553000,
+        "operating_cf": 257697000,
+        "shares_issued": 6228000
+      }
+    },
+    {
+      "code": "7599",
+      "name": "株式会社ＩＤＯＭ",
+      "edinet_code": "E02892",
+      "doc_id": "S100Y64O",
+      "latest_filing": {
+        "submit_date": "2026-05-25",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 562774000000,
+        "operating_profit": 20209000000,
+        "net_income": 11982000000,
+        "total_assets": 263569000000,
+        "equity": 89668000000,
+        "operating_cf": 11059000000,
+        "shares_issued": 106888000
+      }
+    },
+    {
+      "code": "9861",
+      "name": "株式会社吉野家ホールディングス",
+      "edinet_code": "E03153",
+      "doc_id": "S100Y5NR",
+      "latest_filing": {
+        "submit_date": "2026-05-22",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 225667000000,
+        "operating_profit": 8089000000,
+        "net_income": 4743000000,
+        "total_assets": 124824000000,
+        "equity": 68712000000,
+        "operating_cf": 14700000000,
+        "shares_issued": 65129558
+      }
+    },
+    {
+      "code": "7908",
+      "name": "株式会社きもと",
+      "edinet_code": "E02425",
+      "doc_id": "S100Y5JR",
+      "latest_filing": {
+        "submit_date": "2026-05-22",
+        "period_end": "2026-03-31"
+      },
+      "financials": {
+        "sales": 10546000000,
+        "operating_profit": 1064000000,
+        "net_income": 565000000,
+        "total_assets": 23245000000,
+        "equity": 18982000000,
+        "operating_cf": 579000000,
+        "shares_issued": 54772564
+      }
+    },
+    {
+      "code": "9381",
+      "name": "株式会社エーアイテイー",
+      "edinet_code": "E04369",
+      "doc_id": "S100Y53V",
+      "latest_filing": {
+        "submit_date": "2026-05-22",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "operating_profit": 4196000000,
+        "net_income": 3293000000,
+        "total_assets": 27596000000,
+        "equity": 20858000000,
+        "operating_cf": 3530000000,
+        "shares_issued": 23913600
+      }
+    },
+    {
+      "code": "7603",
+      "name": "ジーイエット株式会社",
+      "edinet_code": "E03313",
+      "doc_id": "S100Y5TM",
+      "latest_filing": {
+        "submit_date": "2026-05-22",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "shares_issued": 25747638
+      }
+    },
+    {
+      "code": "6521",
+      "name": "株式会社オキサイド",
+      "edinet_code": "E36433",
+      "doc_id": "S100Y5QW",
+      "latest_filing": {
+        "submit_date": "2026-05-22",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 10040393000,
+        "operating_profit": 542745000,
+        "net_income": -538075000,
+        "total_assets": 14773151000,
+        "equity": 4694989000,
+        "operating_cf": 2846872000,
+        "shares_issued": 11567113
+      }
+    },
+    {
+      "code": "2683",
+      "name": "株式会社魚喜",
+      "edinet_code": "E03365",
+      "doc_id": "S100Y5OG",
+      "latest_filing": {
+        "submit_date": "2026-05-22",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 9492627000,
+        "operating_profit": 88184000,
+        "net_income": 30673000,
+        "total_assets": 3041424000,
+        "equity": 903049000,
+        "operating_cf": 421082000,
+        "shares_issued": 2555856
+      }
+    },
+    {
+      "code": "6323",
+      "name": "ローツェ株式会社",
+      "edinet_code": "E02328",
+      "doc_id": "S100Y5GM",
+      "latest_filing": {
+        "submit_date": "2026-05-22",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 128794000000,
+        "operating_profit": 31154000000,
+        "net_income": 17487000000,
+        "total_assets": 197302000000,
+        "equity": 139961000000,
+        "operating_cf": 31191000000,
+        "shares_issued": 176400000
+      }
+    },
+    {
+      "code": "2186",
+      "name": "ソーバル株式会社",
+      "edinet_code": "E22049",
+      "doc_id": "S100Y5RH",
+      "latest_filing": {
+        "submit_date": "2026-05-22",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 8976977000,
+        "operating_profit": 662044000,
+        "net_income": 460210000,
+        "total_assets": 5889273000,
+        "equity": 4537349000,
+        "operating_cf": 372350000,
+        "shares_issued": 8167498
+      }
+    },
+    {
+      "code": "4017",
+      "name": "株式会社クリーマ",
+      "edinet_code": "E36100",
+      "doc_id": "S100Y5AX",
+      "latest_filing": {
+        "submit_date": "2026-05-22",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 2535110000,
+        "operating_profit": 42706000,
+        "net_income": 27505000,
+        "total_assets": 3679671000,
+        "equity": 1132651000,
+        "operating_cf": 545369000,
+        "shares_issued": 6742100
+      }
+    },
+    {
+      "code": "9388",
+      "name": "株式会社パパネッツ",
+      "edinet_code": "E33610",
+      "doc_id": "S100Y5VD",
+      "latest_filing": {
+        "submit_date": "2026-05-22",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "shares_issued": 2032000
+      }
+    },
+    {
+      "code": "6093",
+      "name": "株式会社エスクロー・エージェント・ジャパン",
+      "edinet_code": "E30476",
+      "doc_id": "S100Y5Q4",
+      "latest_filing": {
+        "submit_date": "2026-05-22",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 5078141000,
+        "operating_profit": 323403000,
+        "net_income": 189442000,
+        "total_assets": 4741590000,
+        "equity": 3498031000,
+        "operating_cf": 384213000,
+        "shares_issued": 45950238
+      }
+    },
+    {
+      "code": "5078",
+      "name": "株式会社セレコーポレーション",
+      "edinet_code": "E37456",
+      "doc_id": "S100Y5GZ",
+      "latest_filing": {
+        "submit_date": "2026-05-22",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 20190480000,
+        "operating_profit": 1692216000,
+        "net_income": 1147664000,
+        "total_assets": 24579503000,
+        "equity": 21116453000,
+        "operating_cf": -1626702000,
+        "shares_issued": 3491900
+      }
+    },
+    {
+      "code": "3612",
+      "name": "株式会社ワールド",
+      "edinet_code": "E02767",
+      "doc_id": "S100Y4W7",
+      "latest_filing": {
+        "submit_date": "2026-05-21",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 284014000000,
+        "operating_profit": 16028000000,
+        "net_income": 11933000000,
+        "total_assets": 280059000000,
+        "equity": 96282000000,
+        "operating_cf": 30984000000,
+        "shares_issued": 36858633
+      }
+    },
+    {
+      "code": "2354",
+      "name": "株式会社ＹＥ　ＤＩＧＩＴＡＬ",
+      "edinet_code": "E05328",
+      "doc_id": "S100Y56T",
+      "latest_filing": {
+        "submit_date": "2026-05-21",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 20263161000,
+        "operating_profit": 1628448000,
+        "net_income": 1303317000,
+        "total_assets": 14297389000,
+        "equity": 8132800000,
+        "operating_cf": 1422473000,
+        "shares_issued": 18326300
+      }
+    },
+    {
+      "code": "4714",
+      "name": "株式会社　リソー教育グループ",
+      "edinet_code": "E05024",
+      "doc_id": "S100Y58Q",
+      "latest_filing": {
+        "submit_date": "2026-05-21",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 34240928000,
+        "operating_profit": 2704189000,
+        "net_income": 1615853000,
+        "total_assets": 22667024000,
+        "equity": 12265789000,
+        "operating_cf": 2000193000,
+        "shares_issued": 171806159
+      }
+    },
+    {
+      "code": "2292",
+      "name": "エスフーズ株式会社",
+      "edinet_code": "E00342",
+      "doc_id": "S100Y5H5",
+      "latest_filing": {
+        "submit_date": "2026-05-21",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 472312000000,
+        "operating_profit": 10476000000,
+        "net_income": 9763000000,
+        "total_assets": 251439000000,
+        "equity": 140672000000,
+        "operating_cf": 8832000000,
+        "shares_issued": 32267721
+      }
+    },
+    {
+      "code": "3391",
+      "name": "株式会社ツルハホールディングス",
+      "edinet_code": "E03464",
+      "doc_id": "S100Y5EY",
+      "latest_filing": {
+        "submit_date": "2026-05-21",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 1450585000000,
+        "operating_profit": 63037000000,
+        "net_income": 45356000000,
+        "total_assets": 1647981000000,
+        "equity": 895706000000,
+        "operating_cf": 84582000000,
+        "shares_issued": 454308990
+      }
+    },
+    {
+      "code": "3198",
+      "name": "ＳＦＰホールディングス株式会社",
+      "edinet_code": "E31029",
+      "doc_id": "S100Y5KF",
+      "latest_filing": {
+        "submit_date": "2026-05-21",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 31119339000,
+        "operating_profit": 1706941000,
+        "net_income": 1085499000,
+        "total_assets": 13512479000,
+        "equity": 9181997000,
+        "operating_cf": 1376511000,
+        "shares_issued": 22813689
+      }
+    },
+    {
+      "code": "9842",
+      "name": "アークランズ株式会社",
+      "edinet_code": "E02706",
+      "doc_id": "S100Y5KN",
+      "latest_filing": {
+        "submit_date": "2026-05-21",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 341141000000,
+        "operating_profit": 14196000000,
+        "net_income": 8133000000,
+        "total_assets": 346213000000,
+        "equity": 128357000000,
+        "operating_cf": 23229000000,
+        "shares_issued": 64733372
+      }
+    },
+    {
+      "code": "7679",
+      "name": "株式会社薬王堂ホールディングス",
+      "edinet_code": "E34943",
+      "doc_id": "S100Y4K3",
+      "latest_filing": {
+        "submit_date": "2026-05-21",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 163808000000,
+        "operating_profit": 5285000000,
+        "net_income": 4028000000,
+        "total_assets": 103173000000,
+        "equity": 40227000000,
+        "operating_cf": 3285000000,
+        "shares_issued": 19740219
+      }
+    },
+    {
+      "code": "6086",
+      "name": "シンメンテホールディングス株式会社",
+      "edinet_code": "E30120",
+      "doc_id": "S100Y57I",
+      "latest_filing": {
+        "submit_date": "2026-05-21",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 29946500000,
+        "operating_profit": 1857431000,
+        "net_income": 1239496000,
+        "total_assets": 11088642000,
+        "equity": 4637105000,
+        "operating_cf": 1851992000,
+        "shares_issued": 21666000
+      }
+    },
+    {
+      "code": "3550",
+      "name": "株式会社スタジオアタオ",
+      "edinet_code": "E32736",
+      "doc_id": "S100Y4QT",
+      "latest_filing": {
+        "submit_date": "2026-05-21",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "shares_issued": 14037000
+      }
+    },
+    {
+      "code": "7894",
+      "name": "丸東産業株式会社",
+      "edinet_code": "E00863",
+      "doc_id": "S100Y5LD",
+      "latest_filing": {
+        "submit_date": "2026-05-21",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 18775003000,
+        "operating_profit": 420712000,
+        "net_income": 641679000,
+        "total_assets": 18642965000,
+        "equity": 9983925000,
+        "operating_cf": 650663000,
+        "shares_issued": 1590250
+      }
+    },
+    {
+      "code": "7975",
+      "name": "株式会社リヒトラブ",
+      "edinet_code": "E00667",
+      "doc_id": "S100Y4MZ",
+      "latest_filing": {
+        "submit_date": "2026-05-20",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 9124181000,
+        "operating_profit": 36028000,
+        "net_income": 67066000,
+        "total_assets": 13516274000,
+        "equity": 10978921000,
+        "operating_cf": 47728000,
+        "shares_issued": 3815700
+      }
+    },
+    {
+      "code": "2668",
+      "name": "タビオ株式会社",
+      "edinet_code": "E02923",
+      "doc_id": "S100Y4Z8",
+      "latest_filing": {
+        "submit_date": "2026-05-20",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 16812398000,
+        "operating_profit": 883961000,
+        "net_income": 569724000,
+        "total_assets": 8902789000,
+        "equity": 5364932000,
+        "operating_cf": 916742000,
+        "shares_issued": 6813880
+      }
+    },
+    {
+      "code": "8233",
+      "name": "株式会社髙島屋",
+      "edinet_code": "E03013",
+      "doc_id": "S100Y4X5",
+      "latest_filing": {
+        "submit_date": "2026-05-20",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 401958000000,
+        "operating_profit": 53516000000,
+        "net_income": -6998000000,
+        "total_assets": 1346229000000,
+        "equity": 477749000000,
+        "operating_cf": 53837000000,
+        "shares_issued": 305208916
+      }
+    },
+    {
+      "code": "3382",
+      "name": "株式会社セブン＆アイ・ホールディングス",
+      "edinet_code": "E03462",
+      "doc_id": "S100Y4VB",
+      "latest_filing": {
+        "submit_date": "2026-05-20",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 8893693000000,
+        "operating_profit": 422993000000,
+        "net_income": 299091000000,
+        "total_assets": 9142957000000,
+        "equity": 3648195000000,
+        "operating_cf": 666736000000,
+        "shares_issued": 2604555849
+      }
+    },
+    {
+      "code": "8185",
+      "name": "株式会社チヨダ",
+      "edinet_code": "E03077",
+      "doc_id": "S100Y563",
+      "latest_filing": {
+        "submit_date": "2026-05-20",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 81377000000,
+        "operating_profit": 1090000000,
+        "net_income": 237000000,
+        "total_assets": 71016000000,
+        "equity": 49964000000,
+        "operating_cf": -4130000000,
+        "shares_issued": 34359396
+      }
+    },
+    {
+      "code": "9946",
+      "name": "ミニストップ株式会社",
+      "edinet_code": "E03188",
+      "doc_id": "S100Y4UH",
+      "latest_filing": {
+        "submit_date": "2026-05-20",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "operating_profit": -3610000000,
+        "net_income": -5785000000,
+        "total_assets": 69013000000,
+        "equity": 27163000000,
+        "operating_cf": 1788000000,
+        "shares_issued": 29372774
+      }
+    },
+    {
+      "code": "3608",
+      "name": "株式会社ＴＳＩホールディングス",
+      "edinet_code": "E25234",
+      "doc_id": "S100Y5A2",
+      "latest_filing": {
+        "submit_date": "2026-05-20",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 167085000000,
+        "operating_profit": 4325000000,
+        "net_income": 3475000000,
+        "total_assets": 174204000000,
+        "equity": 99321000000,
+        "operating_cf": -7717000000,
+        "shares_issued": 63438793
+      }
+    },
+    {
+      "code": "2379",
+      "name": "ディップ株式会社",
+      "edinet_code": "E05368",
+      "doc_id": "S100Y510",
+      "latest_filing": {
+        "submit_date": "2026-05-20",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 54852760000,
+        "operating_profit": 9112764000,
+        "net_income": 5953859000,
+        "total_assets": 49954586000,
+        "equity": 37193783000,
+        "operating_cf": 9965763000,
+        "shares_issued": 60140000
+      }
+    },
+    {
+      "code": "275A",
+      "name": "ハンワホームズ株式会社",
+      "edinet_code": "E40194",
+      "doc_id": "S100Y55S",
+      "latest_filing": {
+        "submit_date": "2026-05-20",
+        "period_end": "2026-02-20"
+      },
+      "financials": {
+        "shares_issued": 2437000
+      }
+    },
+    {
+      "code": "7649",
+      "name": "スギホールディングス株式会社",
+      "edinet_code": "E03344",
+      "doc_id": "S100Y3QN",
+      "latest_filing": {
+        "submit_date": "2026-05-20",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 1010336000000,
+        "operating_profit": 48568000000,
+        "net_income": 44974000000,
+        "total_assets": 614493000000,
+        "equity": 290474000000,
+        "operating_cf": 86779000000,
+        "shares_issued": 189992514
+      }
+    },
+    {
+      "code": "9974",
+      "name": "株式会社ベルク",
+      "edinet_code": "E03216",
+      "doc_id": "S100Y4X3",
+      "latest_filing": {
+        "submit_date": "2026-05-20",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 416514000000,
+        "operating_profit": 17900000000,
+        "net_income": 12681000000,
+        "total_assets": 221376000000,
+        "equity": 120592000000,
+        "operating_cf": 20935000000,
+        "shares_issued": 20867800
+      }
+    },
+    {
+      "code": "8203",
+      "name": "株式会社ミスターマックス・ホールディングス",
+      "edinet_code": "E03103",
+      "doc_id": "S100Y58I",
+      "latest_filing": {
+        "submit_date": "2026-05-20",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 142134000000,
+        "operating_profit": 4445000000,
+        "net_income": 2715000000,
+        "total_assets": 86745000000,
+        "equity": 38374000000,
+        "operating_cf": 4021000000,
+        "shares_issued": 39611134
+      }
+    },
+    {
+      "code": "2337",
+      "name": "いちご株式会社",
+      "edinet_code": "E05314",
+      "doc_id": "S100Y50H",
+      "latest_filing": {
+        "submit_date": "2026-05-20",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 92705000000,
+        "operating_profit": 20449000000,
+        "net_income": 16843000000,
+        "total_assets": 435820000000,
+        "equity": 116754000000,
+        "operating_cf": -21859000000,
+        "shares_issued": 415993612
+      }
+    },
+    {
+      "code": "3222",
+      "name": "ユナイテッド・スーパーマーケット・ホールディングス株式会社",
+      "edinet_code": "E31159",
+      "doc_id": "S100Y585",
+      "latest_filing": {
+        "submit_date": "2026-05-20",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 944425000000,
+        "operating_profit": 5050000000,
+        "net_income": -3185000000,
+        "total_assets": 379211000000,
+        "equity": 200671000000,
+        "operating_cf": 25603000000,
+        "shares_issued": 199100691
+      }
+    },
+    {
+      "code": "7520",
+      "name": "株式会社エコス",
+      "edinet_code": "E03274",
+      "doc_id": "S100Y4BQ",
+      "latest_filing": {
+        "submit_date": "2026-05-19",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 134198000000,
+        "operating_profit": 5729000000,
+        "net_income": 2645000000,
+        "total_assets": 56480000000,
+        "equity": 29229000000,
+        "operating_cf": 5267000000,
+        "shares_issued": 11648917
+      }
+    },
+    {
+      "code": "4343",
+      "name": "株式会社イオンファンタジー",
+      "edinet_code": "E05264",
+      "doc_id": "S100Y4UK",
+      "latest_filing": {
+        "submit_date": "2026-05-19",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 93290048000,
+        "operating_profit": 6114924000,
+        "net_income": 2710112000,
+        "total_assets": 64228857000,
+        "equity": 8014237000,
+        "operating_cf": 11598281000,
+        "shares_issued": 19784125
+      }
+    },
+    {
+      "code": "9253",
+      "name": "スローガン株式会社",
+      "edinet_code": "E37006",
+      "doc_id": "S100Y4UP",
+      "latest_filing": {
+        "submit_date": "2026-05-19",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 1589911000,
+        "operating_profit": 280068000,
+        "net_income": 189575000,
+        "total_assets": 2325822000,
+        "equity": 1633716000,
+        "operating_cf": 328634000,
+        "shares_issued": 2769875
+      }
+    },
+    {
+      "code": "7624",
+      "name": "株式会社ＮａＩＴＯ",
+      "edinet_code": "E02903",
+      "doc_id": "S100Y4MW",
+      "latest_filing": {
+        "submit_date": "2026-05-19",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 43518000000,
+        "operating_profit": 403000000,
+        "net_income": 284000000,
+        "total_assets": 17586000000,
+        "equity": 13138000000,
+        "operating_cf": 462000000,
+        "shares_issued": 54789510
+      }
+    },
+    {
+      "code": "2653",
+      "name": "イオン九州株式会社",
+      "edinet_code": "E03349",
+      "doc_id": "S100Y4YP",
+      "latest_filing": {
+        "submit_date": "2026-05-19",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 520588000000,
+        "operating_profit": 10748000000,
+        "net_income": 5462000000,
+        "total_assets": 206432000000,
+        "equity": 60568000000,
+        "operating_cf": 23700000000,
+        "shares_issued": 34833558
+      }
+    },
+    {
+      "code": "3353",
+      "name": "株式会社メディカル一光グループ",
+      "edinet_code": "E03443",
+      "doc_id": "S100Y4Y9",
+      "latest_filing": {
+        "submit_date": "2026-05-19",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 54982518000,
+        "operating_profit": 1788050000,
+        "net_income": 1314435000,
+        "total_assets": 37576117000,
+        "equity": 16338518000,
+        "operating_cf": 1208104000,
+        "shares_issued": 3770000
+      }
+    },
+    {
+      "code": "9876",
+      "name": "株式会社コックス",
+      "edinet_code": "E03163",
+      "doc_id": "S100Y4RA",
+      "latest_filing": {
+        "submit_date": "2026-05-19",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 14955340000,
+        "operating_profit": 1324332000,
+        "net_income": 1068876000,
+        "total_assets": 14922217000,
+        "equity": 10542614000,
+        "operating_cf": 623293000,
+        "shares_issued": 27711028
+      }
+    },
+    {
+      "code": "8570",
+      "name": "イオンフィナンシャルサービス株式会社",
+      "edinet_code": "E04912",
+      "doc_id": "S100Y53G",
+      "latest_filing": {
+        "submit_date": "2026-05-19",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "operating_profit": 60655000000,
+        "net_income": 36740000000,
+        "total_assets": 8313956000000,
+        "equity": 625209000000,
+        "operating_cf": 303665000000,
+        "shares_issued": 216010128
+      }
+    },
+    {
+      "code": "8278",
+      "name": "株式会社フジ",
+      "edinet_code": "E03118",
+      "doc_id": "S100Y4CU",
+      "latest_filing": {
+        "submit_date": "2026-05-18",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 784256000000,
+        "operating_profit": 11217000000,
+        "net_income": 8179000000,
+        "total_assets": 415212000000,
+        "equity": 227227000000,
+        "operating_cf": 37740000000,
+        "shares_issued": 86856954
+      }
+    },
+    {
+      "code": "8198",
+      "name": "マックスバリュ東海株式会社",
+      "edinet_code": "E03087",
+      "doc_id": "S100Y494",
+      "latest_filing": {
+        "submit_date": "2026-05-18",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 377031000000,
+        "operating_profit": 13557000000,
+        "net_income": 10256000000,
+        "total_assets": 152405000000,
+        "equity": 97052000000,
+        "operating_cf": 19672000000,
+        "shares_issued": 31973848
+      }
+    },
+    {
+      "code": "8166",
+      "name": "株式会社タカキュー",
+      "edinet_code": "E03093",
+      "doc_id": "S100Y4PA",
+      "latest_filing": {
+        "submit_date": "2026-05-18",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "shares_issued": 50493519
+      }
+    },
+    {
+      "code": "6814",
+      "name": "古野電気株式会社",
+      "edinet_code": "E01839",
+      "doc_id": "S100Y3Q6",
+      "latest_filing": {
+        "submit_date": "2026-05-18",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 140616000000,
+        "operating_profit": 16246000000,
+        "net_income": 16777000000,
+        "total_assets": 141364000000,
+        "equity": 89772000000,
+        "operating_cf": 21373000000,
+        "shares_issued": 31894554
+      }
+    },
+    {
+      "code": "7512",
+      "name": "イオン北海道株式会社",
+      "edinet_code": "E03268",
+      "doc_id": "S100Y36L",
+      "latest_filing": {
+        "submit_date": "2026-05-15",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "shares_issued": 139420284
+      }
+    },
+    {
+      "code": "4933",
+      "name": "株式会社Ｉ－ｎｅ",
+      "edinet_code": "E35928",
+      "doc_id": "S100Y415",
+      "latest_filing": {
+        "submit_date": "2026-05-15",
+        "period_end": "2025-12-31"
+      },
+      "financials": {
+        "sales": 48975000000,
+        "operating_profit": 3880000000,
+        "net_income": 2271000000,
+        "total_assets": 37060000000,
+        "equity": 20109000000,
+        "operating_cf": 4058000000,
+        "shares_issued": 17791270
+      }
+    },
+    {
+      "code": "9976",
+      "name": "株式会社　セキチュー",
+      "edinet_code": "E03219",
+      "doc_id": "S100Y3VC",
+      "latest_filing": {
+        "submit_date": "2026-05-14",
+        "period_end": "2026-02-20"
+      },
+      "financials": {
+        "shares_issued": 5586150
+      }
+    },
+    {
+      "code": "6279",
+      "name": "株式会社瑞光",
+      "edinet_code": "E01677",
+      "doc_id": "S100Y3PF",
+      "latest_filing": {
+        "submit_date": "2026-05-14",
+        "period_end": "2026-02-20"
+      },
+      "financials": {
+        "sales": 21170251000,
+        "operating_profit": 162723000,
+        "net_income": 1947659000,
+        "total_assets": 52440335000,
+        "equity": 36324115000,
+        "operating_cf": 1132229000,
+        "shares_issued": 28800000
+      }
+    },
+    {
+      "code": "2778",
+      "name": "パレモ・ホールディングス株式会社",
+      "edinet_code": "E03415",
+      "doc_id": "S100Y39Y",
+      "latest_filing": {
+        "submit_date": "2026-05-13",
+        "period_end": "2026-02-20"
+      },
+      "financials": {
+        "sales": 14082615000,
+        "operating_profit": 190358000,
+        "net_income": 21403000,
+        "total_assets": 6234859000,
+        "equity": 1579663000,
+        "operating_cf": -124126000,
+        "shares_issued": 12051649
+      }
+    },
+    {
+      "code": "7545",
+      "name": "株式会社西松屋チェーン",
+      "edinet_code": "E03287",
+      "doc_id": "S100Y3CW",
+      "latest_filing": {
+        "submit_date": "2026-05-13",
+        "period_end": "2026-02-20"
+      },
+      "financials": {
+        "sales": 193365000000,
+        "operating_profit": 9941000000,
+        "net_income": 6847000000,
+        "total_assets": 160251000000,
+        "equity": 98669000000,
+        "operating_cf": 10566000000,
+        "shares_issued": 69588856
+      }
+    },
+    {
+      "code": "3333",
+      "name": "株式会社あさひ",
+      "edinet_code": "E03439",
+      "doc_id": "S100Y2X4",
+      "latest_filing": {
+        "submit_date": "2026-05-13",
+        "period_end": "2026-02-20"
+      },
+      "financials": {
+        "shares_issued": 26240800
+      }
+    },
+    {
+      "code": "8217",
+      "name": "株式会社オークワ",
+      "edinet_code": "E03119",
+      "doc_id": "S100Y362",
+      "latest_filing": {
+        "submit_date": "2026-05-13",
+        "period_end": "2026-02-20"
+      },
+      "financials": {
+        "sales": 239549000000,
+        "operating_profit": 1878000000,
+        "net_income": 284000000,
+        "total_assets": 129223000000,
+        "equity": 74641000000,
+        "operating_cf": 7619000000,
+        "shares_issued": 41937297
+      }
+    },
+    {
+      "code": "8227",
+      "name": "株式会社しまむら",
+      "edinet_code": "E03137",
+      "doc_id": "S100Y2PP",
+      "latest_filing": {
+        "submit_date": "2026-05-12",
+        "period_end": "2026-02-20"
+      },
+      "financials": {
+        "sales": 700034000000,
+        "operating_profit": 61483000000,
+        "net_income": 44460000000,
+        "total_assets": 554667000000,
+        "equity": 488545000000,
+        "operating_cf": 48052000000,
+        "shares_issued": 73826598
+      }
+    },
+    {
+      "code": "8276",
+      "name": "株式会社　平和堂",
+      "edinet_code": "E03081",
+      "doc_id": "S100Y2FB",
+      "latest_filing": {
+        "submit_date": "2026-05-11",
+        "period_end": "2026-02-20"
+      },
+      "financials": {
+        "sales": 417976000000,
+        "operating_profit": 13313000000,
+        "net_income": 9523000000,
+        "total_assets": 313095000000,
+        "equity": 197962000000,
+        "operating_cf": 17784000000,
+        "shares_issued": 51546470
+      }
+    },
+    {
+      "code": "3399",
+      "name": "株式会社丸千代山岡家",
+      "edinet_code": "E03470",
+      "doc_id": "S100Y1KO",
+      "latest_filing": {
+        "submit_date": "2026-04-30",
+        "period_end": "2026-01-31"
+      },
+      "financials": {
+        "shares_issued": 20112800
+      }
+    },
+    {
+      "code": "3681",
+      "name": "株式会社ブイキューブ",
+      "edinet_code": "E30114",
+      "doc_id": "S100Y1NL",
+      "latest_filing": {
+        "submit_date": "2026-04-30",
+        "period_end": "2025-12-31"
+      },
+      "financials": {
+        "sales": 9859467000,
+        "operating_profit": -1683043000,
+        "net_income": -3941033000,
+        "total_assets": 8730961000,
+        "equity": -1107682000,
+        "operating_cf": -570788000,
+        "shares_issued": 26343900
+      }
+    },
+    {
+      "code": "278A",
+      "name": "Ｔｅｒｒａ　Ｄｒｏｎｅ株式会社",
+      "edinet_code": "E40060",
+      "doc_id": "S100XY8O",
+      "latest_filing": {
+        "submit_date": "2026-04-30",
+        "period_end": "2026-01-31"
+      },
+      "financials": {
+        "sales": 4782585000,
+        "operating_profit": -1143791000,
+        "net_income": -2842693000,
+        "total_assets": 6934968000,
+        "equity": 5008622000,
+        "operating_cf": -716459000,
+        "shares_issued": 9718000
+      }
+    },
+    {
+      "code": "7064",
+      "name": "株式会社ハウテレビジョン",
+      "edinet_code": "E34866",
+      "doc_id": "S100XVTU",
+      "latest_filing": {
+        "submit_date": "2026-04-28",
+        "period_end": "2026-01-31"
+      },
+      "financials": {
+        "sales": 2558118000,
+        "operating_profit": 251403000,
+        "net_income": 96583000,
+        "total_assets": 2701666000,
+        "equity": 1430726000,
+        "operating_cf": 344637000,
+        "shares_issued": 2720882
+      }
+    },
+    {
+      "code": "7073",
+      "name": "株式会社ジェイック",
+      "edinet_code": "E35187",
+      "doc_id": "S100Y1BL",
+      "latest_filing": {
+        "submit_date": "2026-04-28",
+        "period_end": "2026-01-31"
+      },
+      "financials": {
+        "sales": 4475801000,
+        "operating_profit": 203413000,
+        "net_income": 130027000,
+        "total_assets": 3130933000,
+        "equity": 1060531000,
+        "operating_cf": 369361000,
+        "shares_issued": 934200
+      }
+    },
+    {
+      "code": "9166",
+      "name": "株式会社ＧＥＮＤＡ",
+      "edinet_code": "E38739",
+      "doc_id": "S100Y1F9",
+      "latest_filing": {
+        "submit_date": "2026-04-28",
+        "period_end": "2026-01-31"
+      },
+      "financials": {
+        "sales": 170787000000,
+        "operating_profit": 7695000000,
+        "net_income": 3886000000,
+        "total_assets": 222643000000,
+        "equity": 65357000000,
+        "operating_cf": 13919000000,
+        "shares_issued": 187756582
+      }
+    },
+    {
+      "code": "4174",
+      "name": "株式会社アピリッツ",
+      "edinet_code": "E36213",
+      "doc_id": "S100Y16K",
+      "latest_filing": {
+        "submit_date": "2026-04-28",
+        "period_end": "2026-01-31"
+      },
+      "financials": {
+        "sales": 9955206000,
+        "operating_profit": -309393000,
+        "net_income": -465332000,
+        "total_assets": 5704468000,
+        "equity": 1860735000,
+        "operating_cf": -4609000,
+        "shares_issued": 4196562
+      }
+    },
+    {
+      "code": "456A",
+      "name": "ＨＵＭＡＮ　ＭＡＤＥ株式会社",
+      "edinet_code": "E41076",
+      "doc_id": "S100Y17X",
+      "latest_filing": {
+        "submit_date": "2026-04-28",
+        "period_end": "2026-01-31"
+      },
+      "financials": {
+        "shares_issued": 22911400
+      }
+    },
+    {
+      "code": "7614",
+      "name": "株式会社オーエムツーネットワーク",
+      "edinet_code": "E03317",
+      "doc_id": "S100Y11L",
+      "latest_filing": {
+        "submit_date": "2026-04-28",
+        "period_end": "2026-01-31"
+      },
+      "financials": {
+        "sales": 35371072000,
+        "operating_profit": 1295726000,
+        "net_income": 944255000,
+        "total_assets": 23389792000,
+        "equity": 18108822000,
+        "operating_cf": 1468201000,
+        "shares_issued": 7335634
+      }
+    },
+    {
+      "code": "4813",
+      "name": "株式会社ＡＣＣＥＳＳ",
+      "edinet_code": "E05168",
+      "doc_id": "S100Y070",
+      "latest_filing": {
+        "submit_date": "2026-04-28",
+        "period_end": "2026-01-31"
+      },
+      "financials": {
+        "sales": 19215583000,
+        "operating_profit": -2688610000,
+        "net_income": -3398608000,
+        "total_assets": 17095149000,
+        "equity": 6785067000,
+        "operating_cf": -3935926000,
+        "shares_issued": 39962100
+      }
+    },
+    {
+      "code": "446A",
+      "name": "株式会社ノースサンド",
+      "edinet_code": "E41104",
+      "doc_id": "S100Y1HV",
+      "latest_filing": {
+        "submit_date": "2026-04-28",
+        "period_end": "2026-01-31"
+      },
+      "financials": {
+        "shares_issued": 69000000
       }
     }
   ]
