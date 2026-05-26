@@ -117,3 +117,11 @@ function formatShares(value) {
   }
   return value.toLocaleString() + ' 株';
 }
+// Service Worker登録
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/jp-stock-screener/sw.js')
+      .then(() => console.log('SW登録成功'))
+      .catch(err => console.log('SW登録失敗:', err));
+  });
+}
