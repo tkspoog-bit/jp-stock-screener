@@ -1,69 +1,88 @@
-fetch('./data/fundamentals.json')
-  .then(res => res.json())
-  .then(data => {
-    // 更新日時を表示
-    document.getElementById('updated-at').textContent =
-      '更新日時：' + data.updated_at;
+Promise.all([
+  fetch('./data/fundamentals.json').then(r => r.json()),
+  fetch('./data/prices.json').then(r => r.json())
+])
+.then(([fundamentals, prices]) => {
 
-    const list = document.getElementById('company-list');
-    list.innerHTML = '';
+  // 更新日時を表示
+  document.getElementById('updated-at').textContent =
+    '更新日時：' + fundamentals.updated_at;
 
-    data.companies.forEach(company => {
-      const f = company.financials;
-      const filing = company.latest_filing || {};
+  const list = document.getElementById('company-list');
+  list.innerHTML = '';
 
-      // 決算期を「2025年3月期」形式に変換
-      const periodLabel = formatPeriod(filing.period_end);
+  fundamentals.companies.forEach(company => {
+    const f = company.financials;
+    const filing = company.latest_filing || {};
+    const priceData = prices[company.code];
 
-      const card = document.createElement('div');
-      card.className = 'company-card';
+    // 時価総額の計算
+    let marketCap = null;
+    if (priceData && f.shares_issued) {
+      marketCap = priceData.price * f.shares_issued;
+    }
 
-      card.innerHTML = `
-        <div class="company-name">${company.name}</div>
-        <div class="company-code">証券コード：${company.code}</div>
-        <div class="filing-info">
-          <span>決算期：${periodLabel}</span>
-          <span>提出日：${filing.submit_date || '不明'}</span>
+    const periodLabel = formatPeriod(filing.period_end);
+
+    const card = document.createElement('div');
+    card.className = 'company-card';
+
+    card.innerHTML = `
+      <div class="company-name">${company.name}</div>
+      <div class="company-code">証券コード：${company.code}</div>
+      <div class="filing-info">
+        <span>決算期：${periodLabel}</span>
+        <span>提出日：${filing.submit_date || '不明'}</span>
+      </div>
+      <div class="financials">
+        ${marketCap !== null ? `
+        <div class="financial-row market-cap">
+          <span class="financial-label">時価総額</span>
+          <span class="financial-value">${formatAmount(marketCap)}</span>
         </div>
-        <div class="financials">
-          <div class="financial-row">
-            <span class="financial-label">売上高</span>
-            <span class="financial-value">${formatAmount(f.sales)}</span>
-          </div>
-          <div class="financial-row">
-            <span class="financial-label">営業利益</span>
-            <span class="financial-value">${formatAmount(f.operating_profit)}</span>
-          </div>
-          <div class="financial-row">
-            <span class="financial-label">当期純利益</span>
-            <span class="financial-value">${formatAmount(f.net_income)}</span>
-          </div>
-          <div class="financial-row">
-            <span class="financial-label">総資産</span>
-            <span class="financial-value">${formatAmount(f.total_assets)}</span>
-          </div>
-          <div class="financial-row">
-            <span class="financial-label">純資産</span>
-            <span class="financial-value">${formatAmount(f.equity)}</span>
-          </div>
-          <div class="financial-row">
-            <span class="financial-label">営業CF</span>
-            <span class="financial-value">${formatAmount(f.operating_cf)}</span>
-          </div>
-          <div class="financial-row">
-            <span class="financial-label">発行済株式数</span>
-            <span class="financial-value">${formatShares(f.shares_issued)}</span>
-          </div>
+        ` : ''}
+        <div class="financial-row">
+          <span class="financial-label">売上高</span>
+          <span class="financial-value">${formatAmount(f.sales)}</span>
         </div>
-      `;
+        <div class="financial-row">
+          <span class="financial-label">営業利益</span>
+          <span class="financial-value">${formatAmount(f.operating_profit)}</span>
+        </div>
+        <div class="financial-row">
+          <span class="financial-label">当期純利益</span>
+          <span class="financial-value">${formatAmount(f.net_income)}</span>
+        </div>
+        <div class="financial-row">
+          <span class="financial-label">総資産</span>
+          <span class="financial-value">${formatAmount(f.total_assets)}</span>
+        </div>
+        <div class="financial-row">
+          <span class="financial-label">純資産</span>
+          <span class="financial-value">${formatAmount(f.equity)}</span>
+        </div>
+        <div class="financial-row">
+          <span class="financial-label">営業CF</span>
+          <span class="financial-value">${formatAmount(f.operating_cf)}</span>
+        </div>
+        <div class="financial-row">
+          <span class="financial-label">株価</span>
+          <span class="financial-value">${priceData ? priceData.price.toLocaleString() + ' 円' : '不明'}</span>
+        </div>
+        <div class="financial-row">
+          <span class="financial-label">発行済株式数</span>
+          <span class="financial-value">${formatShares(f.shares_issued)}</span>
+        </div>
+      </div>
+    `;
 
-      list.appendChild(card);
-    });
-  })
-  .catch(err => {
-    document.getElementById('company-list').textContent =
-      'データの読み込みに失敗しました：' + err.message;
+    list.appendChild(card);
   });
+})
+.catch(err => {
+  document.getElementById('company-list').textContent =
+    'データの読み込みに失敗しました：' + err.message;
+});
 
 // 「2025-03-31」→「2025年3月期」に変換
 function formatPeriod(periodEnd) {
@@ -77,6 +96,7 @@ function formatPeriod(periodEnd) {
 
 // 金額を「兆・億・万円」単位に変換
 function formatAmount(value) {
+  if (!value) return '不明';
   if (value >= 1_000_000_000_000) {
     return (value / 1_000_000_000_000).toFixed(1) + ' 兆円';
   } else if (value >= 100_000_000) {
@@ -89,6 +109,7 @@ function formatAmount(value) {
 
 // 株式数を「億株・万株」単位に変換
 function formatShares(value) {
+  if (!value) return '不明';
   if (value >= 100_000_000) {
     return (value / 100_000_000).toFixed(1) + ' 億株';
   } else if (value >= 10_000) {

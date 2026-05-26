@@ -50,6 +50,14 @@ header h1 {
 .company-code {
   font-size: 12px;
   color: #888;
+  margin-bottom: 8px;
+}
+
+.filing-info {
+  display: flex;
+  gap: 12px;
+  font-size: 12px;
+  color: #888;
   margin-bottom: 12px;
 }
 
@@ -74,10 +82,21 @@ header h1 {
 .financial-value {
   font-weight: 500;
 }
-.filing-info {
-  display: flex;
-  gap: 12px;
-  font-size: 12px;
-  color: #888;
-  margin-bottom: 12px;
+
+.market-cap {
+  background: #f0f7ff;
+  border-radius: 6px;
+  padding: 8px 6px;
+  margin-bottom: 4px;
+  border-bottom: 2px solid #d0e8ff;
+}
+
+.market-cap .financial-label {
+  color: #2255aa;
+  font-weight: bold;
+}
+
+.market-cap .financial-value {
+  color: #2255aa;
+  font-weight: bold;
 }
