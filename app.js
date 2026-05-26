@@ -1,27 +1,71 @@
+let allData = [];
+let pricesData = {};
+let currentSort = 'market_cap';
+
 Promise.all([
   fetch('./data/fundamentals.json').then(r => r.json()),
   fetch('./data/prices.json').then(r => r.json())
 ])
 .then(([fundamentals, prices]) => {
+  pricesData = prices;
 
   // 更新日時を表示
   document.getElementById('updated-at').textContent =
     '更新日時：' + fundamentals.updated_at;
 
+  // 時価総額を計算して保存
+  allData = fundamentals.companies.map(company => {
+    const priceData = prices[company.code];
+    const shares = company.financials.shares_issued;
+    const marketCap = (priceData && shares)
+      ? priceData.price * shares
+      : null;
+
+    return { ...company, marketCap, priceData };
+  });
+
+  renderList(currentSort);
+})
+.catch(err => {
+  document.getElementById('company-list').textContent =
+    'データの読み込みに失敗しました：' + err.message;
+});
+
+
+function sortBy(key) {
+  currentSort = key;
+
+  // ボタンのアクティブ状態を更新
+  document.querySelectorAll('#sort-bar button').forEach(btn => {
+    btn.classList.remove('active');
+  });
+  event.target.classList.add('active');
+
+  renderList(key);
+}
+
+
+function renderList(sortKey) {
+  const sorted = [...allData].sort((a, b) => {
+    let valA, valB;
+
+    if (sortKey === 'market_cap') {
+      valA = a.marketCap || 0;
+      valB = b.marketCap || 0;
+    } else {
+      valA = a.financials[sortKey] || 0;
+      valB = b.financials[sortKey] || 0;
+    }
+
+    return valB - valA;
+  });
+
   const list = document.getElementById('company-list');
   list.innerHTML = '';
 
-  fundamentals.companies.forEach(company => {
+  sorted.forEach(company => {
     const f = company.financials;
     const filing = company.latest_filing || {};
-    const priceData = prices[company.code];
-
-    // 時価総額の計算
-    let marketCap = null;
-    if (priceData && f.shares_issued) {
-      marketCap = priceData.price * f.shares_issued;
-    }
-
     const periodLabel = formatPeriod(filing.period_end);
 
     const card = document.createElement('div');
@@ -35,10 +79,10 @@ Promise.all([
         <span>提出日：${filing.submit_date || '不明'}</span>
       </div>
       <div class="financials">
-        ${marketCap !== null ? `
+        ${company.marketCap !== null ? `
         <div class="financial-row market-cap">
           <span class="financial-label">時価総額</span>
-          <span class="financial-value">${formatAmount(marketCap)}</span>
+          <span class="financial-value">${formatAmount(company.marketCap)}</span>
         </div>
         ` : ''}
         <div class="financial-row">
@@ -67,7 +111,7 @@ Promise.all([
         </div>
         <div class="financial-row">
           <span class="financial-label">株価</span>
-          <span class="financial-value">${priceData ? priceData.price.toLocaleString() + ' 円' : '不明'}</span>
+          <span class="financial-value">${company.priceData ? company.priceData.price.toLocaleString() + ' 円' : '不明'}</span>
         </div>
         <div class="financial-row">
           <span class="financial-label">発行済株式数</span>
@@ -78,23 +122,16 @@ Promise.all([
 
     list.appendChild(card);
   });
-})
-.catch(err => {
-  document.getElementById('company-list').textContent =
-    'データの読み込みに失敗しました：' + err.message;
-});
+}
 
-// 「2025-03-31」→「2025年3月期」に変換
+
 function formatPeriod(periodEnd) {
   if (!periodEnd) return '不明';
   const parts = periodEnd.split('-');
   if (parts.length < 2) return periodEnd;
-  const year = parts[0];
-  const month = parseInt(parts[1], 10);
-  return `${year}年${month}月期`;
+  return `${parts[0]}年${parseInt(parts[1], 10)}月期`;
 }
 
-// 金額を「兆・億・万円」単位に変換
 function formatAmount(value) {
   if (!value) return '不明';
   if (value >= 1_000_000_000_000) {
@@ -107,7 +144,6 @@ function formatAmount(value) {
   return value.toLocaleString() + ' 円';
 }
 
-// 株式数を「億株・万株」単位に変換
 function formatShares(value) {
   if (!value) return '不明';
   if (value >= 100_000_000) {
@@ -117,6 +153,7 @@ function formatShares(value) {
   }
   return value.toLocaleString() + ' 株';
 }
+
 // Service Worker登録
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
