@@ -102,10 +102,14 @@ TAG_CANDIDATES = {
     },
 }
 
+
 TARGET_COMPANIES = [
-    {"code": "7203", "name": "トヨタ自動車",  "edinet_code": "E02144"},
-    {"code": "6758", "name": "ソニーグループ", "edinet_code": "E01777"},
+    {"code": "7203", "name": "トヨタ自動車",    "edinet_code": "E02144"},
+    {"code": "6758", "name": "ソニーグループ",   "edinet_code": "E01777"},
+    {"code": "4063", "name": "信越化学工業",     "edinet_code": "E00776"},
+    {"code": "9432", "name": "NTT",             "edinet_code": "E04430"},
 ]
+
 
 
 def fetch_doc_id(edinet_code):

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-05-27 03:33:58",
+  "updated_at": "2026-05-27 04:05:24",
   "companies": [
     {
       "code": "7203",
@@ -37,6 +37,44 @@
         "equity": 8510151000000,
         "operating_cf": 2321675000000,
         "shares_issued": 6149810645
+      }
+    },
+    {
+      "code": "4063",
+      "name": "信越化学工業",
+      "edinet_code": "E00776",
+      "doc_id": "S100W0RG",
+      "latest_filing": {
+        "submit_date": "2025-06-20",
+        "period_end": "2025-03-31"
+      },
+      "financials": {
+        "sales": 2561249000000,
+        "operating_profit": 742105000000,
+        "net_income": 580101000000,
+        "total_assets": 5636601000000,
+        "equity": 4837585000000,
+        "operating_cf": 881934000000,
+        "shares_issued": 1984995865
+      }
+    },
+    {
+      "code": "9432",
+      "name": "NTT",
+      "edinet_code": "E04430",
+      "doc_id": "S100W1FL",
+      "latest_filing": {
+        "submit_date": "2025-06-20",
+        "period_end": "2025-03-31"
+      },
+      "financials": {
+        "sales": 13704727000000,
+        "operating_profit": 1649571000000,
+        "net_income": 1082435000000,
+        "total_assets": 30062483000000,
+        "equity": 11344639000000,
+        "operating_cf": 2364031000000,
+        "shares_issued": 90550316400
       }
     }
   ]
