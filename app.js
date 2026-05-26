@@ -21,7 +21,19 @@ Promise.all([
       ? priceData.price * shares
       : null;
 
-    return { ...company, marketCap, priceData };
+    const f = company.financials;
+    const per = (marketCap && f.net_income)
+      ? marketCap / f.net_income : null;
+    const pbr = (marketCap && f.equity)
+      ? marketCap / f.equity : null;
+    const roe = (f.net_income && f.equity)
+      ? f.net_income / f.equity * 100 : null;
+    const roa = (f.net_income && f.total_assets)
+      ? f.net_income / f.total_assets * 100 : null;
+    const operating_margin = (f.operating_profit && f.sales)
+      ? f.operating_profit / f.sales * 100 : null;
+
+    return { ...company, marketCap, priceData, per, pbr, roe, roa, operating_margin };
   });
 
   renderList(currentSort);
@@ -109,6 +121,37 @@ function renderList(sortKey) {
           <span class="financial-label">営業CF</span>
           <span class="financial-value">${formatAmount(f.operating_cf)}</span>
         </div>
+        <div class="financial-row">
+          ${company.per !== null ? `
+        <div class="financial-row">
+          <span class="financial-label">PER</span>
+          <span class="financial-value">${company.per.toFixed(1)} 倍</span>
+        </div>
+        ` : ''}
+        ${company.pbr !== null ? `
+        <div class="financial-row">
+          <span class="financial-label">PBR</span>
+          <span class="financial-value">${company.pbr.toFixed(1)} 倍</span>
+        </div>
+        ` : ''}
+        ${company.roe !== null ? `
+        <div class="financial-row">
+          <span class="financial-label">ROE</span>
+          <span class="financial-value">${company.roe.toFixed(1)} %</span>
+        </div>
+        ` : ''}
+        ${company.roa !== null ? `
+        <div class="financial-row">
+          <span class="financial-label">ROA</span>
+          <span class="financial-value">${company.roa.toFixed(1)} %</span>
+        </div>
+        ` : ''}
+        ${company.operating_margin !== null ? `
+        <div class="financial-row">
+          <span class="financial-label">営業利益率</span>
+          <span class="financial-value">${company.operating_margin.toFixed(1)} %</span>
+        </div>
+        ` : ''}
         <div class="financial-row">
           <span class="financial-label">株価</span>
           <span class="financial-value">${company.priceData ? company.priceData.price.toLocaleString() + ' 円' : '不明'}</span>
