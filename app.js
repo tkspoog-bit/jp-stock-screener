@@ -137,24 +137,38 @@ function renderList(sortKey) {
           <span class="financial-value">${company.pbr.toFixed(1)} 倍</span>
         </div>
         ` : ''}
-        ${company.roe !== null ? `
-        <div class="financial-row">
-          <span class="financial-label">ROE</span>
-          <span class="financial-value">${company.roe.toFixed(1)} %</span>
+        <div class="metrics-grid">
+          ${company.per !== null ? `
+          <div class="metric-item">
+            <span class="metric-label">PER</span>
+            <span class="metric-value">${company.per.toFixed(1)} 倍</span>
+          </div>
+          ` : ''}
+          ${company.pbr !== null ? `
+          <div class="metric-item">
+            <span class="metric-label">PBR</span>
+            <span class="metric-value">${company.pbr.toFixed(1)} 倍</span>
+          </div>
+          ` : ''}
+          ${company.roe !== null ? `
+          <div class="metric-item">
+            <span class="metric-label">ROE</span>
+            <span class="metric-value">${company.roe.toFixed(1)} %</span>
+          </div>
+          ` : ''}
+          ${company.roa !== null ? `
+          <div class="metric-item">
+            <span class="metric-label">ROA</span>
+            <span class="metric-value">${company.roa.toFixed(1)} %</span>
+          </div>
+          ` : ''}
+          ${company.operating_margin !== null ? `
+          <div class="metric-item">
+            <span class="metric-label">営業利益率</span>
+            <span class="metric-value">${company.operating_margin.toFixed(1)} %</span>
+          </div>
+          ` : ''}
         </div>
-        ` : ''}
-        ${company.roa !== null ? `
-        <div class="financial-row">
-          <span class="financial-label">ROA</span>
-          <span class="financial-value">${company.roa.toFixed(1)} %</span>
-        </div>
-        ` : ''}
-        ${company.operating_margin !== null ? `
-        <div class="financial-row">
-          <span class="financial-label">営業利益率</span>
-          <span class="financial-value">${company.operating_margin.toFixed(1)} %</span>
-        </div>
-        ` : ''}
         <div class="financial-row">
           <span class="financial-label">株価</span>
           <span class="financial-value">${company.priceData ? company.priceData.price.toLocaleString() + ' 円' : '不明'}</span>
@@ -179,15 +193,17 @@ function formatPeriod(periodEnd) {
 }
 
 function formatAmount(value) {
-  if (!value) return '不明';
-  if (value >= 1_000_000_000_000) {
-    return (value / 1_000_000_000_000).toFixed(1) + ' 兆円';
-  } else if (value >= 100_000_000) {
-    return (value / 100_000_000).toFixed(0) + ' 億円';
-  } else if (value >= 10_000) {
-    return (value / 10_000).toFixed(0) + ' 万円';
+  if (value === null || value === undefined) return '不明';
+  const sign = value < 0 ? '-' : '';
+  const abs = Math.abs(value);
+  if (abs >= 1_000_000_000_000) {
+    return sign + (abs / 1_000_000_000_000).toFixed(1) + ' 兆円';
+  } else if (abs >= 100_000_000) {
+    return sign + (abs / 100_000_000).toFixed(0) + ' 億円';
+  } else if (abs >= 10_000) {
+    return sign + (abs / 10_000).toFixed(0) + ' 万円';
   }
-  return value.toLocaleString() + ' 円';
+  return sign + abs.toLocaleString() + ' 円';
 }
 
 function formatShares(value) {
