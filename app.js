@@ -239,7 +239,7 @@ function renderList(sortKey, data = allData) {
     nav.id = 'pagination';
     nav.innerHTML = `
       <button onclick="changePage(-1)" ${currentPage === 1 ? 'disabled' : ''}>◀ 前へ</button>
-      <span>${currentPage} / ${totalPages} ページ（${total}件）</span>
+      <span>${currentPage} / ${totalPages} ページ（全${sorted.length}件）</span>
       <button onclick="changePage(1)" ${currentPage === totalPages ? 'disabled' : ''}>次へ ▶</button>
     `;
     list.appendChild(nav);
