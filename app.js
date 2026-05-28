@@ -53,7 +53,7 @@ function sortBy(key) {
   });
   event.target.classList.add('active');
 
-  renderList(key);
+  renderList();
 }
 
 
