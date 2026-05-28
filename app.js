@@ -70,6 +70,18 @@ function setLimit(n, btn) {
   filterList();
 }
 
+function changePage(dir) {
+  currentPage += dir;
+  const query = document.getElementById('search-input').value.trim().toLowerCase();
+  let filtered = query
+    ? allData.filter(c =>
+        c.name.toLowerCase().includes(query) ||
+        c.code.toLowerCase().includes(query)
+      )
+    : allData;
+  renderList(currentSort, filtered);
+}
+
 function sortBy(key) {
   currentSort = key;
 
@@ -116,13 +128,8 @@ function renderList(sortKey, data = allData) {
   `;
   list.appendChild(nav);
 
-  const total = sorted.length;
-  const totalPages = currentLimit ? Math.ceil(total / currentLimit) : 1;
-  const start = currentLimit ? (currentPage - 1) * currentLimit : 0;
-  const end = currentLimit ? start + currentLimit : total;
-  const paged = sorted.slice(start, end);
-
-  paged.forEach(company => {
+  
+  paginated.forEach(company => {
     const f = company.financials;
     const filing = company.latest_filing || {};
     const periodLabel = formatPeriod(filing.period_end);
