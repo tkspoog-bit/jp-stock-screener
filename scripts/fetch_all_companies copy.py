@@ -114,36 +114,6 @@ TAG_CANDIDATES = {
             "CurrentFiscalYearInstant",
             "CurrentYearInstant_NonConsolidatedMember",
         ]
-        
-    },
-    "investing_cf": {
-        "tags": [
-            "NetCashProvidedByUsedInInvestingActivitiesSummaryOfBusinessResults",
-            "NetCashProvidedByUsedInInvestingActivities",
-            "CashFlowsFromInvestingActivities",
-            "NetCashProvidedByUsedInInvestingActivitiesIFRS",
-        ],
-        "contexts": [
-            "CurrentYearDuration",
-            "CurrentFiscalYearDuration",
-            "CurrentYearConsolidatedDuration",
-            "CurrentYearDuration_NonConsolidatedMember",
-        ]
-    },
-    "dividend_per_share": {
-        "tags": [
-            "DividendPaidPerShareSummaryOfBusinessResults",
-            "DividendsPerShareIFRS",
-            "DividendPerShare",
-            "AnnualDividendPerShare",
-        ],
-        "contexts": [
-            "CurrentYearDuration",
-            "CurrentFiscalYearDuration",
-            "CurrentYearInstant",
-            "CurrentYearConsolidatedDuration",
-            "CurrentYearDuration_NonConsolidatedMember",
-        ]
     },
 }
 
@@ -201,8 +171,6 @@ def fetch_all_filings(days=30):
                         "doc_id": doc.get("docID"),
                         "submit_date": submit_date,
                         "period_end": doc.get("periodEnd"),
-                        "industry_code": doc.get("industryCode", ""),
-                        "industry_name": doc.get("industryCodeDescription", ""),
                     }
                     count += 1
 
@@ -276,8 +244,7 @@ def extract_financials_arelle(xbrl_path):
         tag_name = fact.qname.localName
         context_ref = fact.contextID
         try:
-            float_val = float(fact.value)
-            value = float_val if '.' in str(fact.value) else int(float_val)
+            value = int(float(fact.value))
             fact_map[(tag_name, context_ref)] = value
         except:
             continue
@@ -344,8 +311,6 @@ def main():
             "name": name,
             "edinet_code": edinet_code,
             "doc_id": doc_id,
-            "industry_code": filing.get("industry_code", ""),
-            "industry_name": filing.get("industry_name", ""),
             "latest_filing": {
                 "submit_date": filing["submit_date"],
                 "period_end": filing["period_end"],
