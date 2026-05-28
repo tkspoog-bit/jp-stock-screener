@@ -1,6 +1,7 @@
 let allData = [];
 let pricesData = {};
 let currentSort = 'market_cap';
+let currentLimit = null;
 
 Promise.all([
   fetch('./data/fundamentals.json').then(r => r.json()),
@@ -45,13 +46,21 @@ Promise.all([
 
 function filterList() {
   const query = document.getElementById('search-input').value.trim().toLowerCase();
-  const filtered = query
+  let filtered = query
     ? allData.filter(c =>
         c.name.toLowerCase().includes(query) ||
         c.code.toLowerCase().includes(query)
       )
     : allData;
+  if (currentLimit) filtered = filtered.slice(0, currentLimit);
   renderList(currentSort, filtered);
+}
+
+function setLimit(n) {
+  currentLimit = n;
+  document.querySelectorAll('#limit-bar button').forEach(btn => btn.classList.remove('active'));
+  event.target.classList.add('active');
+  filterList();
 }
 
 function sortBy(key) {
