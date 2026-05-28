@@ -20,6 +20,14 @@
   <div id="search-bar">
     <input type="text" id="search-input" placeholder="会社名・証券コード" oninput="filterList()" />
   </div>
+  <div id="limit-bar">
+    <span>表示件数：</span>
+    <button onclick="setLimit(10)">10件</button>
+    <button onclick="setLimit(50)">50件</button>
+    <button onclick="setLimit(100)">100件</button>
+    <button onclick="setLimit(null)" class="active">全件</button>
+  </div>
+  
   <div id="sort-bar">
   <span>並び替え：</span>
   <button onclick="sortBy('market_cap')">時価総額</button>
