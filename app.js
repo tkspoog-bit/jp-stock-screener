@@ -43,6 +43,16 @@ Promise.all([
     'データの読み込みに失敗しました：' + err.message;
 });
 
+function filterList() {
+  const query = document.getElementById('search-input').value.trim().toLowerCase();
+  const filtered = query
+    ? allData.filter(c =>
+        c.name.toLowerCase().includes(query) ||
+        c.code.toLowerCase().includes(query)
+      )
+    : allData;
+  renderList(currentSort, filtered);
+}
 
 function sortBy(key) {
   currentSort = key;
@@ -57,8 +67,8 @@ function sortBy(key) {
 }
 
 
-function renderList(sortKey) {
-  const sorted = [...allData].sort((a, b) => {
+function renderList(sortKey, data = allData) {
+  const sorted = [...data].sort((a, b) => {
     let valA, valB;
 
     if (sortKey === 'market_cap') {
