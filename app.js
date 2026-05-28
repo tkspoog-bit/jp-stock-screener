@@ -1,7 +1,8 @@
 let allData = [];
 let pricesData = {};
 let currentSort = 'market_cap';
-let currentLimit = null;
+let currentLimit = 50;
+let currentPage = 1;
 
 Promise.all([
   fetch('./data/fundamentals.json').then(r => r.json()),
@@ -44,7 +45,7 @@ Promise.all([
     'データの読み込みに失敗しました：' + err.message;
 });
 
-function filterList() {
+function function filterList() {
   const query = document.getElementById('search-input').value.trim().toLowerCase();
   let filtered = query
     ? allData.filter(c =>
@@ -52,14 +53,20 @@ function filterList() {
         c.code.toLowerCase().includes(query)
       )
     : allData;
-  if (currentLimit) filtered = filtered.slice(0, currentLimit);
+  currentPage = 1;
   renderList(currentSort, filtered);
 }
 
-function setLimit(n) {
+function changePage(dir) {
+  currentPage += dir;
+  filterList();
+}
+
+function setLimit(n, btn) {
   currentLimit = n;
-  document.querySelectorAll('#limit-bar button').forEach(btn => btn.classList.remove('active'));
-  event.target.classList.add('active');
+  currentPage = 1;
+  document.querySelectorAll('#limit-bar button').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
   filterList();
 }
 
@@ -97,7 +104,25 @@ function renderList(sortKey, data = allData) {
   const list = document.getElementById('company-list');
   list.innerHTML = '';
 
-  sorted.forEach(company => {
+  const totalPages = Math.ceil(sorted.length / currentLimit);
+  const paginated = sorted.slice((currentPage - 1) * currentLimit, currentPage * currentLimit);
+
+  const nav = document.createElement('div');
+  nav.id = 'pagination';
+  nav.innerHTML = `
+    <button onclick="changePage(-1)" ${currentPage === 1 ? 'disabled' : ''}>◀ 前へ</button>
+    <span>${currentPage} / ${totalPages} ページ（全${sorted.length}件）</span>
+    <button onclick="changePage(1)" ${currentPage === totalPages ? 'disabled' : ''}>次へ ▶</button>
+  `;
+  list.appendChild(nav);
+
+  const total = sorted.length;
+  const totalPages = currentLimit ? Math.ceil(total / currentLimit) : 1;
+  const start = currentLimit ? (currentPage - 1) * currentLimit : 0;
+  const end = currentLimit ? start + currentLimit : total;
+  const paged = sorted.slice(start, end);
+
+  paged.forEach(company => {
     const f = company.financials;
     const filing = company.latest_filing || {};
     const periodLabel = formatPeriod(filing.period_end);
@@ -200,6 +225,19 @@ function renderList(sortKey, data = allData) {
     `;
 
     list.appendChild(card);
+
+// ページネーション
+  if (totalPages > 1) {
+    const nav = document.createElement('div');
+    nav.id = 'pagination';
+    nav.innerHTML = `
+      <button onclick="changePage(-1)" ${currentPage === 1 ? 'disabled' : ''}>◀ 前へ</button>
+      <span>${currentPage} / ${totalPages} ページ（${total}件）</span>
+      <button onclick="changePage(1)" ${currentPage === totalPages ? 'disabled' : ''}>次へ ▶</button>
+    `;
+    list.appendChild(nav);
+  }
+
   });
 }
 
