@@ -45,7 +45,7 @@ Promise.all([
     'データの読み込みに失敗しました：' + err.message;
 });
 
-function function filterList() {
+function filterList() {
   const query = document.getElementById('search-input').value.trim().toLowerCase();
   let filtered = query
     ? allData.filter(c =>

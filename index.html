@@ -22,12 +22,12 @@
   </div>
   <div id="limit-bar">
     <span>表示件数：</span>
-    <button onclick="setLimit(10)">10件</button>
-    <button onclick="setLimit(50)">50件</button>
-    <button onclick="setLimit(100)">100件</button>
-    <button onclick="setLimit(null)" class="active">全件</button>
+    <button onclick="setLimit(10, this)">10件</button>
+    <button onclick="setLimit(50, this)">50件</button>
+    <button onclick="setLimit(100, this)">100件</button>
+    <button onclick="setLimit(null, this)" class="active">全件</button>
   </div>
-  
+
   <div id="sort-bar">
   <span>並び替え：</span>
   <button onclick="sortBy('market_cap')">時価総額</button>
