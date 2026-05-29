@@ -3,6 +3,7 @@ import json
 import os
 import zipfile
 import time
+import xlrd
 from datetime import datetime, timedelta
 from pathlib import Path
 from arelle import ModelManager, FileSource
@@ -15,6 +16,32 @@ API_KEY = os.environ.get("EDINET_API_KEY")
 
 # 候補タグ辞書
 # 候補タグ辞書
+def fetch_industry_map():
+    """東証CSVから証券コード→業種マッピングを取得"""
+    url = "https://www.jpx.co.jp/markets/statistics-equities/misc/tvdivq0000001vg2-att/data_j.xls"
+    xls_path = Path("/tmp/jpx_data.xls")
+    try:
+        r = requests.get(url, timeout=30)
+        with open(xls_path, "wb") as f:
+            f.write(r.content)
+        wb = xlrd.open_workbook(str(xls_path))
+        ws = wb.sheet_by_index(0)
+        industry_map = {}
+        for i in range(1, ws.nrows):
+            row = ws.row_values(i)
+            code = str(int(row[1])).zfill(4) if isinstance(row[1], float) else str(row[1])
+            industry_code = str(int(row[4])) if isinstance(row[4], float) else str(row[4])
+            industry_name = row[5] if row[5] != '-' else ''
+            if industry_name:
+                industry_map[code] = {
+                    "industry_code": industry_code,
+                    "industry_name": industry_name
+                }
+        print(f"業種マッピング完了：{len(industry_map)}社")
+        return industry_map
+    except Exception as e:
+        print(f"⚠️ 業種マッピング取得失敗: {e}")
+        return {}
 TAG_CANDIDATES = {
     "sales": {
         "tags": [
@@ -302,6 +329,9 @@ def extract_financials_arelle(xbrl_path):
 
 
 def main():
+    # 業種マッピング取得
+    industry_map = fetch_industry_map()
+
     # 過去30日分の有価証券報告書を収集
     filings = fetch_all_filings(days=30)
 
@@ -339,13 +369,14 @@ def main():
             fail += 1
             continue
 
+        industry = industry_map.get(filing["code"], {})
         results.append({
             "code": filing["code"],
             "name": name,
             "edinet_code": edinet_code,
             "doc_id": doc_id,
-            "industry_code": filing.get("industry_code", ""),
-            "industry_name": filing.get("industry_name", ""),
+            "industry_code": industry.get("industry_code", ""),
+            "industry_name": industry.get("industry_name", ""),
             "latest_filing": {
                 "submit_date": filing["submit_date"],
                 "period_end": filing["period_end"],
