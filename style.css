@@ -200,3 +200,12 @@ header h1 {
 .metric-value {
   font-weight: 500;
 }
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  padding: 12px;
+  width: 100%;
+}

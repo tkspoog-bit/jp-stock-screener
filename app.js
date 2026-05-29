@@ -93,9 +93,9 @@ function renderList(sortKey, data = allData) {
 
   const total = sorted.length;
   const totalPages = currentLimit ? Math.ceil(total / currentLimit) : 1;
+  const safeLimit = currentLimit || total;
   const paginated = currentLimit
-    ? sorted.slice((currentPage - 1) * currentLimit, currentPage * currentLimit)
-    : sorted;
+    const paginated = sorted.slice((currentPage - 1) * safeLimit, currentPage * safeLimit);
 
   // ページネーション（上）
   const navTop = document.createElement('div');
