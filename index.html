@@ -30,13 +30,13 @@
 
   <div id="sort-bar">
   <span>並び替え：</span>
-  <button onclick="sortBy('market_cap')">時価総額</button>
-  <button onclick="sortBy('sales')">売上高</button>
-  <button onclick="sortBy('operating_profit')">営業利益</button>
-  <button onclick="sortBy('equity')">純資産</button>
-  <button onclick="sortBy('per')">PER</button>
-  <button onclick="sortBy('roe')">ROE</button>
-  <button onclick="sortBy('operating_margin')">営業利益率</button>
+  <button onclick="sortBy('market_cap', this)" class="active">時価総額</button>
+  <button onclick="sortBy('sales', this)">売上高</button>
+  <button onclick="sortBy('operating_profit', this)">営業利益</button>
+  <button onclick="sortBy('equity', this)">純資産</button>
+  <button onclick="sortBy('per', this)">PER</button>
+  <button onclick="sortBy('roe', this)">ROE</button>
+  <button onclick="sortBy('operating_margin', this)">営業利益率</button>
 </div>
 <main id="company-list">
     <p>データ読み込み中...</p>
