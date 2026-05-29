@@ -94,7 +94,7 @@ function renderList(sortKey, data = allData) {
   const total = sorted.length;
   const totalPages = currentLimit ? Math.ceil(total / currentLimit) : 1;
   const safeLimit = currentLimit || total;
-  const paginated = currentLimit
+  
     const paginated = sorted.slice((currentPage - 1) * safeLimit, currentPage * safeLimit);
 
   // ページネーション（上）
