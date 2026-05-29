@@ -12,36 +12,35 @@
   <meta name="apple-mobile-web-app-title" content="株スクリーナー" />
 </head>
 <body>
-  <header>
-    <h1>日本株財務指標スクリーナー</h1>
-    <p id="updated-at">更新日時：読み込み中...</p>
-  </header>
-
-  <div id="search-bar">
-    <input type="text" id="search-input" placeholder="会社名・証券コード" oninput="filterList()" />
+  <div id="controls">
+    <header>
+      <h1>日本株財務指標スクリーナー</h1>
+      <p id="updated-at">更新日時：読み込み中...</p>
+    </header>
+    <div id="search-bar">
+      <input type="text" id="search-input" placeholder="会社名・証券コード" oninput="filterList()" />
+    </div>
+    <div id="limit-bar">
+      <span>表示件数：</span>
+      <button onclick="setLimit(10, this)">10件</button>
+      <button onclick="setLimit(50, this)">50件</button>
+      <button onclick="setLimit(100, this)">100件</button>
+      <button onclick="setLimit(null, this)" class="active">全件</button>
+    </div>
+    <div id="sort-bar">
+      <span>並び替え：</span>
+      <button onclick="sortBy('market_cap', this)" class="active">時価総額</button>
+      <button onclick="sortBy('sales', this)">売上高</button>
+      <button onclick="sortBy('operating_profit', this)">営業利益</button>
+      <button onclick="sortBy('equity', this)">純資産</button>
+      <button onclick="sortBy('per', this)">PER</button>
+      <button onclick="sortBy('roe', this)">ROE</button>
+      <button onclick="sortBy('operating_margin', this)">営業利益率</button>
+    </div>
   </div>
-  <div id="limit-bar">
-    <span>表示件数：</span>
-    <button onclick="setLimit(10, this)">10件</button>
-    <button onclick="setLimit(50, this)">50件</button>
-    <button onclick="setLimit(100, this)">100件</button>
-    <button onclick="setLimit(null, this)" class="active">全件</button>
-  </div>
-
-  <div id="sort-bar">
-  <span>並び替え：</span>
-  <button onclick="sortBy('market_cap', this)" class="active">時価総額</button>
-  <button onclick="sortBy('sales', this)">売上高</button>
-  <button onclick="sortBy('operating_profit', this)">営業利益</button>
-  <button onclick="sortBy('equity', this)">純資産</button>
-  <button onclick="sortBy('per', this)">PER</button>
-  <button onclick="sortBy('roe', this)">ROE</button>
-  <button onclick="sortBy('operating_margin', this)">営業利益率</button>
-</div>
-<main id="company-list">
+  <main id="company-list">
     <p>データ読み込み中...</p>
   </main>
-
   <script src="app.js"></script>
 </body>
 </html>
