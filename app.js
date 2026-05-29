@@ -188,8 +188,8 @@ function renderList(sortKey, data = allData) {
           </div>` : ''}
         </div>
         <div class="financial-row">
-          <span class="financial-label">株価</span>
-          <span class="financial-value">${company.priceData ? company.priceData.price.toLocaleString() + ' 円' : '不明'}</span>
+          <span class="financial-label">参考株価</span>
+          <span class="financial-value">${company.priceData ? company.priceData.price.toLocaleString() + ' 円（' + company.priceData.date + '）' : '不明'}</span>
         </div>
         <div class="financial-row">
           <span class="financial-label">発行済株式数</span>
