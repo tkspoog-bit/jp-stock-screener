@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-05-29 13:37:03",
+  "updated_at": "2026-05-29 22:57:11",
   "companies": [
     {
       "code": "3063",
@@ -8,6 +8,7 @@
       "doc_id": "S100Y7CP",
       "industry_code": "6100",
       "industry_name": "小売業",
+      "market": "グロース（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-29",
         "period_end": "2026-02-28"
@@ -30,6 +31,7 @@
       "doc_id": "S100Y72L",
       "industry_code": "6100",
       "industry_name": "小売業",
+      "market": "スタンダード（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-29",
         "period_end": "2026-02-28"
@@ -53,6 +55,7 @@
       "doc_id": "S100Y6PS",
       "industry_code": "",
       "industry_name": "",
+      "market": "",
       "latest_filing": {
         "submit_date": "2026-05-29",
         "period_end": "2026-02-28"
@@ -75,6 +78,7 @@
       "doc_id": "S100Y7H8",
       "industry_code": "9050",
       "industry_name": "サービス業",
+      "market": "スタンダード（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-29",
         "period_end": "2026-02-28"
@@ -98,6 +102,7 @@
       "doc_id": "S100Y7GV",
       "industry_code": "9050",
       "industry_name": "サービス業",
+      "market": "スタンダード（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-29",
         "period_end": "2026-02-28"
@@ -121,6 +126,7 @@
       "doc_id": "S100Y7HD",
       "industry_code": "3200",
       "industry_name": "化学",
+      "market": "スタンダード（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-29",
         "period_end": "2026-02-28"
@@ -144,6 +150,7 @@
       "doc_id": "S100Y7HH",
       "industry_code": "6100",
       "industry_name": "小売業",
+      "market": "スタンダード（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-29",
         "period_end": "2026-02-28"
@@ -167,6 +174,7 @@
       "doc_id": "S100Y7D7",
       "industry_code": "5250",
       "industry_name": "情報・通信業",
+      "market": "プライム（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-29",
         "period_end": "2026-03-31"
@@ -190,6 +198,7 @@
       "doc_id": "S100Y7D9",
       "industry_code": "6100",
       "industry_name": "小売業",
+      "market": "スタンダード（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-29",
         "period_end": "2026-02-28"
@@ -212,6 +221,7 @@
       "doc_id": "S100Y7HW",
       "industry_code": "6050",
       "industry_name": "卸売業",
+      "market": "グロース（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-29",
         "period_end": "2026-02-28"
@@ -234,6 +244,7 @@
       "doc_id": "S100Y7KL",
       "industry_code": "6100",
       "industry_name": "小売業",
+      "market": "プライム（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-29",
         "period_end": "2026-02-28"
@@ -257,6 +268,7 @@
       "doc_id": "S100Y6RH",
       "industry_code": "3550",
       "industry_name": "金属製品",
+      "market": "スタンダード（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-29",
         "period_end": "2026-02-28"
@@ -274,12 +286,317 @@
       }
     },
     {
+      "code": "8143",
+      "name": "株式会社ラピーヌ",
+      "edinet_code": "E00605",
+      "doc_id": "S100Y7LR",
+      "industry_code": "3100",
+      "industry_name": "繊維製品",
+      "market": "スタンダード（内国株式）",
+      "latest_filing": {
+        "submit_date": "2026-05-29",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 1873910000,
+        "operating_profit": -275915000,
+        "net_income": -259501000,
+        "total_assets": 3247128000,
+        "equity": 746654000,
+        "operating_cf": -473206000,
+        "shares_issued": 2567064,
+        "investing_cf": -1235000,
+        "dividend_per_share": 0.0
+      }
+    },
+    {
+      "code": "3826",
+      "name": "株式会社システムインテグレータ",
+      "edinet_code": "E05643",
+      "doc_id": "S100Y7MS",
+      "industry_code": "5250",
+      "industry_name": "情報・通信業",
+      "market": "スタンダード（内国株式）",
+      "latest_filing": {
+        "submit_date": "2026-05-29",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 5558183000,
+        "operating_profit": 595411000,
+        "net_income": 458377000,
+        "total_assets": 5681503000,
+        "equity": 4465003000,
+        "operating_cf": 693432000,
+        "shares_issued": 11078400,
+        "investing_cf": -688894000,
+        "dividend_per_share": 13.0
+      }
+    },
+    {
+      "code": "6058",
+      "name": "株式会社ベクトル",
+      "edinet_code": "E26428",
+      "doc_id": "S100Y7IM",
+      "industry_code": "9050",
+      "industry_name": "サービス業",
+      "market": "プライム（内国株式）",
+      "latest_filing": {
+        "submit_date": "2026-05-29",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 63794000000,
+        "operating_profit": 9116000000,
+        "net_income": 6335000000,
+        "total_assets": 47293000000,
+        "equity": 27141000000,
+        "operating_cf": 10349000000,
+        "shares_issued": 46914039,
+        "investing_cf": -3149000000,
+        "dividend_per_share": 33
+      }
+    },
+    {
+      "code": "7719",
+      "name": "株式会社東京衡機",
+      "edinet_code": "E01587",
+      "doc_id": "S100Y7MQ",
+      "industry_code": "3750",
+      "industry_name": "精密機器",
+      "market": "スタンダード（内国株式）",
+      "latest_filing": {
+        "submit_date": "2026-05-29",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 4473482000,
+        "operating_profit": 152915000,
+        "net_income": 131569000,
+        "total_assets": 5037242000,
+        "equity": 1902474000,
+        "operating_cf": 556799000,
+        "shares_issued": 7159791,
+        "investing_cf": -134205000
+      }
+    },
+    {
+      "code": "7610",
+      "name": "株式会社テイツー",
+      "edinet_code": "E03319",
+      "doc_id": "S100Y7L3",
+      "industry_code": "6100",
+      "industry_name": "小売業",
+      "market": "スタンダード（内国株式）",
+      "latest_filing": {
+        "submit_date": "2026-05-29",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 42233216000,
+        "operating_profit": 1377796000,
+        "net_income": 867822000,
+        "total_assets": 14306627000,
+        "equity": 6975921000,
+        "operating_cf": 1936639000,
+        "shares_issued": 68664338,
+        "investing_cf": -693387000,
+        "dividend_per_share": 5.0
+      }
+    },
+    {
+      "code": "6228",
+      "name": "株式会社ジェイ・イー・ティ",
+      "edinet_code": "E36545",
+      "doc_id": "S100Y7JM",
+      "industry_code": "3600",
+      "industry_name": "機械",
+      "market": "スタンダード（内国株式）",
+      "latest_filing": {
+        "submit_date": "2026-05-29",
+        "period_end": "2025-12-31"
+      },
+      "financials": {
+        "sales": 14662000000,
+        "operating_profit": -1493000000,
+        "net_income": -2336000000,
+        "total_assets": 19512000000,
+        "equity": 9720000000,
+        "operating_cf": 3080000000,
+        "shares_issued": 13470000,
+        "investing_cf": -420000000
+      }
+    },
+    {
+      "code": "4490",
+      "name": "株式会社ビザスク",
+      "edinet_code": "E35278",
+      "doc_id": "S100Y7OP",
+      "industry_code": "5250",
+      "industry_name": "情報・通信業",
+      "market": "グロース（内国株式）",
+      "latest_filing": {
+        "submit_date": "2026-05-29",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "operating_profit": 1341141000,
+        "net_income": 891901000,
+        "total_assets": 8091624000,
+        "equity": 1813415000,
+        "operating_cf": 1292027000,
+        "shares_issued": 9353317,
+        "investing_cf": -382991000
+      }
+    },
+    {
+      "code": "7815",
+      "name": "東京ボード工業株式会社",
+      "edinet_code": "E31123",
+      "doc_id": "S100Y7DO",
+      "industry_code": "3800",
+      "industry_name": "その他製品",
+      "market": "スタンダード（内国株式）",
+      "latest_filing": {
+        "submit_date": "2026-05-29",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 6625098000,
+        "operating_profit": -81337000,
+        "net_income": -761643000,
+        "total_assets": 11239438000,
+        "equity": 1652845000,
+        "operating_cf": 725450000,
+        "shares_issued": 3660369,
+        "investing_cf": -1312173000
+      }
+    },
+    {
+      "code": "8739",
+      "name": "スパークス・グループ株式会社",
+      "edinet_code": "E05242",
+      "doc_id": "S100Y7MV",
+      "industry_code": "7100",
+      "industry_name": "証券、商品先物取引業",
+      "market": "プライム（内国株式）",
+      "latest_filing": {
+        "submit_date": "2026-05-29",
+        "period_end": "2026-03-31"
+      },
+      "financials": {
+        "operating_profit": 9025000000,
+        "net_income": 6384000000,
+        "total_assets": 57600000000,
+        "equity": 39204000000,
+        "operating_cf": 5901000000,
+        "shares_issued": 41507780,
+        "investing_cf": -3880000000,
+        "dividend_per_share": 90.0
+      }
+    },
+    {
+      "code": "9326",
+      "name": "関通ホールディングス株式会社",
+      "edinet_code": "E35493",
+      "doc_id": "S100Y7I7",
+      "industry_code": "5200",
+      "industry_name": "倉庫・運輸関連業",
+      "market": "グロース（内国株式）",
+      "latest_filing": {
+        "submit_date": "2026-05-29",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 18345950000,
+        "operating_profit": 319926000,
+        "net_income": 206088000,
+        "total_assets": 11699038000,
+        "equity": 2244094000,
+        "operating_cf": 494040000,
+        "shares_issued": 10308150,
+        "investing_cf": -1059911000,
+        "dividend_per_share": 10.0
+      }
+    },
+    {
+      "code": "3479",
+      "name": "株式会社ティーケーピー",
+      "edinet_code": "E20616",
+      "doc_id": "S100Y7OL",
+      "industry_code": "8050",
+      "industry_name": "不動産業",
+      "market": "グロース（内国株式）",
+      "latest_filing": {
+        "submit_date": "2026-05-29",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 114357000000,
+        "operating_profit": 10301000000,
+        "net_income": 13591000000,
+        "total_assets": 170851000000,
+        "equity": 57309000000,
+        "operating_cf": 13967000000,
+        "shares_issued": 42488185,
+        "investing_cf": 1843000000
+      }
+    },
+    {
+      "code": "9238",
+      "name": "バリュークリエーション株式会社",
+      "edinet_code": "E39089",
+      "doc_id": "S100Y7MG",
+      "industry_code": "9050",
+      "industry_name": "サービス業",
+      "market": "グロース（内国株式）",
+      "latest_filing": {
+        "submit_date": "2026-05-29",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 3127333000,
+        "operating_profit": -423841000,
+        "net_income": -260975000,
+        "total_assets": 1906068000,
+        "equity": 39510000,
+        "operating_cf": -179225000,
+        "shares_issued": 2350680,
+        "investing_cf": -182428000,
+        "dividend_per_share": 2.0
+      }
+    },
+    {
+      "code": "3557",
+      "name": "ユナイテッド＆コレクティブ株式会社",
+      "edinet_code": "E32965",
+      "doc_id": "S100Y7EJ",
+      "industry_code": "6100",
+      "industry_name": "小売業",
+      "market": "グロース（内国株式）",
+      "latest_filing": {
+        "submit_date": "2026-05-29",
+        "period_end": "2026-02-28"
+      },
+      "financials": {
+        "sales": 6460676000,
+        "operating_profit": -15853000,
+        "net_income": -227518000,
+        "total_assets": 3891869000,
+        "equity": 527061000,
+        "operating_cf": 199276000,
+        "shares_issued": 4954800,
+        "investing_cf": -602162000
+      }
+    },
+    {
       "code": "8005",
       "name": "株式会社スクロール",
       "edinet_code": "E03054",
       "doc_id": "S100Y6S7",
       "industry_code": "6100",
       "industry_name": "小売業",
+      "market": "プライム（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-28",
         "period_end": "2026-03-31"
@@ -303,6 +620,7 @@
       "doc_id": "S100Y73F",
       "industry_code": "6100",
       "industry_name": "小売業",
+      "market": "プライム（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-28",
         "period_end": "2026-02-28"
@@ -326,6 +644,7 @@
       "doc_id": "S100Y764",
       "industry_code": "6100",
       "industry_name": "小売業",
+      "market": "スタンダード（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-28",
         "period_end": "2026-02-28"
@@ -349,6 +668,7 @@
       "doc_id": "S100Y721",
       "industry_code": "8050",
       "industry_name": "不動産業",
+      "market": "スタンダード（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-28",
         "period_end": "2026-02-28"
@@ -371,6 +691,7 @@
       "doc_id": "S100Y77K",
       "industry_code": "3100",
       "industry_name": "繊維製品",
+      "market": "プライム（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-28",
         "period_end": "2026-02-28"
@@ -394,6 +715,7 @@
       "doc_id": "S100Y77U",
       "industry_code": "3050",
       "industry_name": "食料品",
+      "market": "プライム（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-28",
         "period_end": "2026-02-28"
@@ -416,6 +738,7 @@
       "doc_id": "S100Y71R",
       "industry_code": "5250",
       "industry_name": "情報・通信業",
+      "market": "プライム（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-28",
         "period_end": "2026-02-28"
@@ -439,6 +762,7 @@
       "doc_id": "S100Y7A6",
       "industry_code": "9050",
       "industry_name": "サービス業",
+      "market": "グロース（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-28",
         "period_end": "2026-02-28"
@@ -461,6 +785,7 @@
       "doc_id": "S100Y6YJ",
       "industry_code": "5250",
       "industry_name": "情報・通信業",
+      "market": "スタンダード（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-28",
         "period_end": "2026-02-28"
@@ -483,6 +808,7 @@
       "doc_id": "S100Y7A4",
       "industry_code": "3050",
       "industry_name": "食料品",
+      "market": "グロース（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-28",
         "period_end": "2026-02-28"
@@ -505,6 +831,7 @@
       "doc_id": "S100Y6RF",
       "industry_code": "6100",
       "industry_name": "小売業",
+      "market": "スタンダード（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-28",
         "period_end": "2026-02-28"
@@ -527,6 +854,7 @@
       "doc_id": "S100Y797",
       "industry_code": "3800",
       "industry_name": "その他製品",
+      "market": "スタンダード（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-28",
         "period_end": "2026-02-28"
@@ -550,6 +878,7 @@
       "doc_id": "S100Y6WM",
       "industry_code": "6100",
       "industry_name": "小売業",
+      "market": "スタンダード（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-28",
         "period_end": "2026-02-28"
@@ -573,6 +902,7 @@
       "doc_id": "S100Y74O",
       "industry_code": "5250",
       "industry_name": "情報・通信業",
+      "market": "スタンダード（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-28",
         "period_end": "2026-02-28"
@@ -596,6 +926,7 @@
       "doc_id": "S100Y6V9",
       "industry_code": "6100",
       "industry_name": "小売業",
+      "market": "プライム（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-28",
         "period_end": "2026-02-28"
@@ -619,6 +950,7 @@
       "doc_id": "S100Y6K8",
       "industry_code": "9050",
       "industry_name": "サービス業",
+      "market": "グロース（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-28",
         "period_end": "2026-02-28"
@@ -642,6 +974,7 @@
       "doc_id": "S100Y78J",
       "industry_code": "3600",
       "industry_name": "機械",
+      "market": "プライム（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-28",
         "period_end": "2026-02-28"
@@ -665,6 +998,7 @@
       "doc_id": "S100Y78X",
       "industry_code": "9050",
       "industry_name": "サービス業",
+      "market": "スタンダード（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-28",
         "period_end": "2026-02-28"
@@ -688,6 +1022,7 @@
       "doc_id": "S100Y66O",
       "industry_code": "3800",
       "industry_name": "その他製品",
+      "market": "スタンダード（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-28",
         "period_end": "2026-02-28"
@@ -711,6 +1046,7 @@
       "doc_id": "S100Y6B0",
       "industry_code": "5250",
       "industry_name": "情報・通信業",
+      "market": "スタンダード（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-28",
         "period_end": "2026-02-28"
@@ -733,6 +1069,7 @@
       "doc_id": "S100Y77X",
       "industry_code": "6100",
       "industry_name": "小売業",
+      "market": "スタンダード（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-28",
         "period_end": "2026-02-28"
@@ -755,6 +1092,7 @@
       "doc_id": "S100Y78C",
       "industry_code": "",
       "industry_name": "",
+      "market": "",
       "latest_filing": {
         "submit_date": "2026-05-28",
         "period_end": "2026-02-28"
@@ -777,6 +1115,7 @@
       "doc_id": "S100Y63V",
       "industry_code": "9050",
       "industry_name": "サービス業",
+      "market": "プライム（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-27",
         "period_end": "2026-02-28"
@@ -800,6 +1139,7 @@
       "doc_id": "S100Y6JW",
       "industry_code": "9050",
       "industry_name": "サービス業",
+      "market": "スタンダード（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-27",
         "period_end": "2026-02-28"
@@ -823,6 +1163,7 @@
       "doc_id": "S100Y2CG",
       "industry_code": "5250",
       "industry_name": "情報・通信業",
+      "market": "グロース（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-27",
         "period_end": "2026-02-28"
@@ -845,6 +1186,7 @@
       "doc_id": "S100Y5AV",
       "industry_code": "6100",
       "industry_name": "小売業",
+      "market": "スタンダード（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-27",
         "period_end": "2026-02-28"
@@ -868,6 +1210,7 @@
       "doc_id": "S100Y62P",
       "industry_code": "3050",
       "industry_name": "食料品",
+      "market": "プライム（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-27",
         "period_end": "2026-02-28"
@@ -891,6 +1234,7 @@
       "doc_id": "S100Y6C2",
       "industry_code": "6100",
       "industry_name": "小売業",
+      "market": "スタンダード（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-27",
         "period_end": "2026-02-28"
@@ -914,6 +1258,7 @@
       "doc_id": "S100Y6MK",
       "industry_code": "6100",
       "industry_name": "小売業",
+      "market": "プライム（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-27",
         "period_end": "2026-02-28"
@@ -937,6 +1282,7 @@
       "doc_id": "S100Y6QH",
       "industry_code": "6050",
       "industry_name": "卸売業",
+      "market": "スタンダード（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-27",
         "period_end": "2026-02-28"
@@ -960,6 +1306,7 @@
       "doc_id": "S100Y68I",
       "industry_code": "6100",
       "industry_name": "小売業",
+      "market": "スタンダード（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-27",
         "period_end": "2026-02-28"
@@ -983,6 +1330,7 @@
       "doc_id": "S100Y5IT",
       "industry_code": "6100",
       "industry_name": "小売業",
+      "market": "プライム（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-27",
         "period_end": "2026-02-28"
@@ -1006,6 +1354,7 @@
       "doc_id": "S100Y6LI",
       "industry_code": "9050",
       "industry_name": "サービス業",
+      "market": "スタンダード（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-27",
         "period_end": "2026-02-28"
@@ -1029,6 +1378,7 @@
       "doc_id": "S100Y6PQ",
       "industry_code": "8050",
       "industry_name": "不動産業",
+      "market": "スタンダード（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-27",
         "period_end": "2026-02-28"
@@ -1052,6 +1402,7 @@
       "doc_id": "S100Y6N1",
       "industry_code": "3050",
       "industry_name": "食料品",
+      "market": "プライム（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-27",
         "period_end": "2026-02-28"
@@ -1075,6 +1426,7 @@
       "doc_id": "S100Y6JY",
       "industry_code": "6100",
       "industry_name": "小売業",
+      "market": "スタンダード（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-27",
         "period_end": "2026-02-28"
@@ -1098,6 +1450,7 @@
       "doc_id": "S100Y6PJ",
       "industry_code": "6100",
       "industry_name": "小売業",
+      "market": "スタンダード（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-27",
         "period_end": "2026-02-28"
@@ -1121,6 +1474,7 @@
       "doc_id": "S100Y6A8",
       "industry_code": "6100",
       "industry_name": "小売業",
+      "market": "プライム（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-27",
         "period_end": "2026-02-28"
@@ -1144,6 +1498,7 @@
       "doc_id": "S100Y6HY",
       "industry_code": "6100",
       "industry_name": "小売業",
+      "market": "スタンダード（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-27",
         "period_end": "2026-02-28"
@@ -1167,6 +1522,7 @@
       "doc_id": "S100Y67I",
       "industry_code": "6100",
       "industry_name": "小売業",
+      "market": "スタンダード（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-27",
         "period_end": "2026-02-28"
@@ -1190,6 +1546,7 @@
       "doc_id": "S100Y688",
       "industry_code": "3600",
       "industry_name": "機械",
+      "market": "グロース（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-27",
         "period_end": "2026-02-28"
@@ -1213,6 +1570,7 @@
       "doc_id": "S100Y6J6",
       "industry_code": "3100",
       "industry_name": "繊維製品",
+      "market": "プライム（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-27",
         "period_end": "2026-02-28"
@@ -1236,6 +1594,7 @@
       "doc_id": "S100Y6VZ",
       "industry_code": "5250",
       "industry_name": "情報・通信業",
+      "market": "スタンダード（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-27",
         "period_end": "2026-02-28"
@@ -1258,6 +1617,7 @@
       "doc_id": "S100Y69B",
       "industry_code": "9050",
       "industry_name": "サービス業",
+      "market": "グロース（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-27",
         "period_end": "2026-02-28"
@@ -1280,6 +1640,7 @@
       "doc_id": "S100Y6BQ",
       "industry_code": "6100",
       "industry_name": "小売業",
+      "market": "スタンダード（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-27",
         "period_end": "2026-02-28"
@@ -1302,6 +1663,7 @@
       "doc_id": "S100Y6AI",
       "industry_code": "5250",
       "industry_name": "情報・通信業",
+      "market": "グロース（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-27",
         "period_end": "2026-02-28"
@@ -1324,6 +1686,7 @@
       "doc_id": "S100Y6WH",
       "industry_code": "6100",
       "industry_name": "小売業",
+      "market": "スタンダード（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-27",
         "period_end": "2026-02-28"
@@ -1347,6 +1710,7 @@
       "doc_id": "S100Y6Q0",
       "industry_code": "5250",
       "industry_name": "情報・通信業",
+      "market": "グロース（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-27",
         "period_end": "2026-02-28"
@@ -1369,6 +1733,7 @@
       "doc_id": "S100Y6VO",
       "industry_code": "8050",
       "industry_name": "不動産業",
+      "market": "スタンダード（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-27",
         "period_end": "2026-02-28"
@@ -1392,6 +1757,7 @@
       "doc_id": "S100Y6O9",
       "industry_code": "6050",
       "industry_name": "卸売業",
+      "market": "プライム（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-27",
         "period_end": "2026-02-28"
@@ -1415,6 +1781,7 @@
       "doc_id": "S100Y6MY",
       "industry_code": "6100",
       "industry_name": "小売業",
+      "market": "プライム（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-27",
         "period_end": "2026-02-28"
@@ -1438,6 +1805,7 @@
       "doc_id": "S100Y6RE",
       "industry_code": "6100",
       "industry_name": "小売業",
+      "market": "グロース（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-27",
         "period_end": "2026-02-28"
@@ -1461,6 +1829,7 @@
       "doc_id": "S100Y6J0",
       "industry_code": "5250",
       "industry_name": "情報・通信業",
+      "market": "プライム（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-27",
         "period_end": "2026-02-28"
@@ -1484,6 +1853,7 @@
       "doc_id": "S100Y6XK",
       "industry_code": "3050",
       "industry_name": "食料品",
+      "market": "プライム（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-27",
         "period_end": "2026-02-28"
@@ -1507,6 +1877,7 @@
       "doc_id": "S100Y6XM",
       "industry_code": "6100",
       "industry_name": "小売業",
+      "market": "スタンダード（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-27",
         "period_end": "2026-02-28"
@@ -1530,6 +1901,7 @@
       "doc_id": "S100Y6MO",
       "industry_code": "5250",
       "industry_name": "情報・通信業",
+      "market": "グロース（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-27",
         "period_end": "2026-02-28"
@@ -1552,6 +1924,7 @@
       "doc_id": "S100Y6U1",
       "industry_code": "6100",
       "industry_name": "小売業",
+      "market": "スタンダード（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-27",
         "period_end": "2026-02-28"
@@ -1574,6 +1947,7 @@
       "doc_id": "S100Y6XY",
       "industry_code": "9050",
       "industry_name": "サービス業",
+      "market": "グロース（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-27",
         "period_end": "2026-02-28"
@@ -1597,6 +1971,7 @@
       "doc_id": "S100Y6L5",
       "industry_code": "5250",
       "industry_name": "情報・通信業",
+      "market": "グロース（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-27",
         "period_end": "2026-02-28"
@@ -1619,6 +1994,7 @@
       "doc_id": "S100Y6NR",
       "industry_code": "",
       "industry_name": "",
+      "market": "",
       "latest_filing": {
         "submit_date": "2026-05-27",
         "period_end": "2026-02-28"
@@ -1642,6 +2018,7 @@
       "doc_id": "S100Y1AF",
       "industry_code": "9050",
       "industry_name": "サービス業",
+      "market": "グロース（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-27",
         "period_end": "2026-02-28"
@@ -1664,6 +2041,7 @@
       "doc_id": "S100Y6LQ",
       "industry_code": "",
       "industry_name": "",
+      "market": "",
       "latest_filing": {
         "submit_date": "2026-05-27",
         "period_end": "2026-02-28"
@@ -1686,6 +2064,7 @@
       "doc_id": "S100Y6W8",
       "industry_code": "9050",
       "industry_name": "サービス業",
+      "market": "グロース（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-27",
         "period_end": "2026-02-28"
@@ -1708,6 +2087,7 @@
       "doc_id": "S100Y6NU",
       "industry_code": "6100",
       "industry_name": "小売業",
+      "market": "スタンダード（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-27",
         "period_end": "2026-02-28"
@@ -1731,6 +2111,7 @@
       "doc_id": "S100Y5RU",
       "industry_code": "9050",
       "industry_name": "サービス業",
+      "market": "スタンダード（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-26",
         "period_end": "2026-02-28"
@@ -1754,6 +2135,7 @@
       "doc_id": "S100Y69Z",
       "industry_code": "6100",
       "industry_name": "小売業",
+      "market": "スタンダード（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-26",
         "period_end": "2026-02-28"
@@ -1777,6 +2159,7 @@
       "doc_id": "S100Y64F",
       "industry_code": "3300",
       "industry_name": "石油・石炭製品",
+      "market": "スタンダード（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-26",
         "period_end": "2026-02-28"
@@ -1800,6 +2183,7 @@
       "doc_id": "S100Y57D",
       "industry_code": "6100",
       "industry_name": "小売業",
+      "market": "スタンダード（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-26",
         "period_end": "2026-02-28"
@@ -1823,6 +2207,7 @@
       "doc_id": "S100Y63D",
       "industry_code": "6100",
       "industry_name": "小売業",
+      "market": "プライム（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-26",
         "period_end": "2026-02-28"
@@ -1846,6 +2231,7 @@
       "doc_id": "S100Y6FE",
       "industry_code": "9050",
       "industry_name": "サービス業",
+      "market": "プライム（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-26",
         "period_end": "2026-02-28"
@@ -1869,6 +2255,7 @@
       "doc_id": "S100Y67Z",
       "industry_code": "6050",
       "industry_name": "卸売業",
+      "market": "スタンダード（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-26",
         "period_end": "2026-02-28"
@@ -1892,6 +2279,7 @@
       "doc_id": "S100Y647",
       "industry_code": "6100",
       "industry_name": "小売業",
+      "market": "プライム（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-26",
         "period_end": "2026-02-28"
@@ -1915,6 +2303,7 @@
       "doc_id": "S100Y6GL",
       "industry_code": "6100",
       "industry_name": "小売業",
+      "market": "スタンダード（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-26",
         "period_end": "2026-02-28"
@@ -1938,6 +2327,7 @@
       "doc_id": "S100Y6GG",
       "industry_code": "3500",
       "industry_name": "非鉄金属",
+      "market": "スタンダード（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-26",
         "period_end": "2026-02-28"
@@ -1961,6 +2351,7 @@
       "doc_id": "S100Y69G",
       "industry_code": "9050",
       "industry_name": "サービス業",
+      "market": "プライム（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-26",
         "period_end": "2026-02-28"
@@ -1984,6 +2375,7 @@
       "doc_id": "S100Y5ZC",
       "industry_code": "6100",
       "industry_name": "小売業",
+      "market": "プライム（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-26",
         "period_end": "2026-02-28"
@@ -2007,6 +2399,7 @@
       "doc_id": "S100Y671",
       "industry_code": "6100",
       "industry_name": "小売業",
+      "market": "プライム（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-26",
         "period_end": "2026-02-28"
@@ -2030,6 +2423,7 @@
       "doc_id": "S100Y6B9",
       "industry_code": "3550",
       "industry_name": "金属製品",
+      "market": "スタンダード（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-26",
         "period_end": "2026-02-28"
@@ -2053,6 +2447,7 @@
       "doc_id": "S100Y6D7",
       "industry_code": "6100",
       "industry_name": "小売業",
+      "market": "プライム（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-26",
         "period_end": "2026-02-28"
@@ -2076,6 +2471,7 @@
       "doc_id": "S100Y5YH",
       "industry_code": "",
       "industry_name": "",
+      "market": "",
       "latest_filing": {
         "submit_date": "2026-05-26",
         "period_end": "2026-02-28"
@@ -2099,6 +2495,7 @@
       "doc_id": "S100Y6EN",
       "industry_code": "3650",
       "industry_name": "電気機器",
+      "market": "スタンダード（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-26",
         "period_end": "2026-02-28"
@@ -2122,6 +2519,7 @@
       "doc_id": "S100Y68G",
       "industry_code": "6100",
       "industry_name": "小売業",
+      "market": "プライム（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-26",
         "period_end": "2026-02-28"
@@ -2145,6 +2543,7 @@
       "doc_id": "S100Y4LV",
       "industry_code": "3400",
       "industry_name": "ガラス・土石製品",
+      "market": "スタンダード（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-26",
         "period_end": "2026-02-28"
@@ -2168,6 +2567,7 @@
       "doc_id": "S100Y68C",
       "industry_code": "9050",
       "industry_name": "サービス業",
+      "market": "スタンダード（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-26",
         "period_end": "2026-02-28"
@@ -2191,6 +2591,7 @@
       "doc_id": "S100Y644",
       "industry_code": "6100",
       "industry_name": "小売業",
+      "market": "プライム（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-26",
         "period_end": "2026-02-28"
@@ -2214,6 +2615,7 @@
       "doc_id": "S100Y66D",
       "industry_code": "9050",
       "industry_name": "サービス業",
+      "market": "プライム（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-26",
         "period_end": "2026-02-28"
@@ -2237,6 +2639,7 @@
       "doc_id": "S100Y6K0",
       "industry_code": "6100",
       "industry_name": "小売業",
+      "market": "プライム（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-26",
         "period_end": "2026-02-28"
@@ -2260,6 +2663,7 @@
       "doc_id": "S100Y6DH",
       "industry_code": "5250",
       "industry_name": "情報・通信業",
+      "market": "プライム（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-26",
         "period_end": "2026-02-28"
@@ -2283,6 +2687,7 @@
       "doc_id": "S100Y6G1",
       "industry_code": "9050",
       "industry_name": "サービス業",
+      "market": "スタンダード（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-26",
         "period_end": "2026-02-28"
@@ -2306,6 +2711,7 @@
       "doc_id": "S100Y6IG",
       "industry_code": "9050",
       "industry_name": "サービス業",
+      "market": "プライム（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-26",
         "period_end": "2026-02-28"
@@ -2329,6 +2735,7 @@
       "doc_id": "S100Y6L3",
       "industry_code": "9050",
       "industry_name": "サービス業",
+      "market": "スタンダード（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-26",
         "period_end": "2026-02-28"
@@ -2351,6 +2758,7 @@
       "doc_id": "S100Y65X",
       "industry_code": "9050",
       "industry_name": "サービス業",
+      "market": "スタンダード（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-26",
         "period_end": "2026-02-28"
@@ -2374,6 +2782,7 @@
       "doc_id": "S100Y2PC",
       "industry_code": "6100",
       "industry_name": "小売業",
+      "market": "プライム（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-26",
         "period_end": "2026-02-28"
@@ -2397,6 +2806,7 @@
       "doc_id": "S100Y6L2",
       "industry_code": "9050",
       "industry_name": "サービス業",
+      "market": "スタンダード（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-26",
         "period_end": "2026-02-28"
@@ -2420,6 +2830,7 @@
       "doc_id": "S100Y64B",
       "industry_code": "6100",
       "industry_name": "小売業",
+      "market": "プライム（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-26",
         "period_end": "2026-02-28"
@@ -2443,6 +2854,7 @@
       "doc_id": "S100Y628",
       "industry_code": "5250",
       "industry_name": "情報・通信業",
+      "market": "プライム（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-25",
         "period_end": "2026-02-28"
@@ -2466,6 +2878,7 @@
       "doc_id": "S100Y5F0",
       "industry_code": "6100",
       "industry_name": "小売業",
+      "market": "プライム（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-25",
         "period_end": "2026-02-28"
@@ -2489,6 +2902,7 @@
       "doc_id": "S100Y5RZ",
       "industry_code": "9050",
       "industry_name": "サービス業",
+      "market": "スタンダード（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-25",
         "period_end": "2026-02-28"
@@ -2512,6 +2926,7 @@
       "doc_id": "S100Y62K",
       "industry_code": "8050",
       "industry_name": "不動産業",
+      "market": "スタンダード（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-25",
         "period_end": "2026-02-28"
@@ -2535,6 +2950,7 @@
       "doc_id": "S100Y5SJ",
       "industry_code": "6100",
       "industry_name": "小売業",
+      "market": "スタンダード（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-25",
         "period_end": "2026-02-28"
@@ -2558,6 +2974,7 @@
       "doc_id": "S100Y635",
       "industry_code": "3800",
       "industry_name": "その他製品",
+      "market": "スタンダード（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-25",
         "period_end": "2026-02-28"
@@ -2581,6 +2998,7 @@
       "doc_id": "S100Y62Z",
       "industry_code": "6050",
       "industry_name": "卸売業",
+      "market": "スタンダード（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-25",
         "period_end": "2026-02-28"
@@ -2604,6 +3022,7 @@
       "doc_id": "S100Y5WR",
       "industry_code": "6100",
       "industry_name": "小売業",
+      "market": "プライム（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-25",
         "period_end": "2026-02-28"
@@ -2627,6 +3046,7 @@
       "doc_id": "S100Y5TO",
       "industry_code": "6100",
       "industry_name": "小売業",
+      "market": "スタンダード（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-25",
         "period_end": "2026-02-28"
@@ -2650,6 +3070,7 @@
       "doc_id": "S100Y5VV",
       "industry_code": "3200",
       "industry_name": "化学",
+      "market": "プライム（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-25",
         "period_end": "2026-02-28"
@@ -2673,6 +3094,7 @@
       "doc_id": "S100Y651",
       "industry_code": "6100",
       "industry_name": "小売業",
+      "market": "スタンダード（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-25",
         "period_end": "2026-02-28"
@@ -2695,6 +3117,7 @@
       "doc_id": "S100Y600",
       "industry_code": "2050",
       "industry_name": "建設業",
+      "market": "スタンダード（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-25",
         "period_end": "2026-02-28"
@@ -2718,6 +3141,7 @@
       "doc_id": "S100Y4A4",
       "industry_code": "6100",
       "industry_name": "小売業",
+      "market": "スタンダード（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-25",
         "period_end": "2026-02-28"
@@ -2741,6 +3165,7 @@
       "doc_id": "S100Y64A",
       "industry_code": "6100",
       "industry_name": "小売業",
+      "market": "プライム（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-25",
         "period_end": "2026-02-28"
@@ -2764,6 +3189,7 @@
       "doc_id": "S100Y650",
       "industry_code": "6100",
       "industry_name": "小売業",
+      "market": "プライム（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-25",
         "period_end": "2026-02-28"
@@ -2787,6 +3213,7 @@
       "doc_id": "S100Y5TC",
       "industry_code": "3600",
       "industry_name": "機械",
+      "market": "スタンダード（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-25",
         "period_end": "2026-02-28"
@@ -2810,6 +3237,7 @@
       "doc_id": "S100Y60M",
       "industry_code": "6050",
       "industry_name": "卸売業",
+      "market": "プライム（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-25",
         "period_end": "2026-02-28"
@@ -2833,6 +3261,7 @@
       "doc_id": "S100Y5VH",
       "industry_code": "6100",
       "industry_name": "小売業",
+      "market": "プライム（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-25",
         "period_end": "2026-02-28"
@@ -2856,6 +3285,7 @@
       "doc_id": "S100Y613",
       "industry_code": "9050",
       "industry_name": "サービス業",
+      "market": "スタンダード（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-25",
         "period_end": "2026-02-28"
@@ -2879,6 +3309,7 @@
       "doc_id": "S100Y60F",
       "industry_code": "5250",
       "industry_name": "情報・通信業",
+      "market": "プライム（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-25",
         "period_end": "2026-02-28"
@@ -2902,6 +3333,7 @@
       "doc_id": "S100Y66L",
       "industry_code": "3100",
       "industry_name": "繊維製品",
+      "market": "スタンダード（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-25",
         "period_end": "2026-02-28"
@@ -2925,6 +3357,7 @@
       "doc_id": "S100Y5Z2",
       "industry_code": "9050",
       "industry_name": "サービス業",
+      "market": "プライム（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-25",
         "period_end": "2026-02-28"
@@ -2948,6 +3381,7 @@
       "doc_id": "S100Y5VS",
       "industry_code": "5250",
       "industry_name": "情報・通信業",
+      "market": "グロース（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-25",
         "period_end": "2026-02-28"
@@ -2971,6 +3405,7 @@
       "doc_id": "S100Y64P",
       "industry_code": "6100",
       "industry_name": "小売業",
+      "market": "スタンダード（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-25",
         "period_end": "2026-02-28"
@@ -2994,6 +3429,7 @@
       "doc_id": "S100Y621",
       "industry_code": "3050",
       "industry_name": "食料品",
+      "market": "スタンダード（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-25",
         "period_end": "2026-02-28"
@@ -3017,6 +3453,7 @@
       "doc_id": "S100Y5TF",
       "industry_code": "5250",
       "industry_name": "情報・通信業",
+      "market": "スタンダード（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-25",
         "period_end": "2026-02-28"
@@ -3040,6 +3477,7 @@
       "doc_id": "S100Y66K",
       "industry_code": "5250",
       "industry_name": "情報・通信業",
+      "market": "プライム（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-25",
         "period_end": "2026-02-28"
@@ -3063,6 +3501,7 @@
       "doc_id": "S100Y62C",
       "industry_code": "6050",
       "industry_name": "卸売業",
+      "market": "スタンダード（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-25",
         "period_end": "2026-02-28"
@@ -3086,6 +3525,7 @@
       "doc_id": "S100Y640",
       "industry_code": "6100",
       "industry_name": "小売業",
+      "market": "プライム（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-25",
         "period_end": "2026-02-28"
@@ -3109,6 +3549,7 @@
       "doc_id": "S100Y69H",
       "industry_code": "3650",
       "industry_name": "電気機器",
+      "market": "プライム（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-25",
         "period_end": "2026-02-28"
@@ -3132,6 +3573,7 @@
       "doc_id": "S100Y68H",
       "industry_code": "5250",
       "industry_name": "情報・通信業",
+      "market": "グロース（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-25",
         "period_end": "2026-02-28"
@@ -3154,6 +3596,7 @@
       "doc_id": "S100Y5O3",
       "industry_code": "5250",
       "industry_name": "情報・通信業",
+      "market": "プライム（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-25",
         "period_end": "2026-02-28"
@@ -3176,6 +3619,7 @@
       "doc_id": "S100Y69Y",
       "industry_code": "9050",
       "industry_name": "サービス業",
+      "market": "プライム（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-25",
         "period_end": "2026-02-28"
@@ -3199,6 +3643,7 @@
       "doc_id": "S100Y6A9",
       "industry_code": "5250",
       "industry_name": "情報・通信業",
+      "market": "スタンダード（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-25",
         "period_end": "2026-02-28"
@@ -3222,6 +3667,7 @@
       "doc_id": "S100Y64O",
       "industry_code": "6050",
       "industry_name": "卸売業",
+      "market": "プライム（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-25",
         "period_end": "2026-02-28"
@@ -3245,6 +3691,7 @@
       "doc_id": "S100Y5NR",
       "industry_code": "6100",
       "industry_name": "小売業",
+      "market": "プライム（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-22",
         "period_end": "2026-02-28"
@@ -3268,6 +3715,7 @@
       "doc_id": "S100Y5JR",
       "industry_code": "3200",
       "industry_name": "化学",
+      "market": "スタンダード（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-22",
         "period_end": "2026-03-31"
@@ -3291,6 +3739,7 @@
       "doc_id": "S100Y53V",
       "industry_code": "5200",
       "industry_name": "倉庫・運輸関連業",
+      "market": "プライム（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-22",
         "period_end": "2026-02-28"
@@ -3313,6 +3762,7 @@
       "doc_id": "S100Y5TM",
       "industry_code": "6100",
       "industry_name": "小売業",
+      "market": "スタンダード（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-22",
         "period_end": "2026-02-28"
@@ -3335,6 +3785,7 @@
       "doc_id": "S100Y5QW",
       "industry_code": "3650",
       "industry_name": "電気機器",
+      "market": "グロース（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-22",
         "period_end": "2026-02-28"
@@ -3357,6 +3808,7 @@
       "doc_id": "S100Y5OG",
       "industry_code": "6100",
       "industry_name": "小売業",
+      "market": "スタンダード（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-22",
         "period_end": "2026-02-28"
@@ -3380,6 +3832,7 @@
       "doc_id": "S100Y5GM",
       "industry_code": "3600",
       "industry_name": "機械",
+      "market": "プライム（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-22",
         "period_end": "2026-02-28"
@@ -3403,6 +3856,7 @@
       "doc_id": "S100Y5RH",
       "industry_code": "9050",
       "industry_name": "サービス業",
+      "market": "スタンダード（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-22",
         "period_end": "2026-02-28"
@@ -3426,6 +3880,7 @@
       "doc_id": "S100Y5AX",
       "industry_code": "5250",
       "industry_name": "情報・通信業",
+      "market": "グロース（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-22",
         "period_end": "2026-02-28"
@@ -3448,6 +3903,7 @@
       "doc_id": "S100Y5VD",
       "industry_code": "",
       "industry_name": "",
+      "market": "",
       "latest_filing": {
         "submit_date": "2026-05-22",
         "period_end": "2026-02-28"
@@ -3471,6 +3927,7 @@
       "doc_id": "S100Y5Q4",
       "industry_code": "9050",
       "industry_name": "サービス業",
+      "market": "スタンダード（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-22",
         "period_end": "2026-02-28"
@@ -3494,6 +3951,7 @@
       "doc_id": "S100Y5GZ",
       "industry_code": "2050",
       "industry_name": "建設業",
+      "market": "スタンダード（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-22",
         "period_end": "2026-02-28"
@@ -3517,6 +3975,7 @@
       "doc_id": "S100Y4W7",
       "industry_code": "3100",
       "industry_name": "繊維製品",
+      "market": "プライム（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-21",
         "period_end": "2026-02-28"
@@ -3540,6 +3999,7 @@
       "doc_id": "S100Y56T",
       "industry_code": "5250",
       "industry_name": "情報・通信業",
+      "market": "スタンダード（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-21",
         "period_end": "2026-02-28"
@@ -3563,6 +4023,7 @@
       "doc_id": "S100Y58Q",
       "industry_code": "9050",
       "industry_name": "サービス業",
+      "market": "プライム（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-21",
         "period_end": "2026-02-28"
@@ -3586,6 +4047,7 @@
       "doc_id": "S100Y5H5",
       "industry_code": "3050",
       "industry_name": "食料品",
+      "market": "プライム（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-21",
         "period_end": "2026-02-28"
@@ -3609,6 +4071,7 @@
       "doc_id": "S100Y5EY",
       "industry_code": "6100",
       "industry_name": "小売業",
+      "market": "プライム（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-21",
         "period_end": "2026-02-28"
@@ -3632,6 +4095,7 @@
       "doc_id": "S100Y5KF",
       "industry_code": "6100",
       "industry_name": "小売業",
+      "market": "プライム（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-21",
         "period_end": "2026-02-28"
@@ -3655,6 +4119,7 @@
       "doc_id": "S100Y5KN",
       "industry_code": "6100",
       "industry_name": "小売業",
+      "market": "プライム（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-21",
         "period_end": "2026-02-28"
@@ -3678,6 +4143,7 @@
       "doc_id": "S100Y4K3",
       "industry_code": "6100",
       "industry_name": "小売業",
+      "market": "プライム（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-21",
         "period_end": "2026-02-28"
@@ -3701,6 +4167,7 @@
       "doc_id": "S100Y57I",
       "industry_code": "9050",
       "industry_name": "サービス業",
+      "market": "グロース（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-21",
         "period_end": "2026-02-28"
@@ -3724,6 +4191,7 @@
       "doc_id": "S100Y4QT",
       "industry_code": "6100",
       "industry_name": "小売業",
+      "market": "グロース（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-21",
         "period_end": "2026-02-28"
@@ -3747,6 +4215,7 @@
       "doc_id": "S100Y5LD",
       "industry_code": "",
       "industry_name": "",
+      "market": "",
       "latest_filing": {
         "submit_date": "2026-05-21",
         "period_end": "2026-02-28"
@@ -3770,6 +4239,7 @@
       "doc_id": "S100Y4MZ",
       "industry_code": "3800",
       "industry_name": "その他製品",
+      "market": "スタンダード（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-20",
         "period_end": "2026-02-28"
@@ -3793,6 +4263,7 @@
       "doc_id": "S100Y4Z8",
       "industry_code": "6050",
       "industry_name": "卸売業",
+      "market": "スタンダード（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-20",
         "period_end": "2026-02-28"
@@ -3816,6 +4287,7 @@
       "doc_id": "S100Y4X5",
       "industry_code": "6100",
       "industry_name": "小売業",
+      "market": "プライム（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-20",
         "period_end": "2026-02-28"
@@ -3839,6 +4311,7 @@
       "doc_id": "S100Y4VB",
       "industry_code": "6100",
       "industry_name": "小売業",
+      "market": "プライム（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-20",
         "period_end": "2026-02-28"
@@ -3862,6 +4335,7 @@
       "doc_id": "S100Y563",
       "industry_code": "6100",
       "industry_name": "小売業",
+      "market": "プライム（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-20",
         "period_end": "2026-02-28"
@@ -3885,6 +4359,7 @@
       "doc_id": "S100Y4UH",
       "industry_code": "6100",
       "industry_name": "小売業",
+      "market": "プライム（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-20",
         "period_end": "2026-02-28"
@@ -3908,6 +4383,7 @@
       "doc_id": "S100Y5A2",
       "industry_code": "3100",
       "industry_name": "繊維製品",
+      "market": "プライム（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-20",
         "period_end": "2026-02-28"
@@ -3931,6 +4407,7 @@
       "doc_id": "S100Y510",
       "industry_code": "9050",
       "industry_name": "サービス業",
+      "market": "プライム（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-20",
         "period_end": "2026-02-28"
@@ -3954,6 +4431,7 @@
       "doc_id": "S100Y55S",
       "industry_code": "",
       "industry_name": "",
+      "market": "",
       "latest_filing": {
         "submit_date": "2026-05-20",
         "period_end": "2026-02-20"
@@ -3976,6 +4454,7 @@
       "doc_id": "S100Y3QN",
       "industry_code": "6100",
       "industry_name": "小売業",
+      "market": "プライム（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-20",
         "period_end": "2026-02-28"
@@ -3999,6 +4478,7 @@
       "doc_id": "S100Y4X3",
       "industry_code": "6100",
       "industry_name": "小売業",
+      "market": "プライム（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-20",
         "period_end": "2026-02-28"
@@ -4022,6 +4502,7 @@
       "doc_id": "S100Y58I",
       "industry_code": "6100",
       "industry_name": "小売業",
+      "market": "プライム（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-20",
         "period_end": "2026-02-28"
@@ -4045,6 +4526,7 @@
       "doc_id": "S100Y50H",
       "industry_code": "8050",
       "industry_name": "不動産業",
+      "market": "プライム（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-20",
         "period_end": "2026-02-28"
@@ -4068,6 +4550,7 @@
       "doc_id": "S100Y585",
       "industry_code": "6100",
       "industry_name": "小売業",
+      "market": "スタンダード（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-20",
         "period_end": "2026-02-28"
@@ -4091,6 +4574,7 @@
       "doc_id": "S100Y4BQ",
       "industry_code": "6100",
       "industry_name": "小売業",
+      "market": "プライム（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-19",
         "period_end": "2026-02-28"
@@ -4114,6 +4598,7 @@
       "doc_id": "S100Y4UK",
       "industry_code": "9050",
       "industry_name": "サービス業",
+      "market": "プライム（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-19",
         "period_end": "2026-02-28"
@@ -4137,6 +4622,7 @@
       "doc_id": "S100Y4UP",
       "industry_code": "9050",
       "industry_name": "サービス業",
+      "market": "グロース（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-19",
         "period_end": "2026-02-28"
@@ -4159,6 +4645,7 @@
       "doc_id": "S100Y4MW",
       "industry_code": "6050",
       "industry_name": "卸売業",
+      "market": "スタンダード（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-19",
         "period_end": "2026-02-28"
@@ -4182,6 +4669,7 @@
       "doc_id": "S100Y4YP",
       "industry_code": "6100",
       "industry_name": "小売業",
+      "market": "スタンダード（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-19",
         "period_end": "2026-02-28"
@@ -4205,6 +4693,7 @@
       "doc_id": "S100Y4Y9",
       "industry_code": "6100",
       "industry_name": "小売業",
+      "market": "スタンダード（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-19",
         "period_end": "2026-02-28"
@@ -4228,6 +4717,7 @@
       "doc_id": "S100Y4RA",
       "industry_code": "6100",
       "industry_name": "小売業",
+      "market": "スタンダード（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-19",
         "period_end": "2026-02-28"
@@ -4250,6 +4740,7 @@
       "doc_id": "S100Y53G",
       "industry_code": "7200",
       "industry_name": "その他金融業",
+      "market": "プライム（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-19",
         "period_end": "2026-02-28"
@@ -4272,6 +4763,7 @@
       "doc_id": "S100Y4CU",
       "industry_code": "6100",
       "industry_name": "小売業",
+      "market": "プライム（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-18",
         "period_end": "2026-02-28"
@@ -4295,6 +4787,7 @@
       "doc_id": "S100Y494",
       "industry_code": "6100",
       "industry_name": "小売業",
+      "market": "スタンダード（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-18",
         "period_end": "2026-02-28"
@@ -4318,6 +4811,7 @@
       "doc_id": "S100Y4PA",
       "industry_code": "6100",
       "industry_name": "小売業",
+      "market": "スタンダード（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-18",
         "period_end": "2026-02-28"
@@ -4340,6 +4834,7 @@
       "doc_id": "S100Y3Q6",
       "industry_code": "3650",
       "industry_name": "電気機器",
+      "market": "プライム（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-18",
         "period_end": "2026-02-28"
@@ -4363,6 +4858,7 @@
       "doc_id": "S100Y36L",
       "industry_code": "6100",
       "industry_name": "小売業",
+      "market": "スタンダード（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-15",
         "period_end": "2026-02-28"
@@ -4386,6 +4882,7 @@
       "doc_id": "S100Y415",
       "industry_code": "3200",
       "industry_name": "化学",
+      "market": "プライム（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-15",
         "period_end": "2025-12-31"
@@ -4409,6 +4906,7 @@
       "doc_id": "S100Y3VC",
       "industry_code": "6100",
       "industry_name": "小売業",
+      "market": "スタンダード（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-14",
         "period_end": "2026-02-20"
@@ -4432,6 +4930,7 @@
       "doc_id": "S100Y3PF",
       "industry_code": "3600",
       "industry_name": "機械",
+      "market": "プライム（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-14",
         "period_end": "2026-02-20"
@@ -4455,6 +4954,7 @@
       "doc_id": "S100Y39Y",
       "industry_code": "6100",
       "industry_name": "小売業",
+      "market": "スタンダード（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-13",
         "period_end": "2026-02-20"
@@ -4477,6 +4977,7 @@
       "doc_id": "S100Y3CW",
       "industry_code": "6100",
       "industry_name": "小売業",
+      "market": "プライム（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-13",
         "period_end": "2026-02-20"
@@ -4500,6 +5001,7 @@
       "doc_id": "S100Y2X4",
       "industry_code": "6100",
       "industry_name": "小売業",
+      "market": "プライム（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-13",
         "period_end": "2026-02-20"
@@ -4523,6 +5025,7 @@
       "doc_id": "S100Y362",
       "industry_code": "6100",
       "industry_name": "小売業",
+      "market": "プライム（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-13",
         "period_end": "2026-02-20"
@@ -4546,6 +5049,7 @@
       "doc_id": "S100Y2PP",
       "industry_code": "6100",
       "industry_name": "小売業",
+      "market": "プライム（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-12",
         "period_end": "2026-02-20"
@@ -4569,6 +5073,7 @@
       "doc_id": "S100Y2FB",
       "industry_code": "6100",
       "industry_name": "小売業",
+      "market": "プライム（内国株式）",
       "latest_filing": {
         "submit_date": "2026-05-11",
         "period_end": "2026-02-20"
@@ -4592,6 +5097,7 @@
       "doc_id": "S100Y1KO",
       "industry_code": "6100",
       "industry_name": "小売業",
+      "market": "スタンダード（内国株式）",
       "latest_filing": {
         "submit_date": "2026-04-30",
         "period_end": "2026-01-31"
@@ -4615,6 +5121,7 @@
       "doc_id": "S100Y1NL",
       "industry_code": "5250",
       "industry_name": "情報・通信業",
+      "market": "プライム（内国株式）",
       "latest_filing": {
         "submit_date": "2026-04-30",
         "period_end": "2025-12-31"
@@ -4637,6 +5144,7 @@
       "doc_id": "S100XY8O",
       "industry_code": "3750",
       "industry_name": "精密機器",
+      "market": "グロース（内国株式）",
       "latest_filing": {
         "submit_date": "2026-04-30",
         "period_end": "2026-01-31"

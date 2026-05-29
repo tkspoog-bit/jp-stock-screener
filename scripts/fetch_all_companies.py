@@ -34,9 +34,10 @@ def fetch_industry_map():
             industry_name = row[5] if row[5] != '-' else ''
             if industry_name:
                 industry_map[code] = {
-                    "industry_code": industry_code,
-                    "industry_name": industry_name
-                }
+            "industry_code": industry_code,
+            "industry_name": industry_name,
+            "market": row[3] if row[3] != '-' else ''
+        }
         print(f"業種マッピング完了：{len(industry_map)}社")
         return industry_map
     except Exception as e:
@@ -377,6 +378,7 @@ def main():
             "doc_id": doc_id,
             "industry_code": industry.get("industry_code", ""),
             "industry_name": industry.get("industry_name", ""),
+            "market": industry.get("market", ""),
             "latest_filing": {
                 "submit_date": filing["submit_date"],
                 "period_end": filing["period_end"],

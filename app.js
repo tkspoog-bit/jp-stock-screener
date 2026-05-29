@@ -95,7 +95,7 @@ function renderList(sortKey, data = allData) {
   const totalPages = currentLimit ? Math.ceil(total / currentLimit) : 1;
   const safeLimit = currentLimit || total;
   
-    const paginated = sorted.slice((currentPage - 1) * safeLimit, currentPage * safeLimit);
+  const paginated = sorted.slice((currentPage - 1) * safeLimit, currentPage * safeLimit);
 
   // ページネーション（上）
   const navTop = document.createElement('div');
@@ -115,7 +115,7 @@ function renderList(sortKey, data = allData) {
     card.className = 'company-card';
     card.innerHTML = `
       <div class="company-name">${company.name}</div>
-      <div class="company-code">証券コード：${company.code}</div>
+      <div class="company-code">証券コード：${company.code}${company.market ? `　${company.market}` : ''}${company.industry_name ? `　${company.industry_name}` : ''}</div>
       <div class="filing-info">
         <span>決算期：${periodLabel}</span>
         <span>提出日：${filing.submit_date || '不明'}</span>
