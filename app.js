@@ -233,7 +233,7 @@ function formatShares(value) {
 
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/jp-stock-screener/sw.js')
+    navigator.serviceWorker.register('./sw.js')
       .then(() => console.log('SW登録成功'))
       .catch(err => console.log('SW登録失敗:', err));
   });
