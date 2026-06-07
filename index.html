@@ -37,6 +37,19 @@
       <button onclick="sortBy('roe', this)">ROE</button>
       <button onclick="sortBy('operating_margin', this)">営業利益率</button>
     </div>
+    <div id="filter-bar">
+      <span>市場：</span>
+      <button onclick="setFilter('market', null, this)" class="active">全て</button>
+      <button onclick="setFilter('market', 'プライム（内国株式）', this)">プライム</button>
+      <button onclick="setFilter('market', 'スタンダード（内国株式）', this)">スタンダード</button>
+      <button onclick="setFilter('market', 'グロース（内国株式）', this)">グロース</button>
+    </div>
+    <div id="industry-filter">
+      <span>業種：</span>
+      <select id="industry-select" onchange="setIndustryFilter(this.value)">
+        <option value="">全業種</option>
+      </select>
+    </div>
   </div>
   <main id="company-list">
     <p>データ読み込み中...</p>

@@ -3,6 +3,8 @@ let pricesData = {};
 let currentSort = 'market_cap';
 let currentLimit = 50;
 let currentPage = 1;
+let currentMarketFilter = null;
+let currentIndustryFilter = '';
 
 Promise.all([
   fetch('./data/fundamentals.json').then(r => r.json()),
@@ -26,6 +28,16 @@ Promise.all([
     return { ...company, marketCap, priceData, per, pbr, roe, roa, operating_margin };
   });
 
+  // 業種リスト生成
+  const industries = [...new Set(allData.map(c => c.industry_name).filter(Boolean))].sort();
+  const select = document.getElementById('industry-select');
+  industries.forEach(ind => {
+    const opt = document.createElement('option');
+    opt.value = ind;
+    opt.textContent = ind;
+    select.appendChild(opt);
+  });
+
   filterList();
 })
 .catch(err => {
@@ -35,14 +47,33 @@ Promise.all([
 
 function filterList() {
   const query = document.getElementById('search-input').value.trim().toLowerCase();
-  const filtered = query
-    ? allData.filter(c =>
-        c.name.toLowerCase().includes(query) ||
-        c.code.toLowerCase().includes(query)
-      )
-    : allData;
+  let filtered = allData;
+  if (query) {
+    filtered = filtered.filter(c =>
+      c.name.toLowerCase().includes(query) ||
+      c.code.toLowerCase().includes(query)
+    );
+  }
+  if (currentMarketFilter) {
+    filtered = filtered.filter(c => c.market === currentMarketFilter);
+  }
+  if (currentIndustryFilter) {
+    filtered = filtered.filter(c => c.industry_name === currentIndustryFilter);
+  }
   currentPage = 1;
   renderList(currentSort, filtered);
+}
+
+function setFilter(type, value, btn) {
+  currentMarketFilter = value;
+  document.querySelectorAll('#filter-bar button').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  filterList();
+}
+
+function setIndustryFilter(value) {
+  currentIndustryFilter = value;
+  filterList();
 }
 
 function changePage(dir) {

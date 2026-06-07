@@ -181,6 +181,38 @@ header h1 {
   background: #1a1a2e;
   color: white;
   border-color: #1a1a2e;
+
+#filter-bar, #industry-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 8px 16px;
+  align-items: center;
+}
+
+#filter-bar button {
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  background: white;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+#filter-bar button.active {
+  background: #1a1a2e;
+  color: white;
+  border-color: #1a1a2e;
+}
+
+#industry-select {
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
 }.metrics-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
