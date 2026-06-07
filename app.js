@@ -5,6 +5,8 @@ let currentLimit = 50;
 let currentPage = 1;
 let currentMarketFilter = null;
 let currentIndustryFilter = '';
+let portfolios = {};
+let currentPortfolio = null;
 
 Promise.all([
   fetch('./data/fundamentals.json').then(r => r.json()),
@@ -39,6 +41,7 @@ Promise.all([
     select.appendChild(opt);
   });
 
+  initPortfolios();
   filterList();
 })
 .catch(err => {
@@ -65,6 +68,10 @@ function filterList() {
   }
   if (currentIndustryFilter) {
     filtered = filtered.filter(c => c.industry_name === currentIndustryFilter);
+  }
+  if (currentPortfolio && portfolios[currentPortfolio]) {
+    const codes = portfolios[currentPortfolio].codes;
+    filtered = filtered.filter(c => codes.includes(c.code));
   }
   if (!isNaN(perMax)) {
     filtered = filtered.filter(c => c.per !== null && c.per <= perMax);
@@ -174,9 +181,13 @@ function renderList(sortKey, data = allData) {
     const filing = company.latest_filing || {};
     const periodLabel = formatPeriod(filing.period_end);
     const card = document.createElement('div');
-    card.className = 'company-card';
-    card.innerHTML = `
-      <div class="company-name">${company.name}</div>
+      card.className = 'company-card';
+      const inPf = Object.values(portfolios).some(pf => pf.codes.includes(company.code));
+      card.innerHTML = `
+        <div class="company-header">
+          <div class="company-name">${company.name}</div>
+          <button class="pf-btn ${inPf ? 'in-pf' : ''}" onclick="togglePortfolio('${company.code}')">${inPf ? '★' : '☆'}</button>
+        </div>
       <div class="company-code">証券コード：${company.code}${company.market ? `　${company.market}` : ''}${company.industry_name ? `　${company.industry_name}` : ''}</div>
       <div class="filing-info">
         <span>決算期：${periodLabel}</span>
@@ -296,6 +307,93 @@ function formatShares(value) {
   if (value >= 100_000_000) return (value / 100_000_000).toFixed(1) + ' 億株';
   if (value >= 10_000) return (value / 10_000).toFixed(0) + ' 万株';
   return value.toLocaleString() + ' 株';
+}
+
+function initPortfolios() {
+  const params = new URLSearchParams(window.location.search);
+  portfolios = {};
+  let i = 1;
+  while (params.has(`p${i}`)) {
+    const codes = params.get(`p${i}`).split(',').filter(Boolean);
+    const name = params.get(`p${i}name`) || `ポートフォリオ${i}`;
+    portfolios[`p${i}`] = { name, codes };
+    i++;
+  }
+  renderPortfolioTabs();
+}
+
+function renderPortfolioTabs() {
+  const tabs = document.getElementById('portfolio-tabs');
+  tabs.innerHTML = '';
+  Object.entries(portfolios).forEach(([key, pf]) => {
+    const btn = document.createElement('button');
+    btn.textContent = pf.name + ` (${pf.codes.length})`;
+    btn.onclick = () => showPortfolio(key);
+    btn.id = `btn-${key}`;
+    tabs.appendChild(btn);
+  });
+}
+
+function showAll() {
+  currentPortfolio = null;
+  document.querySelectorAll('#portfolio-bar button').forEach(b => b.classList.remove('active'));
+  document.getElementById('btn-all').classList.add('active');
+  filterList();
+}
+
+function showPortfolio(key) {
+  currentPortfolio = key;
+  document.querySelectorAll('#portfolio-bar button').forEach(b => b.classList.remove('active'));
+  document.getElementById(`btn-${key}`).classList.add('active');
+  filterList();
+}
+
+function addPortfolio() {
+  const name = prompt('ポートフォリオ名を入力してください');
+  if (!name) return;
+  const i = Object.keys(portfolios).length + 1;
+  portfolios[`p${i}`] = { name, codes: [] };
+  renderPortfolioTabs();
+  updateURL();
+}
+
+function togglePortfolio(code) {
+  if (Object.keys(portfolios).length === 0) {
+    alert('先にポートフォリオを作成してください');
+    return;
+  }
+  const keys = Object.keys(portfolios);
+  if (keys.length === 1) {
+    addToPortfolio(keys[0], code);
+    return;
+  }
+  const key = prompt('追加先:\n' + keys.map(k => `${k}: ${portfolios[k].name}`).join('\n') + '\n\nキーを入力（例: p1）');
+  if (key && portfolios[key]) {
+    addToPortfolio(key, code);
+  }
+}
+
+function addToPortfolio(key, code) {
+  const pf = portfolios[key];
+  if (pf.codes.includes(code)) {
+    pf.codes = pf.codes.filter(c => c !== code);
+  } else {
+    pf.codes.push(code);
+  }
+  renderPortfolioTabs();
+  updateURL();
+  filterList();
+}
+
+function updateURL() {
+  const params = new URLSearchParams();
+  Object.entries(portfolios).forEach(([key, pf]) => {
+    const i = key.replace('p', '');
+    params.set(`p${i}`, pf.codes.join(','));
+    params.set(`p${i}name`, pf.name);
+  });
+  const newURL = window.location.pathname + '?' + params.toString();
+  window.history.replaceState({}, '', newURL);
 }
 
 if ('serviceWorker' in navigator) {

@@ -17,6 +17,11 @@
       <h1>日本株財務指標スクリーナー</h1>
       <p id="updated-at">更新日時：読み込み中...</p>
     </header>
+    <div id="portfolio-bar">
+      <button onclick="showAll()" class="active" id="btn-all">全銘柄</button>
+      <div id="portfolio-tabs"></div>
+      <button onclick="addPortfolio()">＋ポートフォリオ追加</button>
+    </div>
     <div id="search-bar">
       <input type="text" id="search-input" placeholder="会社名・証券コード" oninput="filterList()" />
     </div>

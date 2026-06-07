@@ -288,3 +288,51 @@ header h1 {
   overflow-y: auto;
   padding: 16px;
 }
+
+#portfolio-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 8px 16px;
+  align-items: center;
+}
+
+#portfolio-bar button {
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  background: white;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+#portfolio-bar button.active {
+  background: #1a1a2e;
+  color: white;
+  border-color: #1a1a2e;
+}
+
+#portfolio-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.company-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pf-btn {
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  padding: 0 4px;
+  color: #ccc;
+}
+
+.pf-btn.in-pf {
+  color: #f4a261;
+}
