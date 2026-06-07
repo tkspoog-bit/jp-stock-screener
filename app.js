@@ -362,6 +362,18 @@ function togglePortfolio(code) {
     alert('先にポートフォリオを作成してください');
     return;
   }
+
+  // 現在表示中のポートフォリオで★を押した場合
+  if (currentPortfolio && portfolios[currentPortfolio]) {
+    if (portfolios[currentPortfolio].codes.includes(code)) {
+      if (confirm('お気に入りから削除しますか？')) {
+        addToPortfolio(currentPortfolio, code);
+      }
+      return;
+    }
+  }
+
+  // 全銘柄表示中の場合
   const keys = Object.keys(portfolios);
   if (keys.length === 1) {
     addToPortfolio(keys[0], code);
