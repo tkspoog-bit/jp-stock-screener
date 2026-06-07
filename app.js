@@ -28,7 +28,8 @@ Promise.all([
     const roa = (f.net_income && f.total_assets) ? f.net_income / f.total_assets * 100 : null;
     const operating_margin = (f.operating_profit && f.sales) ? f.operating_profit / f.sales * 100 : null;
     const net_cash_ratio = (f.net_cash && marketCap) ? f.net_cash / marketCap * 100 : null;
-      return { ...company, marketCap, priceData, per, pbr, roe, roa, operating_margin, net_cash_ratio };
+      const net_net_ratio = (f.net_net && marketCap) ? f.net_net / marketCap : null;
+      return { ...company, marketCap, priceData, per, pbr, roe, roa, operating_margin, net_cash_ratio, net_net_ratio };
   });
 
   // 業種リスト生成
@@ -89,6 +90,10 @@ function filterList() {
   if (!isNaN(ncpMin)) {
     filtered = filtered.filter(c => c.net_cash_ratio !== null && c.net_cash_ratio >= ncpMin);
   }
+  const nnMin = parseFloat(document.getElementById('filter-nn').value);
+  if (!isNaN(nnMin)) {
+    filtered = filtered.filter(c => c.net_net_ratio !== null && c.net_net_ratio >= nnMin);
+  }
   currentPage = 1;
   renderList(currentSort, filtered);
 }
@@ -99,6 +104,7 @@ function clearScreenFilter() {
   document.getElementById('filter-margin').value = '';
   document.getElementById('filter-cap').value = '';
   document.getElementById('filter-ncp').value = '';
+  document.getElementById('filter-nn').value = '';
   filterList();
 }
 
@@ -309,6 +315,11 @@ function renderList(sortKey, data = allData) {
             <div class="metric-item">
               <span class="metric-label">NC比率</span>
               <span class="metric-value">${company.net_cash_ratio.toFixed(1)} %</span>
+            </div>` : ''}
+            ${company.net_net_ratio !== null ? `
+            <div class="metric-item">
+              <span class="metric-label">NN倍率</span>
+              <span class="metric-value">${company.net_net_ratio.toFixed(2)} 倍</span>
             </div>` : ''}
         </div>
         <div class="financial-row">
