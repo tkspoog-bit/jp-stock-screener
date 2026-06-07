@@ -102,6 +102,52 @@ function clearScreenFilter() {
   filterList();
 }
 
+function exportCSV() {
+  const query = document.getElementById('search-input').value.trim().toLowerCase();
+  let filtered = allData;
+  if (query) {
+    filtered = filtered.filter(c =>
+      c.name.toLowerCase().includes(query) ||
+      c.code.toLowerCase().includes(query)
+    );
+  }
+  if (currentMarketFilter) {
+    filtered = filtered.filter(c => c.market === currentMarketFilter);
+  }
+  if (currentIndustryFilter) {
+    filtered = filtered.filter(c => c.industry_name === currentIndustryFilter);
+  }
+  if (currentPortfolio && portfolios[currentPortfolio]) {
+    const codes = portfolios[currentPortfolio].codes;
+    filtered = filtered.filter(c => codes.includes(c.code));
+  }
+
+  const headers = ['証券コード','会社名','市場','業種','売上高','営業利益','純利益','時価総額','PER','PBR','ROE','ROA','営業利益率','NC比率','参考株価'];
+  const rows = filtered.map(c => [
+    c.code, c.name, c.market || '', c.industry_name || '',
+    c.financials.sales || '',
+    c.financials.operating_profit || '',
+    c.financials.net_income || '',
+    c.marketCap || '',
+    c.per ? c.per.toFixed(1) : '',
+    c.pbr ? c.pbr.toFixed(1) : '',
+    c.roe ? c.roe.toFixed(1) : '',
+    c.roa ? c.roa.toFixed(1) : '',
+    c.operating_margin ? c.operating_margin.toFixed(1) : '',
+    c.net_cash_ratio ? c.net_cash_ratio.toFixed(1) : '',
+    c.priceData ? c.priceData.price : ''
+  ]);
+
+  const csv = [headers, ...rows].map(r => r.join(',')).join('\n');
+  const bom = '\uFEFF';
+  const blob = new Blob([bom + csv], { type: 'text/csv' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `jp-stock-screener-${new Date().toISOString().slice(0,10)}.csv`;
+  a.click();
+}
+
 function setFilter(type, value, btn) {
   currentMarketFilter = value;
   document.querySelectorAll('#filter-bar button').forEach(b => b.classList.remove('active'));
@@ -326,11 +372,31 @@ function renderPortfolioTabs() {
   const tabs = document.getElementById('portfolio-tabs');
   tabs.innerHTML = '';
   Object.entries(portfolios).forEach(([key, pf]) => {
+    const wrap = document.createElement('div');
+    wrap.style.display = 'flex';
+    wrap.style.alignItems = 'center';
+    wrap.style.gap = '2px';
+
     const btn = document.createElement('button');
     btn.textContent = pf.name + ` (${pf.codes.length})`;
     btn.onclick = () => showPortfolio(key);
     btn.id = `btn-${key}`;
-    tabs.appendChild(btn);
+
+    const del = document.createElement('button');
+    del.textContent = '×';
+    del.style.cssText = 'padding:2px 6px;font-size:0.8rem;border-radius:50%;';
+    del.onclick = () => {
+      if (confirm(`「${pf.name}」を削除しますか？`)) {
+        delete portfolios[key];
+        if (currentPortfolio === key) showAll();
+        renderPortfolioTabs();
+        updateURL();
+      }
+    };
+
+    wrap.appendChild(btn);
+    wrap.appendChild(del);
+    tabs.appendChild(wrap);
   });
 }
 
