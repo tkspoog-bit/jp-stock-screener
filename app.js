@@ -25,7 +25,8 @@ Promise.all([
     const roe = (f.net_income && f.equity) ? f.net_income / f.equity * 100 : null;
     const roa = (f.net_income && f.total_assets) ? f.net_income / f.total_assets * 100 : null;
     const operating_margin = (f.operating_profit && f.sales) ? f.operating_profit / f.sales * 100 : null;
-    return { ...company, marketCap, priceData, per, pbr, roe, roa, operating_margin };
+    const net_cash_ratio = (f.net_cash && marketCap) ? f.net_cash / marketCap * 100 : null;
+      return { ...company, marketCap, priceData, per, pbr, roe, roa, operating_margin, net_cash_ratio };
   });
 
   // 業種リスト生成
@@ -77,6 +78,10 @@ function filterList() {
   if (!isNaN(capMax)) {
     filtered = filtered.filter(c => c.marketCap !== null && c.marketCap <= capMax * 100000000);
   }
+  const ncpMin = parseFloat(document.getElementById('filter-ncp').value);
+  if (!isNaN(ncpMin)) {
+    filtered = filtered.filter(c => c.net_cash_ratio !== null && c.net_cash_ratio >= ncpMin);
+  }
   currentPage = 1;
   renderList(currentSort, filtered);
 }
@@ -86,6 +91,7 @@ function clearScreenFilter() {
   document.getElementById('filter-roe').value = '';
   document.getElementById('filter-margin').value = '';
   document.getElementById('filter-cap').value = '';
+  document.getElementById('filter-ncp').value = '';
   filterList();
 }
 
@@ -238,10 +244,15 @@ function renderList(sortKey, data = allData) {
             <span class="metric-value">${company.roa.toFixed(1)} %</span>
           </div>` : ''}
           ${company.operating_margin !== null ? `
-          <div class="metric-item">
-            <span class="metric-label">営業利益率</span>
-            <span class="metric-value">${company.operating_margin.toFixed(1)} %</span>
-          </div>` : ''}
+            <div class="metric-item">
+              <span class="metric-label">営業利益率</span>
+              <span class="metric-value">${company.operating_margin.toFixed(1)} %</span>
+            </div>` : ''}
+            ${company.net_cash_ratio !== null ? `
+            <div class="metric-item">
+              <span class="metric-label">NC比率</span>
+              <span class="metric-value">${company.net_cash_ratio.toFixed(1)} %</span>
+            </div>` : ''}
         </div>
         <div class="financial-row">
           <span class="financial-label">参考株価</span>

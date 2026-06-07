@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-07 07:57:03",
+  "updated_at": "2026-06-07 14:31:41",
   "companies": [
     {
       "code": "135A",
@@ -21,7 +21,10 @@
         "total_assets": 3215000000,
         "equity": 2086000000,
         "operating_cf": -374000000,
-        "investing_cf": -94000000
+        "investing_cf": -94000000,
+        "cash": 427000000,
+        "interest_bearing_debt": 0,
+        "net_cash": 298900000
       }
     },
     {
@@ -45,7 +48,10 @@
         "equity": 30229393000,
         "operating_cf": 4884559000,
         "investing_cf": -2423085000,
-        "dividend_per_share": 50.0
+        "dividend_per_share": 50.0,
+        "cash": 17839451000,
+        "interest_bearing_debt": 0,
+        "net_cash": 12487615700
       }
     },
     {
@@ -68,7 +74,10 @@
         "total_assets": 2703501000,
         "equity": -343094000,
         "operating_cf": -704735000,
-        "investing_cf": -3989674000
+        "investing_cf": -3989674000,
+        "cash": 192468000,
+        "interest_bearing_debt": 0,
+        "net_cash": 134727600
       }
     },
     {
@@ -92,7 +101,10 @@
         "equity": 81823000000,
         "operating_cf": 20566000000,
         "investing_cf": -9515000000,
-        "dividend_per_share": 90.0
+        "dividend_per_share": 90.0,
+        "cash": 24820000000,
+        "interest_bearing_debt": 0,
+        "net_cash": 17374000000
       }
     },
     {
@@ -116,7 +128,10 @@
         "equity": 86167000000,
         "operating_cf": 21332000000,
         "investing_cf": -4215000000,
-        "dividend_per_share": 40.0
+        "dividend_per_share": 40.0,
+        "cash": 96264000000,
+        "interest_bearing_debt": 11618000000,
+        "net_cash": 55766799999
       }
     },
     {
@@ -140,7 +155,10 @@
         "equity": 5916253000,
         "operating_cf": 1439389000,
         "investing_cf": 775565000,
-        "dividend_per_share": 50.0
+        "dividend_per_share": 50.0,
+        "cash": 685658000,
+        "interest_bearing_debt": 4285642000,
+        "net_cash": -3805681400
       }
     },
     {
@@ -164,7 +182,10 @@
         "equity": 7695997000,
         "operating_cf": 1072106000,
         "investing_cf": -1772620000,
-        "dividend_per_share": 100.0
+        "dividend_per_share": 100.0,
+        "cash": 10681634000,
+        "interest_bearing_debt": 6504743000,
+        "net_cash": 972400800
       }
     },
     {
@@ -188,7 +209,10 @@
         "equity": 2187944000,
         "operating_cf": 440620000,
         "investing_cf": -346600000,
-        "dividend_per_share": 5.0
+        "dividend_per_share": 5.0,
+        "cash": 1098694000,
+        "interest_bearing_debt": 2303708000,
+        "net_cash": -1534622200
       }
     },
     {
@@ -211,7 +235,10 @@
         "total_assets": 5082510000,
         "equity": 883599000,
         "operating_cf": 505780000,
-        "investing_cf": -428496000
+        "investing_cf": -428496000,
+        "cash": 1535457000,
+        "interest_bearing_debt": 1569745000,
+        "net_cash": -494925100
       }
     },
     {
@@ -235,7 +262,10 @@
         "equity": 11477000000,
         "operating_cf": 4728000000,
         "investing_cf": -5863000000,
-        "dividend_per_share": 15.0
+        "dividend_per_share": 15.0,
+        "cash": 2324000000,
+        "interest_bearing_debt": 5114000000,
+        "net_cash": -3487200000
       }
     },
     {
@@ -258,7 +288,10 @@
         "total_assets": 61028441000,
         "equity": 19253264000,
         "operating_cf": -2503037000,
-        "investing_cf": -2037537000
+        "investing_cf": -2037537000,
+        "cash": 8288749000,
+        "interest_bearing_debt": 22599552000,
+        "net_cash": -16797427700
       }
     },
     {
@@ -282,7 +315,10 @@
         "equity": 62131000000,
         "operating_cf": 16960000000,
         "investing_cf": -13482000000,
-        "dividend_per_share": 120.0
+        "dividend_per_share": 120.0,
+        "cash": 10378000000,
+        "interest_bearing_debt": 25494000000,
+        "net_cash": -18229400000
       }
     },
     {
@@ -306,7 +342,10 @@
         "equity": 20053000000,
         "operating_cf": 4196000000,
         "investing_cf": -428000000,
-        "dividend_per_share": 29.0
+        "dividend_per_share": 29.0,
+        "cash": 6214000000,
+        "interest_bearing_debt": 2751000000,
+        "net_cash": 1598800000
       }
     },
     {
@@ -329,7 +368,10 @@
         "total_assets": 4013585000,
         "equity": 1355547000,
         "operating_cf": 255417000,
-        "investing_cf": -239957000
+        "investing_cf": -239957000,
+        "cash": 1886902000,
+        "interest_bearing_debt": 236128000,
+        "net_cash": 1084703400
       }
     },
     {
@@ -353,7 +395,10 @@
         "equity": 3407606000,
         "operating_cf": 912584000,
         "investing_cf": -620506000,
-        "dividend_per_share": 11.0
+        "dividend_per_share": 11.0,
+        "cash": 2635312000,
+        "interest_bearing_debt": 1240840000,
+        "net_cash": 603878400
       }
     },
     {
@@ -376,7 +421,10 @@
         "total_assets": 2154410000,
         "equity": 1987878000,
         "operating_cf": 181193000,
-        "investing_cf": -123953000
+        "investing_cf": -123953000,
+        "cash": 1287720000,
+        "interest_bearing_debt": 0,
+        "net_cash": 901404000
       }
     },
     {
@@ -400,7 +448,10 @@
         "equity": 298177000000,
         "operating_cf": 36541000000,
         "investing_cf": -11361000000,
-        "dividend_per_share": 47.0
+        "dividend_per_share": 47.0,
+        "cash": 85094000000,
+        "interest_bearing_debt": 239412000000,
+        "net_cash": -179846200000
       }
     },
     {
@@ -423,7 +474,10 @@
         "total_assets": 10722007000,
         "equity": 1719842000,
         "operating_cf": 1610525000,
-        "investing_cf": -322678000
+        "investing_cf": -322678000,
+        "cash": 2350823000,
+        "interest_bearing_debt": 6342245000,
+        "net_cash": -4696668900
       }
     },
     {
@@ -447,7 +501,10 @@
         "equity": 1710146000,
         "operating_cf": 505369000,
         "investing_cf": -221419000,
-        "dividend_per_share": 5.0
+        "dividend_per_share": 5.0,
+        "cash": 1871787000,
+        "interest_bearing_debt": 103214000,
+        "net_cash": 1207036900
       }
     },
     {
@@ -471,7 +528,10 @@
         "equity": 8774558000,
         "operating_cf": 2081573000,
         "investing_cf": -1278395000,
-        "dividend_per_share": 14.0
+        "dividend_per_share": 14.0,
+        "cash": 4440735000,
+        "interest_bearing_debt": 0,
+        "net_cash": 3108514500
       }
     },
     {
@@ -495,7 +555,10 @@
         "equity": 5931655000,
         "operating_cf": 271335000,
         "investing_cf": -693187000,
-        "dividend_per_share": 13.0
+        "dividend_per_share": 13.0,
+        "cash": 3019184000,
+        "interest_bearing_debt": 641993000,
+        "net_cash": 1471435799
       }
     },
     {
@@ -519,7 +582,10 @@
         "equity": 2837685000,
         "operating_cf": -130303000,
         "investing_cf": -530456000,
-        "dividend_per_share": 10.0
+        "dividend_per_share": 10.0,
+        "cash": 1832352000,
+        "interest_bearing_debt": 36620000,
+        "net_cash": 1246026400
       }
     },
     {
@@ -543,7 +609,10 @@
         "equity": 3789955000,
         "operating_cf": 1072744000,
         "investing_cf": -290428000,
-        "dividend_per_share": 135.0
+        "dividend_per_share": 135.0,
+        "cash": 1671856000,
+        "interest_bearing_debt": 1106269000,
+        "net_cash": 64030200
       }
     },
     {
@@ -567,7 +636,10 @@
         "equity": 3400617000,
         "operating_cf": 463963000,
         "investing_cf": -250088000,
-        "dividend_per_share": 10.0
+        "dividend_per_share": 10.0,
+        "cash": 1413462000,
+        "interest_bearing_debt": 1646592000,
+        "net_cash": -657168600
       }
     },
     {
@@ -590,7 +662,10 @@
         "total_assets": 1007252000,
         "equity": 552125000,
         "operating_cf": 87520000,
-        "investing_cf": -48364000
+        "investing_cf": -48364000,
+        "cash": 224393000,
+        "interest_bearing_debt": 0,
+        "net_cash": 157075100
       }
     },
     {
@@ -613,7 +688,10 @@
         "total_assets": 1712008000,
         "equity": 21318000,
         "operating_cf": -928523000,
-        "investing_cf": -68592000
+        "investing_cf": -68592000,
+        "cash": 196060000,
+        "interest_bearing_debt": 0,
+        "net_cash": 137242000
       }
     },
     {
@@ -637,7 +715,10 @@
         "equity": 10820000000,
         "operating_cf": -5639000000,
         "investing_cf": 356000000,
-        "dividend_per_share": 30.0
+        "dividend_per_share": 30.0,
+        "cash": 7870000000,
+        "interest_bearing_debt": 6195000000,
+        "net_cash": -686000000
       }
     },
     {
@@ -660,7 +741,10 @@
         "total_assets": 2888385000,
         "equity": 1558630000,
         "operating_cf": 349810000,
-        "investing_cf": -164452000
+        "investing_cf": -164452000,
+        "cash": 1646775000,
+        "interest_bearing_debt": 824947000,
+        "net_cash": 327795500
       }
     },
     {
@@ -684,7 +768,10 @@
         "equity": 19651000000,
         "operating_cf": 830000000,
         "investing_cf": 2110000000,
-        "dividend_per_share": 20.0
+        "dividend_per_share": 20.0,
+        "cash": 9211000000,
+        "interest_bearing_debt": 0,
+        "net_cash": 6447700000
       }
     },
     {
@@ -706,7 +793,10 @@
         "shares_issued": 7823150,
         "total_assets": 9389000000,
         "equity": 3583000000,
-        "dividend_per_share": 30.0
+        "dividend_per_share": 30.0,
+        "cash": 568000000,
+        "interest_bearing_debt": 2494000000,
+        "net_cash": -2096400000
       }
     },
     {
@@ -729,7 +819,10 @@
         "total_assets": 170851000000,
         "equity": 57309000000,
         "operating_cf": 13967000000,
-        "investing_cf": 1843000000
+        "investing_cf": 1843000000,
+        "cash": 45383000000,
+        "interest_bearing_debt": 75813000000,
+        "net_cash": -44044900000
       }
     },
     {
@@ -753,7 +846,10 @@
         "equity": 3986242000,
         "operating_cf": -250386000,
         "investing_cf": -284345000,
-        "dividend_per_share": 30.0
+        "dividend_per_share": 30.0,
+        "cash": 3852722000,
+        "interest_bearing_debt": 7714279000,
+        "net_cash": -5017373600
       }
     },
     {
@@ -775,7 +871,10 @@
         "shares_issued": 46271400,
         "total_assets": 23152000000,
         "equity": 19999000000,
-        "dividend_per_share": 60.0
+        "dividend_per_share": 60.0,
+        "cash": 3463000000,
+        "interest_bearing_debt": 0,
+        "net_cash": 2424100000
       }
     },
     {
@@ -799,7 +898,10 @@
         "equity": 14705000000,
         "operating_cf": 819000000,
         "investing_cf": 560000000,
-        "dividend_per_share": 38.0
+        "dividend_per_share": 38.0,
+        "cash": 11319000000,
+        "interest_bearing_debt": 6000000000,
+        "net_cash": 1923299999
       }
     },
     {
@@ -822,7 +924,10 @@
         "total_assets": 3891869000,
         "equity": 527061000,
         "operating_cf": 199276000,
-        "investing_cf": -602162000
+        "investing_cf": -602162000,
+        "cash": 1318867000,
+        "interest_bearing_debt": 2580561000,
+        "net_cash": -1657354100
       }
     },
     {
@@ -846,7 +951,10 @@
         "equity": 8560767000,
         "operating_cf": 1763190000,
         "investing_cf": -1362848000,
-        "dividend_per_share": 30.0
+        "dividend_per_share": 30.0,
+        "cash": 2934837000,
+        "interest_bearing_debt": 442215000,
+        "net_cash": 1612170899
       }
     },
     {
@@ -870,7 +978,10 @@
         "equity": 6046159000,
         "operating_cf": 354030000,
         "investing_cf": -633050000,
-        "dividend_per_share": 5.0
+        "dividend_per_share": 5.0,
+        "cash": 2883045000,
+        "interest_bearing_debt": 2613930000,
+        "net_cash": -595798500
       }
     },
     {
@@ -894,7 +1005,10 @@
         "equity": 19221000000,
         "operating_cf": 2454000000,
         "investing_cf": -426000000,
-        "dividend_per_share": 40.0
+        "dividend_per_share": 40.0,
+        "cash": 14014000000,
+        "interest_bearing_debt": 2646000000,
+        "net_cash": 7163800000
       }
     },
     {
@@ -918,7 +1032,10 @@
         "equity": 4465003000,
         "operating_cf": 693432000,
         "investing_cf": -688894000,
-        "dividend_per_share": 13.0
+        "dividend_per_share": 13.0,
+        "cash": 2351453000,
+        "interest_bearing_debt": 13000000,
+        "net_cash": 1633017100
       }
     },
     {
@@ -941,7 +1058,10 @@
         "total_assets": 7133433000,
         "equity": 1878619000,
         "operating_cf": -14927000,
-        "investing_cf": -310083000
+        "investing_cf": -310083000,
+        "cash": 1814115000,
+        "interest_bearing_debt": 3015240000,
+        "net_cash": -1745359500
       }
     },
     {
@@ -964,7 +1084,10 @@
         "total_assets": 687135000,
         "equity": 363295000,
         "operating_cf": 18482000,
-        "investing_cf": -29414000
+        "investing_cf": -29414000,
+        "cash": 307250000,
+        "interest_bearing_debt": 156658000,
+        "net_cash": 58417000
       }
     },
     {
@@ -987,7 +1110,10 @@
         "total_assets": 3043731000,
         "equity": 1879437000,
         "operating_cf": 113044000,
-        "investing_cf": -2113000
+        "investing_cf": -2113000,
+        "cash": 1797325000,
+        "interest_bearing_debt": 362774000,
+        "net_cash": 895353500
       }
     },
     {
@@ -1011,7 +1137,10 @@
         "equity": 7772939000,
         "operating_cf": 2341903000,
         "investing_cf": -1511308000,
-        "dividend_per_share": 20.0
+        "dividend_per_share": 20.0,
+        "cash": 3060349000,
+        "interest_bearing_debt": 0,
+        "net_cash": 2142244299
       }
     },
     {
@@ -1033,7 +1162,10 @@
         "shares_issued": 32148708,
         "total_assets": 9077801000,
         "equity": 6302664000,
-        "dividend_per_share": 7.58
+        "dividend_per_share": 7.58,
+        "cash": 2354005000,
+        "interest_bearing_debt": 1342403000,
+        "net_cash": 305400500
       }
     },
     {
@@ -1056,7 +1188,10 @@
         "total_assets": 9632660000,
         "equity": 3316427000,
         "operating_cf": 697070000,
-        "investing_cf": -34671000
+        "investing_cf": -34671000,
+        "cash": 3939457000,
+        "interest_bearing_debt": 0,
+        "net_cash": 2757619900
       }
     },
     {
@@ -1079,7 +1214,10 @@
         "total_assets": 8091624000,
         "equity": 1813415000,
         "operating_cf": 1292027000,
-        "investing_cf": -382991000
+        "investing_cf": -382991000,
+        "cash": 5003357000,
+        "interest_bearing_debt": 2373812000,
+        "net_cash": 1128537900
       }
     },
     {
@@ -1102,7 +1240,10 @@
         "total_assets": 5211568000,
         "equity": 3922941000,
         "operating_cf": 517760000,
-        "investing_cf": -104012000
+        "investing_cf": -104012000,
+        "cash": 973433000,
+        "interest_bearing_debt": 900000000,
+        "net_cash": -218596900
       }
     },
     {
@@ -1126,7 +1267,10 @@
         "equity": 2521610000,
         "operating_cf": 1365164000,
         "investing_cf": 280488000,
-        "dividend_per_share": 10.0
+        "dividend_per_share": 10.0,
+        "cash": 4127234000,
+        "interest_bearing_debt": 5953215000,
+        "net_cash": -3064151200
       }
     },
     {
@@ -1150,7 +1294,10 @@
         "equity": 15253029000,
         "operating_cf": 3060875000,
         "investing_cf": -271348000,
-        "dividend_per_share": 80.0
+        "dividend_per_share": 80.0,
+        "cash": 6046015000,
+        "interest_bearing_debt": 0,
+        "net_cash": 4232210499
       }
     },
     {
@@ -1174,7 +1321,10 @@
         "equity": 4244033000,
         "operating_cf": 140192000,
         "investing_cf": 118675000,
-        "dividend_per_share": 30.0
+        "dividend_per_share": 30.0,
+        "cash": 1080500000,
+        "interest_bearing_debt": 4382501000,
+        "net_cash": -3626151000
       }
     },
     {
@@ -1198,7 +1348,10 @@
         "equity": 26883000000,
         "operating_cf": 2982000000,
         "investing_cf": -729000000,
-        "dividend_per_share": 55.0
+        "dividend_per_share": 55.0,
+        "cash": 6914000000,
+        "interest_bearing_debt": 1108000000,
+        "net_cash": 3731800000
       }
     },
     {
@@ -1221,7 +1374,10 @@
         "total_assets": 1357966000,
         "equity": 1112053000,
         "operating_cf": 27255000,
-        "investing_cf": 137552000
+        "investing_cf": 137552000,
+        "cash": 855904000,
+        "interest_bearing_debt": 0,
+        "net_cash": 599132800
       }
     },
     {
@@ -1245,7 +1401,10 @@
         "equity": 5653393000,
         "operating_cf": 1338434000,
         "investing_cf": -30601000,
-        "dividend_per_share": 15.0
+        "dividend_per_share": 15.0,
+        "cash": 2217755000,
+        "interest_bearing_debt": 2142058000,
+        "net_cash": -589629500
       }
     },
     {
@@ -1269,7 +1428,10 @@
         "equity": 13687029000,
         "operating_cf": 535159000,
         "investing_cf": -819021000,
-        "dividend_per_share": 20.0
+        "dividend_per_share": 20.0,
+        "cash": 2569821000,
+        "interest_bearing_debt": 0,
+        "net_cash": 1798874700
       }
     },
     {
@@ -1293,7 +1455,10 @@
         "equity": 27141000000,
         "operating_cf": 10349000000,
         "investing_cf": -3149000000,
-        "dividend_per_share": 33.0
+        "dividend_per_share": 33.0,
+        "cash": 22273000000,
+        "interest_bearing_debt": 4705000000,
+        "net_cash": 10886099999
       }
     },
     {
@@ -1316,7 +1481,10 @@
         "total_assets": 411395000,
         "equity": -223181000,
         "operating_cf": -656165000,
-        "investing_cf": 515867000
+        "investing_cf": 515867000,
+        "cash": 89552000,
+        "interest_bearing_debt": 182659000,
+        "net_cash": -119972600
       }
     },
     {
@@ -1340,7 +1508,10 @@
         "equity": 22343225000,
         "operating_cf": 1003970000,
         "investing_cf": -174915000,
-        "dividend_per_share": 15.0
+        "dividend_per_share": 15.0,
+        "cash": 9556969000,
+        "interest_bearing_debt": 326314000,
+        "net_cash": 6363564300
       }
     },
     {
@@ -1363,7 +1534,10 @@
         "total_assets": 4676128000,
         "equity": 2007969000,
         "operating_cf": 332563000,
-        "investing_cf": -156835000
+        "investing_cf": -156835000,
+        "cash": 2904477000,
+        "interest_bearing_debt": 1359143000,
+        "net_cash": 673990899
       }
     },
     {
@@ -1387,7 +1561,10 @@
         "equity": 5838809000,
         "operating_cf": 824671000,
         "investing_cf": -113124000,
-        "dividend_per_share": 33.0
+        "dividend_per_share": 33.0,
+        "cash": 2583887000,
+        "interest_bearing_debt": 4135387000,
+        "net_cash": -2326666100
       }
     },
     {
@@ -1410,7 +1587,10 @@
         "total_assets": 19512000000,
         "equity": 9720000000,
         "operating_cf": 3080000000,
-        "investing_cf": -420000000
+        "investing_cf": -420000000,
+        "cash": 2013000000,
+        "interest_bearing_debt": 4343000000,
+        "net_cash": -2933900000
       }
     },
     {
@@ -1434,7 +1614,10 @@
         "equity": 186935000000,
         "operating_cf": 22889000000,
         "investing_cf": -3758000000,
-        "dividend_per_share": 210.0
+        "dividend_per_share": 210.0,
+        "cash": 56235000000,
+        "interest_bearing_debt": 0,
+        "net_cash": 39364500000
       }
     },
     {
@@ -1456,7 +1639,10 @@
         "shares_issued": 155411410,
         "total_assets": 77498000000,
         "equity": 60822000000,
-        "dividend_per_share": 100.0
+        "dividend_per_share": 100.0,
+        "cash": 13849000000,
+        "interest_bearing_debt": 263000000,
+        "net_cash": 9431300000
       }
     },
     {
@@ -1480,7 +1666,10 @@
         "equity": 1073007000,
         "operating_cf": 88970000,
         "investing_cf": -93191000,
-        "dividend_per_share": 9.0
+        "dividend_per_share": 9.0,
+        "cash": 1460042000,
+        "interest_bearing_debt": 253896000,
+        "net_cash": 768133399
       }
     },
     {
@@ -1503,7 +1692,10 @@
         "total_assets": 4806624000,
         "equity": 3659400000,
         "operating_cf": 106756000,
-        "investing_cf": -50993000
+        "investing_cf": -50993000,
+        "cash": 2098898000,
+        "interest_bearing_debt": 106269000,
+        "net_cash": 1362959600
       }
     },
     {
@@ -1526,7 +1718,10 @@
         "total_assets": 1840485000,
         "equity": 1388689000,
         "operating_cf": -157955000,
-        "investing_cf": -431084000
+        "investing_cf": -431084000,
+        "cash": 455389000,
+        "interest_bearing_debt": 0,
+        "net_cash": 318772300
       }
     },
     {
@@ -1550,7 +1745,10 @@
         "equity": 1218505000,
         "operating_cf": 27265000,
         "investing_cf": -333026000,
-        "dividend_per_share": 25.0
+        "dividend_per_share": 25.0,
+        "cash": 1045230000,
+        "interest_bearing_debt": 622908000,
+        "net_cash": 108753000
       }
     },
     {
@@ -1574,7 +1772,10 @@
         "equity": 12178415000,
         "operating_cf": 3980462000,
         "investing_cf": -149576000,
-        "dividend_per_share": 30.0
+        "dividend_per_share": 30.0,
+        "cash": 6230654000,
+        "interest_bearing_debt": 0,
+        "net_cash": 4361457800
       }
     },
     {
@@ -1598,7 +1799,10 @@
         "equity": 3534703000,
         "operating_cf": 2164825000,
         "investing_cf": -404427000,
-        "dividend_per_share": 30.0
+        "dividend_per_share": 30.0,
+        "cash": 923235000,
+        "interest_bearing_debt": 5483621000,
+        "net_cash": -4837356500
       }
     },
     {
@@ -1622,7 +1826,10 @@
         "equity": 173849000000,
         "operating_cf": 22990000000,
         "investing_cf": -20650000000,
-        "dividend_per_share": 130.0
+        "dividend_per_share": 130.0,
+        "cash": 13300000000,
+        "interest_bearing_debt": 153070000000,
+        "net_cash": -143760000000
       }
     },
     {
@@ -1646,7 +1853,10 @@
         "equity": 4852000000,
         "operating_cf": 1090000000,
         "investing_cf": -3000000,
-        "dividend_per_share": 18.0
+        "dividend_per_share": 18.0,
+        "cash": 4768000000,
+        "interest_bearing_debt": 0,
+        "net_cash": 3337600000
       }
     },
     {
@@ -1669,7 +1879,10 @@
         "total_assets": 3953928000,
         "equity": 879102000,
         "operating_cf": 487843000,
-        "investing_cf": -232883000
+        "investing_cf": -232883000,
+        "cash": 841144000,
+        "interest_bearing_debt": 204614000,
+        "net_cash": 384186800
       }
     },
     {
@@ -1693,7 +1906,10 @@
         "equity": 6656305000,
         "operating_cf": 835928000,
         "investing_cf": -174322000,
-        "dividend_per_share": 47.0
+        "dividend_per_share": 47.0,
+        "cash": 4183339000,
+        "interest_bearing_debt": 0,
+        "net_cash": 2928337300
       }
     },
     {
@@ -1717,7 +1933,10 @@
         "equity": 6975921000,
         "operating_cf": 1936639000,
         "investing_cf": -693387000,
-        "dividend_per_share": 5.0
+        "dividend_per_share": 5.0,
+        "cash": 2983952000,
+        "interest_bearing_debt": 1165757000,
+        "net_cash": 923009399
       }
     },
     {
@@ -1741,7 +1960,10 @@
         "equity": 32885000000,
         "operating_cf": 5594000000,
         "investing_cf": -4932000000,
-        "dividend_per_share": 16.0
+        "dividend_per_share": 16.0,
+        "cash": 13048000000,
+        "interest_bearing_debt": 224000000,
+        "net_cash": 8909600000
       }
     },
     {
@@ -1764,7 +1986,10 @@
         "total_assets": 1152061000,
         "equity": 767532000,
         "operating_cf": -290200000,
-        "investing_cf": -1853000
+        "investing_cf": -1853000,
+        "cash": 559134000,
+        "interest_bearing_debt": 192455000,
+        "net_cash": 198938800
       }
     },
     {
@@ -1787,7 +2012,10 @@
         "total_assets": 5037242000,
         "equity": 1902474000,
         "operating_cf": 556799000,
-        "investing_cf": -134205000
+        "investing_cf": -134205000,
+        "cash": 1246494000,
+        "interest_bearing_debt": 1360768000,
+        "net_cash": -488222200
       }
     },
     {
@@ -1811,7 +2039,10 @@
         "equity": 3526473000,
         "operating_cf": 683436000,
         "investing_cf": -442687000,
-        "dividend_per_share": 13.0
+        "dividend_per_share": 13.0,
+        "cash": 1331473000,
+        "interest_bearing_debt": 190000000,
+        "net_cash": 742031100
       }
     },
     {
@@ -1834,7 +2065,10 @@
         "total_assets": 11239438000,
         "equity": 1652845000,
         "operating_cf": 725450000,
-        "investing_cf": -1312173000
+        "investing_cf": -1312173000,
+        "cash": 1171854000,
+        "interest_bearing_debt": 7153130000,
+        "net_cash": -6332832200
       }
     },
     {
@@ -1858,7 +2092,10 @@
         "equity": 5022615000,
         "operating_cf": -191035000,
         "investing_cf": -819383000,
-        "dividend_per_share": 30.0
+        "dividend_per_share": 30.0,
+        "cash": 3157578000,
+        "interest_bearing_debt": 846428000,
+        "net_cash": 1363876600
       }
     },
     {
@@ -1882,7 +2119,10 @@
         "equity": 37694000000,
         "operating_cf": 6939000000,
         "investing_cf": 1141000000,
-        "dividend_per_share": 59.0
+        "dividend_per_share": 59.0,
+        "cash": 10721000000,
+        "interest_bearing_debt": 0,
+        "net_cash": 7504700000
       }
     },
     {
@@ -1906,7 +2146,10 @@
         "equity": 41067000000,
         "operating_cf": 1102000000,
         "investing_cf": 2266000000,
-        "dividend_per_share": 83.0
+        "dividend_per_share": 83.0,
+        "cash": 1326000000,
+        "interest_bearing_debt": 8000000000,
+        "net_cash": -7071800000
       }
     },
     {
@@ -1930,7 +2173,10 @@
         "equity": 40923000000,
         "operating_cf": 995000000,
         "investing_cf": 1637000000,
-        "dividend_per_share": 139.0
+        "dividend_per_share": 139.0,
+        "cash": 18492000000,
+        "interest_bearing_debt": 7325000000,
+        "net_cash": 5619400000
       }
     },
     {
@@ -1954,7 +2200,10 @@
         "equity": 93588000000,
         "operating_cf": 8249000000,
         "investing_cf": 6390000000,
-        "dividend_per_share": 30.0
+        "dividend_per_share": 30.0,
+        "cash": 19715000000,
+        "interest_bearing_debt": 22362000000,
+        "net_cash": -8561500000
       }
     },
     {
@@ -1977,7 +2226,10 @@
         "total_assets": 3247128000,
         "equity": 746654000,
         "operating_cf": -473206000,
-        "investing_cf": -1235000
+        "investing_cf": -1235000,
+        "cash": 490325000,
+        "interest_bearing_debt": 720185000,
+        "net_cash": -376957500
       }
     },
     {
@@ -2001,7 +2253,10 @@
         "equity": 7387360000,
         "operating_cf": 627135000,
         "investing_cf": -150231000,
-        "dividend_per_share": 15.0
+        "dividend_per_share": 15.0,
+        "cash": 1873805000,
+        "interest_bearing_debt": 1671200000,
+        "net_cash": -359536500
       }
     },
     {
@@ -2025,7 +2280,10 @@
         "equity": 155534000000,
         "operating_cf": 74477000000,
         "investing_cf": -11206000000,
-        "dividend_per_share": 65.5
+        "dividend_per_share": 65.5,
+        "cash": 26592000000,
+        "interest_bearing_debt": 29524000000,
+        "net_cash": -10909600000
       }
     },
     {
@@ -2049,7 +2307,10 @@
         "equity": 15231157000,
         "operating_cf": 2945495000,
         "investing_cf": -2037233000,
-        "dividend_per_share": 13.0
+        "dividend_per_share": 13.0,
+        "cash": 2296898000,
+        "interest_bearing_debt": 7467218000,
+        "net_cash": -5859389400
       }
     },
     {
@@ -2073,7 +2334,10 @@
         "equity": 27478000000,
         "operating_cf": 4722000000,
         "investing_cf": 143000000,
-        "dividend_per_share": 12.0
+        "dividend_per_share": 12.0,
+        "cash": 4694000000,
+        "interest_bearing_debt": 12826000000,
+        "net_cash": -9540200000
       }
     },
     {
@@ -2096,7 +2360,10 @@
         "total_assets": 27596184000,
         "equity": 5436232000,
         "operating_cf": 1093823000,
-        "investing_cf": -177992000
+        "investing_cf": -177992000,
+        "cash": 2562620000,
+        "interest_bearing_debt": 2844419000,
+        "net_cash": -1050585000
       }
     },
     {
@@ -2120,7 +2387,10 @@
         "equity": 12207000000,
         "operating_cf": 1831000000,
         "investing_cf": -300000000,
-        "dividend_per_share": 6.0
+        "dividend_per_share": 6.0,
+        "cash": 2635000000,
+        "interest_bearing_debt": 1174000000,
+        "net_cash": 670500000
       }
     },
     {
@@ -2143,7 +2413,10 @@
         "total_assets": 64648000000,
         "equity": 21062000000,
         "operating_cf": 3449000000,
-        "investing_cf": -539000000
+        "investing_cf": -539000000,
+        "cash": 3597000000,
+        "interest_bearing_debt": 16741000000,
+        "net_cash": -14223100000
       }
     },
     {
@@ -2167,7 +2440,10 @@
         "equity": 39204000000,
         "operating_cf": 5901000000,
         "investing_cf": -3880000000,
-        "dividend_per_share": 90.0
+        "dividend_per_share": 90.0,
+        "cash": 19527000000,
+        "interest_bearing_debt": 7000000000,
+        "net_cash": 6668900000
       }
     },
     {
@@ -2190,7 +2466,10 @@
         "total_assets": 10356755000,
         "equity": 9193589000,
         "operating_cf": -949733000,
-        "investing_cf": -12978000
+        "investing_cf": -12978000,
+        "cash": 2910636000,
+        "interest_bearing_debt": 381649000,
+        "net_cash": 1655796199
       }
     },
     {
@@ -2212,7 +2491,10 @@
         "shares_issued": 24878540,
         "total_assets": 5521390000,
         "equity": 3597442000,
-        "dividend_per_share": 21.0
+        "dividend_per_share": 21.0,
+        "cash": 2659830000,
+        "interest_bearing_debt": 1063790000,
+        "net_cash": 798091000
       }
     },
     {
@@ -2236,7 +2518,10 @@
         "equity": 39510000,
         "operating_cf": -179225000,
         "investing_cf": -182428000,
-        "dividend_per_share": 2.0
+        "dividend_per_share": 2.0,
+        "cash": 1124643000,
+        "interest_bearing_debt": 1002848000,
+        "net_cash": -215597900
       }
     },
     {
@@ -2260,7 +2545,10 @@
         "equity": 2244094000,
         "operating_cf": 494040000,
         "investing_cf": -1059911000,
-        "dividend_per_share": 10.0
+        "dividend_per_share": 10.0,
+        "cash": 2445892000,
+        "interest_bearing_debt": 6532621000,
+        "net_cash": -4820496600
       }
     },
     {
@@ -2284,7 +2572,10 @@
         "equity": 44189255000,
         "operating_cf": 5583854000,
         "investing_cf": -5185881000,
-        "dividend_per_share": 60.0
+        "dividend_per_share": 60.0,
+        "cash": 16211071000,
+        "interest_bearing_debt": 2163635000,
+        "net_cash": 9184114700
       }
     },
     {
@@ -2308,7 +2599,10 @@
         "equity": 3621300000,
         "operating_cf": 274481000,
         "investing_cf": -125081000,
-        "dividend_per_share": 120.0
+        "dividend_per_share": 120.0,
+        "cash": 752936000,
+        "interest_bearing_debt": 1577465000,
+        "net_cash": -1050409800
       }
     },
     {
@@ -2332,7 +2626,10 @@
         "equity": 83403000000,
         "operating_cf": 10984000000,
         "investing_cf": -4071000000,
-        "dividend_per_share": 76.0
+        "dividend_per_share": 76.0,
+        "cash": 18301000000,
+        "interest_bearing_debt": 4425000000,
+        "net_cash": 8385700000
       }
     },
     {
@@ -2356,7 +2653,10 @@
         "equity": 12590348000,
         "operating_cf": 1663261000,
         "investing_cf": -3015389000,
-        "dividend_per_share": 10.0
+        "dividend_per_share": 10.0,
+        "cash": 1853155000,
+        "interest_bearing_debt": 14616630000,
+        "net_cash": -13319421500
       }
     },
     {
@@ -2380,7 +2680,10 @@
         "equity": 6798064000,
         "operating_cf": 783067000,
         "investing_cf": -395560000,
-        "dividend_per_share": 20.0
+        "dividend_per_share": 20.0,
+        "cash": 989888000,
+        "interest_bearing_debt": 6751877000,
+        "net_cash": -6058955400
       }
     },
     {
@@ -2404,7 +2707,10 @@
         "equity": 26744000000,
         "operating_cf": 5950000000,
         "investing_cf": 1059000000,
-        "dividend_per_share": 27.0
+        "dividend_per_share": 27.0,
+        "cash": 4950000000,
+        "interest_bearing_debt": 4101000000,
+        "net_cash": -636000000
       }
     }
   ]
