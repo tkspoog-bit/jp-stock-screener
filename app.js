@@ -47,6 +47,11 @@ Promise.all([
 
 function filterList() {
   const query = document.getElementById('search-input').value.trim().toLowerCase();
+  const perMax = parseFloat(document.getElementById('filter-per').value);
+  const roeMin = parseFloat(document.getElementById('filter-roe').value);
+  const marginMin = parseFloat(document.getElementById('filter-margin').value);
+  const capMax = parseFloat(document.getElementById('filter-cap').value);
+
   let filtered = allData;
   if (query) {
     filtered = filtered.filter(c =>
@@ -60,8 +65,28 @@ function filterList() {
   if (currentIndustryFilter) {
     filtered = filtered.filter(c => c.industry_name === currentIndustryFilter);
   }
+  if (!isNaN(perMax)) {
+    filtered = filtered.filter(c => c.per !== null && c.per <= perMax);
+  }
+  if (!isNaN(roeMin)) {
+    filtered = filtered.filter(c => c.roe !== null && c.roe >= roeMin);
+  }
+  if (!isNaN(marginMin)) {
+    filtered = filtered.filter(c => c.operating_margin !== null && c.operating_margin >= marginMin);
+  }
+  if (!isNaN(capMax)) {
+    filtered = filtered.filter(c => c.marketCap !== null && c.marketCap <= capMax * 100000000);
+  }
   currentPage = 1;
   renderList(currentSort, filtered);
+}
+
+function clearScreenFilter() {
+  document.getElementById('filter-per').value = '';
+  document.getElementById('filter-roe').value = '';
+  document.getElementById('filter-margin').value = '';
+  document.getElementById('filter-cap').value = '';
+  filterList();
 }
 
 function setFilter(type, value, btn) {
