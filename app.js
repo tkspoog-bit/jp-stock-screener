@@ -28,7 +28,7 @@ Promise.all([
     const roa = (f.net_income && f.total_assets) ? f.net_income / f.total_assets * 100 : null;
     const operating_margin = (f.operating_profit && f.sales) ? f.operating_profit / f.sales * 100 : null;
     const net_cash_ratio = (f.net_cash && marketCap) ? f.net_cash / marketCap * 100 : null;
-    const net_net_ratio = (f.net_net && marketCap) ? f.net_net / marketCap : null;
+    const net_net_ratio = (f.net_net !== undefined && f.net_net !== null && marketCap) ? f.net_net / marketCap : null;
     return { ...company, marketCap, priceData, per, pbr, roe, roa, operating_margin, net_cash_ratio, net_net_ratio };
   });
 
@@ -78,18 +78,39 @@ function applyFilters() {
 
   let filtered = allData;
 
-  if (currentMarketFilter) {
-    filtered = filtered.filter(c => c.market === currentMarketFilter);
+  if (currentMarketFilters.length > 0) {
+    filtered = filtered.filter(c => currentMarketFilters.includes(c.market));
   }
   if (currentIndustryFilter) {
     filtered = filtered.filter(c => c.industry_name === currentIndustryFilter);
   }
-  if (!isNaN(perMax)) filtered = filtered.filter(c => c.per !== null && c.per <= perMax);
-  if (!isNaN(roeMin)) filtered = filtered.filter(c => c.roe !== null && c.roe >= roeMin);
-  if (!isNaN(marginMin)) filtered = filtered.filter(c => c.operating_margin !== null && c.operating_margin >= marginMin);
-  if (!isNaN(capMax)) filtered = filtered.filter(c => c.marketCap !== null && c.marketCap <= capMax * 100000000);
-  if (!isNaN(ncpMin)) filtered = filtered.filter(c => c.net_cash_ratio !== null && c.net_cash_ratio >= ncpMin);
-  if (!isNaN(nnMin)) filtered = filtered.filter(c => c.net_net_ratio !== null && c.net_net_ratio >= nnMin);
+  const PER_MAX = 100, ROE_MAX = 30, MARGIN_MAX = 30, CAP_MAX = 5000, NCP_MAX = 50, NN_MAX = 2.0;
+  const PER_MIN = 5, ROE_MIN = 5, MARGIN_MIN = 5, CAP_MIN = 50, NCP_MIN = 0, NN_MIN = 0.3;
+
+  if (!isNaN(perMax)) {
+    if (perMax >= PER_MAX) filtered = filtered.filter(c => c.per !== null && c.per >= perMax);
+    else filtered = filtered.filter(c => c.per !== null && c.per <= perMax);
+  }
+  if (!isNaN(roeMin)) {
+    if (roeMin <= ROE_MIN) filtered = filtered.filter(c => c.roe !== null && c.roe <= roeMin);
+    else filtered = filtered.filter(c => c.roe !== null && c.roe >= roeMin);
+  }
+  if (!isNaN(marginMin)) {
+    if (marginMin <= MARGIN_MIN) filtered = filtered.filter(c => c.operating_margin !== null && c.operating_margin <= marginMin);
+    else filtered = filtered.filter(c => c.operating_margin !== null && c.operating_margin >= marginMin);
+  }
+  if (!isNaN(capMax)) {
+    if (capMax >= CAP_MAX) filtered = filtered.filter(c => c.marketCap !== null && c.marketCap >= capMax * 100000000);
+    else filtered = filtered.filter(c => c.marketCap !== null && c.marketCap <= capMax * 100000000);
+  }
+  if (!isNaN(ncpMin)) {
+    if (ncpMin <= NCP_MIN) filtered = filtered.filter(c => c.net_cash_ratio !== null && c.net_cash_ratio <= ncpMin);
+    else filtered = filtered.filter(c => c.net_cash_ratio !== null && c.net_cash_ratio >= ncpMin);
+  }
+  if (!isNaN(nnMin)) {
+    if (nnMin <= NN_MIN) filtered = filtered.filter(c => c.net_net_ratio !== null && c.net_net_ratio <= nnMin);
+    else filtered = filtered.filter(c => c.net_net_ratio !== null && c.net_net_ratio >= nnMin);
+  }
 
   filteredData = filtered;
 }
@@ -114,10 +135,26 @@ function filterList() {
   renderList(data);
 }
 
+let currentMarketFilters = [];
+
 function setFilter(type, value, btn) {
-  currentMarketFilter = value;
-  document.querySelectorAll('.btn-group button').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
+  if (value === null) {
+    currentMarketFilters = [];
+    document.querySelectorAll('.btn-group button').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    return;
+  }
+  if (currentMarketFilters.includes(value)) {
+    currentMarketFilters = currentMarketFilters.filter(v => v !== value);
+    btn.classList.remove('active');
+  } else {
+    currentMarketFilters.push(value);
+    btn.classList.add('active');
+    document.querySelector('.btn-group button').classList.remove('active');
+  }
+  if (currentMarketFilters.length === 0) {
+    document.querySelector('.btn-group button').classList.add('active');
+  }
 }
 
 function setIndustryFilter(value) {
@@ -130,7 +167,7 @@ function sortBy(key) {
 }
 
 function clearScreenFilter() {
-  currentMarketFilter = null;
+  currentMarketFilters = [];
   currentIndustryFilter = '';
   document.querySelectorAll('.btn-group button').forEach(b => b.classList.remove('active'));
   document.querySelector('.btn-group button').classList.add('active');
