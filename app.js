@@ -1,7 +1,7 @@
 let allData = [];
 let pricesData = {};
 let currentSort = 'market_cap';
-let currentMarketFilter = null;
+let currentMarketFilters = [];
 let currentIndustryFilter = '';
 let portfolios = {};
 let currentPortfolio = null;
@@ -50,6 +50,52 @@ Promise.all([
   console.error(err);
 });
 
+const HINTS = {
+  'PER': '株価収益率。株価が1株あたり利益の何倍かを示す。低いほど割安。',
+  'PBR': '株価純資産倍率。株価が1株あたり純資産の何倍かを示す。1倍割れは解散価値以下。',
+  'ROE': '自己資本利益率。純資産に対してどれだけ利益を稼いだか。高いほど効率的。',
+  'ROA': '総資産利益率。総資産に対してどれだけ利益を稼いだか。',
+  '営業利益率': '売上に対する営業利益の割合。本業の稼ぐ力を示す。',
+  'NC比率': 'ネットキャッシュ比率。（現金×0.7−有利子負債）÷時価総額。高いほどキャッシュリッチ。清原達郎氏が重視する指標。',
+  'ネットネット': 'ネットネット倍率。（流動資産−総負債）÷時価総額。1倍以上は流動資産だけで時価総額を上回る超割安株。',
+  '時価総額': '株価×発行済株式数。会社全体の値段。',
+  '営業CF': '営業活動によるキャッシュフロー。本業で現金をどれだけ稼いだか。',
+  '投資CF': '投資活動によるキャッシュフロー。設備投資などへの支出。マイナスが多いほど積極投資。',
+};
+
+function initSettings() {
+  const saved = localStorage.getItem('show-hints');
+  const showHints = saved === null ? true : saved === 'true';
+  document.getElementById('show-hints').checked = showHints;
+
+  const hintList = document.getElementById('hint-list');
+  hintList.innerHTML = '';
+  Object.entries(HINTS).forEach(([key, desc]) => {
+    const item = document.createElement('div');
+    item.className = 'hint-item';
+    item.innerHTML = `
+      <div class="hint-label">${key}</div>
+      <div class="hint-desc">${desc}</div>
+    `;
+    hintList.appendChild(item);
+  });
+}
+
+function saveSettings() {
+  const showHints = document.getElementById('show-hints').checked;
+  localStorage.setItem('show-hints', showHints);
+}
+
+function showHint(key) {
+  const showHints = document.getElementById('show-hints').checked;
+  if (!showHints) return;
+  const desc = HINTS[key];
+  if (!desc) return;
+  alert(`${key}\n\n${desc}`);
+}
+
+
+
 // タブ切り替え
 function switchTab(tab) {
   currentTab = tab;
@@ -59,6 +105,7 @@ function switchTab(tab) {
   document.getElementById(`nav-${tab}`).classList.add('active');
   if (tab === 'result') renderList();
   if (tab === 'portfolio') renderPortfolioScreen();
+  if (tab === 'settings') initSettings();
 }
 
 // 結果画面へ
@@ -135,7 +182,6 @@ function filterList() {
   renderList(data);
 }
 
-let currentMarketFilters = [];
 
 function setFilter(type, value, btn) {
   if (value === null) {
@@ -248,13 +294,13 @@ function renderList(data) {
         ${f.investing_cf !== undefined ? `<div class="financial-row"><span class="financial-label">投資CF</span><span class="financial-value">${formatAmount(f.investing_cf)}</span></div>` : ''}
         ${f.dividend_per_share !== undefined ? `<div class="financial-row"><span class="financial-label">1株配当</span><span class="financial-value">${f.dividend_per_share} 円</span></div>` : ''}
         <div class="metrics-grid">
-          ${company.per !== null ? `<div class="metric-item"><span class="metric-label">PER</span><span class="metric-value">${company.per.toFixed(1)} 倍</span></div>` : ''}
-          ${company.pbr !== null ? `<div class="metric-item"><span class="metric-label">PBR</span><span class="metric-value">${company.pbr.toFixed(1)} 倍</span></div>` : ''}
-          ${company.roe !== null ? `<div class="metric-item"><span class="metric-label">ROE</span><span class="metric-value">${company.roe.toFixed(1)} %</span></div>` : ''}
-          ${company.roa !== null ? `<div class="metric-item"><span class="metric-label">ROA</span><span class="metric-value">${company.roa.toFixed(1)} %</span></div>` : ''}
-          ${company.operating_margin !== null ? `<div class="metric-item"><span class="metric-label">営業利益率</span><span class="metric-value">${company.operating_margin.toFixed(1)} %</span></div>` : ''}
-          ${company.net_cash_ratio !== null ? `<div class="metric-item"><span class="metric-label">NC比率</span><span class="metric-value">${company.net_cash_ratio.toFixed(1)} %</span></div>` : ''}
-          ${company.net_net_ratio !== null ? `<div class="metric-item"><span class="metric-label">ネットネット</span><span class="metric-value">${company.net_net_ratio.toFixed(2)} 倍</span></div>` : ''}
+          ${company.per !== null ? `<div class="metric-item" onclick="showHint('PER')"><span class="metric-label">PER ？</span><span class="metric-value">${company.per.toFixed(1)} 倍</span></div>` : ''}
+          ${company.pbr !== null ? `<div class="metric-item" onclick="showHint('PBR')"><span class="metric-label">PBR ？</span><span class="metric-value">${company.pbr.toFixed(1)} 倍</span></div>` : ''}
+          ${company.roe !== null ? `<div class="metric-item" onclick="showHint('ROE')"><span class="metric-label">ROE ？</span><span class="metric-value">${company.roe.toFixed(1)} %</span></div>` : ''}
+          ${company.roa !== null ? `<div class="metric-item" onclick="showHint('ROA')"><span class="metric-label">ROA ？</span><span class="metric-value">${company.roa.toFixed(1)} %</span></div>` : ''}
+          ${company.operating_margin !== null ? `<div class="metric-item" onclick="showHint('営業利益率')"><span class="metric-label">営業利益率 ？</span><span class="metric-value">${company.operating_margin.toFixed(1)} %</span></div>` : ''}
+          ${company.net_cash_ratio !== null ? `<div class="metric-item" onclick="showHint('NC比率')"><span class="metric-label">NC比率 ？</span><span class="metric-value">${company.net_cash_ratio.toFixed(1)} %</span></div>` : ''}
+          ${company.net_net_ratio !== null ? `<div class="metric-item" onclick="showHint('ネットネット')"><span class="metric-label">ネットネット ？</span><span class="metric-value">${company.net_net_ratio.toFixed(2)} 倍</span></div>` : ''}
         </div>
         <div class="financial-row"><span class="financial-label">参考株価</span><span class="financial-value">${company.priceData ? company.priceData.price.toLocaleString() + ' 円（' + company.priceData.date + '）' : '不明'}</span></div>
         <div class="financial-row"><span class="financial-label">発行済株式数</span><span class="financial-value">${formatShares(f.shares_issued)}</span></div>
