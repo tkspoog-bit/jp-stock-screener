@@ -122,13 +122,17 @@
             </label>
           </div>
         </div>
-        <div class="settings-section">
-          <h3>指標の意味</h3>
-          <div id="hint-list"></div>
-        </div>
+        
       </div>
     </div>
 
+  <!-- 用語画面 -->
+    <div id="glossary-screen" class="screen">
+      <div class="screen-content">
+        <h2>📖 用語集</h2>
+        <div id="glossary-list"></div>
+      </div>
+    </div>
 
   <!-- 下部タブ -->
   <nav id="bottom-nav">
@@ -147,6 +151,10 @@
     <button onclick="switchTab('settings')" class="nav-btn" id="nav-settings">
       <span class="nav-icon">⚙️</span>
       <span class="nav-label">設定</span>
+    </button>
+    <button onclick="switchTab('glossary')" class="nav-btn" id="nav-glossary">
+      <span class="nav-icon">📖</span>
+      <span class="nav-label">用語</span>
     </button>
   </nav>
 

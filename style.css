@@ -314,6 +314,7 @@ body {
 
 .financial-value {
   font-weight: 500;
+  cursor: pointer;
 }
 
 .market-cap .financial-value {
@@ -515,3 +516,21 @@ body {
 .metric-item:active {
   background: #eee;
 }
+
+.company-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 6px 0;
+  user-select: none;
+}
+
+.company-tag {
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-size: 0.72rem;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+}
+

@@ -61,15 +61,27 @@ const HINTS = {
   '時価総額': '株価×発行済株式数。会社全体の値段。',
   '営業CF': '営業活動によるキャッシュフロー。本業で現金をどれだけ稼いだか。',
   '投資CF': '投資活動によるキャッシュフロー。設備投資などへの支出。マイナスが多いほど積極投資。',
+  'タグ：大型株': '時価総額1兆円以上',
+  'タグ：中型株': '時価総額1000億円以上1兆円未満',
+  'タグ：小型株': '時価総額1000億円未満',
+  'タグ：高ROE': 'ROE 20%以上。自己資本を効率よく使って稼いでいる会社。',
+  'タグ：高利益率': '営業利益率 20%以上。本業で高い利益を上げている会社。',
+  'タグ：低PER': 'PER 10倍以下。株価が利益に対して割安な状態。',
+  'タグ：低PBR': 'PBR 1倍以下。株価が純資産を下回る解散価値以下の状態。',
+  'タグ：キャッシュリッチ': 'NC比率 30%以上。現金×0.7が有利子負債を大きく上回る会社。清原達郎氏が重視。',
+  'タグ：ネットネット株': 'ネットネット倍率 1倍以上。流動資産だけで時価総額を上回る超割安株。',
+  'タグ：高CF': '営業CFが純利益を上回る。実際の現金創出力が高い会社。',
 };
 
 function initSettings() {
   const saved = localStorage.getItem('show-hints');
   const showHints = saved === null ? true : saved === 'true';
   document.getElementById('show-hints').checked = showHints;
+}
 
-  const hintList = document.getElementById('hint-list');
-  hintList.innerHTML = '';
+function initGlossary() {
+  const list = document.getElementById('glossary-list');
+  list.innerHTML = '';
   Object.entries(HINTS).forEach(([key, desc]) => {
     const item = document.createElement('div');
     item.className = 'hint-item';
@@ -77,7 +89,7 @@ function initSettings() {
       <div class="hint-label">${key}</div>
       <div class="hint-desc">${desc}</div>
     `;
-    hintList.appendChild(item);
+    list.appendChild(item);
   });
 }
 
@@ -106,6 +118,7 @@ function switchTab(tab) {
   if (tab === 'result') renderList();
   if (tab === 'portfolio') renderPortfolioScreen();
   if (tab === 'settings') initSettings();
+  if (tab === 'glossary') initGlossary();
 }
 
 // 結果画面へ
@@ -275,6 +288,7 @@ function renderList(data) {
         <button class="pf-btn ${inPf ? 'in-pf' : ''}" onclick="togglePortfolio('${company.code}')">${inPf ? '★' : '☆'}</button>
       </div>
       <div class="company-code">証券コード：${company.code}${company.market ? `　${company.market}` : ''}${company.industry_name ? `　${company.industry_name}` : ''}</div>
+      <div class="company-tags">${generateTags(company)}</div>
       <div class="filing-info">
         <span>決算期：${periodLabel}</span>
         <span>提出日：${filing.submit_date || '不明'}</span>
@@ -444,6 +458,37 @@ function exportCSV() {
   a.download = `jp-stock-${new Date().toISOString().slice(0,10)}.csv`;
   a.click();
 }
+function generateTags(c) {
+  const tags = [];
+  const f = c.financials;
+
+  // 規模
+  if (c.marketCap >= 1_000_000_000_000) tags.push({ label: '大型株', color: '#1a1a2e' });
+  else if (c.marketCap >= 100_000_000_000) tags.push({ label: '中型株', color: '#2d6a9f' });
+  else if (c.marketCap) tags.push({ label: '小型株', color: '#5a8a6a' });
+
+  // 収益性
+  if (c.roe >= 20) tags.push({ label: '高ROE', color: '#e07b3a' });
+  if (c.operating_margin >= 20) tags.push({ label: '高利益率', color: '#e07b3a' });
+
+  // 割安
+  if (c.per && c.per <= 10) tags.push({ label: '低PER', color: '#9b59b6' });
+  if (c.pbr && c.pbr <= 1) tags.push({ label: '低PBR', color: '#9b59b6' });
+  if (c.net_cash_ratio >= 30) tags.push({ label: 'キャッシュリッチ', color: '#27ae60' });
+  if (c.net_net_ratio >= 1) tags.push({ label: 'ネットネット株', color: '#c0392b' });
+
+  // CF
+  if (f.operating_cf && f.net_income && f.operating_cf > f.net_income) {
+    tags.push({ label: '高CF', color: '#2980b9' });
+  }
+
+  if (tags.length === 0) return '';
+  return tags.map(t =>
+    `<span class="company-tag" style="background:${t.color}" onclick="showHint('タグ：${t.label}')">${t.label}</span>`
+  ).join('');
+}
+
+
 
 // フォーマット関数
 function formatPeriod(periodEnd) {
