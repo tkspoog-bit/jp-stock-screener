@@ -1,11 +1,12 @@
 {
-  "updated_at": "2026-06-07 14:31:41",
+  "updated_at": "2026-06-11 16:23:26",
   "companies": [
     {
       "code": "135A",
       "name": "株式会社ＶＲＡＩＮ　Ｓｏｌｕｔｉｏｎ",
       "edinet_code": "E39382",
       "doc_id": "S100Y2CG",
+      "description": "工場の機械の動きを学習し、自動化する会社です。",
       "industry_code": "5250",
       "industry_name": "情報・通信業",
       "market": "グロース（内国株式）",
@@ -24,7 +25,8 @@
         "investing_cf": -94000000,
         "cash": 427000000,
         "interest_bearing_debt": 0,
-        "net_cash": 298900000
+        "net_cash": 298900000,
+        "net_net": 1618000000
       }
     },
     {
@@ -32,6 +34,7 @@
       "name": "株式会社スタジオアリス",
       "edinet_code": "E03393",
       "doc_id": "S100Y6JW",
+      "description": "写真撮影をして、アルバムや写真にして売る会社。",
       "industry_code": "9050",
       "industry_name": "サービス業",
       "market": "スタンダード（内国株式）",
@@ -51,7 +54,8 @@
         "dividend_per_share": 50.0,
         "cash": 17839451000,
         "interest_bearing_debt": 0,
-        "net_cash": 12487615700
+        "net_cash": 12487615700,
+        "net_net": 13824251000
       }
     },
     {
@@ -59,6 +63,7 @@
       "name": "クオンタムソリューションズ株式会社",
       "edinet_code": "E05315",
       "doc_id": "S100Y6YJ",
+      "description": "**新しいデジタル技術でビジネスを支える会社**",
       "industry_code": "5250",
       "industry_name": "情報・通信業",
       "market": "スタンダード（内国株式）",
@@ -77,7 +82,8 @@
         "investing_cf": -3989674000,
         "cash": 192468000,
         "interest_bearing_debt": 0,
-        "net_cash": 134727600
+        "net_cash": 134727600,
+        "net_net": -369346000
       }
     },
     {
@@ -85,6 +91,7 @@
       "name": "株式会社アンドエスティＨＤ",
       "edinet_code": "E03368",
       "doc_id": "S100Y5ZC",
+      "description": "服や雑貨を売るお店をたくさん運営している会社。",
       "industry_code": "6100",
       "industry_name": "小売業",
       "market": "プライム（内国株式）",
@@ -104,7 +111,8 @@
         "dividend_per_share": 90.0,
         "cash": 24820000000,
         "interest_bearing_debt": 0,
-        "net_cash": 17374000000
+        "net_cash": 17374000000,
+        "net_net": 19780000000
       }
     },
     {
@@ -112,6 +120,7 @@
       "name": "株式会社パルグループホールディングス",
       "edinet_code": "E03387",
       "doc_id": "S100Y647",
+      "description": "おしゃれな服や雑貨を売るお店の会社です。",
       "industry_code": "6100",
       "industry_name": "小売業",
       "market": "プライム（内国株式）",
@@ -131,7 +140,8 @@
         "dividend_per_share": 40.0,
         "cash": 96264000000,
         "interest_bearing_debt": 11618000000,
-        "net_cash": 55766799999
+        "net_cash": 55766799999,
+        "net_net": 50430000000
       }
     },
     {
@@ -139,6 +149,7 @@
       "name": "北雄ラッキー株式会社",
       "edinet_code": "E03397",
       "doc_id": "S100Y6GL",
+      "description": "北海道で、毎日の食べ物や日用品を売るお店です。",
       "industry_code": "6100",
       "industry_name": "小売業",
       "market": "スタンダード（内国株式）",
@@ -158,7 +169,8 @@
         "dividend_per_share": 50.0,
         "cash": 685658000,
         "interest_bearing_debt": 4285642000,
-        "net_cash": -3805681400
+        "net_cash": -3805681400,
+        "net_net": -7369266000
       }
     },
     {
@@ -166,6 +178,7 @@
       "name": "株式会社ガーデン",
       "edinet_code": "E40066",
       "doc_id": "S100Y6WH",
+      "description": "おしゃれな雑貨や服を売るお店です。",
       "industry_code": "6100",
       "industry_name": "小売業",
       "market": "スタンダード（内国株式）",
@@ -185,7 +198,8 @@
         "dividend_per_share": 100.0,
         "cash": 10681634000,
         "interest_bearing_debt": 6504743000,
-        "net_cash": 972400800
+        "net_cash": 972400800,
+        "net_net": 2276393000
       }
     },
     {
@@ -193,6 +207,7 @@
       "name": "株式会社カルラ",
       "edinet_code": "E03422",
       "doc_id": "S100Y72L",
+      "description": "和風レストラン「まるまつ」などを運営する会社です。",
       "industry_code": "6100",
       "industry_name": "小売業",
       "market": "スタンダード（内国株式）",
@@ -212,7 +227,8 @@
         "dividend_per_share": 5.0,
         "cash": 1098694000,
         "interest_bearing_debt": 2303708000,
-        "net_cash": -1534622200
+        "net_cash": -1534622200,
+        "net_net": -1566250000
       }
     },
     {
@@ -220,6 +236,7 @@
       "name": "株式会社ワイズテーブルコーポレーション",
       "edinet_code": "E03428",
       "doc_id": "S100Y6U1",
+      "description": "おいしいレストランをたくさん運営する会社です。",
       "industry_code": "6100",
       "industry_name": "小売業",
       "market": "スタンダード（内国株式）",
@@ -238,7 +255,8 @@
         "investing_cf": -428496000,
         "cash": 1535457000,
         "interest_bearing_debt": 1569745000,
-        "net_cash": -494925100
+        "net_cash": -494925100,
+        "net_net": -1516540000
       }
     },
     {
@@ -246,6 +264,7 @@
       "name": "株式会社イートアンドホールディングス",
       "edinet_code": "E25551",
       "doc_id": "S100Y6XK",
+      "description": "「大阪王将」などの餃子や冷凍食品を売る会社です。",
       "industry_code": "3050",
       "industry_name": "食料品",
       "market": "プライム（内国株式）",
@@ -265,7 +284,8 @@
         "dividend_per_share": 15.0,
         "cash": 2324000000,
         "interest_bearing_debt": 5114000000,
-        "net_cash": -3487200000
+        "net_cash": -3487200000,
+        "net_net": -9071000000
       }
     },
     {
@@ -273,6 +293,7 @@
       "name": "株式会社ヨシムラ・フード・ホールディングス",
       "edinet_code": "E32138",
       "doc_id": "S100Y77U",
+      "description": "小さい食品会社を助けて育てる会社です。",
       "industry_code": "3050",
       "industry_name": "食料品",
       "market": "プライム（内国株式）",
@@ -291,7 +312,8 @@
         "investing_cf": -2037537000,
         "cash": 8288749000,
         "interest_bearing_debt": 22599552000,
-        "net_cash": -16797427700
+        "net_cash": -16797427700,
+        "net_net": -4837118000
       }
     },
     {
@@ -299,6 +321,7 @@
       "name": "わらべや日洋ホールディングス株式会社",
       "edinet_code": "E00496",
       "doc_id": "S100Y6N1",
+      "description": "コンビニのお弁当やおにぎりを作る会社です。",
       "industry_code": "3050",
       "industry_name": "食料品",
       "market": "プライム（内国株式）",
@@ -318,7 +341,8 @@
         "dividend_per_share": 120.0,
         "cash": 10378000000,
         "interest_bearing_debt": 25494000000,
-        "net_cash": -18229400000
+        "net_cash": -18229400000,
+        "net_net": -33003000000
       }
     },
     {
@@ -326,6 +350,7 @@
       "name": "株式会社ピックルスホールディングス",
       "edinet_code": "E37741",
       "doc_id": "S100Y62P",
+      "description": "「ご飯がすすむキムチ」などの漬物をつくる会社。",
       "industry_code": "3050",
       "industry_name": "食料品",
       "market": "プライム（内国株式）",
@@ -345,7 +370,8 @@
         "dividend_per_share": 29.0,
         "cash": 6214000000,
         "interest_bearing_debt": 2751000000,
-        "net_cash": 1598800000
+        "net_cash": 1598800000,
+        "net_net": 1429000000
       }
     },
     {
@@ -353,6 +379,7 @@
       "name": "ベースフード株式会社",
       "edinet_code": "E38104",
       "doc_id": "S100Y7A4",
+      "description": "体に必要な栄養が全部入ったパンを売る会社。",
       "industry_code": "3050",
       "industry_name": "食料品",
       "market": "グロース（内国株式）",
@@ -371,7 +398,8 @@
         "investing_cf": -239957000,
         "cash": 1886902000,
         "interest_bearing_debt": 236128000,
-        "net_cash": 1084703400
+        "net_cash": 1084703400,
+        "net_net": 572970000
       }
     },
     {
@@ -379,6 +407,7 @@
       "name": "株式会社ハブ",
       "edinet_code": "E03473",
       "doc_id": "S100Y764",
+      "description": "イギリス風の居酒屋を運営して、飲み物や料理を売る会社。",
       "industry_code": "6100",
       "industry_name": "小売業",
       "market": "スタンダード（内国株式）",
@@ -398,7 +427,8 @@
         "dividend_per_share": 11.0,
         "cash": 2635312000,
         "interest_bearing_debt": 1240840000,
-        "net_cash": 603878400
+        "net_cash": 603878400,
+        "net_net": 112540000
       }
     },
     {
@@ -406,6 +436,7 @@
       "name": "フォルシア株式会社",
       "edinet_code": "E40230",
       "doc_id": "S100Y6MO",
+      "description": "車の座席の快適さを技術で作る会社です。",
       "industry_code": "5250",
       "industry_name": "情報・通信業",
       "market": "グロース（内国株式）",
@@ -424,7 +455,8 @@
         "investing_cf": -123953000,
         "cash": 1287720000,
         "interest_bearing_debt": 0,
-        "net_cash": 901404000
+        "net_cash": 901404000,
+        "net_net": 1567324000
       }
     },
     {
@@ -432,6 +464,7 @@
       "name": "ＤＣＭホールディングス株式会社",
       "edinet_code": "E03489",
       "doc_id": "S100Y6MK",
+      "description": "暮らしに必要な道具を売るホームセンターの会社です。",
       "industry_code": "6100",
       "industry_name": "小売業",
       "market": "プライム（内国株式）",
@@ -451,7 +484,8 @@
         "dividend_per_share": 47.0,
         "cash": 85094000000,
         "interest_bearing_debt": 239412000000,
-        "net_cash": -179846200000
+        "net_cash": -179846200000,
+        "net_net": -100094000000
       }
     },
     {
@@ -459,6 +493,7 @@
       "name": "株式会社ジェイグループホールディングス",
       "edinet_code": "E03495",
       "doc_id": "S100Y7CP",
+      "description": "居酒屋や飲食店をたくさん運営して稼ぐ会社です。",
       "industry_code": "6100",
       "industry_name": "小売業",
       "market": "グロース（内国株式）",
@@ -477,7 +512,8 @@
         "investing_cf": -322678000,
         "cash": 2350823000,
         "interest_bearing_debt": 6342245000,
-        "net_cash": -4696668900
+        "net_cash": -4696668900,
+        "net_net": -5663003000
       }
     },
     {
@@ -485,6 +521,7 @@
       "name": "株式会社ライフフーズ",
       "edinet_code": "E03490",
       "doc_id": "S100Y57D",
+      "description": "スーパーの野菜や果物を売る会社です。",
       "industry_code": "6100",
       "industry_name": "小売業",
       "market": "スタンダード（内国株式）",
@@ -504,7 +541,8 @@
         "dividend_per_share": 5.0,
         "cash": 1871787000,
         "interest_bearing_debt": 103214000,
-        "net_cash": 1207036900
+        "net_cash": 1207036900,
+        "net_net": 214810000
       }
     },
     {
@@ -512,6 +550,7 @@
       "name": "株式会社銚子丸",
       "edinet_code": "E03507",
       "doc_id": "S100Y6WM",
+      "description": "おいしいお寿司をにぎって売るお店です。",
       "industry_code": "6100",
       "industry_name": "小売業",
       "market": "スタンダード（内国株式）",
@@ -531,7 +570,8 @@
         "dividend_per_share": 14.0,
         "cash": 4440735000,
         "interest_bearing_debt": 0,
-        "net_cash": 3108514500
+        "net_cash": 3108514500,
+        "net_net": 3064378000
       }
     },
     {
@@ -539,6 +579,7 @@
       "name": "株式会社ジェーソン",
       "edinet_code": "E03509",
       "doc_id": "S100Y69Z",
+      "description": "おかしや飲み物を、とっても安く売るお店です。",
       "industry_code": "6100",
       "industry_name": "小売業",
       "market": "スタンダード（内国株式）",
@@ -558,7 +599,8 @@
         "dividend_per_share": 13.0,
         "cash": 3019184000,
         "interest_bearing_debt": 641993000,
-        "net_cash": 1471435799
+        "net_cash": 1471435799,
+        "net_net": 2047791000
       }
     },
     {
@@ -566,6 +608,7 @@
       "name": "スターシーズ株式会社",
       "edinet_code": "E03498",
       "doc_id": "S100Y7XS",
+      "description": "色々な商品を仕入れて、お客さんに売る会社です。",
       "industry_code": "6100",
       "industry_name": "小売業",
       "market": "スタンダード（内国株式）",
@@ -585,7 +628,8 @@
         "dividend_per_share": 10.0,
         "cash": 1832352000,
         "interest_bearing_debt": 36620000,
-        "net_cash": 1246026400
+        "net_cash": 1246026400,
+        "net_net": 1837011000
       }
     },
     {
@@ -593,6 +637,7 @@
       "name": "株式会社ありがとうサービス",
       "edinet_code": "E26821",
       "doc_id": "S100Y7HH",
+      "description": "リサイクルショップで物を売買して稼ぐ会社です。",
       "industry_code": "6100",
       "industry_name": "小売業",
       "market": "スタンダード（内国株式）",
@@ -612,7 +657,8 @@
         "dividend_per_share": 135.0,
         "cash": 1671856000,
         "interest_bearing_debt": 1106269000,
-        "net_cash": 64030200
+        "net_cash": 64030200,
+        "net_net": 590316000
       }
     },
     {
@@ -620,6 +666,7 @@
       "name": "株式会社買取王国",
       "edinet_code": "E27202",
       "doc_id": "S100Y6PJ",
+      "description": "いらなくなったものを買い取り、安く売るお店です。",
       "industry_code": "6100",
       "industry_name": "小売業",
       "market": "スタンダード（内国株式）",
@@ -639,7 +686,8 @@
         "dividend_per_share": 10.0,
         "cash": 1413462000,
         "interest_bearing_debt": 1646592000,
-        "net_cash": -657168600
+        "net_cash": -657168600,
+        "net_net": 1453673000
       }
     },
     {
@@ -647,6 +695,7 @@
       "name": "株式会社エスエルディー",
       "edinet_code": "E31291",
       "doc_id": "S100Y6RF",
+      "description": "おしゃれなカフェやお店で、楽しい時間を提供する会社。",
       "industry_code": "6100",
       "industry_name": "小売業",
       "market": "スタンダード（内国株式）",
@@ -665,7 +714,8 @@
         "investing_cf": -48364000,
         "cash": 224393000,
         "interest_bearing_debt": 0,
-        "net_cash": 157075100
+        "net_cash": 157075100,
+        "net_net": 191144000
       }
     },
     {
@@ -673,6 +723,7 @@
       "name": "株式会社エスポア",
       "edinet_code": "E04086",
       "doc_id": "S100Y78C",
+      "description": "マンションを建てて売る会社です。",
       "industry_code": null,
       "industry_name": null,
       "market": null,
@@ -691,7 +742,8 @@
         "investing_cf": -68592000,
         "cash": 196060000,
         "interest_bearing_debt": 0,
-        "net_cash": 137242000
+        "net_cash": 137242000,
+        "net_net": -209776000
       }
     },
     {
@@ -699,6 +751,7 @@
       "name": "株式会社エストラスト",
       "edinet_code": "E26966",
       "doc_id": "S100Y6PQ",
+      "description": "マンションを建てて販売する会社です。",
       "industry_code": "8050",
       "industry_name": "不動産業",
       "market": "スタンダード（内国株式）",
@@ -718,7 +771,8 @@
         "dividend_per_share": 30.0,
         "cash": 7870000000,
         "interest_bearing_debt": 6195000000,
-        "net_cash": -686000000
+        "net_cash": -686000000,
+        "net_net": 2605000000
       }
     },
     {
@@ -726,6 +780,7 @@
       "name": "株式会社アークコア",
       "edinet_code": "E02989",
       "doc_id": "S100Y6PS",
+      "description": "バイクの販売や修理で稼ぐ会社です。",
       "industry_code": null,
       "industry_name": null,
       "market": null,
@@ -744,7 +799,8 @@
         "investing_cf": -164452000,
         "cash": 1646775000,
         "interest_bearing_debt": 824947000,
-        "net_cash": 327795500
+        "net_cash": 327795500,
+        "net_net": 1252395000
       }
     },
     {
@@ -752,6 +808,7 @@
       "name": "株式会社フェリシモ",
       "edinet_code": "E03467",
       "doc_id": "S100Y6XM",
+      "description": "毎月ワクワクする雑貨や服を届ける会社です。",
       "industry_code": "6100",
       "industry_name": "小売業",
       "market": "スタンダード（内国株式）",
@@ -771,7 +828,8 @@
         "dividend_per_share": 20.0,
         "cash": 9211000000,
         "interest_bearing_debt": 0,
-        "net_cash": 6447700000
+        "net_cash": 6447700000,
+        "net_net": 8946000000
       }
     },
     {
@@ -779,6 +837,7 @@
       "name": "プログレス・テクノロジーズ　グループ株式会社",
       "edinet_code": "E40448",
       "doc_id": "S100Y6XY",
+      "description": "エンジニアの力で新しい製品や技術を作る会社です。",
       "industry_code": "9050",
       "industry_name": "サービス業",
       "market": "グロース（内国株式）",
@@ -796,7 +855,8 @@
         "dividend_per_share": 30.0,
         "cash": 568000000,
         "interest_bearing_debt": 2494000000,
-        "net_cash": -2096400000
+        "net_cash": -2096400000,
+        "net_net": -4765000000
       }
     },
     {
@@ -804,6 +864,7 @@
       "name": "株式会社ティーケーピー",
       "edinet_code": "E20616",
       "doc_id": "S100Y7OL",
+      "description": "会議室や宴会場を貸し出して稼ぐ会社です。",
       "industry_code": "8050",
       "industry_name": "不動産業",
       "market": "グロース（内国株式）",
@@ -822,7 +883,8 @@
         "investing_cf": 1843000000,
         "cash": 45383000000,
         "interest_bearing_debt": 75813000000,
-        "net_cash": -44044900000
+        "net_cash": -44044900000,
+        "net_net": -44915000000
       }
     },
     {
@@ -830,6 +892,7 @@
       "name": "株式会社アズ企画設計",
       "edinet_code": "E33863",
       "doc_id": "S100Y6VO",
+      "description": "古くなった建物を買い取り、きれいに直して価値を高めて売る会社です。",
       "industry_code": "8050",
       "industry_name": "不動産業",
       "market": "スタンダード（内国株式）",
@@ -849,7 +912,8 @@
         "dividend_per_share": 30.0,
         "cash": 3852722000,
         "interest_bearing_debt": 7714279000,
-        "net_cash": -5017373600
+        "net_cash": -5017373600,
+        "net_net": 3245312000
       }
     },
     {
@@ -857,6 +921,7 @@
       "name": "株式会社コメダホールディングス",
       "edinet_code": "E32427",
       "doc_id": "S100Y6O9",
+      "description": "喫茶店「コメダ珈琲店」を全国で運営する会社です。",
       "industry_code": "6050",
       "industry_name": "卸売業",
       "market": "プライム（内国株式）",
@@ -874,7 +939,8 @@
         "dividend_per_share": 60.0,
         "cash": 3463000000,
         "interest_bearing_debt": 0,
-        "net_cash": 2424100000
+        "net_cash": 2424100000,
+        "net_net": 834000000
       }
     },
     {
@@ -882,6 +948,7 @@
       "name": "株式会社バロックジャパンリミテッド",
       "edinet_code": "E32697",
       "doc_id": "S100Y6V9",
+      "description": "「MOUSSY」などの服を売る会社。",
       "industry_code": "6100",
       "industry_name": "小売業",
       "market": "プライム（内国株式）",
@@ -901,7 +968,8 @@
         "dividend_per_share": 38.0,
         "cash": 11319000000,
         "interest_bearing_debt": 6000000000,
-        "net_cash": 1923299999
+        "net_cash": 1923299999,
+        "net_net": 1264000000
       }
     },
     {
@@ -909,6 +977,7 @@
       "name": "ユナイテッド＆コレクティブ株式会社",
       "edinet_code": "E32965",
       "doc_id": "S100Y7EJ",
+      "description": "焼き鳥屋の「てけてけ」などを運営する会社です。",
       "industry_code": "6100",
       "industry_name": "小売業",
       "market": "グロース（内国株式）",
@@ -927,7 +996,8 @@
         "investing_cf": -602162000,
         "cash": 1318867000,
         "interest_bearing_debt": 2580561000,
-        "net_cash": -1657354100
+        "net_cash": -1657354100,
+        "net_net": -1364579000
       }
     },
     {
@@ -935,6 +1005,7 @@
       "name": "ジェイドグループ株式会社",
       "edinet_code": "E32966",
       "doc_id": "S100Y6RE",
+      "description": "ネットで服や靴を安く売る会社です。",
       "industry_code": "6100",
       "industry_name": "小売業",
       "market": "グロース（内国株式）",
@@ -954,7 +1025,8 @@
         "dividend_per_share": 30.0,
         "cash": 2934837000,
         "interest_bearing_debt": 442215000,
-        "net_cash": 1612170899
+        "net_cash": 1612170899,
+        "net_net": 3514063000
       }
     },
     {
@@ -962,6 +1034,7 @@
       "name": "テクミラホールディングス株式会社",
       "edinet_code": "E20385",
       "doc_id": "S100Y74O",
+      "description": "スマホのアプリや便利なソフトを作る会社です。",
       "industry_code": "5250",
       "industry_name": "情報・通信業",
       "market": "スタンダード（内国株式）",
@@ -981,7 +1054,8 @@
         "dividend_per_share": 5.0,
         "cash": 2883045000,
         "interest_bearing_debt": 2613930000,
-        "net_cash": -595798500
+        "net_cash": -595798500,
+        "net_net": 1437888000
       }
     },
     {
@@ -989,6 +1063,7 @@
       "name": "株式会社メディアドゥ",
       "edinet_code": "E30002",
       "doc_id": "S100Y71R",
+      "description": "電子書籍を本屋さんに届ける会社です。",
       "industry_code": "5250",
       "industry_name": "情報・通信業",
       "market": "プライム（内国株式）",
@@ -1008,7 +1083,8 @@
         "dividend_per_share": 40.0,
         "cash": 14014000000,
         "interest_bearing_debt": 2646000000,
-        "net_cash": 7163800000
+        "net_cash": 7163800000,
+        "net_net": 6297000000
       }
     },
     {
@@ -1016,6 +1092,7 @@
       "name": "株式会社システムインテグレータ",
       "edinet_code": "E05643",
       "doc_id": "S100Y7MS",
+      "description": "企業の業務を助けるソフトを開発する会社です。",
       "industry_code": "5250",
       "industry_name": "情報・通信業",
       "market": "スタンダード（内国株式）",
@@ -1035,7 +1112,8 @@
         "dividend_per_share": 13.0,
         "cash": 2351453000,
         "interest_bearing_debt": 13000000,
-        "net_cash": 1633017100
+        "net_cash": 1633017100,
+        "net_net": 3628569000
       }
     },
     {
@@ -1043,6 +1121,7 @@
       "name": "株式会社エルテス",
       "edinet_code": "E32750",
       "doc_id": "S100Y6AI",
+      "description": "ネットの炎上や悪い噂を見つけて守る会社。",
       "industry_code": "5250",
       "industry_name": "情報・通信業",
       "market": "グロース（内国株式）",
@@ -1061,7 +1140,8 @@
         "investing_cf": -310083000,
         "cash": 1814115000,
         "interest_bearing_debt": 3015240000,
-        "net_cash": -1745359500
+        "net_cash": -1745359500,
+        "net_net": -922733000
       }
     },
     {
@@ -1069,6 +1149,7 @@
       "name": "フュージョン株式会社",
       "edinet_code": "E32956",
       "doc_id": "S100Y6LQ",
+      "description": "お客さんにたくさん買い物をしてもらう仕組みを作る会社。",
       "industry_code": null,
       "industry_name": null,
       "market": null,
@@ -1087,7 +1168,8 @@
         "investing_cf": -29414000,
         "cash": 307250000,
         "interest_bearing_debt": 156658000,
-        "net_cash": 58417000
+        "net_cash": 58417000,
+        "net_net": 207177000
       }
     },
     {
@@ -1095,6 +1177,7 @@
       "name": "サインポスト株式会社",
       "edinet_code": "E33519",
       "doc_id": "S100Y6B0",
+      "description": "レジに行かず買い物が終わる技術を売る会社。",
       "industry_code": "5250",
       "industry_name": "情報・通信業",
       "market": "スタンダード（内国株式）",
@@ -1113,7 +1196,8 @@
         "investing_cf": -2113000,
         "cash": 1797325000,
         "interest_bearing_debt": 362774000,
-        "net_cash": 895353500
+        "net_cash": 895353500,
+        "net_net": 1171020000
       }
     },
     {
@@ -1121,6 +1205,7 @@
       "name": "株式会社レイ",
       "edinet_code": "E05230",
       "doc_id": "S100Y7H8",
+      "description": "イベントや映像を作って盛り上げる会社です。",
       "industry_code": "9050",
       "industry_name": "サービス業",
       "market": "スタンダード（内国株式）",
@@ -1140,7 +1225,8 @@
         "dividend_per_share": 20.0,
         "cash": 3060349000,
         "interest_bearing_debt": 0,
-        "net_cash": 2142244299
+        "net_cash": 2142244299,
+        "net_net": 2904530000
       }
     },
     {
@@ -1148,6 +1234,7 @@
       "name": "株式会社ボードルア",
       "edinet_code": "E37133",
       "doc_id": "S100Y6J0",
+      "description": "会社のネットワークをつくる仕事。",
       "industry_code": "5250",
       "industry_name": "情報・通信業",
       "market": "プライム（内国株式）",
@@ -1165,7 +1252,8 @@
         "dividend_per_share": 7.58,
         "cash": 2354005000,
         "interest_bearing_debt": 1342403000,
-        "net_cash": 305400500
+        "net_cash": 305400500,
+        "net_net": 1021373000
       }
     },
     {
@@ -1173,6 +1261,7 @@
       "name": "リックソフト株式会社",
       "edinet_code": "E34633",
       "doc_id": "S100Y6L5",
+      "description": "「世界の便利な仕事道具を広める会社」です。",
       "industry_code": "5250",
       "industry_name": "情報・通信業",
       "market": "グロース（内国株式）",
@@ -1191,7 +1280,8 @@
         "investing_cf": -34671000,
         "cash": 3939457000,
         "interest_bearing_debt": 0,
-        "net_cash": 2757619900
+        "net_cash": 2757619900,
+        "net_net": 2878559000
       }
     },
     {
@@ -1199,6 +1289,7 @@
       "name": "株式会社ビザスク",
       "edinet_code": "E35278",
       "doc_id": "S100Y7OP",
+      "description": "プロの知識を借りたい人と貸したい人をつなぐ会社。",
       "industry_code": "5250",
       "industry_name": "情報・通信業",
       "market": "グロース（内国株式）",
@@ -1217,7 +1308,8 @@
         "investing_cf": -382991000,
         "cash": 5003357000,
         "interest_bearing_debt": 2373812000,
-        "net_cash": 1128537900
+        "net_cash": 1128537900,
+        "net_net": 1275987000
       }
     },
     {
@@ -1225,6 +1317,7 @@
       "name": "バリオセキュア株式会社",
       "edinet_code": "E35544",
       "doc_id": "S100Y6VZ",
+      "description": "ネットの安全を守る番人です。（13文字）",
       "industry_code": "5250",
       "industry_name": "情報・通信業",
       "market": "スタンダード（内国株式）",
@@ -1243,7 +1336,8 @@
         "investing_cf": -104012000,
         "cash": 973433000,
         "interest_bearing_debt": 900000000,
-        "net_cash": -218596900
+        "net_cash": -218596900,
+        "net_net": 579767000
       }
     },
     {
@@ -1251,6 +1345,7 @@
       "name": "株式会社市進ホールディングス",
       "edinet_code": "E04958",
       "doc_id": "S100Y6LI",
+      "description": "塾や家庭教師で勉強を教える会社です。",
       "industry_code": "9050",
       "industry_name": "サービス業",
       "market": "スタンダード（内国株式）",
@@ -1270,7 +1365,8 @@
         "dividend_per_share": 10.0,
         "cash": 4127234000,
         "interest_bearing_debt": 5953215000,
-        "net_cash": -3064151200
+        "net_cash": -3064151200,
+        "net_net": -3872967000
       }
     },
     {
@@ -1278,6 +1374,7 @@
       "name": "株式会社ＩＤホールディングス",
       "edinet_code": "E05017",
       "doc_id": "S100Y7D7",
+      "description": "会社のシステム作りや守りをお手伝いする会社です。",
       "industry_code": "5250",
       "industry_name": "情報・通信業",
       "market": "プライム（内国株式）",
@@ -1297,7 +1394,8 @@
         "dividend_per_share": 80.0,
         "cash": 6046015000,
         "interest_bearing_debt": 0,
-        "net_cash": 4232210499
+        "net_cash": 4232210499,
+        "net_net": 7670562000
       }
     },
     {
@@ -1305,6 +1403,7 @@
       "name": "株式会社日本色材工業研究所",
       "edinet_code": "E01040",
       "doc_id": "S100Y7HD",
+      "description": "高級ブランドの化粧品を代わりに作る会社です。",
       "industry_code": "3200",
       "industry_name": "化学",
       "market": "スタンダード（内国株式）",
@@ -1324,7 +1423,8 @@
         "dividend_per_share": 30.0,
         "cash": 1080500000,
         "interest_bearing_debt": 4382501000,
-        "net_cash": -3626151000
+        "net_cash": -3626151000,
+        "net_net": -5357455000
       }
     },
     {
@@ -1332,6 +1432,7 @@
       "name": "株式会社ＭＯＲＥＳＣＯ",
       "edinet_code": "E01083",
       "doc_id": "S100Y64F",
+      "description": "機械を動かす特別な油を作る会社です。",
       "industry_code": "3300",
       "industry_name": "石油・石炭製品",
       "market": "スタンダード（内国株式）",
@@ -1351,7 +1452,8 @@
         "dividend_per_share": 55.0,
         "cash": 6914000000,
         "interest_bearing_debt": 1108000000,
-        "net_cash": 3731800000
+        "net_cash": 3731800000,
+        "net_net": 9330000000
       }
     },
     {
@@ -1359,6 +1461,7 @@
       "name": "株式会社マーキュリー",
       "edinet_code": "E37397",
       "doc_id": "S100Y6Q0",
+      "description": "スマホや家電の販売・サポートをする会社です。",
       "industry_code": "5250",
       "industry_name": "情報・通信業",
       "market": "グロース（内国株式）",
@@ -1377,7 +1480,8 @@
         "investing_cf": 137552000,
         "cash": 855904000,
         "interest_bearing_debt": 0,
-        "net_cash": 599132800
+        "net_cash": 599132800,
+        "net_net": 891169000
       }
     },
     {
@@ -1385,6 +1489,7 @@
       "name": "ＪＭＡＣＳ株式会社",
       "edinet_code": "E01348",
       "doc_id": "S100Y6GG",
+      "description": "電線やケーブルの材料を作る会社です。",
       "industry_code": "3500",
       "industry_name": "非鉄金属",
       "market": "スタンダード（内国株式）",
@@ -1404,7 +1509,8 @@
         "dividend_per_share": 15.0,
         "cash": 2217755000,
         "interest_bearing_debt": 2142058000,
-        "net_cash": -589629500
+        "net_cash": -589629500,
+        "net_net": 913216000
       }
     },
     {
@@ -1412,6 +1518,7 @@
       "name": "株式会社ダイケン",
       "edinet_code": "E01325",
       "doc_id": "S100Y6RH",
+      "description": "建物に使う金属製の扉や窓枠を作る会社です。",
       "industry_code": "3550",
       "industry_name": "金属製品",
       "market": "スタンダード（内国株式）",
@@ -1431,7 +1538,8 @@
         "dividend_per_share": 20.0,
         "cash": 2569821000,
         "interest_bearing_debt": 0,
-        "net_cash": 1798874700
+        "net_cash": 1798874700,
+        "net_net": 6874309000
       }
     },
     {
@@ -1439,6 +1547,7 @@
       "name": "株式会社ベクトル",
       "edinet_code": "E26428",
       "doc_id": "S100Y7IM",
+      "description": "世の中の「いいこと」を広めるお手伝いをする会社。",
       "industry_code": "9050",
       "industry_name": "サービス業",
       "market": "プライム（内国株式）",
@@ -1458,7 +1567,8 @@
         "dividend_per_share": 33.0,
         "cash": 22273000000,
         "interest_bearing_debt": 4705000000,
-        "net_cash": 10886099999
+        "net_cash": 10886099999,
+        "net_net": 17224000000
       }
     },
     {
@@ -1466,6 +1576,7 @@
       "name": "アーキテクツ・スタジオ・ジャパン株式会社",
       "edinet_code": "E30119",
       "doc_id": "S100Y7A6",
+      "description": "建築家と家を建てたい人をつなぐ会社です。",
       "industry_code": "9050",
       "industry_name": "サービス業",
       "market": "グロース（内国株式）",
@@ -1484,7 +1595,8 @@
         "investing_cf": 515867000,
         "cash": 89552000,
         "interest_bearing_debt": 182659000,
-        "net_cash": -119972600
+        "net_cash": -119972600,
+        "net_net": -356604000
       }
     },
     {
@@ -1492,6 +1604,7 @@
       "name": "富士精工株式会社",
       "edinet_code": "E01503",
       "doc_id": "S100Y6NR",
+      "description": "金属を削るための「ドリル」を作る会社です。",
       "industry_code": null,
       "industry_name": null,
       "market": null,
@@ -1511,7 +1624,8 @@
         "dividend_per_share": 15.0,
         "cash": 9556969000,
         "interest_bearing_debt": 326314000,
-        "net_cash": 6363564300
+        "net_cash": 6363564300,
+        "net_net": 10487950000
       }
     },
     {
@@ -1519,6 +1633,7 @@
       "name": "株式会社メタリアル",
       "edinet_code": "E31901",
       "doc_id": "S100Y6W8",
+      "description": "AIを使って、世界中の言葉を自動で翻訳する会社。",
       "industry_code": "9050",
       "industry_name": "サービス業",
       "market": "グロース（内国株式）",
@@ -1537,7 +1652,8 @@
         "investing_cf": -156835000,
         "cash": 2904477000,
         "interest_bearing_debt": 1359143000,
-        "net_cash": 673990899
+        "net_cash": 673990899,
+        "net_net": 924605000
       }
     },
     {
@@ -1545,6 +1661,7 @@
       "name": "株式会社ＪＲＣ",
       "edinet_code": "E38780",
       "doc_id": "S100Y688",
+      "description": "ベルトコンベヤの部品を作り、運ぶ仕事を守る会社。",
       "industry_code": "3600",
       "industry_name": "機械",
       "market": "グロース（内国株式）",
@@ -1564,7 +1681,8 @@
         "dividend_per_share": 33.0,
         "cash": 2583887000,
         "interest_bearing_debt": 4135387000,
-        "net_cash": -2326666100
+        "net_cash": -2326666100,
+        "net_net": 604678000
       }
     },
     {
@@ -1572,6 +1690,7 @@
       "name": "株式会社ジェイ・イー・ティ",
       "edinet_code": "E36545",
       "doc_id": "S100Y7JM",
+      "description": "半導体を作る機械を洗う装置の会社です。",
       "industry_code": "3600",
       "industry_name": "機械",
       "market": "スタンダード（内国株式）",
@@ -1590,7 +1709,8 @@
         "investing_cf": -420000000,
         "cash": 2013000000,
         "interest_bearing_debt": 4343000000,
-        "net_cash": -2933900000
+        "net_cash": -2933900000,
+        "net_net": 8311000000
       }
     },
     {
@@ -1598,6 +1718,7 @@
       "name": "株式会社竹内製作所",
       "edinet_code": "E01723",
       "doc_id": "S100Y78J",
+      "description": "工事現場で土を掘る、小型の建設機械を作る会社。",
       "industry_code": "3600",
       "industry_name": "機械",
       "market": "プライム（内国株式）",
@@ -1617,7 +1738,8 @@
         "dividend_per_share": 210.0,
         "cash": 56235000000,
         "interest_bearing_debt": 0,
-        "net_cash": 39364500000
+        "net_cash": 39364500000,
+        "net_net": 145751000000
       }
     },
     {
@@ -1625,6 +1747,7 @@
       "name": "株式会社ベイカレント",
       "edinet_code": "E32549",
       "doc_id": "S100Y69G",
+      "description": "企業の悩みを解決し、業績を上げるお手伝いをする会社。",
       "industry_code": "9050",
       "industry_name": "サービス業",
       "market": "プライム（内国株式）",
@@ -1642,7 +1765,8 @@
         "dividend_per_share": 100.0,
         "cash": 13849000000,
         "interest_bearing_debt": 263000000,
-        "net_cash": 9431300000
+        "net_cash": 9431300000,
+        "net_net": 43772000000
       }
     },
     {
@@ -1650,6 +1774,7 @@
       "name": "株式会社コレックホールディングス",
       "edinet_code": "E33928",
       "doc_id": "S100Y78X",
+      "description": "光回線などのネット契約をお手伝いする会社です。",
       "industry_code": "9050",
       "industry_name": "サービス業",
       "market": "スタンダード（内国株式）",
@@ -1669,7 +1794,8 @@
         "dividend_per_share": 9.0,
         "cash": 1460042000,
         "interest_bearing_debt": 253896000,
-        "net_cash": 768133399
+        "net_cash": 768133399,
+        "net_net": 676892000
       }
     },
     {
@@ -1677,6 +1803,7 @@
       "name": "株式会社識学",
       "edinet_code": "E34634",
       "doc_id": "S100Y1AF",
+      "description": "「組織のルール作りを教える会社」です。",
       "industry_code": "9050",
       "industry_name": "サービス業",
       "market": "グロース（内国株式）",
@@ -1695,7 +1822,8 @@
         "investing_cf": -50993000,
         "cash": 2098898000,
         "interest_bearing_debt": 106269000,
-        "net_cash": 1362959600
+        "net_cash": 1362959600,
+        "net_net": 2945449000
       }
     },
     {
@@ -1703,6 +1831,7 @@
       "name": "株式会社ＡＬｉＮＫインターネット",
       "edinet_code": "E35288",
       "doc_id": "S100Y69B",
+      "description": "天気予報サイトを運営し、広告などで稼ぐ会社です。",
       "industry_code": "9050",
       "industry_name": "サービス業",
       "market": "グロース（内国株式）",
@@ -1721,7 +1850,8 @@
         "investing_cf": -431084000,
         "cash": 455389000,
         "interest_bearing_debt": 0,
-        "net_cash": 318772300
+        "net_cash": 318772300,
+        "net_net": 1290375000
       }
     },
     {
@@ -1729,6 +1859,7 @@
       "name": "株式会社ジオコード",
       "edinet_code": "E36078",
       "doc_id": "S100Y7GV",
+      "description": "検索で見つけやすくして、売上を増やす会社。",
       "industry_code": "9050",
       "industry_name": "サービス業",
       "market": "スタンダード（内国株式）",
@@ -1748,7 +1879,8 @@
         "dividend_per_share": 25.0,
         "cash": 1045230000,
         "interest_bearing_debt": 622908000,
-        "net_cash": 108753000
+        "net_cash": 108753000,
+        "net_net": 108315000
       }
     },
     {
@@ -1756,6 +1888,7 @@
       "name": "エコートレーディング株式会社",
       "edinet_code": "E02801",
       "doc_id": "S100Y67Z",
+      "description": "ペット用品をお店に届ける会社です。",
       "industry_code": "6050",
       "industry_name": "卸売業",
       "market": "スタンダード（内国株式）",
@@ -1775,7 +1908,8 @@
         "dividend_per_share": 30.0,
         "cash": 6230654000,
         "interest_bearing_debt": 0,
-        "net_cash": 4361457800
+        "net_cash": 4361457800,
+        "net_net": 9880142000
       }
     },
     {
@@ -1783,6 +1917,7 @@
       "name": "株式会社マルヨシセンター",
       "edinet_code": "E03272",
       "doc_id": "S100Y5AV",
+      "description": "スーパーマーケットを運営して、食品を売る会社です。",
       "industry_code": "6100",
       "industry_name": "小売業",
       "market": "スタンダード（内国株式）",
@@ -1802,7 +1937,8 @@
         "dividend_per_share": 30.0,
         "cash": 923235000,
         "interest_bearing_debt": 5483621000,
-        "net_cash": -4837356500
+        "net_cash": -4837356500,
+        "net_net": -9659906000
       }
     },
     {
@@ -1810,6 +1946,7 @@
       "name": "コーナン商事株式会社",
       "edinet_code": "E03273",
       "doc_id": "S100Y7KL",
+      "description": "家や庭の手入れに必要な道具を売るお店です。",
       "industry_code": "6100",
       "industry_name": "小売業",
       "market": "プライム（内国株式）",
@@ -1829,7 +1966,8 @@
         "dividend_per_share": 130.0,
         "cash": 13300000000,
         "interest_bearing_debt": 153070000000,
-        "net_cash": -143760000000
+        "net_cash": -143760000000,
+        "net_net": -141598000000
       }
     },
     {
@@ -1837,6 +1975,7 @@
       "name": "株式会社スリーエフ",
       "edinet_code": "E03286",
       "doc_id": "S100Y68I",
+      "description": "コンビニエンスストアで商品を売る会社です。",
       "industry_code": "6100",
       "industry_name": "小売業",
       "market": "スタンダード（内国株式）",
@@ -1856,7 +1995,8 @@
         "dividend_per_share": 18.0,
         "cash": 4768000000,
         "interest_bearing_debt": 0,
-        "net_cash": 3337600000
+        "net_cash": 3337600000,
+        "net_net": 4208000000
       }
     },
     {
@@ -1864,6 +2004,7 @@
       "name": "株式会社ポプラ",
       "edinet_code": "E03312",
       "doc_id": "S100Y6BQ",
+      "description": "温かいごはんをよそってくれるコンビニです。",
       "industry_code": "6100",
       "industry_name": "小売業",
       "market": "スタンダード（内国株式）",
@@ -1882,7 +2023,8 @@
         "investing_cf": -232883000,
         "cash": 841144000,
         "interest_bearing_debt": 204614000,
-        "net_cash": 384186800
+        "net_cash": 384186800,
+        "net_net": -1270217000
       }
     },
     {
@@ -1890,6 +2032,7 @@
       "name": "株式会社エスケイジャパン",
       "edinet_code": "E02897",
       "doc_id": "S100Y6QH",
+      "description": "クレーンゲームの景品などを売る会社です。",
       "industry_code": "6050",
       "industry_name": "卸売業",
       "market": "スタンダード（内国株式）",
@@ -1909,7 +2052,8 @@
         "dividend_per_share": 47.0,
         "cash": 4183339000,
         "interest_bearing_debt": 0,
-        "net_cash": 2928337300
+        "net_cash": 2928337300,
+        "net_net": 6102134000
       }
     },
     {
@@ -1917,6 +2061,7 @@
       "name": "株式会社テイツー",
       "edinet_code": "E03319",
       "doc_id": "S100Y7L3",
+      "description": "中古のゲームや本、カードを買い取って売る会社。",
       "industry_code": "6100",
       "industry_name": "小売業",
       "market": "スタンダード（内国株式）",
@@ -1936,7 +2081,8 @@
         "dividend_per_share": 5.0,
         "cash": 2983952000,
         "interest_bearing_debt": 1165757000,
-        "net_cash": 923009399
+        "net_cash": 923009399,
+        "net_net": 2361901000
       }
     },
     {
@@ -1944,6 +2090,7 @@
       "name": "株式会社壱番屋",
       "edinet_code": "E03329",
       "doc_id": "S100Y73F",
+      "description": "カレーの「ココイチ」のお店を広げている会社。",
       "industry_code": "6100",
       "industry_name": "小売業",
       "market": "プライム（内国株式）",
@@ -1963,7 +2110,8 @@
         "dividend_per_share": 16.0,
         "cash": 13048000000,
         "interest_bearing_debt": 224000000,
-        "net_cash": 8909600000
+        "net_cash": 8909600000,
+        "net_net": 4660000000
       }
     },
     {
@@ -1971,6 +2119,7 @@
       "name": "株式会社コパ・コーポレーション",
       "edinet_code": "E35554",
       "doc_id": "S100Y7HW",
+      "description": "便利なアイデア商品を、お店やテレビで紹介して売る会社です。",
       "industry_code": "6050",
       "industry_name": "卸売業",
       "market": "グロース（内国株式）",
@@ -1989,7 +2138,8 @@
         "investing_cf": -1853000,
         "cash": 559134000,
         "interest_bearing_debt": 192455000,
-        "net_cash": 198938800
+        "net_cash": 198938800,
+        "net_net": 760300000
       }
     },
     {
@@ -1997,6 +2147,7 @@
       "name": "株式会社東京衡機",
       "edinet_code": "E01587",
       "doc_id": "S100Y7MQ",
+      "description": "いろいろな物の「重さや強さ」を測る機械を作る会社。",
       "industry_code": "3750",
       "industry_name": "精密機器",
       "market": "スタンダード（内国株式）",
@@ -2015,7 +2166,8 @@
         "investing_cf": -134205000,
         "cash": 1246494000,
         "interest_bearing_debt": 1360768000,
-        "net_cash": -488222200
+        "net_cash": -488222200,
+        "net_net": 519757000
       }
     },
     {
@@ -2023,6 +2175,7 @@
       "name": "株式会社幸和製作所",
       "edinet_code": "E33491",
       "doc_id": "S100Y797",
+      "description": "お年寄りが歩くための杖や車いすを作る会社です。",
       "industry_code": "3800",
       "industry_name": "その他製品",
       "market": "スタンダード（内国株式）",
@@ -2042,7 +2195,8 @@
         "dividend_per_share": 13.0,
         "cash": 1331473000,
         "interest_bearing_debt": 190000000,
-        "net_cash": 742031100
+        "net_cash": 742031100,
+        "net_net": 2523177000
       }
     },
     {
@@ -2050,6 +2204,7 @@
       "name": "東京ボード工業株式会社",
       "edinet_code": "E31123",
       "doc_id": "S100Y7DO",
+      "description": "段ボールの材料となる紙を作る会社です。",
       "industry_code": "3800",
       "industry_name": "その他製品",
       "market": "スタンダード（内国株式）",
@@ -2068,7 +2223,8 @@
         "investing_cf": -1312173000,
         "cash": 1171854000,
         "interest_bearing_debt": 7153130000,
-        "net_cash": -6332832200
+        "net_cash": -6332832200,
+        "net_net": -6123252000
       }
     },
     {
@@ -2076,6 +2232,7 @@
       "name": "株式会社グラファイトデザイン",
       "edinet_code": "E02464",
       "doc_id": "S100Y66O",
+      "description": "ゴルフのクラブの「シャフト」を作る会社。",
       "industry_code": "3800",
       "industry_name": "その他製品",
       "market": "スタンダード（内国株式）",
@@ -2095,7 +2252,8 @@
         "dividend_per_share": 30.0,
         "cash": 3157578000,
         "interest_bearing_debt": 846428000,
-        "net_cash": 1363876600
+        "net_cash": 1363876600,
+        "net_net": 2540631000
       }
     },
     {
@@ -2103,6 +2261,7 @@
       "name": "株式会社スクロール",
       "edinet_code": "E03054",
       "doc_id": "S100Y6S7",
+      "description": "カタログやネットで服や雑貨を売る会社です。",
       "industry_code": "6100",
       "industry_name": "小売業",
       "market": "プライム（内国株式）",
@@ -2122,7 +2281,8 @@
         "dividend_per_share": 59.0,
         "cash": 10721000000,
         "interest_bearing_debt": 0,
-        "net_cash": 7504700000
+        "net_cash": 7504700000,
+        "net_net": 18186000000
       }
     },
     {
@@ -2130,6 +2290,7 @@
       "name": "株式会社ヨンドシーホールディングス",
       "edinet_code": "E02621",
       "doc_id": "S100Y6MY",
+      "description": "宝石やアクセサリーを売っている会社です。",
       "industry_code": "6100",
       "industry_name": "小売業",
       "market": "プライム（内国株式）",
@@ -2149,7 +2310,8 @@
         "dividend_per_share": 83.0,
         "cash": 1326000000,
         "interest_bearing_debt": 8000000000,
-        "net_cash": -7071800000
+        "net_cash": -7071800000,
+        "net_net": -4763000000
       }
     },
     {
@@ -2157,6 +2319,7 @@
       "name": "株式会社三陽商会",
       "edinet_code": "E00593",
       "doc_id": "S100Y77K",
+      "description": "有名ブランドの服を企画・販売する会社です。",
       "industry_code": "3100",
       "industry_name": "繊維製品",
       "market": "プライム（内国株式）",
@@ -2176,7 +2339,8 @@
         "dividend_per_share": 139.0,
         "cash": 18492000000,
         "interest_bearing_debt": 7325000000,
-        "net_cash": 5619400000
+        "net_cash": 5619400000,
+        "net_net": 19754000000
       }
     },
     {
@@ -2184,6 +2348,7 @@
       "name": "株式会社オンワードホールディングス",
       "edinet_code": "E02521",
       "doc_id": "S100Y6J6",
+      "description": "服を作って売る、ファッションの会社です。",
       "industry_code": "3100",
       "industry_name": "繊維製品",
       "market": "プライム（内国株式）",
@@ -2203,7 +2368,8 @@
         "dividend_per_share": 30.0,
         "cash": 19715000000,
         "interest_bearing_debt": 22362000000,
-        "net_cash": -8561500000
+        "net_cash": -8561500000,
+        "net_net": -3110000000
       }
     },
     {
@@ -2211,6 +2377,7 @@
       "name": "株式会社ラピーヌ",
       "edinet_code": "E00605",
       "doc_id": "S100Y7LR",
+      "description": "大人向けのすてきな婦人服を作って売る会社です。",
       "industry_code": "3100",
       "industry_name": "繊維製品",
       "market": "スタンダード（内国株式）",
@@ -2229,7 +2396,8 @@
         "investing_cf": -1235000,
         "cash": 490325000,
         "interest_bearing_debt": 720185000,
-        "net_cash": -376957500
+        "net_cash": -376957500,
+        "net_net": -1264025000
       }
     },
     {
@@ -2237,6 +2405,7 @@
       "name": "株式会社東天紅",
       "edinet_code": "E04784",
       "doc_id": "S100Y6NU",
+      "description": "本格的な中華料理を出すお店を運営する会社です。",
       "industry_code": "6100",
       "industry_name": "小売業",
       "market": "スタンダード（内国株式）",
@@ -2256,7 +2425,8 @@
         "dividend_per_share": 15.0,
         "cash": 1873805000,
         "interest_bearing_debt": 1671200000,
-        "net_cash": -359536500
+        "net_cash": -359536500,
+        "net_net": -1619893000
       }
     },
     {
@@ -2264,6 +2434,7 @@
       "name": "株式会社ライフコーポレーション",
       "edinet_code": "E03083",
       "doc_id": "S100Y63D",
+      "description": "スーパーマーケットを運営して、食品などを売る会社。",
       "industry_code": "6100",
       "industry_name": "小売業",
       "market": "プライム（内国株式）",
@@ -2283,7 +2454,8 @@
         "dividend_per_share": 65.5,
         "cash": 26592000000,
         "interest_bearing_debt": 29524000000,
-        "net_cash": -10909600000
+        "net_cash": -10909600000,
+        "net_net": -58182000000
       }
     },
     {
@@ -2291,6 +2463,7 @@
       "name": "株式会社リンガーハット",
       "edinet_code": "E03099",
       "doc_id": "S100Y5IT",
+      "description": "おいしい「長崎ちゃんぽん」のお店を全国で運営する会社。",
       "industry_code": "6100",
       "industry_name": "小売業",
       "market": "プライム（内国株式）",
@@ -2310,7 +2483,8 @@
         "dividend_per_share": 13.0,
         "cash": 2296898000,
         "interest_bearing_debt": 7467218000,
-        "net_cash": -5859389400
+        "net_cash": -5859389400,
+        "net_net": -9741569000
       }
     },
     {
@@ -2318,6 +2492,7 @@
       "name": "株式会社松屋",
       "edinet_code": "E03017",
       "doc_id": "S100Y6A8",
+      "description": "おいしい牛丼を安く早く提供するお店です。",
       "industry_code": "6100",
       "industry_name": "小売業",
       "market": "プライム（内国株式）",
@@ -2337,7 +2512,8 @@
         "dividend_per_share": 12.0,
         "cash": 4694000000,
         "interest_bearing_debt": 12826000000,
-        "net_cash": -9540200000
+        "net_cash": -9540200000,
+        "net_net": -30908000000
       }
     },
     {
@@ -2345,6 +2521,7 @@
       "name": "株式会社大和",
       "edinet_code": "E03025",
       "doc_id": "S100Y7D9",
+      "description": "身の回りの商品を売ってお金をもらう会社です。",
       "industry_code": "6100",
       "industry_name": "小売業",
       "market": "スタンダード（内国株式）",
@@ -2363,7 +2540,8 @@
         "investing_cf": -177992000,
         "cash": 2562620000,
         "interest_bearing_debt": 2844419000,
-        "net_cash": -1050585000
+        "net_cash": -1050585000,
+        "net_net": -15874835000
       }
     },
     {
@@ -2371,6 +2549,7 @@
       "name": "株式会社井筒屋",
       "edinet_code": "E03032",
       "doc_id": "S100Y6HY",
+      "description": "デパートで服や食べ物を売る会社です。",
       "industry_code": "6100",
       "industry_name": "小売業",
       "market": "スタンダード（内国株式）",
@@ -2390,7 +2569,8 @@
         "dividend_per_share": 6.0,
         "cash": 2635000000,
         "interest_bearing_debt": 1174000000,
-        "net_cash": 670500000
+        "net_cash": 670500000,
+        "net_net": -24165000000
       }
     },
     {
@@ -2398,6 +2578,7 @@
       "name": "株式会社Ｏｌｙｍｐｉｃグループ",
       "edinet_code": "E03132",
       "doc_id": "S100Y77X",
+      "description": "生活に必要な物を安く売るお店です。",
       "industry_code": "6100",
       "industry_name": "小売業",
       "market": "スタンダード（内国株式）",
@@ -2416,7 +2597,8 @@
         "investing_cf": -539000000,
         "cash": 3597000000,
         "interest_bearing_debt": 16741000000,
-        "net_cash": -14223100000
+        "net_cash": -14223100000,
+        "net_net": -25543000000
       }
     },
     {
@@ -2424,6 +2606,7 @@
       "name": "スパークス・グループ株式会社",
       "edinet_code": "E05242",
       "doc_id": "S100Y7MV",
+      "description": "みんなから預かったお金を運用して増やす会社です。",
       "industry_code": "7100",
       "industry_name": "証券、商品先物取引業",
       "market": "プライム（内国株式）",
@@ -2443,7 +2626,8 @@
         "dividend_per_share": 90.0,
         "cash": 19527000000,
         "interest_bearing_debt": 7000000000,
-        "net_cash": 6668900000
+        "net_cash": 6668900000,
+        "net_net": 11993000000
       }
     },
     {
@@ -2451,6 +2635,7 @@
       "name": "株式会社ランド",
       "edinet_code": "E04015",
       "doc_id": "S100Y721",
+      "description": "マンションを買ったり貸したりして稼ぐ会社です。",
       "industry_code": "8050",
       "industry_name": "不動産業",
       "market": "スタンダード（内国株式）",
@@ -2469,7 +2654,8 @@
         "investing_cf": -12978000,
         "cash": 2910636000,
         "interest_bearing_debt": 381649000,
-        "net_cash": 1655796199
+        "net_cash": 1655796199,
+        "net_net": 9117233000
       }
     },
     {
@@ -2477,6 +2663,7 @@
       "name": "株式会社ライズ・コンサルティング・グループ",
       "edinet_code": "E38895",
       "doc_id": "S100Y6K8",
+      "description": "企業の困りごとを解決して稼ぐ会社です。",
       "industry_code": "9050",
       "industry_name": "サービス業",
       "market": "グロース（内国株式）",
@@ -2494,7 +2681,8 @@
         "dividend_per_share": 21.0,
         "cash": 2659830000,
         "interest_bearing_debt": 1063790000,
-        "net_cash": 798091000
+        "net_cash": 798091000,
+        "net_net": 1833224000
       }
     },
     {
@@ -2502,6 +2690,7 @@
       "name": "バリュークリエーション株式会社",
       "edinet_code": "E39089",
       "doc_id": "S100Y7MG",
+      "description": "ネットで企業の商品を宣伝する会社です。",
       "industry_code": "9050",
       "industry_name": "サービス業",
       "market": "グロース（内国株式）",
@@ -2521,7 +2710,8 @@
         "dividend_per_share": 2.0,
         "cash": 1124643000,
         "interest_bearing_debt": 1002848000,
-        "net_cash": -215597900
+        "net_cash": -215597900,
+        "net_net": -85754000
       }
     },
     {
@@ -2529,6 +2719,7 @@
       "name": "関通ホールディングス株式会社",
       "edinet_code": "E35493",
       "doc_id": "S100Y7I7",
+      "description": "通販会社の代わりに商品を発送する会社です。",
       "industry_code": "5200",
       "industry_name": "倉庫・運輸関連業",
       "market": "グロース（内国株式）",
@@ -2548,7 +2739,8 @@
         "dividend_per_share": 10.0,
         "cash": 2445892000,
         "interest_bearing_debt": 6532621000,
-        "net_cash": -4820496600
+        "net_cash": -4820496600,
+        "net_net": -3721254000
       }
     },
     {
@@ -2556,6 +2748,7 @@
       "name": "セントラル警備保障株式会社",
       "edinet_code": "E04799",
       "doc_id": "S100Y6FE",
+      "description": "みんなの安全を２４時間守るお仕事です。（18文字）",
       "industry_code": "9050",
       "industry_name": "サービス業",
       "market": "プライム（内国株式）",
@@ -2575,7 +2768,8 @@
         "dividend_per_share": 60.0,
         "cash": 16211071000,
         "interest_bearing_debt": 2163635000,
-        "net_cash": 9184114700
+        "net_cash": 9184114700,
+        "net_net": 11971412000
       }
     },
     {
@@ -2583,6 +2777,7 @@
       "name": "株式会社昴",
       "edinet_code": "E04941",
       "doc_id": "S100Y5RU",
+      "description": "塾や学習教室を開いて、勉強を教えています。",
       "industry_code": "9050",
       "industry_name": "サービス業",
       "market": "スタンダード（内国株式）",
@@ -2602,7 +2797,8 @@
         "dividend_per_share": 120.0,
         "cash": 752936000,
         "interest_bearing_debt": 1577465000,
-        "net_cash": -1050409800
+        "net_cash": -1050409800,
+        "net_net": -2374095000
       }
     },
     {
@@ -2610,6 +2806,7 @@
       "name": "株式会社ダイセキ",
       "edinet_code": "E04931",
       "doc_id": "S100Y63V",
+      "description": "工場から出るゴミをきれいに変える会社です。",
       "industry_code": "9050",
       "industry_name": "サービス業",
       "market": "プライム（内国株式）",
@@ -2629,7 +2826,8 @@
         "dividend_per_share": 76.0,
         "cash": 18301000000,
         "interest_bearing_debt": 4425000000,
-        "net_cash": 8385700000
+        "net_cash": 8385700000,
+        "net_net": 14803000000
       }
     },
     {
@@ -2637,6 +2835,7 @@
       "name": "株式会社ジュンテンドー",
       "edinet_code": "E03141",
       "doc_id": "S100Y6C2",
+      "description": "日用品や園芸品を売るホームセンターの会社です。",
       "industry_code": "6100",
       "industry_name": "小売業",
       "market": "スタンダード（内国株式）",
@@ -2656,7 +2855,8 @@
         "dividend_per_share": 10.0,
         "cash": 1853155000,
         "interest_bearing_debt": 14616630000,
-        "net_cash": -13319421500
+        "net_cash": -13319421500,
+        "net_net": -12574001000
       }
     },
     {
@@ -2664,6 +2864,7 @@
       "name": "株式会社カンセキ",
       "edinet_code": "E03179",
       "doc_id": "S100Y67I",
+      "description": "ホームセンターなどで暮らしの品を売る会社です。",
       "industry_code": "6100",
       "industry_name": "小売業",
       "market": "スタンダード（内国株式）",
@@ -2683,7 +2884,8 @@
         "dividend_per_share": 20.0,
         "cash": 989888000,
         "interest_bearing_debt": 6751877000,
-        "net_cash": -6058955400
+        "net_cash": -6058955400,
+        "net_net": -9623033000
       }
     },
     {
@@ -2691,6 +2893,7 @@
       "name": "株式会社ヤマザワ",
       "edinet_code": "E03228",
       "doc_id": "S100Y6JY",
+      "description": "山形や宮城の街で、食料品や日用品を売るスーパーです。",
       "industry_code": "6100",
       "industry_name": "小売業",
       "market": "スタンダード（内国株式）",
@@ -2710,7 +2913,8 @@
         "dividend_per_share": 27.0,
         "cash": 4950000000,
         "interest_bearing_debt": 4101000000,
-        "net_cash": -636000000
+        "net_cash": -636000000,
+        "net_net": -10780000000
       }
     }
   ]

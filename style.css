@@ -534,3 +534,9 @@ body {
   cursor: pointer;
 }
 
+.company-desc {
+  font-size: 0.82rem;
+  color: #555;
+  margin: 4px 0 8px 0;
+  line-height: 1.4;
+}

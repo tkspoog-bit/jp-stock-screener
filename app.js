@@ -289,6 +289,7 @@ function renderList(data) {
       </div>
       <div class="company-code">証券コード：${company.code}${company.market ? `　${company.market}` : ''}${company.industry_name ? `　${company.industry_name}` : ''}</div>
       <div class="company-tags">${generateTags(company)}</div>
+      ${company.description ? `<div class="company-desc">${company.description}</div>` : ''}
       <div class="filing-info">
         <span>決算期：${periodLabel}</span>
         <span>提出日：${filing.submit_date || '不明'}</span>
