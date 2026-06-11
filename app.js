@@ -156,6 +156,7 @@ function applyFilters() {
   const capMax = parseFloat(document.getElementById('filter-cap').value);
   const ncpMin = parseFloat(document.getElementById('filter-ncp').value);
   const nnMin = parseFloat(document.getElementById('filter-nn').value);
+  const yieldMin = parseFloat(document.getElementById('filter-yield').value);
 
   let filtered = allData;
 
@@ -187,6 +188,10 @@ function applyFilters() {
   if (!isNaN(ncpMin)) {
     if (ncpMin <= NCP_MIN) filtered = filtered.filter(c => c.net_cash_ratio !== null && c.net_cash_ratio <= ncpMin);
     else filtered = filtered.filter(c => c.net_cash_ratio !== null && c.net_cash_ratio >= ncpMin);
+  }
+  if (!isNaN(yieldMin)) {
+    if (yieldMin <= 1) filtered = filtered.filter(c => c.dividend_yield !== null && c.dividend_yield <= yieldMin);
+    else filtered = filtered.filter(c => c.dividend_yield !== null && c.dividend_yield >= yieldMin);
   }
   if (!isNaN(nnMin)) {
     if (nnMin <= NN_MIN) filtered = filtered.filter(c => c.net_net_ratio !== null && c.net_net_ratio <= nnMin);
@@ -258,6 +263,7 @@ function clearScreenFilter() {
   document.getElementById('filter-cap').value = '';
   document.getElementById('filter-ncp').value = '';
   document.getElementById('filter-nn').value = '';
+  document.getElementById('filter-yield').value = '';
 }
 
 // 結果描画
@@ -275,11 +281,14 @@ function renderList(data) {
     }
   }
 
-  const sorted = [...data].sort((a, b) => {
+  const displayData = currentSort === 'dividend_yield'
+    ? data.filter(c => c.dividend_yield !== null)
+    : data;
+  const sorted = [...displayData].sort((a, b) => {
     let valA, valB;
-    if (['per','pbr','roe','roa','operating_margin','net_cash_ratio','net_net_ratio'].includes(currentSort)) {
-      valA = a[currentSort] || 0;
-      valB = b[currentSort] || 0;
+    if (['per','pbr','roe','roa','operating_margin','net_cash_ratio','net_net_ratio','dividend_yield'].includes(currentSort)) {
+      valA = a[currentSort] !== null ? a[currentSort] : -Infinity;
+      valB = b[currentSort] !== null ? b[currentSort] : -Infinity;
     } else if (currentSort === 'market_cap') {
       valA = a.marketCap || 0;
       valB = b.marketCap || 0;
