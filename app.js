@@ -29,7 +29,8 @@ Promise.all([
     const operating_margin = (f.operating_profit && f.sales) ? f.operating_profit / f.sales * 100 : null;
     const net_cash_ratio = (f.net_cash && marketCap) ? f.net_cash / marketCap * 100 : null;
     const net_net_ratio = (f.net_net !== undefined && f.net_net !== null && marketCap) ? f.net_net / marketCap : null;
-    return { ...company, marketCap, priceData, per, pbr, roe, roa, operating_margin, net_cash_ratio, net_net_ratio };
+    const dividend_yield = (f.dividend_per_share && priceData) ? f.dividend_per_share / priceData.price * 100 : null;
+    return { ...company, marketCap, priceData, per, pbr, roe, roa, operating_margin, net_cash_ratio, net_net_ratio, dividend_yield };
   });
 
   // 業種リスト生成
@@ -61,6 +62,7 @@ const HINTS = {
   '時価総額': '株価×発行済株式数。会社全体の値段。',
   '営業CF': '営業活動によるキャッシュフロー。本業で現金をどれだけ稼いだか。',
   '投資CF': '投資活動によるキャッシュフロー。設備投資などへの支出。マイナスが多いほど積極投資。',
+  '配当利回り': '1株配当÷株価×100。株を持っているだけでもらえる配当金の割合。高いほど株主還元が厚い。',
   'タグ：大型株': '時価総額1兆円以上',
   'タグ：中型株': '時価総額1000億円以上1兆円未満',
   'タグ：小型株': '時価総額1000億円未満',
@@ -71,6 +73,7 @@ const HINTS = {
   'タグ：キャッシュリッチ': 'NC比率 30%以上。現金×0.7が有利子負債を大きく上回る会社。清原達郎氏が重視。',
   'タグ：ネットネット株': 'ネットネット倍率 1倍以上。流動資産だけで時価総額を上回る超割安株。',
   'タグ：高CF': '営業CFが純利益を上回る。実際の現金創出力が高い会社。',
+  'タグ：高配当': '配当利回り3%以上。株を持っているだけで多くの配当金がもらえる会社。',
 };
 
 function initSettings() {
@@ -79,15 +82,33 @@ function initSettings() {
   document.getElementById('show-hints').checked = showHints;
 }
 
+const TAG_COLORS = {
+  'タグ：大型株': '#1a1a2e',
+  'タグ：中型株': '#2d6a9f',
+  'タグ：小型株': '#5a8a6a',
+  'タグ：高ROE': '#e07b3a',
+  'タグ：高利益率': '#e07b3a',
+  'タグ：低PER': '#9b59b6',
+  'タグ：低PBR': '#9b59b6',
+  'タグ：キャッシュリッチ': '#27ae60',
+  'タグ：ネットネット株': '#c0392b',
+  'タグ：高CF': '#2980b9',
+  'タグ：高配当': '#d4a017',
+};
+
 function initGlossary() {
   const list = document.getElementById('glossary-list');
   list.innerHTML = '';
   Object.entries(HINTS).forEach(([key, desc]) => {
     const item = document.createElement('div');
     item.className = 'hint-item';
+    const color = TAG_COLORS[key];
+    const label = color
+      ? `<span class="company-tag" style="background:${color}">${key.replace('タグ：', '')}</span>`
+      : `<div class="hint-label">${key}</div>`;
     item.innerHTML = `
-      <div class="hint-label">${key}</div>
-      <div class="hint-desc">${desc}</div>
+      ${label}
+      <div class="hint-desc" style="margin-top:6px">${desc}</div>
     `;
     list.appendChild(item);
   });
@@ -316,6 +337,7 @@ function renderList(data) {
           ${company.operating_margin !== null ? `<div class="metric-item" onclick="showHint('営業利益率')"><span class="metric-label">営業利益率 ？</span><span class="metric-value">${company.operating_margin.toFixed(1)} %</span></div>` : ''}
           ${company.net_cash_ratio !== null ? `<div class="metric-item" onclick="showHint('NC比率')"><span class="metric-label">NC比率 ？</span><span class="metric-value">${company.net_cash_ratio.toFixed(1)} %</span></div>` : ''}
           ${company.net_net_ratio !== null ? `<div class="metric-item" onclick="showHint('ネットネット')"><span class="metric-label">ネットネット ？</span><span class="metric-value">${company.net_net_ratio.toFixed(2)} 倍</span></div>` : ''}
+          ${company.dividend_yield !== null ? `<div class="metric-item" onclick="showHint('配当利回り')"><span class="metric-label">配当利回り ？</span><span class="metric-value">${company.dividend_yield.toFixed(2)} %</span></div>` : ''}
         </div>
         <div class="financial-row"><span class="financial-label">参考株価</span><span class="financial-value">${company.priceData ? company.priceData.price.toLocaleString() + ' 円（' + company.priceData.date + '）' : '不明'}</span></div>
         <div class="financial-row"><span class="financial-label">発行済株式数</span><span class="financial-value">${formatShares(f.shares_issued)}</span></div>
@@ -483,6 +505,7 @@ function generateTags(c) {
     tags.push({ label: '高CF', color: '#2980b9' });
   }
 
+  if (c.dividend_yield >= 3) tags.push({ label: '高配当', color: '#d4a017' });
   if (tags.length === 0) return '';
   return tags.map(t =>
     `<span class="company-tag" style="background:${t.color}" onclick="showHint('タグ：${t.label}')">${t.label}</span>`
