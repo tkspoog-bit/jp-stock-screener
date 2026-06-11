@@ -80,6 +80,26 @@ function initSettings() {
   const saved = localStorage.getItem('show-hints');
   const showHints = saved === null ? true : saved === 'true';
   document.getElementById('show-hints').checked = showHints;
+
+  const apiKey = localStorage.getItem('gemini-api-key');
+  if (apiKey) {
+    document.getElementById('gemini-api-key').value = apiKey;
+    document.getElementById('api-key-status').textContent = '✓ APIキー設定済み';
+  }
+}
+
+function saveApiKey() {
+  const key = document.getElementById('gemini-api-key').value.trim();
+  if (!key) {
+    document.getElementById('api-key-status').textContent = 'キーを入力してください';
+    return;
+  }
+  localStorage.setItem('gemini-api-key', key);
+  document.getElementById('api-key-status').textContent = '✓ 保存しました';
+}
+
+function getApiKey() {
+  return localStorage.getItem('gemini-api-key') || '';
 }
 
 const TAG_COLORS = {
@@ -114,6 +134,205 @@ function initGlossary() {
   });
 }
 
+function openDetail(code) {
+  const company = allData.find(c => c.code === code);
+  if (!company) return;
+
+  switchTab('detail');
+
+  const content = document.getElementById('detail-content');
+  const f = company.financials;
+  const history = company.history || [];
+
+  // 年ラベル生成
+  const periodLabels = {
+    'Prior4YearDuration': '-4期',
+    'Prior3YearDuration': '-3期',
+    'Prior2YearDuration': '-2期',
+    'Prior1YearDuration': '-1期',
+    'CurrentYearDuration': '今期'
+  };
+
+  const historyWithLabel = history.map(h => ({
+    ...h,
+    label: periodLabels[h.period] || h.period
+  }));
+
+  content.innerHTML = `
+    <div class="detail-header">
+      <div class="detail-name">${company.name}</div>
+      <div class="detail-code">${company.code}　${company.market || ''}　${company.industry_name || ''}</div>
+      ${company.description ? `<div class="company-desc">${company.description}</div>` : ''}
+      <div class="company-tags">${generateTags(company)}</div>
+    </div>
+
+    <div class="detail-section">
+      <h3>🤖 AI詳細サマリ</h3>
+      <div id="ai-summary" class="detail-ai-loading">分析中...</div>
+    </div>
+
+    <div class="detail-section">
+      <h3>📈 売上・利益推移</h3>
+      <div class="chart-container">
+        <canvas id="chart-revenue"></canvas>
+      </div>
+    </div>
+
+    <div class="detail-section">
+      <h3>📊 EPS推移</h3>
+      <div class="chart-container">
+        <canvas id="chart-eps"></canvas>
+      </div>
+    </div>
+
+    <div class="detail-section">
+      <h3>💰 主要指標</h3>
+      <div class="metrics-grid">
+        ${company.per !== null ? `<div class="metric-item"><span class="metric-label">PER</span><span class="metric-value">${company.per.toFixed(1)} 倍</span></div>` : ''}
+        ${company.pbr !== null ? `<div class="metric-item"><span class="metric-label">PBR</span><span class="metric-value">${company.pbr.toFixed(1)} 倍</span></div>` : ''}
+        ${company.roe !== null ? `<div class="metric-item"><span class="metric-label">ROE</span><span class="metric-value">${company.roe.toFixed(1)} %</span></div>` : ''}
+        ${company.roa !== null ? `<div class="metric-item"><span class="metric-label">ROA</span><span class="metric-value">${company.roa.toFixed(1)} %</span></div>` : ''}
+        ${company.operating_margin !== null ? `<div class="metric-item"><span class="metric-label">営業利益率</span><span class="metric-value">${company.operating_margin.toFixed(1)} %</span></div>` : ''}
+        ${company.net_cash_ratio !== null ? `<div class="metric-item"><span class="metric-label">NC比率</span><span class="metric-value">${company.net_cash_ratio.toFixed(1)} %</span></div>` : ''}
+        ${company.net_net_ratio !== null ? `<div class="metric-item"><span class="metric-label">ネットネット</span><span class="metric-value">${company.net_net_ratio.toFixed(2)} 倍</span></div>` : ''}
+        ${company.dividend_yield !== null ? `<div class="metric-item"><span class="metric-label">配当利回り</span><span class="metric-value">${company.dividend_yield.toFixed(2)} %</span></div>` : ''}
+      </div>
+    </div>
+  `;
+
+  // グラフ描画
+  drawRevenueChart(historyWithLabel);
+  drawEpsChart(historyWithLabel);
+
+  // AI詳細サマリ生成
+  generateAISummary(company);
+}
+
+function closeDetail() {
+  switchTab('result');
+}
+
+function drawRevenueChart(history) {
+  const canvas = document.getElementById('chart-revenue');
+  if (!canvas || history.length === 0) return;
+  const ctx = canvas.getContext('2d');
+
+  const labels = history.map(h => h.label);
+  const sales = history.map(h => h.net_sales ? h.net_sales / 100000000 : null);
+  const opIncome = history.map(h => h.operating_income ? h.operating_income / 100000000 : null);
+  const netIncome = history.map(h => h.net_profit ? h.net_profit / 100000000 : null);
+
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels,
+      datasets: [
+        {
+          label: '営業利益(億円)',
+          data: opIncome,
+          backgroundColor: 'rgba(230,126,34,0.7)',
+          yAxisID: 'y2'
+        },
+        {
+          label: '純利益(億円)',
+          data: netIncome,
+          backgroundColor: 'rgba(39,174,96,0.7)',
+          yAxisID: 'y2'
+        },
+        {
+          label: '売上高(億円)',
+          data: sales,
+          type: 'line',
+          borderColor: '#1a1a2e',
+          backgroundColor: 'rgba(26,26,46,0.1)',
+          tension: 0.3,
+          yAxisID: 'y1',
+          fill: false
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      plugins: { legend: { position: 'bottom' } },
+      scales: {
+        y1: {
+          type: 'linear',
+          position: 'left',
+          title: { display: true, text: '売上高(億円)' }
+        },
+        y2: {
+          type: 'linear',
+          position: 'right',
+          title: { display: true, text: '利益(億円)' },
+          grid: { drawOnChartArea: false }
+        }
+      }
+    }
+  });
+}
+
+function drawEpsChart(history) {
+  const canvas = document.getElementById('chart-eps');
+  if (!canvas || history.length === 0) return;
+  const ctx = canvas.getContext('2d');
+
+  const labels = history.map(h => h.label);
+  const eps = history.map(h =>
+    (h.net_profit && h.shares_outstanding) ? (h.net_profit / h.shares_outstanding).toFixed(1) : null
+  );
+
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels,
+      datasets: [{
+        label: 'EPS(円)',
+        data: eps,
+        borderColor: '#1a1a2e',
+        backgroundColor: 'rgba(26,26,46,0.1)',
+        tension: 0.3,
+        fill: true
+      }]
+    },
+    options: { responsive: true, plugins: { legend: { position: 'bottom' } } }
+  });
+}
+
+async function generateAISummary(company) {
+  const f = company.financials;
+  const history = company.history || [];
+
+  const prompt = `
+以下の企業データを分析して、個人投資家向けに200文字程度で投資判断のポイントを説明してください。
+企業名：${company.name}
+業種：${company.industry_name}
+売上高：${f.sales ? Math.round(f.sales/100000000) + '億円' : '不明'}
+営業利益：${f.operating_profit ? Math.round(f.operating_profit/100000000) + '億円' : '不明'}
+ROE：${company.roe ? company.roe.toFixed(1) + '%' : '不明'}
+営業利益率：${company.operating_margin ? company.operating_margin.toFixed(1) + '%' : '不明'}
+PER：${company.per ? company.per.toFixed(1) + '倍' : '不明'}
+NC比率：${company.net_cash_ratio ? company.net_cash_ratio.toFixed(1) + '%' : '不明'}
+ネットネット倍率：${company.net_net_ratio ? company.net_net_ratio.toFixed(2) + '倍' : '不明'}
+  `.trim();
+
+  try {
+    const response = await fetch(
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite:generateContent?key=${getApiKey()}`,
+      {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] })
+      }
+    );
+    const data = await response.json();
+    const text = data.candidates[0].content.parts[0].text;
+    document.getElementById('ai-summary').textContent = text;
+    document.getElementById('ai-summary').className = 'detail-ai-text';
+  } catch (e) {
+    document.getElementById('ai-summary').textContent = 'AI分析を取得できませんでした。';
+  }
+}
+
 function saveSettings() {
   const showHints = document.getElementById('show-hints').checked;
   localStorage.setItem('show-hints', showHints);
@@ -135,11 +354,13 @@ function switchTab(tab) {
   document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
   document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
   document.getElementById(`${tab}-screen`).classList.add('active');
-  document.getElementById(`nav-${tab}`).classList.add('active');
+  const navBtn = document.getElementById(`nav-${tab}`);
+  if (navBtn) navBtn.classList.add('active');
   if (tab === 'result') renderList();
   if (tab === 'portfolio') renderPortfolioScreen();
   if (tab === 'settings') initSettings();
   if (tab === 'glossary') initGlossary();
+  if (tab === 'detail') {}
 }
 
 // 結果画面へ
@@ -312,6 +533,11 @@ function renderList(data) {
     const inPf = Object.values(portfolios).some(pf => pf.codes.includes(company.code));
     const card = document.createElement('div');
     card.className = 'company-card';
+    card.style.cursor = 'pointer';
+    card.onclick = (e) => {
+      if (e.target.classList.contains('pf-btn') || e.target.classList.contains('company-tag')) return;
+      openDetail(company.code);
+    };
     card.innerHTML = `
       <div class="company-header">
         <div class="company-name">${company.name}</div>

@@ -125,6 +125,15 @@
       <div class="screen-content">
         <h2>⚙️ 設定</h2>
         <div class="settings-section">
+          <div class="settings-label">Gemini APIキー</div>
+          <div class="settings-desc">AI詳細サマリの利用に必要です。<a href="https://aistudio.google.com/app/apikey" target="_blank">Google AI Studioで取得</a></div>
+          <div style="display:flex;gap:8px;margin-top:8px">
+            <input type="password" id="gemini-api-key" placeholder="APIキーを入力" style="flex:1;padding:8px;border:1px solid #ddd;border-radius:8px;font-size:0.9rem">
+            <button onclick="saveApiKey()" style="padding:8px 16px;background:#1a1a2e;color:white;border:none;border-radius:8px;cursor:pointer">保存</button>
+          </div>
+          <div id="api-key-status" style="font-size:0.75rem;color:#888;margin-top:4px"></div>
+        </div>
+        <div class="settings-section">
           <div class="settings-row">
             <div>
               <div class="settings-label">指標の説明を表示</div>
@@ -140,7 +149,15 @@
       </div>
     </div>
 
-  <!-- 用語画面 -->
+  <!-- 詳細画面 -->
+    <div id="detail-screen" class="screen">
+      <div id="detail-back">
+        <button onclick="closeDetail()">← 戻る</button>
+      </div>
+      <div id="detail-content"></div>
+    </div>
+
+    <!-- 用語画面 -->
     <div id="glossary-screen" class="screen">
       <div class="screen-content">
         <h2>📖 用語集</h2>
@@ -172,6 +189,7 @@
     </button>
   </nav>
 
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

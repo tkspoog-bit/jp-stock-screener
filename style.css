@@ -540,3 +540,62 @@ body {
   margin: 4px 0 8px 0;
   line-height: 1.4;
 }
+/* 詳細画面 */
+#detail-back {
+  padding: 8px 16px;
+  background: transparent;
+  position: sticky;
+  top: 56px;
+  z-index: 90;
+}
+
+#detail-back button {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  color: #1a1a2e;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 6px 16px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+#detail-content {
+  padding: 16px;
+}
+
+.detail-section {
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+.detail-section h3 {
+  font-size: 0.95rem;
+  color: #1a1a2e;
+  margin-bottom: 12px;
+  font-weight: bold;
+}
+
+.detail-ai-text {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: #444;
+}
+
+.detail-ai-loading {
+  color: #aaa;
+  font-size: 0.9rem;
+}
+
+.chart-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+canvas {
+  max-width: 100%;
+}
