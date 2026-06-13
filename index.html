@@ -42,23 +42,68 @@
           </div>
           <div class="filter-group">
             <label class="filter-label">PER（倍以下）</label>
-            <input type="number" id="filter-per" placeholder="例：20" min="0">
+          <select id="filter-per">
+              <option value="">指定なし</option>
+              <option value="5">5以下</option>
+              <option value="10">10</option>
+              <option value="15">15</option>
+              <option value="20">20</option>
+              <option value="25">25</option>
+              <option value="30">30</option>
+              <option value="40">40</option>
+              <option value="50">50</option>
+              <option value="100">100以上</option>
+            </select>
           </div>
           <div class="filter-group">
             <label class="filter-label">ROE（%以上）</label>
-            <input type="number" id="filter-roe" placeholder="例：15" min="0">
+            <select id="filter-roe">
+              <option value="">指定なし</option>
+              <option value="5">5以下</option>
+              <option value="10">10</option>
+              <option value="15">15</option>
+              <option value="20">20</option>
+              <option value="25">25</option>
+              <option value="30">30以上</option>
+            </select>
           </div>
           <div class="filter-group">
             <label class="filter-label">営業利益率（%以上）</label>
-            <input type="number" id="filter-margin" placeholder="例：10" min="0">
+            <select id="filter-margin">
+              <option value="">指定なし</option>
+              <option value="5">5以下</option>
+              <option value="10">10</option>
+              <option value="15">15</option>
+              <option value="20">20</option>
+              <option value="25">25</option>
+              <option value="30">30以上</option>
+            </select>
           </div>
           <div class="filter-group">
             <label class="filter-label">時価総額（億円以下）</label>
-            <input type="number" id="filter-cap" placeholder="例：500" min="0">
+            <select id="filter-cap">
+              <option value="">指定なし</option>
+              <option value="50">50以下</option>
+              <option value="100">100</option>
+              <option value="200">200</option>
+              <option value="300">300</option>
+              <option value="500">500</option>
+              <option value="1000">1000</option>
+              <option value="2000">2000</option>
+              <option value="5000">5000以上</option>
+            </select>
           </div>
           <div class="filter-group">
             <label class="filter-label">ネットキャッシュ比率（%以上）</label>
-            <input type="number" id="filter-ncp" placeholder="例：20" min="-100">
+            <select id="filter-ncp">
+              <option value="">指定なし</option>
+              <option value="0">0以下</option>
+              <option value="10">10</option>
+              <option value="20">20</option>
+              <option value="30">30</option>
+              <option value="40">40</option>
+              <option value="50">50以上</option>
+            </select>
           </div>
           <div class="filter-group">
             <label class="filter-label">配当利回り（%以上）</label>
@@ -74,7 +119,35 @@
           </div>
           <div class="filter-group">
             <label class="filter-label">ネットネット倍率（倍以上）</label>
-            <input type="number" id="filter-nn" placeholder="例：0.5" min="-10" step="0.1">
+            <select id="filter-nn">
+              <option value="">指定なし</option>
+              <option value="0.3">0.3以下</option>
+              <option value="0.5">0.5</option>
+              <option value="0.7">0.7</option>
+              <option value="1.0">1.0</option>
+              <option value="1.5">1.5</option>
+              <option value="2.0">2.0以上</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label class="filter-label">自己資本比率（%以上）</label>
+            <select id="filter-equity-ratio">
+              <option value="">指定なし</option>
+              <option value="30">30%以上</option>
+              <option value="40">40</option>
+              <option value="50">50</option>
+              <option value="60">60</option>
+              <option value="70">70</option>
+              <option value="80">80%以上</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label class="filter-label">営業CF（黒字のみ）</label>
+            <select id="filter-cf">
+              <option value="">指定なし</option>
+              <option value="1">黒字のみ</option>
+            </select>
           </div>
           
         </div>
@@ -126,12 +199,27 @@
         <h2>⚙️ 設定</h2>
         <div class="settings-section">
           <div class="settings-label">Gemini APIキー</div>
-          <div class="settings-desc">AI詳細サマリの利用に必要です。<a href="https://aistudio.google.com/app/apikey" target="_blank">Google AI Studioで取得</a></div>
+          <div class="settings-desc">
+            AI詳細サマリの利用に必要です。<br>
+            <a href="https://aistudio.google.com/app/apikey" target="_blank">① Google AI Studioで取得</a><br>
+            ② 取得したキーを下の入力欄に貼り付けて「保存」<br>
+            ③ 無料枠はモデルにより異なります（例：gemini-3.1-flash-liteはRPD500）<br>
+            ⚠️ APIキーは外部に漏らさないよう注意してください。このアプリはキーをこのデバイスのみに保存します。
+          </div>
           <div style="display:flex;gap:8px;margin-top:8px">
             <input type="password" id="gemini-api-key" placeholder="APIキーを入力" style="flex:1;padding:8px;border:1px solid #ddd;border-radius:8px;font-size:0.9rem">
             <button onclick="saveApiKey()" style="padding:8px 16px;background:#1a1a2e;color:white;border:none;border-radius:8px;cursor:pointer">保存</button>
           </div>
           <div id="api-key-status" style="font-size:0.75rem;color:#888;margin-top:4px"></div>
+        </div>
+        <div class="settings-section">
+          <div class="settings-label">AIモデル選択</div>
+          <div class="settings-desc">精度と無料枠のバランスで選んでください</div>
+          <select id="gemini-model" onchange="saveModel()" style="width:100%;padding:8px;border:1px solid #ddd;border-radius:8px;font-size:0.9rem;margin-top:8px">
+            <option value="gemini-3.1-flash-lite">gemini-3.1-flash-lite（無料枠多い・推奨）</option>
+            <option value="gemini-2.0-flash">gemini-2.0-flash（バランス型）</option>
+            <option value="gemini-2.5-flash">gemini-2.5-flash（高精度）</option>
+          </select>
         </div>
         <div class="settings-section">
           <div class="settings-row">

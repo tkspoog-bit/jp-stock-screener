@@ -30,7 +30,8 @@ Promise.all([
     const net_cash_ratio = (f.net_cash && marketCap) ? f.net_cash / marketCap * 100 : null;
     const net_net_ratio = (f.net_net !== undefined && f.net_net !== null && marketCap) ? f.net_net / marketCap : null;
     const dividend_yield = (f.dividend_per_share && priceData) ? f.dividend_per_share / priceData.price * 100 : null;
-    return { ...company, marketCap, priceData, per, pbr, roe, roa, operating_margin, net_cash_ratio, net_net_ratio, dividend_yield };
+    const equity_ratio = f.equity_ratio || null;
+    return { ...company, marketCap, priceData, per, pbr, roe, roa, operating_margin, net_cash_ratio, net_net_ratio, dividend_yield, equity_ratio };
   });
 
   // 業種リスト生成
@@ -63,6 +64,7 @@ const HINTS = {
   '営業CF': '営業活動によるキャッシュフロー。本業で現金をどれだけ稼いだか。',
   '投資CF': '投資活動によるキャッシュフロー。設備投資などへの支出。マイナスが多いほど積極投資。',
   '配当利回り': '1株配当÷株価×100。株を持っているだけでもらえる配当金の割合。高いほど株主還元が厚い。',
+  '自己資本比率': '総資産に対する純資産の割合。高いほど財務が安全。40%以上が目安。借金に頼らず自力で稼いでいる会社の証拠。',
   'タグ：大型株': '時価総額1兆円以上',
   'タグ：中型株': '時価総額1000億円以上1兆円未満',
   'タグ：小型株': '時価総額1000億円未満',
@@ -86,6 +88,10 @@ function initSettings() {
     document.getElementById('gemini-api-key').value = apiKey;
     document.getElementById('api-key-status').textContent = '✓ APIキー設定済み';
   }
+  const model = localStorage.getItem('gemini-model');
+  if (model) {
+    document.getElementById('gemini-model').value = model;
+  }
 }
 
 function saveApiKey() {
@@ -96,6 +102,15 @@ function saveApiKey() {
   }
   localStorage.setItem('gemini-api-key', key);
   document.getElementById('api-key-status').textContent = '✓ 保存しました';
+}
+
+function saveModel() {
+  const model = document.getElementById('gemini-model').value;
+  localStorage.setItem('gemini-model', model);
+}
+
+function getModel() {
+  return localStorage.getItem('gemini-model') || 'gemini-3.1-flash-lite';
 }
 
 function getApiKey() {
@@ -168,6 +183,7 @@ function openDetail(code) {
 
     <div class="detail-section">
       <h3>🤖 AI詳細サマリ</h3>
+      <div class="detail-ai-notice">※ 銘柄を開くたびにAIが再生成します。APIキーの利用枠を消費します。</div>
       <div id="ai-summary" class="detail-ai-loading">分析中...</div>
     </div>
 
@@ -317,7 +333,7 @@ NC比率：${company.net_cash_ratio ? company.net_cash_ratio.toFixed(1) + '%' : 
 
   try {
     const response = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite:generateContent?key=${getApiKey()}`,
+      `https://generativelanguage.googleapis.com/v1beta/models/${getModel()}:generateContent?key=${getApiKey()}`,
       {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -378,6 +394,8 @@ function applyFilters() {
   const ncpMin = parseFloat(document.getElementById('filter-ncp').value);
   const nnMin = parseFloat(document.getElementById('filter-nn').value);
   const yieldMin = parseFloat(document.getElementById('filter-yield').value);
+  const equityRatioMin = parseFloat(document.getElementById('filter-equity-ratio').value);
+  const cfFilter = document.getElementById('filter-cf').value;
 
   let filtered = allData;
 
@@ -409,6 +427,14 @@ function applyFilters() {
   if (!isNaN(ncpMin)) {
     if (ncpMin <= NCP_MIN) filtered = filtered.filter(c => c.net_cash_ratio !== null && c.net_cash_ratio <= ncpMin);
     else filtered = filtered.filter(c => c.net_cash_ratio !== null && c.net_cash_ratio >= ncpMin);
+  }
+  if (!isNaN(equityRatioMin)) {
+    if (equityRatioMin >= 80) filtered = filtered.filter(c => c.equity_ratio !== null && c.equity_ratio >= equityRatioMin);
+    else if (equityRatioMin <= 30) filtered = filtered.filter(c => c.equity_ratio !== null && c.equity_ratio <= equityRatioMin);
+    else filtered = filtered.filter(c => c.equity_ratio !== null && c.equity_ratio >= equityRatioMin);
+  }
+  if (cfFilter === '1') {
+    filtered = filtered.filter(c => c.financials.operating_cf && c.financials.operating_cf > 0);
   }
   if (!isNaN(yieldMin)) {
     if (yieldMin <= 1) filtered = filtered.filter(c => c.dividend_yield !== null && c.dividend_yield <= yieldMin);
@@ -485,6 +511,8 @@ function clearScreenFilter() {
   document.getElementById('filter-ncp').value = '';
   document.getElementById('filter-nn').value = '';
   document.getElementById('filter-yield').value = '';
+  document.getElementById('filter-equity-ratio').value = '';
+  document.getElementById('filter-cf').value = '';
 }
 
 // 結果描画
@@ -573,6 +601,7 @@ function renderList(data) {
           ${company.net_cash_ratio !== null ? `<div class="metric-item" onclick="showHint('NC比率')"><span class="metric-label">NC比率 ？</span><span class="metric-value">${company.net_cash_ratio.toFixed(1)} %</span></div>` : ''}
           ${company.net_net_ratio !== null ? `<div class="metric-item" onclick="showHint('ネットネット')"><span class="metric-label">ネットネット ？</span><span class="metric-value">${company.net_net_ratio.toFixed(2)} 倍</span></div>` : ''}
           ${company.dividend_yield !== null ? `<div class="metric-item" onclick="showHint('配当利回り')"><span class="metric-label">配当利回り ？</span><span class="metric-value">${company.dividend_yield.toFixed(2)} %</span></div>` : ''}
+          ${company.equity_ratio !== null ? `<div class="metric-item" onclick="showHint('自己資本比率')"><span class="metric-label">自己資本比率 ？</span><span class="metric-value">${company.equity_ratio.toFixed(1)} %</span></div>` : ''}
         </div>
         <div class="financial-row"><span class="financial-label">参考株価</span><span class="financial-value">${company.priceData ? company.priceData.price.toLocaleString() + ' 円（' + company.priceData.date + '）' : '不明'}</span></div>
         <div class="financial-row"><span class="financial-label">発行済株式数</span><span class="financial-value">${formatShares(f.shares_issued)}</span></div>

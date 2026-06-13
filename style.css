@@ -599,3 +599,9 @@ body {
 canvas {
   max-width: 100%;
 }
+
+.detail-ai-notice {
+  font-size: 0.75rem;
+  color: #aaa;
+  margin-bottom: 8px;
+}
