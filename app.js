@@ -31,7 +31,8 @@ Promise.all([
     const net_net_ratio = (f.net_net !== undefined && f.net_net !== null && marketCap) ? f.net_net / marketCap : null;
     const dividend_yield = (f.dividend_per_share && priceData) ? f.dividend_per_share / priceData.price * 100 : null;
     const equity_ratio = f.equity_ratio || null;
-    return { ...company, marketCap, priceData, per, pbr, roe, roa, operating_margin, net_cash_ratio, net_net_ratio, dividend_yield, equity_ratio };
+    const roic = f.roic || null;
+    return { ...company, marketCap, priceData, per, pbr, roe, roa, operating_margin, net_cash_ratio, net_net_ratio, dividend_yield, equity_ratio, roic };
   });
 
   // 業種リスト生成
@@ -394,6 +395,7 @@ function applyFilters() {
   const ncpMin = parseFloat(document.getElementById('filter-ncp').value);
   const nnMin = parseFloat(document.getElementById('filter-nn').value);
   const yieldMin = parseFloat(document.getElementById('filter-yield').value);
+  const roicMin = parseFloat(document.getElementById('filter-roic').value);
   const equityRatioMin = parseFloat(document.getElementById('filter-equity-ratio').value);
   const cfFilter = document.getElementById('filter-cf').value;
 
@@ -427,6 +429,10 @@ function applyFilters() {
   if (!isNaN(ncpMin)) {
     if (ncpMin <= NCP_MIN) filtered = filtered.filter(c => c.net_cash_ratio !== null && c.net_cash_ratio <= ncpMin);
     else filtered = filtered.filter(c => c.net_cash_ratio !== null && c.net_cash_ratio >= ncpMin);
+  }
+  if (!isNaN(roicMin)) {
+    if (roicMin <= 5) filtered = filtered.filter(c => c.roic !== null && c.roic <= roicMin);
+    else filtered = filtered.filter(c => c.roic !== null && c.roic >= roicMin);
   }
   if (!isNaN(equityRatioMin)) {
     if (equityRatioMin >= 80) filtered = filtered.filter(c => c.equity_ratio !== null && c.equity_ratio >= equityRatioMin);
@@ -507,6 +513,7 @@ function clearScreenFilter() {
   document.getElementById('filter-per').value = '';
   document.getElementById('filter-roe').value = '';
   document.getElementById('filter-margin').value = '';
+  document.getElementById('filter-roic').value = '';
   document.getElementById('filter-cap').value = '';
   document.getElementById('filter-ncp').value = '';
   document.getElementById('filter-nn').value = '';
@@ -602,6 +609,7 @@ function renderList(data) {
           ${company.net_net_ratio !== null ? `<div class="metric-item" onclick="showHint('ネットネット')"><span class="metric-label">ネットネット ？</span><span class="metric-value">${company.net_net_ratio.toFixed(2)} 倍</span></div>` : ''}
           ${company.dividend_yield !== null ? `<div class="metric-item" onclick="showHint('配当利回り')"><span class="metric-label">配当利回り ？</span><span class="metric-value">${company.dividend_yield.toFixed(2)} %</span></div>` : ''}
           ${company.equity_ratio !== null ? `<div class="metric-item" onclick="showHint('自己資本比率')"><span class="metric-label">自己資本比率 ？</span><span class="metric-value">${company.equity_ratio.toFixed(1)} %</span></div>` : ''}
+          ${company.roic !== null ? `<div class="metric-item" onclick="showHint('ROIC')"><span class="metric-label">ROIC ？</span><span class="metric-value">${company.roic.toFixed(1)} %</span></div>` : ''}
         </div>
         <div class="financial-row"><span class="financial-label">参考株価</span><span class="financial-value">${company.priceData ? company.priceData.price.toLocaleString() + ' 円（' + company.priceData.date + '）' : '不明'}</span></div>
         <div class="financial-row"><span class="financial-label">発行済株式数</span><span class="financial-value">${formatShares(f.shares_issued)}</span></div>

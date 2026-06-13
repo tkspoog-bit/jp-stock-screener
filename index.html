@@ -131,6 +131,19 @@
           </div>
 
           <div class="filter-group">
+            <label class="filter-label">ROIC（%以上）</label>
+            <select id="filter-roic">
+              <option value="">指定なし</option>
+              <option value="5">5以下</option>
+              <option value="8">8</option>
+              <option value="10">10</option>
+              <option value="15">15</option>
+              <option value="20">20</option>
+              <option value="25">25以上</option>
+            </select>
+          </div>
+          
+          <div class="filter-group">
             <label class="filter-label">自己資本比率（%以上）</label>
             <select id="filter-equity-ratio">
               <option value="">指定なし</option>
@@ -179,6 +192,7 @@
             <option value="equity">純資産</option>
             <option value="per">PER</option>
             <option value="roe">ROE</option>
+            <option value="roic">ROIC</option>
             <option value="operating_margin">営業利益率</option>
             <option value="net_cash_ratio">NC比率</option>
             <option value="net_net_ratio">ネットネット</option>
