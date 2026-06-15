@@ -207,6 +207,15 @@
 
   </div>
 
+  <!-- 戦略画面 -->
+    <div id="strategy-screen" class="screen">
+      <div class="screen-content">
+        <h2>📈 投資戦略スコア</h2>
+        <p class="strategy-desc">各戦略のスコアを確認し、「この条件で検索」を押すとスクリーニング条件が自動入力されます。</p>
+        <div id="strategy-list"></div>
+      </div>
+    </div>
+
     <!-- 設定画面 -->
     <div id="settings-screen" class="screen">
       <div class="screen-content">
@@ -280,6 +289,10 @@
     <button onclick="switchTab('result')" class="nav-btn" id="nav-result">
       <span class="nav-icon">📊</span>
       <span class="nav-label">結果</span>
+    </button>
+    <button onclick="switchTab('strategy')" class="nav-btn" id="nav-strategy">
+      <span class="nav-icon">📈</span>
+      <span class="nav-label">戦略</span>
     </button>
     <button onclick="switchTab('settings')" class="nav-btn" id="nav-settings">
       <span class="nav-icon">⚙️</span>

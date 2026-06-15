@@ -1,394 +1,674 @@
 {
   "135A": {
-    "price": 3865.0,
-    "date": "2026-06-04"
+    "price": 3670.0,
+    "date": "2026-06-14",
+    "held_institutions": 0.07265,
+    "held_insiders": 0.70348,
+    "analyst_count": null,
+    "avg_volume": 140611
   },
   "2305": {
-    "price": 1795.0,
-    "date": "2026-06-04"
+    "price": 1827.0,
+    "date": "2026-06-14",
+    "held_institutions": 0.11927,
+    "held_insiders": 0.49343,
+    "analyst_count": null,
+    "avg_volume": 32485
   },
   "2338": {
-    "price": 119.0,
-    "date": "2026-06-04"
+    "price": 108.0,
+    "date": "2026-06-14",
+    "held_institutions": 0.15355,
+    "held_insiders": 0.118760005,
+    "analyst_count": null,
+    "avg_volume": 1231841
   },
   "2685": {
-    "price": 3495.0,
-    "date": "2026-06-04"
+    "price": 3440.0,
+    "date": "2026-06-14",
+    "held_institutions": 0.23409,
+    "held_insiders": 0.42328,
+    "analyst_count": 6,
+    "avg_volume": 205413
   },
   "2726": {
-    "price": 1400.0,
-    "date": "2026-06-04"
+    "price": 1424.0,
+    "date": "2026-06-14",
+    "held_institutions": 0.28753,
+    "held_insiders": 0.41304,
+    "analyst_count": 3,
+    "avg_volume": 1005635
   },
   "2747": {
-    "price": 3050.0,
-    "date": "2026-06-04"
+    "price": 3035.0,
+    "date": "2026-06-14",
+    "held_institutions": 0.07275,
+    "held_insiders": 0.47033,
+    "analyst_count": null,
+    "avg_volume": 791
   },
   "274A": {
-    "price": 2223.0,
-    "date": "2026-06-04"
+    "price": 2179.0,
+    "date": "2026-06-14",
+    "held_institutions": 0.0083,
+    "held_insiders": 0.71624,
+    "analyst_count": null,
+    "avg_volume": 9006
   },
   "2789": {
-    "price": 455.0,
-    "date": "2026-06-04"
+    "price": 463.0,
+    "date": "2026-06-14",
+    "held_institutions": 0.0,
+    "held_insiders": 0.49493,
+    "analyst_count": null,
+    "avg_volume": 2775
   },
   "2798": {
     "price": 2988.0,
-    "date": "2026-06-04"
+    "date": "2026-06-14",
+    "held_institutions": 0.0113699995,
+    "held_insiders": 0.5003,
+    "analyst_count": null,
+    "avg_volume": 2175
   },
   "2882": {
-    "price": 1958.0,
-    "date": "2026-06-04"
+    "price": 2002.0,
+    "date": "2026-06-14",
+    "held_institutions": 0.061300002,
+    "held_insiders": 0.35751998,
+    "analyst_count": null,
+    "avg_volume": 19368
   },
   "2884": {
-    "price": 639.0,
-    "date": "2026-06-04"
+    "price": 635.0,
+    "date": "2026-06-14",
+    "held_institutions": 0.27474,
+    "held_insiders": 0.46428,
+    "analyst_count": null,
+    "avg_volume": 170960
   },
   "2918": {
-    "price": 2578.0,
-    "date": "2026-06-04"
+    "price": 2582.0,
+    "date": "2026-06-14",
+    "held_institutions": 0.18004,
+    "held_insiders": 0.38761002,
+    "analyst_count": 1,
+    "avg_volume": 125515
   },
   "2935": {
-    "price": 1081.0,
-    "date": "2026-06-04"
+    "price": 1100.0,
+    "date": "2026-06-14",
+    "held_institutions": 0.25682,
+    "held_insiders": 0.24816999,
+    "analyst_count": null,
+    "avg_volume": 32431
   },
   "2936": {
-    "price": 317.0,
-    "date": "2026-06-04"
+    "price": 290.0,
+    "date": "2026-06-14",
+    "held_institutions": 0.04895,
+    "held_insiders": 0.76877,
+    "analyst_count": null,
+    "avg_volume": 44611
   },
   "3030": {
-    "price": 937.0,
-    "date": "2026-06-04"
+    "price": 926.0,
+    "date": "2026-06-14",
+    "held_institutions": 0.0,
+    "held_insiders": 0.53949,
+    "analyst_count": null,
+    "avg_volume": 38253
   },
   "304A": {
-    "price": 1716.0,
-    "date": "2026-06-04"
+    "price": 1760.0,
+    "date": "2026-06-14",
+    "held_institutions": 0.0,
+    "held_insiders": 0.82048,
+    "analyst_count": null,
+    "avg_volume": 3033
   },
   "3050": {
-    "price": 1445.0,
-    "date": "2026-06-04"
+    "price": 1497.0,
+    "date": "2026-06-14",
+    "held_institutions": 0.16264999,
+    "held_insiders": 0.27151,
+    "analyst_count": 1,
+    "avg_volume": 327950
   },
   "3063": {
-    "price": 1042.0,
-    "date": "2026-06-04"
+    "price": 1154.0,
+    "date": "2026-06-14",
+    "held_institutions": 0.0015199999,
+    "held_insiders": 0.28648,
+    "analyst_count": null,
+    "avg_volume": 19760
   },
   "3065": {
-    "price": 1614.0,
-    "date": "2026-06-04"
+    "price": 1615.0,
+    "date": "2026-06-14",
+    "held_institutions": 0.01481,
+    "held_insiders": 0.5727,
+    "analyst_count": null,
+    "avg_volume": 1018
   },
   "3075": {
-    "price": 1600.0,
-    "date": "2026-06-04"
+    "price": 1606.0,
+    "date": "2026-06-14",
+    "held_institutions": 0.00332,
+    "held_insiders": 0.50529,
+    "analyst_count": null,
+    "avg_volume": 5566
   },
   "3080": {
-    "price": 757.0,
-    "date": "2026-06-04"
+    "price": 755.0,
+    "date": "2026-06-14",
+    "held_institutions": 0.0,
+    "held_insiders": 0.76625997,
+    "analyst_count": null,
+    "avg_volume": 3285
   },
   "3083": {
-    "price": 1000.0,
-    "date": "2026-06-04"
+    "price": 992.0,
+    "date": "2026-06-14",
+    "held_institutions": 0.034760002,
+    "held_insiders": 0.5367,
+    "analyst_count": null,
+    "avg_volume": 271266
   },
   "3177": {
-    "price": 3290.0,
-    "date": "2026-06-04"
+    "price": 3440.0,
+    "date": "2026-06-14",
+    "held_institutions": 0.0150999995,
+    "held_insiders": 0.51348,
+    "analyst_count": null,
+    "avg_volume": 1873
   },
   "3181": {
-    "price": 954.0,
-    "date": "2026-06-04"
+    "price": 951.0,
+    "date": "2026-06-14",
+    "held_institutions": 0.04923,
+    "held_insiders": 0.54083,
+    "analyst_count": null,
+    "avg_volume": 11520
   },
   "3223": {
-    "price": 905.0,
-    "date": "2026-06-04"
+    "price": 950.0,
+    "date": "2026-06-14",
+    "held_institutions": 0.03364,
+    "held_insiders": 0.51451,
+    "analyst_count": null,
+    "avg_volume": 2081
   },
   "3280": {
-    "price": 973.0,
-    "date": "2026-06-04"
+    "price": 966.0,
+    "date": "2026-06-14",
+    "held_institutions": 0.05435,
+    "held_insiders": 0.66334,
+    "analyst_count": null,
+    "avg_volume": 10903
   },
   "3396": {
-    "price": 830.0,
-    "date": "2026-06-04"
+    "price": 840.0,
+    "date": "2026-06-14",
+    "held_institutions": 0.0014300001,
+    "held_insiders": 0.33776,
+    "analyst_count": null,
+    "avg_volume": 6326
   },
   "339A": {
-    "price": 1000.0,
-    "date": "2026-06-04"
+    "price": 914.0,
+    "date": "2026-06-14",
+    "held_institutions": 0.50356996,
+    "held_insiders": 0.1868,
+    "analyst_count": null,
+    "avg_volume": 33548
   },
   "3479": {
-    "price": 1522.0,
-    "date": "2026-06-04"
+    "price": 1721.0,
+    "date": "2026-06-14",
+    "held_institutions": 0.07468,
+    "held_insiders": 0.60725,
+    "analyst_count": 2,
+    "avg_volume": 192131
   },
   "3490": {
-    "price": 2882.0,
-    "date": "2026-06-04"
+    "price": 2840.0,
+    "date": "2026-06-14",
+    "held_institutions": 0.0,
+    "held_insiders": 0.54443,
+    "analyst_count": null,
+    "avg_volume": 1703
   },
   "3543": {
-    "price": 2705.0,
-    "date": "2026-06-04"
+    "price": 2740.0,
+    "date": "2026-06-14",
+    "held_institutions": 0.25366,
+    "held_insiders": 0.00908,
+    "analyst_count": 5,
+    "avg_volume": 224385
   },
   "3548": {
-    "price": 720.0,
-    "date": "2026-06-04"
+    "price": 727.0,
+    "date": "2026-06-14",
+    "held_institutions": 0.20232001,
+    "held_insiders": 0.30644,
+    "analyst_count": null,
+    "avg_volume": 63755
   },
   "3557": {
-    "price": 522.0,
-    "date": "2026-06-04"
+    "price": 521.0,
+    "date": "2026-06-14",
+    "held_institutions": 0.00236,
+    "held_insiders": 0.42464,
+    "analyst_count": null,
+    "avg_volume": 20493
   },
   "3558": {
-    "price": 1640.0,
-    "date": "2026-06-04"
+    "price": 1571.0,
+    "date": "2026-06-14",
+    "held_institutions": 0.18340999,
+    "held_insiders": 0.22478001,
+    "analyst_count": null,
+    "avg_volume": 169258
   },
   "3627": {
-    "price": 274.0,
-    "date": "2026-06-04"
+    "price": 258.0,
+    "date": "2026-06-14",
+    "held_institutions": 0.05639,
+    "held_insiders": 0.27656,
+    "analyst_count": null,
+    "avg_volume": 91606
   },
   "3678": {
-    "price": 1325.0,
-    "date": "2026-06-04"
+    "price": 1300.0,
+    "date": "2026-06-14",
+    "held_institutions": 0.065560006,
+    "held_insiders": 0.67661005,
+    "analyst_count": 1,
+    "avg_volume": 79865
   },
   "3826": {
-    "price": 451.0,
-    "date": "2026-06-04"
+    "price": 439.0,
+    "date": "2026-06-14",
+    "held_institutions": 0.0,
+    "held_insiders": 0.53612,
+    "analyst_count": null,
+    "avg_volume": 12933
   },
   "3967": {
-    "price": 579.0,
-    "date": "2026-06-04"
+    "price": 556.0,
+    "date": "2026-06-14",
+    "held_institutions": 0.030639999,
+    "held_insiders": 0.35823002,
+    "analyst_count": null,
+    "avg_volume": 12123
   },
   "3996": {
-    "price": 180.0,
-    "date": "2026-06-04"
+    "price": 170.0,
+    "date": "2026-06-14",
+    "held_institutions": 0.0,
+    "held_insiders": 0.45141,
+    "analyst_count": null,
+    "avg_volume": 33996
   },
   "4317": {
-    "price": 466.0,
-    "date": "2026-06-04"
+    "price": 456.0,
+    "date": "2026-06-14",
+    "held_institutions": 0.0068800002,
+    "held_insiders": 0.55362,
+    "analyst_count": null,
+    "avg_volume": 16391
   },
   "4413": {
-    "price": 2482.0,
-    "date": "2026-06-04"
+    "price": 2452.0,
+    "date": "2026-06-14",
+    "held_institutions": 0.13444,
+    "held_insiders": 0.61022,
+    "analyst_count": 1,
+    "avg_volume": 296346
   },
   "4429": {
-    "price": 724.0,
-    "date": "2026-06-04"
+    "price": 708.0,
+    "date": "2026-06-14",
+    "held_institutions": 0.07448,
+    "held_insiders": 0.61421,
+    "analyst_count": null,
+    "avg_volume": 5523
   },
   "4490": {
-    "price": 605.0,
-    "date": "2026-06-04"
+    "price": 570.0,
+    "date": "2026-06-14",
+    "held_institutions": 0.07439,
+    "held_insiders": 0.50192,
+    "analyst_count": null,
+    "avg_volume": 64856
   },
   "4494": {
-    "price": 654.0,
-    "date": "2026-06-04"
+    "price": 674.0,
+    "date": "2026-06-14",
+    "held_institutions": 0.00254,
+    "held_insiders": 0.58112,
+    "analyst_count": null,
+    "avg_volume": 11256
   },
   "4645": {
-    "price": 423.0,
-    "date": "2026-06-04"
+    "price": 428.0,
+    "date": "2026-06-14",
+    "held_institutions": 0.01518,
+    "held_insiders": 0.48421,
+    "analyst_count": null,
+    "avg_volume": 1061
   },
   "4709": {
-    "price": 1003.0,
-    "date": "2026-06-04"
+    "price": 1060.0,
+    "date": "2026-06-14",
+    "held_institutions": 0.13458,
+    "held_insiders": 0.24418,
+    "analyst_count": null,
+    "avg_volume": 88663
   },
   "4920": {
-    "price": 1100.0,
-    "date": "2026-06-04"
+    "price": 1116.0,
+    "date": "2026-06-14",
+    "held_institutions": 0.0,
+    "held_insiders": 0.62798,
+    "analyst_count": null,
+    "avg_volume": 1668
   },
   "5018": {
-    "price": 1897.0,
-    "date": "2026-06-04"
+    "price": 1775.0,
+    "date": "2026-06-14",
+    "held_institutions": 0.07807,
+    "held_insiders": 0.31537,
+    "analyst_count": null,
+    "avg_volume": 31096
   },
   "5025": {
-    "price": 651.0,
-    "date": "2026-06-04"
+    "price": 559.0,
+    "date": "2026-06-14",
+    "held_institutions": 0.0,
+    "held_insiders": 0.80660003,
+    "analyst_count": null,
+    "avg_volume": 1458
   },
   "5817": {
-    "price": 987.0,
-    "date": "2026-06-04"
+    "price": 849.0,
+    "date": "2026-06-14",
+    "held_institutions": 0.0,
+    "held_insiders": 0.54505,
+    "analyst_count": null,
+    "avg_volume": 342651
   },
   "5900": {
-    "price": 816.0,
-    "date": "2026-06-04"
+    "price": 843.0,
+    "date": "2026-06-14",
+    "held_institutions": 0.07581,
+    "held_insiders": 0.43447,
+    "analyst_count": null,
+    "avg_volume": 2133
   },
   "6058": {
-    "price": 1407.0,
-    "date": "2026-06-04"
+    "price": 1472.0,
+    "date": "2026-06-14",
+    "held_institutions": 0.18579,
+    "held_insiders": 0.42180002,
+    "analyst_count": null,
+    "avg_volume": 317411
   },
   "6085": {
-    "price": 320.0,
-    "date": "2026-06-04"
+    "price": 343.0,
+    "date": "2026-06-14",
+    "held_institutions": 0.089729995,
+    "held_insiders": 0.50716,
+    "analyst_count": null,
+    "avg_volume": 5734301
   },
   "6182": {
-    "price": 555.0,
-    "date": "2026-06-04"
+    "price": 501.0,
+    "date": "2026-06-14",
+    "held_institutions": 6.0000002e-05,
+    "held_insiders": 0.40570998,
+    "analyst_count": null,
+    "avg_volume": 78813
   },
   "6224": {
-    "price": 1327.0,
-    "date": "2026-06-04"
+    "price": 1296.0,
+    "date": "2026-06-14",
+    "held_institutions": 0.04572,
+    "held_insiders": 0.50579,
+    "analyst_count": null,
+    "avg_volume": 61251
   },
   "6228": {
-    "price": 756.0,
-    "date": "2026-06-04"
+    "price": 783.0,
+    "date": "2026-06-14",
+    "held_institutions": 0.00671,
+    "held_insiders": 0.66168,
+    "analyst_count": null,
+    "avg_volume": 68056
   },
   "6432": {
-    "price": 7790.0,
-    "date": "2026-06-04"
+    "price": 7380.0,
+    "date": "2026-06-14",
+    "held_institutions": 0.3459,
+    "held_insiders": 0.25909,
+    "analyst_count": 4,
+    "avg_volume": 331881
   },
   "6532": {
-    "price": 5971.0,
-    "date": "2026-06-04"
+    "price": 5545.0,
+    "date": "2026-06-14",
+    "held_institutions": 0.62643003,
+    "held_insiders": 0.07067,
+    "analyst_count": 12,
+    "avg_volume": 1776551
   },
   "6578": {
-    "price": 434.0,
-    "date": "2026-06-04"
+    "price": 439.0,
+    "date": "2026-06-14",
+    "held_institutions": 0.03941,
+    "held_insiders": 0.75414,
+    "analyst_count": null,
+    "avg_volume": 6320
   },
   "7049": {
-    "price": 799.0,
-    "date": "2026-06-04"
+    "price": 816.0,
+    "date": "2026-06-14",
+    "held_institutions": 0.00978,
+    "held_insiders": 0.65329003,
+    "analyst_count": null,
+    "avg_volume": 16146
   },
   "7077": {
-    "price": 973.0,
-    "date": "2026-06-04"
+    "price": 972.0,
+    "date": "2026-06-14",
+    "held_institutions": 0.0,
+    "held_insiders": 0.57167,
+    "analyst_count": null,
+    "avg_volume": 1366
   },
   "7357": {
-    "price": 1514.0,
-    "date": "2026-06-04"
+    "price": 1530.0,
+    "date": "2026-06-14",
+    "held_institutions": 0.0,
+    "held_insiders": 0.66190004,
+    "analyst_count": null,
+    "avg_volume": 2750
   },
   "7427": {
-    "price": 853.0,
-    "date": "2026-06-04"
+    "price": 821.0,
+    "date": "2026-06-14",
+    "held_institutions": 0.00265,
+    "held_insiders": 0.45233002,
+    "analyst_count": null,
+    "avg_volume": 11278
   },
   "7515": {
-    "price": 4455.0,
-    "date": "2026-06-04"
+    "price": 4515.0,
+    "date": "2026-06-14",
+    "held_institutions": 0.06824,
+    "held_insiders": 0.54093,
+    "analyst_count": null,
+    "avg_volume": 318
   },
   "7516": {
-    "price": 4055.0,
-    "date": "2026-06-04"
+    "price": 4185.0,
+    "date": "2026-06-14",
+    "held_institutions": 0.18175,
+    "held_insiders": 0.33007,
+    "analyst_count": null,
+    "avg_volume": 82820
   },
   "7544": {
-    "price": 565.0,
-    "date": "2026-06-04"
+    "price": 564.0,
+    "date": "2026-06-14",
+    "held_institutions": 0.01946,
+    "held_insiders": 0.65729,
+    "analyst_count": null,
+    "avg_volume": 6675
   },
   "7601": {
-    "price": 165.0,
-    "date": "2026-06-04"
+    "price": 164.0,
+    "date": "2026-06-14",
+    "held_institutions": 0.08140001,
+    "held_insiders": 0.41456002,
+    "analyst_count": null,
+    "avg_volume": 17566
   },
   "7608": {
-    "price": 738.0,
-    "date": "2026-06-04"
+    "price": 724.0,
+    "date": "2026-06-14",
+    "held_institutions": 0.02238,
+    "held_insiders": 0.53352,
+    "analyst_count": null,
+    "avg_volume": 118601
   },
   "7610": {
-    "price": 134.0,
-    "date": "2026-06-04"
+    "price": 143.0,
+    "date": "2026-06-14",
+    "held_institutions": 0.06262,
+    "held_insiders": 0.24399,
+    "analyst_count": null,
+    "avg_volume": 834766
   },
   "7630": {
-    "price": 850.0,
-    "date": "2026-06-04"
-  },
-  "7689": {
-    "price": 384.0,
-    "date": "2026-06-04"
-  },
-  "7719": {
-    "price": 426.0,
-    "date": "2026-06-04"
-  },
-  "7807": {
-    "price": 830.0,
-    "date": "2026-06-04"
-  },
-  "7815": {
-    "price": 267.0,
-    "date": "2026-06-04"
-  },
-  "7847": {
-    "price": 615.0,
-    "date": "2026-06-04"
-  },
-  "8005": {
-    "price": 1637.0,
-    "date": "2026-06-04"
-  },
-  "8008": {
-    "price": 1801.0,
-    "date": "2026-06-04"
-  },
-  "8011": {
-    "price": 3660.0,
-    "date": "2026-06-04"
-  },
-  "8016": {
-    "price": 723.0,
-    "date": "2026-06-04"
-  },
-  "8143": {
-    "price": 177.0,
-    "date": "2026-06-04"
-  },
-  "8181": {
-    "price": 971.0,
-    "date": "2026-06-04"
-  },
-  "8194": {
-    "price": 2550.0,
-    "date": "2026-06-04"
-  },
-  "8200": {
-    "price": 2030.0,
-    "date": "2026-06-04"
+    "price": 900.0,
+    "date": "2026-06-14",
+    "held_institutions": 0.06725,
+    "held_insiders": 0.57905,
+    "analyst_count": null,
+    "avg_volume": 406750
   },
   "8237": {
-    "price": 1524.0,
-    "date": "2026-06-04"
+    "price": 1573.0,
+    "date": "2026-06-14",
+    "held_institutions": 0.2542,
+    "held_insiders": 0.26081,
+    "analyst_count": null,
+    "avg_volume": 339553
   },
   "8247": {
-    "price": 271.0,
-    "date": "2026-06-04"
+    "price": 274.0,
+    "date": "2026-06-14",
+    "held_institutions": 0.061669998,
+    "held_insiders": 0.31792998,
+    "analyst_count": null,
+    "avg_volume": 28371
   },
   "8260": {
-    "price": 378.0,
-    "date": "2026-06-04"
+    "price": 389.0,
+    "date": "2026-06-14",
+    "held_institutions": 0.047909997,
+    "held_insiders": 0.43093,
+    "analyst_count": null,
+    "avg_volume": 22793
   },
   "8289": {
-    "price": 979.0,
-    "date": "2026-06-04"
+    "price": 1004.0,
+    "date": "2026-06-14",
+    "held_institutions": 0.095,
+    "held_insiders": 0.62391996,
+    "analyst_count": null,
+    "avg_volume": 213591
   },
   "8739": {
-    "price": 2173.0,
-    "date": "2026-06-04"
+    "price": 2145.0,
+    "date": "2026-06-14",
+    "held_institutions": 0.13674,
+    "held_insiders": 0.54338,
+    "analyst_count": null,
+    "avg_volume": 119696
   },
   "8918": {
     "price": 10.0,
-    "date": "2026-06-04"
+    "date": "2026-06-14",
+    "held_institutions": 0.06033,
+    "held_insiders": 0.3843,
+    "analyst_count": null,
+    "avg_volume": 223375518
   },
   "9168": {
-    "price": 406.0,
-    "date": "2026-06-04"
+    "price": 392.0,
+    "date": "2026-06-14",
+    "held_institutions": 0.25892,
+    "held_insiders": 0.3759,
+    "analyst_count": 1,
+    "avg_volume": 290925
   },
   "9238": {
-    "price": 488.0,
-    "date": "2026-06-04"
+    "price": 390.0,
+    "date": "2026-06-14",
+    "held_institutions": 0.0168,
+    "held_insiders": 0.63386,
+    "analyst_count": null,
+    "avg_volume": 7198
   },
   "9326": {
-    "price": 412.0,
-    "date": "2026-06-04"
+    "price": 417.0,
+    "date": "2026-06-14",
+    "held_institutions": 0.010190001,
+    "held_insiders": 0.61492,
+    "analyst_count": null,
+    "avg_volume": 11625
   },
   "9740": {
-    "price": 2723.0,
-    "date": "2026-06-04"
+    "price": 2702.0,
+    "date": "2026-06-14",
+    "held_institutions": 0.18290001,
+    "held_insiders": 0.41512,
+    "analyst_count": 2,
+    "avg_volume": 28561
   },
   "9778": {
     "price": 5560.0,
-    "date": "2026-06-04"
+    "date": "2026-06-14",
+    "held_institutions": 0.08795,
+    "held_insiders": 0.47291002,
+    "analyst_count": null,
+    "avg_volume": 353
   },
   "9793": {
-    "price": 3925.0,
-    "date": "2026-06-04"
+    "price": 3860.0,
+    "date": "2026-06-14",
+    "held_institutions": 0.52456003,
+    "held_insiders": 0.10318,
+    "analyst_count": 4,
+    "avg_volume": 148081
   },
   "9835": {
-    "price": 506.0,
-    "date": "2026-06-04"
+    "price": 508.0,
+    "date": "2026-06-14",
+    "held_institutions": 0.05461,
+    "held_insiders": 0.56786996,
+    "analyst_count": null,
+    "avg_volume": 3480
   },
   "9903": {
-    "price": 1219.0,
-    "date": "2026-06-04"
-  },
-  "9993": {
-    "price": 1155.0,
-    "date": "2026-06-04"
+    "price": 1165.0,
+    "date": "2026-06-14",
+    "held_institutions": 0.02944,
+    "held_insiders": 0.72582,
+    "analyst_count": null,
+    "avg_volume": 7621
   }
 }

@@ -7,6 +7,7 @@ let portfolios = {};
 let currentPortfolio = null;
 let currentTab = 'screen';
 let filteredData = [];
+let currentStrategy = null;
 
 // データ読み込み
 Promise.all([
@@ -149,6 +150,270 @@ function initGlossary() {
     list.appendChild(item);
   });
 }
+
+const STRATEGIES = [
+  {
+    key: 'cash_rich',
+    name: '💰 キャッシュリッチ型',
+    desc: '現金豊富・割安小型株を狙う戦略',
+    color: '#27ae60',
+    filters: { 'filter-ncp': '20', 'filter-nn': '0.5', 'filter-margin': '10', 'filter-cap': '300' },
+    calc: (c) => {
+      let score = 0;
+      const items = [];
+      const nc = c.net_cash_ratio;
+      if (nc >= 30) { score += 40; items.push({ label: 'NC比率30%以上', pts: 40 }); }
+      else if (nc >= 20) { score += 30; items.push({ label: 'NC比率20%以上', pts: 30 }); }
+      else if (nc >= 10) { score += 20; items.push({ label: 'NC比率10%以上', pts: 20 }); }
+      else if (nc >= 0) { score += 10; items.push({ label: 'NC比率プラス', pts: 10 }); }
+      else items.push({ label: 'NC比率マイナス', pts: 0 });
+
+      const nn = c.net_net_ratio;
+      if (nn >= 1.0) { score += 30; items.push({ label: 'ネットネット1倍以上', pts: 30 }); }
+      else if (nn >= 0.7) { score += 20; items.push({ label: 'ネットネット0.7倍以上', pts: 20 }); }
+      else if (nn >= 0.5) { score += 15; items.push({ label: 'ネットネット0.5倍以上', pts: 15 }); }
+      else if (nn >= 0.3) { score += 10; items.push({ label: 'ネットネット0.3倍以上', pts: 10 }); }
+      else items.push({ label: 'ネットネット低', pts: 0 });
+
+      const m = c.operating_margin;
+      if (m >= 20) { score += 20; items.push({ label: '営業利益率20%以上', pts: 20 }); }
+      else if (m >= 15) { score += 15; items.push({ label: '営業利益率15%以上', pts: 15 }); }
+      else if (m >= 10) { score += 10; items.push({ label: '営業利益率10%以上', pts: 10 }); }
+      else if (m >= 5) { score += 5; items.push({ label: '営業利益率5%以上', pts: 5 }); }
+      else items.push({ label: '営業利益率低', pts: 0 });
+
+      const cap = c.marketCap;
+      if (cap && cap < 10000000000) { score += 10; items.push({ label: '時価総額100億未満', pts: 10 }); }
+      else if (cap && cap < 30000000000) { score += 5; items.push({ label: '時価総額300億未満', pts: 5 }); }
+      else items.push({ label: '時価総額大', pts: 0 });
+
+      return { score, items };
+    }
+  },
+  {
+    key: 'deep_value',
+    name: '📉 超割安型',
+    desc: '解散価値以下の超割安株を狙う戦略',
+    color: '#9b59b6',
+    filters: { 'filter-per': '15', 'filter-equity-ratio': '40', 'filter-nn': '0.3' },
+    calc: (c) => {
+      let score = 0;
+      const items = [];
+
+      const per = c.per;
+      if (per && per <= 5) { score += 30; items.push({ label: 'PER5倍以下', pts: 30 }); }
+      else if (per && per <= 10) { score += 20; items.push({ label: 'PER10倍以下', pts: 20 }); }
+      else if (per && per <= 15) { score += 15; items.push({ label: 'PER15倍以下', pts: 15 }); }
+      else if (per && per <= 20) { score += 10; items.push({ label: 'PER20倍以下', pts: 10 }); }
+      else items.push({ label: 'PER高', pts: 0 });
+
+      const pbr = c.pbr;
+      if (pbr && pbr <= 0.5) { score += 30; items.push({ label: 'PBR0.5倍以下', pts: 30 }); }
+      else if (pbr && pbr <= 1.0) { score += 20; items.push({ label: 'PBR1倍以下', pts: 20 }); }
+      else if (pbr && pbr <= 1.5) { score += 10; items.push({ label: 'PBR1.5倍以下', pts: 10 }); }
+      else items.push({ label: 'PBR高', pts: 0 });
+
+      const er = c.equity_ratio;
+      if (er && er >= 60) { score += 20; items.push({ label: '自己資本比率60%以上', pts: 20 }); }
+      else if (er && er >= 50) { score += 15; items.push({ label: '自己資本比率50%以上', pts: 15 }); }
+      else if (er && er >= 40) { score += 10; items.push({ label: '自己資本比率40%以上', pts: 10 }); }
+      else items.push({ label: '自己資本比率低', pts: 0 });
+
+      const nn = c.net_net_ratio;
+      if (nn >= 0.5) { score += 20; items.push({ label: 'ネットネット0.5倍以上', pts: 20 }); }
+      else if (nn >= 0.3) { score += 10; items.push({ label: 'ネットネット0.3倍以上', pts: 10 }); }
+      else items.push({ label: 'ネットネット低', pts: 0 });
+
+      return { score, items };
+    }
+  },
+  {
+    key: 'moat',
+    name: '🏰 堀あり型',
+    desc: '競争優位性が高く安定して稼ぐ企業を狙う戦略',
+    color: '#e07b3a',
+    filters: { 'filter-roe': '15', 'filter-roic': '10', 'filter-margin': '15', 'filter-equity-ratio': '50' },
+    calc: (c) => {
+      let score = 0;
+      const items = [];
+
+      const roe = c.roe;
+      if (roe >= 20) { score += 25; items.push({ label: 'ROE20%以上', pts: 25 }); }
+      else if (roe >= 15) { score += 20; items.push({ label: 'ROE15%以上', pts: 20 }); }
+      else if (roe >= 10) { score += 15; items.push({ label: 'ROE10%以上', pts: 15 }); }
+      else items.push({ label: 'ROE低', pts: 0 });
+
+      const roic = c.roic;
+      if (roic >= 15) { score += 25; items.push({ label: 'ROIC15%以上', pts: 25 }); }
+      else if (roic >= 10) { score += 20; items.push({ label: 'ROIC10%以上', pts: 20 }); }
+      else if (roic >= 8) { score += 15; items.push({ label: 'ROIC8%以上', pts: 15 }); }
+      else items.push({ label: 'ROIC低', pts: 0 });
+
+      const m = c.operating_margin;
+      if (m >= 20) { score += 25; items.push({ label: '営業利益率20%以上', pts: 25 }); }
+      else if (m >= 15) { score += 20; items.push({ label: '営業利益率15%以上', pts: 20 }); }
+      else if (m >= 10) { score += 15; items.push({ label: '営業利益率10%以上', pts: 15 }); }
+      else items.push({ label: '営業利益率低', pts: 0 });
+
+      const er = c.equity_ratio;
+      if (er >= 60) { score += 25; items.push({ label: '自己資本比率60%以上', pts: 25 }); }
+      else if (er >= 50) { score += 20; items.push({ label: '自己資本比率50%以上', pts: 20 }); }
+      else if (er >= 40) { score += 15; items.push({ label: '自己資本比率40%以上', pts: 15 }); }
+      else items.push({ label: '自己資本比率低', pts: 0 });
+
+      return { score, items };
+    }
+  },
+  {
+    key: 'growth',
+    name: '🚀 成長加速型',
+    desc: 'EPS・売上が高成長している企業を狙う戦略',
+    color: '#2980b9',
+    filters: { 'filter-roe': '15', 'filter-margin': '10', 'filter-cap': '500' },
+    calc: (c) => {
+      let score = 0;
+      const items = [];
+
+      // EPS成長率（historyから計算）
+      const history = c.history || [];
+      const epsHistory = history
+        .filter(h => h.net_profit && h.shares_outstanding)
+        .map(h => h.net_profit / h.shares_outstanding);
+
+      if (epsHistory.length >= 2) {
+        const first = epsHistory[0];
+        const last = epsHistory[epsHistory.length - 1];
+        const years = epsHistory.length - 1;
+        const epsGrowth = first > 0 ? ((last / first) ** (1 / years) - 1) * 100 : null;
+        if (epsGrowth >= 20) { score += 40; items.push({ label: `EPS成長率${epsGrowth.toFixed(0)}%/年`, pts: 40 }); }
+        else if (epsGrowth >= 15) { score += 30; items.push({ label: `EPS成長率${epsGrowth.toFixed(0)}%/年`, pts: 30 }); }
+        else if (epsGrowth >= 10) { score += 20; items.push({ label: `EPS成長率${epsGrowth.toFixed(0)}%/年`, pts: 20 }); }
+        else items.push({ label: `EPS成長率${epsGrowth ? epsGrowth.toFixed(0) : '不明'}%/年`, pts: 0 });
+      } else {
+        items.push({ label: 'EPS成長率：データ不足', pts: 0 });
+      }
+
+      // 売上成長率
+      const salesHistory = history.filter(h => h.net_sales).map(h => h.net_sales);
+      if (salesHistory.length >= 2) {
+        const first = salesHistory[0];
+        const last = salesHistory[salesHistory.length - 1];
+        const years = salesHistory.length - 1;
+        const salesGrowth = first > 0 ? ((last / first) ** (1 / years) - 1) * 100 : null;
+        if (salesGrowth >= 15) { score += 30; items.push({ label: `売上成長率${salesGrowth.toFixed(0)}%/年`, pts: 30 }); }
+        else if (salesGrowth >= 10) { score += 20; items.push({ label: `売上成長率${salesGrowth.toFixed(0)}%/年`, pts: 20 }); }
+        else if (salesGrowth >= 5) { score += 10; items.push({ label: `売上成長率${salesGrowth.toFixed(0)}%/年`, pts: 10 }); }
+        else items.push({ label: `売上成長率${salesGrowth ? salesGrowth.toFixed(0) : '不明'}%/年`, pts: 0 });
+      } else {
+        items.push({ label: '売上成長率：データ不足', pts: 0 });
+      }
+
+      const roe = c.roe;
+      if (roe >= 20) { score += 20; items.push({ label: 'ROE20%以上', pts: 20 }); }
+      else if (roe >= 15) { score += 15; items.push({ label: 'ROE15%以上', pts: 15 }); }
+      else if (roe >= 10) { score += 10; items.push({ label: 'ROE10%以上', pts: 10 }); }
+      else items.push({ label: 'ROE低', pts: 0 });
+
+      const cap = c.marketCap;
+      if (cap && cap < 30000000000) { score += 10; items.push({ label: '時価総額300億未満', pts: 10 }); }
+      else if (cap && cap < 50000000000) { score += 5; items.push({ label: '時価総額500億未満', pts: 5 }); }
+      else items.push({ label: '時価総額大', pts: 0 });
+
+      return { score, items };
+    }
+  },
+  {
+    key: 'survival',
+    name: '🛡️ 生存戦略型',
+    desc: '機関投資家の死角で個人投資家が優位に立てる銘柄',
+    color: '#c0392b',
+    filters: { 'filter-cap': '100', 'filter-cf': '1', 'filter-ncp': '0' },
+    calc: (c) => {
+      let score = 0;
+      const items = [];
+      const p = c.priceData || {};
+
+      // 時価総額（機関の死角）
+      const cap = c.marketCap;
+      if (cap && cap < 10000000000) { score += 30; items.push({ label: '時価総額100億未満', pts: 30 }); }
+      else if (cap && cap < 30000000000) { score += 15; items.push({ label: '時価総額300億未満', pts: 15 }); }
+      else items.push({ label: '時価総額大（機関参入域）', pts: 0 });
+
+      // 機関投資家持株比率
+      const inst = p.held_institutions;
+      if (inst !== null && inst !== undefined) {
+        if (inst < 0.01) { score += 25; items.push({ label: '機関持株1%未満', pts: 25 }); }
+        else if (inst < 0.05) { score += 15; items.push({ label: '機関持株5%未満', pts: 15 }); }
+        else if (inst < 0.10) { score += 5; items.push({ label: '機関持株10%未満', pts: 5 }); }
+        else items.push({ label: '機関持株多い', pts: 0 });
+      } else {
+        items.push({ label: '機関持株：データなし', pts: 0 });
+      }
+
+      // アナリストカバレッジ
+      const analyst = p.analyst_count;
+      if (analyst === null || analyst === undefined || analyst === 0) {
+        score += 20; items.push({ label: 'アナリストカバレッジなし', pts: 20 });
+      } else {
+        items.push({ label: `アナリスト${analyst}人`, pts: 0 });
+      }
+
+      // 財務の要塞
+      if (c.financials.operating_cf > 0) { score += 15; items.push({ label: '営業CF黒字', pts: 15 }); }
+      else items.push({ label: '営業CF赤字', pts: 0 });
+
+      if (c.net_cash_ratio > 0) { score += 10; items.push({ label: 'ネットキャッシュプラス', pts: 10 }); }
+      else items.push({ label: 'ネットキャッシュマイナス', pts: 0 });
+
+      return { score, items };
+    }
+  }
+];
+
+function initStrategy() {
+  if (allData.length === 0) return;
+
+  const list = document.getElementById('strategy-list');
+  list.innerHTML = '';
+
+  // 全銘柄の平均スコアを計算
+  STRATEGIES.forEach(strategy => {
+    const scores = allData.map(c => strategy.calc(c).score);
+    const avgScore = Math.round(scores.reduce((a, b) => a + b, 0) / scores.length);
+    const maxScore = Math.max(...scores);
+    const topCompany = allData[scores.indexOf(maxScore)];
+
+    const card = document.createElement('div');
+    card.className = 'strategy-card';
+    card.innerHTML = `
+      <div class="strategy-card-header">
+        <div class="strategy-card-title">${strategy.name}</div>
+      </div>
+      <p style="font-size:0.8rem;color:#888;margin-bottom:12px">${strategy.desc}</p>
+      <div style="font-size:0.8rem;color:#666;margin-bottom:8px">
+        🏆 最高スコア：<strong>${topCompany.name}</strong>（${maxScore}点）
+      </div>
+      <div class="strategy-score-bar">
+        <div class="strategy-score-fill" style="width:${avgScore}%;background:${strategy.color}"></div>
+      </div>
+      <div style="font-size:0.75rem;color:#aaa;margin-bottom:12px">全銘柄平均スコア：${avgScore}点</div>
+      <button class="strategy-search-btn" style="background:${strategy.color}" onclick="applyStrategyFilter('${strategy.key}')">
+        この条件で検索 →
+      </button>
+    `;
+    list.appendChild(card);
+  });
+}
+
+function applyStrategyFilter(key) {
+  const strategy = STRATEGIES.find(s => s.key === key);
+  if (!strategy) return;
+  clearScreenFilter();
+  currentStrategy = strategy;
+  filteredData = [...allData];
+  switchTab('result');
+}
+
 
 function openDetail(code) {
   const company = allData.find(c => c.code === code);
@@ -377,6 +642,7 @@ function switchTab(tab) {
   if (tab === 'portfolio') renderPortfolioScreen();
   if (tab === 'settings') initSettings();
   if (tab === 'glossary') initGlossary();
+  if (tab === 'strategy') initStrategy();
   if (tab === 'detail') {}
 }
 
@@ -384,6 +650,10 @@ function switchTab(tab) {
 function goToResults() {
   applyFilters();
   switchTab('result');
+}
+
+function clearStrategy() {
+  currentStrategy = null;
 }
 
 // フィルタ適用
@@ -505,6 +775,7 @@ function sortBy(key) {
 }
 
 function clearScreenFilter() {
+  currentStrategy = null;
   currentMarketFilters = [];
   currentIndustryFilter = '';
   document.querySelectorAll('.btn-group button').forEach(b => b.classList.remove('active'));
@@ -540,9 +811,15 @@ function renderList(data) {
   const displayData = currentSort === 'dividend_yield'
     ? data.filter(c => c.dividend_yield !== null)
     : data;
-  const sorted = [...displayData].sort((a, b) => {
+const sorted = [...displayData].sort((a, b) => {
+    // 戦略スコアが設定されている場合はスコア順
+    if (currentStrategy) {
+      const scoreA = currentStrategy.calc(a).score;
+      const scoreB = currentStrategy.calc(b).score;
+      return scoreB - scoreA;
+    }
     let valA, valB;
-    if (['per','pbr','roe','roa','operating_margin','net_cash_ratio','net_net_ratio','dividend_yield'].includes(currentSort)) {
+    if (['per','pbr','roe','roa','operating_margin','net_cash_ratio','net_net_ratio','dividend_yield','roic','equity_ratio'].includes(currentSort)) {
       valA = a[currentSort] !== null ? a[currentSort] : -Infinity;
       valB = b[currentSort] !== null ? b[currentSort] : -Infinity;
     } else if (currentSort === 'market_cap') {
@@ -556,7 +833,9 @@ function renderList(data) {
   });
 
   const count = document.getElementById('result-count');
-  count.textContent = `${sorted.length} 件`;
+  count.textContent = currentStrategy
+    ? `${sorted.length} 件（${currentStrategy.name}スコア順）`
+    : `${sorted.length} 件`;
 
   const list = document.getElementById('company-list');
   list.innerHTML = '';
