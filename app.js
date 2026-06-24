@@ -8,6 +8,7 @@ let currentPortfolio = null;
 let currentTab = 'screen';
 let filteredData = [];
 let currentStrategy = null;
+let aiRequestId = 0;
 
 // データ読み込み
 Promise.all([
@@ -449,7 +450,10 @@ function openDetail(code) {
 
     <div class="detail-section">
       <h3>🤖 AI詳細サマリ</h3>
-      <div class="detail-ai-notice">※ 銘柄を開くたびにAIが再生成します。APIキーの利用枠を消費します。</div>
+      <div class="detail-ai-notice">
+        <div class="detail-ai-date">📅 ${company.latest_filing?.period_end || '不明'}時点の有報データに基づく分析</div>
+        ⚠️ 最新情報は<a href="https://finance.yahoo.co.jp/quote/${company.code}.T" target="_blank">Yahoo!ファイナンスさん</a>等で確認してください。投資判断は自己責任でお願いします。
+      </div>
       <div id="ai-summary" class="detail-ai-loading">分析中...</div>
     </div>
 
@@ -489,6 +493,17 @@ function openDetail(code) {
   // AI詳細サマリ生成
   generateAISummary(company);
 }
+
+async function loadTexts(code) {
+  try {
+    const r = await fetch(`./data/texts/${code}.json`);
+    if (!r.ok) return null;
+    return await r.json();
+  } catch (e) {
+    return null;
+  }
+}
+
 
 function closeDetail() {
   switchTab('result');
@@ -581,20 +596,37 @@ function drawEpsChart(history) {
 }
 
 async function generateAISummary(company) {
+  const requestId = ++aiRequestId;
   const f = company.financials;
   const history = company.history || [];
+  const texts = await loadTexts(company.code);
 
-  const prompt = `
-以下の企業データを分析して、個人投資家向けに200文字程度で投資判断のポイントを説明してください。
+const prompt = `
+以下の有価証券報告書の情報をもとに、この会社が「何をやっている会社か」を長期投資家向けにわかりやすく説明してください。
+財務指標の評価は不要です。事業内容・提供価値・将来性に特化してください。
+
+【出力形式】
+■ 一言で言うと
+（20文字以内で事業を表現）
+
+■ 何を作っている・提供しているか
+・（箇条書き）
+
+■ セグメント別の事業内容
+・（セグメントがない場合は省略）
+
+■ 誰に価値を提供しているか
+・（顧客・ユーザー層）
+
+■ 長期保有の観点から注目すべき点
+・（成長性・競争優位性・社会的意義など）
+
 企業名：${company.name}
 業種：${company.industry_name}
-売上高：${f.sales ? Math.round(f.sales/100000000) + '億円' : '不明'}
-営業利益：${f.operating_profit ? Math.round(f.operating_profit/100000000) + '億円' : '不明'}
-ROE：${company.roe ? company.roe.toFixed(1) + '%' : '不明'}
-営業利益率：${company.operating_margin ? company.operating_margin.toFixed(1) + '%' : '不明'}
-PER：${company.per ? company.per.toFixed(1) + '倍' : '不明'}
-NC比率：${company.net_cash_ratio ? company.net_cash_ratio.toFixed(1) + '%' : '不明'}
-ネットネット倍率：${company.net_net_ratio ? company.net_net_ratio.toFixed(2) + '倍' : '不明'}
+
+${texts?.policy ? '【経営方針】' + texts.policy : ''}
+${texts?.strategy ? '【戦略】' + texts.strategy : ''}
+${texts?.management_analysis ? '【経営者の財務分析】' + texts.management_analysis : ''}
   `.trim();
 
   try {
@@ -608,9 +640,11 @@ NC比率：${company.net_cash_ratio ? company.net_cash_ratio.toFixed(1) + '%' : 
     );
     const data = await response.json();
     const text = data.candidates[0].content.parts[0].text;
-    document.getElementById('ai-summary').textContent = text;
+    if (requestId !== aiRequestId) return;
+    document.getElementById('ai-summary').innerHTML = text.replace(/\n/g, '<br>');
     document.getElementById('ai-summary').className = 'detail-ai-text';
   } catch (e) {
+    if (requestId !== aiRequestId) return;
     document.getElementById('ai-summary').textContent = 'AI分析を取得できませんでした。';
   }
 }
@@ -650,6 +684,7 @@ function switchTab(tab) {
 function goToResults() {
   applyFilters();
   switchTab('result');
+  window.scrollTo(0, 0);
 }
 
 function clearStrategy() {

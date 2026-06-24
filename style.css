@@ -690,3 +690,10 @@ canvas {
   cursor: pointer;
   font-weight: bold;
 }
+
+.detail-ai-date {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #e07b3a;
+  margin-bottom: 4px;
+}
