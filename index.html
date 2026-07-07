@@ -12,6 +12,10 @@
   <meta name="apple-mobile-web-app-title" content="株スクリーナー" />
 </head>
 <body>
+  <div id="global-loading" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(255,255,255,0.85);z-index:999;flex-direction:column;align-items:center;justify-content:center;">
+    <div class="spinner"></div>
+    <div style="margin-top:12px;color:#1a1a2e;font-size:0.9rem" id="loading-message">読み込み中...</div>
+  </div>
   <div id="app">
 
     <!-- ヘッダー -->
@@ -20,11 +24,79 @@
       <p id="updated-at">読み込み中...</p>
     </header>
 
+    <!-- ホーム画面 -->
+    <div id="home-screen" class="screen active">
+      <div class="screen-content">
+        <div class="home-hero">
+          <div class="home-logo">📊</div>
+          <h1 class="home-title">日本株スクリーナー</h1>
+          <p class="home-subtitle">4,000社以上の上場企業を<br>独自指標でスクリーニング</p>
+        </div>
+
+        <div class="home-features">
+          <div class="home-feature-card">
+            <div class="home-feature-icon">🔍</div>
+            <div class="home-feature-title">多彩なスクリーニング</div>
+            <div class="home-feature-desc">PER・ROE・ROIC・NC比率・ネットネット倍率など、プロ級の指標で絞り込み</div>
+          </div>
+          <div class="home-feature-card">
+            <div class="home-feature-icon">📈</div>
+            <div class="home-feature-title">5つの投資戦略スコア</div>
+            <div class="home-feature-desc">キャッシュリッチ・超割安・堀あり・成長加速・生存戦略の各スコアで銘柄を評価</div>
+          </div>
+          <div class="home-feature-card">
+            <div class="home-feature-icon">🤖</div>
+            <div class="home-feature-title">AI詳細サマリ</div>
+            <div class="home-feature-desc">有価証券報告書をもとに事業内容・経営戦略をAIが分析（要Gemini APIキー）</div>
+          </div>
+          <div class="home-feature-card">
+            <div class="home-feature-icon">★</div>
+            <div class="home-feature-title">ポートフォリオ管理</div>
+            <div class="home-feature-desc">気になる銘柄をポートフォリオに追加。URLで共有・複数デバイス対応</div>
+          </div>
+        </div>
+
+        <div class="home-howto">
+          <h3>📖 使い方</h3>
+          <div class="home-step">
+            <div class="home-step-num">1</div>
+            <div class="home-step-desc">🔍 スクリーニングタブで条件を設定して「検索する」を押す</div>
+          </div>
+          <div class="home-step">
+            <div class="home-step-num">2</div>
+            <div class="home-step-desc">📊 結果タブで銘柄一覧を確認。カードをタップで詳細表示</div>
+          </div>
+          <div class="home-step">
+            <div class="home-step-num">3</div>
+            <div class="home-step-desc">★ 気になった銘柄は☆ボタンでポートフォリオに追加</div>
+          </div>
+          <div class="home-step">
+            <div class="home-step-num">4</div>
+            <div class="home-step-desc">📈 戦略タブで投資哲学別スコアランキングを確認</div>
+          </div>
+        </div>
+
+        <div class="home-disclaimer">
+          ⚠️ 本アプリは情報提供を目的としており、投資助言ではありません。
+          投資判断はご自身の責任で行ってください。
+          データはEDINET（金融庁）の有価証券報告書に基づいています。
+        </div>
+
+        <div class="home-start">
+          <button onclick="switchTab('screen'); window.scrollTo(0,0);" class="btn-search">スクリーニングを始める →</button>
+        </div>
+      </div>
+    </div>
+
     <!-- スクリーニング画面 -->
-    <div id="screen-screen" class="screen active">
+    <div id="screen-screen" class="screen">
       <div class="screen-content">
         <h2>🔍 スクリーニング条件</h2>
         <div class="filter-section">
+          <div class="filter-group">
+            <label class="filter-label">銘柄名・証券コード・業種で検索</label>
+            <input type="text" id="screen-search" placeholder="例：トヨタ、小売業、7203" style="width:100%;padding:8px;border:1px solid #ddd;border-radius:8px;font-size:0.95rem">
+          </div>
           <div class="filter-group">
             <label class="filter-label">市場</label>
             <div class="btn-group">
@@ -201,7 +273,11 @@
           <button onclick="exportCSV()">CSV</button>
         </div>
       </div>
-      <div id="result-count"></div>
+<div id="result-count"></div>
+      <div id="loading-spinner" style="display:none;text-align:center;padding:32px">
+        <div class="spinner"></div>
+        <div style="margin-top:8px;color:#888;font-size:0.9rem">検索中...</div>
+      </div>
       <main id="company-list"></main>
     </div>
 
@@ -278,6 +354,10 @@
 
   <!-- 下部タブ -->
   <nav id="bottom-nav">
+    <button onclick="switchTab('home')" class="nav-btn" id="nav-home">
+      <span class="nav-icon">🏠</span>
+      <span class="nav-label">ホーム</span>
+    </button>
     <button onclick="switchTab('screen')" class="nav-btn active" id="nav-screen">
       <span class="nav-icon">🔍</span>
       <span class="nav-label">スクリーニング</span>

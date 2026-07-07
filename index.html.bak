@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>日本株財務指標スクリーナー</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#1a1a2e" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="株スクリーナー" />
+</head>
+<body>
+  <div id="controls">
+    <header>
+      <h1>日本株財務指標スクリーナー</h1>
+      <p id="updated-at">更新日時：読み込み中...</p>
+    </header>
+    <div id="portfolio-bar">
+      <button onclick="showAll()" class="active" id="btn-all">全銘柄</button>
+      <div id="portfolio-tabs"></div>
+      <button onclick="addPortfolio()">＋ポートフォリオ追加</button>
+    </div>
+    <div id="search-bar">
+      <input type="text" id="search-input" placeholder="会社名・証券コード" oninput="filterList()" />
+    </div>
+    <div id="limit-bar">
+      <span>表示件数：</span>
+      <button onclick="setLimit(10, this)">10件</button>
+      <button onclick="setLimit(50, this)">50件</button>
+      <button onclick="setLimit(100, this)">100件</button>
+      <button onclick="setLimit(null, this)" class="active">全件</button>
+    </div>
+    <div id="sort-bar">
+      <span>並び替え：</span>
+      <button onclick="sortBy('market_cap', this)" class="active">時価総額</button>
+      <button onclick="sortBy('sales', this)">売上高</button>
+      <button onclick="sortBy('operating_profit', this)">営業利益</button>
+      <button onclick="sortBy('equity', this)">純資産</button>
+      <button onclick="sortBy('per', this)">PER</button>
+      <button onclick="sortBy('roe', this)">ROE</button>
+      <button onclick="sortBy('operating_margin', this)">営業利益率</button>
+    </div>
+    <div id="filter-bar">
+      <span>市場：</span>
+      <button onclick="setFilter('market', null, this)" class="active">全て</button>
+      <button onclick="setFilter('market', 'プライム（内国株式）', this)">プライム</button>
+      <button onclick="setFilter('market', 'スタンダード（内国株式）', this)">スタンダード</button>
+      <button onclick="setFilter('market', 'グロース（内国株式）', this)">グロース</button>
+    </div>
+    <div id="industry-filter">
+      <span>業種：</span>
+      <select id="industry-select" onchange="setIndustryFilter(this.value)">
+        <option value="">全業種</option>
+      </select>
+    </div>
+    <div id="screen-filter">
+      <span>スクリーニング：</span>
+      <label>PER <input type="number" id="filter-per" placeholder="以下" min="0" oninput="filterList()"> 倍以下,</label>
+      <label>ROE <input type="number" id="filter-roe" placeholder="以上" min="0" oninput="filterList()"> %以上,</label>
+      <label>営業利益率 <input type="number" id="filter-margin" placeholder="以上" min="0" oninput="filterList()"> %以上,</label>
+      <label>時価総額 <input type="number" id="filter-cap" placeholder="以下" min="0" oninput="filterList()"> 億円以下,</label>
+      <label>ネットキャッシュ比率 <input type="number" id="filter-ncp" placeholder="以上" min="-100" oninput="filterList()"> %以上,</label>
+      <label>ネットネット倍率 <input type="number" id="filter-nn" placeholder="以上" step="0.1" oninput="filterList()"> 倍以上</label>
+      <button onclick="clearScreenFilter()">リセット</button>
+      <button onclick="exportCSV()">CSV出力</button>
+    </div>
+  </div>
+  <main id="company-list">
+    <p>データ読み込み中...</p>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

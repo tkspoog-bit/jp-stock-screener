@@ -10,6 +10,16 @@ let filteredData = [];
 let currentStrategy = null;
 let aiRequestId = 0;
 
+function showLoading(message = '読み込み中...') {
+  const el = document.getElementById('global-loading');
+  document.getElementById('loading-message').textContent = message;
+  el.style.display = 'flex';
+}
+
+function hideLoading() {
+  document.getElementById('global-loading').style.display = 'none';
+}
+
 // データ読み込み
 Promise.all([
   fetch('./data/fundamentals.json').then(r => r.json()),
@@ -597,6 +607,7 @@ function drawEpsChart(history) {
 
 async function generateAISummary(company) {
   const requestId = ++aiRequestId;
+  showLoading('AI分析中...');
   const f = company.financials;
   const history = company.history || [];
   const texts = await loadTexts(company.code);
@@ -641,10 +652,12 @@ ${texts?.management_analysis ? '【経営者の財務分析】' + texts.manageme
     const data = await response.json();
     const text = data.candidates[0].content.parts[0].text;
     if (requestId !== aiRequestId) return;
+    hideLoading();
     document.getElementById('ai-summary').innerHTML = text.replace(/\n/g, '<br>');
     document.getElementById('ai-summary').className = 'detail-ai-text';
   } catch (e) {
     if (requestId !== aiRequestId) return;
+    hideLoading();
     document.getElementById('ai-summary').textContent = 'AI分析を取得できませんでした。';
   }
 }
@@ -672,19 +685,31 @@ function switchTab(tab) {
   document.getElementById(`${tab}-screen`).classList.add('active');
   const navBtn = document.getElementById(`nav-${tab}`);
   if (navBtn) navBtn.classList.add('active');
-  if (tab === 'result') renderList();
-  if (tab === 'portfolio') renderPortfolioScreen();
-  if (tab === 'settings') initSettings();
-  if (tab === 'glossary') initGlossary();
-  if (tab === 'strategy') initStrategy();
-  if (tab === 'detail') {}
+
+  showLoading();
+  setTimeout(() => {
+    if (tab === 'result') renderList();
+    if (tab === 'portfolio') renderPortfolioScreen();
+    if (tab === 'settings') initSettings();
+    if (tab === 'glossary') initGlossary();
+    if (tab === 'strategy') initStrategy();
+    if (tab === 'home') {}
+    hideLoading();
+  }, 50);
 }
 
 // 結果画面へ
 function goToResults() {
-  applyFilters();
   switchTab('result');
+  document.getElementById('loading-spinner').style.display = 'block';
+  document.getElementById('company-list').innerHTML = '';
+  document.getElementById('result-count').textContent = '';
   window.scrollTo(0, 0);
+  setTimeout(() => {
+    applyFilters();
+    renderList();
+    document.getElementById('loading-spinner').style.display = 'none';
+  }, 50);
 }
 
 function clearStrategy() {
@@ -693,6 +718,7 @@ function clearStrategy() {
 
 // フィルタ適用
 function applyFilters() {
+  const screenSearch = document.getElementById('screen-search').value.trim().toLowerCase();
   const perMax = parseFloat(document.getElementById('filter-per').value);
   const roeMin = parseFloat(document.getElementById('filter-roe').value);
   const marginMin = parseFloat(document.getElementById('filter-margin').value);
@@ -705,6 +731,14 @@ function applyFilters() {
   const cfFilter = document.getElementById('filter-cf').value;
 
   let filtered = allData;
+
+  if (screenSearch) {
+    filtered = filtered.filter(c =>
+      c.name.toLowerCase().includes(screenSearch) ||
+      c.code.toLowerCase().includes(screenSearch) ||
+      (c.industry_name && c.industry_name.toLowerCase().includes(screenSearch))
+    );
+  }
 
   if (currentMarketFilters.length > 0) {
     filtered = filtered.filter(c => currentMarketFilters.includes(c.market));
@@ -826,6 +860,7 @@ function clearScreenFilter() {
   document.getElementById('filter-yield').value = '';
   document.getElementById('filter-equity-ratio').value = '';
   document.getElementById('filter-cf').value = '';
+  document.getElementById('screen-search').value = '';
 }
 
 // 結果描画

@@ -697,3 +697,131 @@ canvas {
   color: #e07b3a;
   margin-bottom: 4px;
 }
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #eee;
+  border-top: 4px solid #1a1a2e;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin: 0 auto;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ホーム画面 */
+.home-hero {
+  text-align: center;
+  padding: 24px 0 16px;
+}
+
+.home-logo {
+  font-size: 3rem;
+  margin-bottom: 8px;
+}
+
+.home-title {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #1a1a2e;
+  margin-bottom: 8px;
+}
+
+.home-subtitle {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+.home-features {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.home-feature-card {
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.home-feature-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.home-feature-title {
+  font-weight: bold;
+  font-size: 0.95rem;
+  margin-bottom: 4px;
+}
+
+.home-feature-desc {
+  font-size: 0.8rem;
+  color: #666;
+  line-height: 1.5;
+}
+
+.home-howto {
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+.home-howto h3 {
+  font-size: 0.95rem;
+  margin-bottom: 12px;
+  color: #1a1a2e;
+}
+
+.home-step {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.home-step-num {
+  background: #1a1a2e;
+  color: white;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.home-step-desc {
+  font-size: 0.85rem;
+  color: #444;
+  line-height: 1.5;
+  padding-top: 2px;
+}
+
+.home-disclaimer {
+  background: #fff8e1;
+  border-radius: 12px;
+  padding: 12px 16px;
+  font-size: 0.78rem;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.home-start {
+  margin-bottom: 16px;
+}
