@@ -694,6 +694,7 @@ function switchTab(tab) {
     if (tab === 'glossary') initGlossary();
     if (tab === 'strategy') initStrategy();
     if (tab === 'home') {}
+    if (tab === 'legal') {}
     hideLoading();
   }, 50);
 }

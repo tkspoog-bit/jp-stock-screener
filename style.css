@@ -825,3 +825,53 @@ canvas {
 .home-start {
   margin-bottom: 16px;
 }
+
+/* 利用規約 */
+.legal-section {
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+.legal-section h3 {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #1a1a2e;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #1a1a2e;
+}
+
+.legal-block {
+  margin-bottom: 16px;
+}
+
+.legal-block h4 {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #1a1a2e;
+  margin-bottom: 6px;
+}
+
+.legal-block p {
+  font-size: 0.82rem;
+  color: #555;
+  line-height: 1.7;
+}
+
+.legal-block ul {
+  font-size: 0.82rem;
+  color: #555;
+  line-height: 1.7;
+  padding-left: 16px;
+  margin-top: 4px;
+}
+
+.legal-updated {
+  font-size: 0.75rem;
+  color: #aaa;
+  text-align: right;
+  margin-top: 8px;
+}

@@ -352,6 +352,100 @@
       </div>
     </div>
 
+    <!-- 利用規約・プライバシーポリシー画面 -->
+    <div id="legal-screen" class="screen">
+      <div class="screen-content">
+        <h2>📋 利用規約・プライバシーポリシー</h2>
+
+        <div class="legal-section">
+          <h3>利用規約</h3>
+
+          <div class="legal-block">
+            <h4>第1条（サービスについて）</h4>
+            <p>kabu-mine（以下「本サービス」）は、日本の上場企業の財務データを独自指標でスクリーニングする情報提供ツールです。個人が運営するサービスです。</p>
+          </div>
+
+          <div class="legal-block">
+            <h4>第2条（投資助言ではありません）</h4>
+            <p>本サービスが提供する情報は、投資判断の参考情報であり、金融商品取引法に基づく投資助言ではありません。株式の売買に関する最終判断はご自身の責任で行ってください。本サービスの情報を利用したことによる損害について、運営者は一切の責任を負いません。</p>
+          </div>
+
+          <div class="legal-block">
+            <h4>第3条（データの正確性について）</h4>
+            <p>本サービスのデータは、金融庁が運営するEDINET（有価証券報告書等の開示書類に関する電子開示システム）から取得した有価証券報告書に基づいています。データの正確性・完全性・最新性を保証するものではありません。データは定期的に更新されますが、最新の情報と異なる場合があります。</p>
+          </div>
+
+          <div class="legal-block">
+            <h4>第4条（AI分析について）</h4>
+            <p>AI詳細サマリはGoogle Gemini APIを使用しています。AI分析は有価証券報告書のデータに基づいており、最新の市場状況を反映しない場合があります。AI分析の内容は参考情報であり、投資判断の根拠とすることはお控えください。</p>
+          </div>
+
+          <div class="legal-block">
+            <h4>第5条（禁止事項）</h4>
+            <p>以下の行為を禁止します。</p>
+            <ul>
+              <li>本サービスのデータを無断で商用利用・転載すること</li>
+              <li>本サービスのシステムに過度な負荷をかけること</li>
+              <li>本サービスを違法な目的に使用すること</li>
+            </ul>
+          </div>
+
+          <div class="legal-block">
+            <h4>第6条（サービスの変更・停止）</h4>
+            <p>運営者は予告なく本サービスの内容を変更・停止することがあります。これにより生じた損害について、運営者は責任を負いません。</p>
+          </div>
+
+          <div class="legal-block">
+            <h4>第7条（準拠法）</h4>
+            <p>本規約は日本法に準拠し、東京地方裁判所を第一審の専属的合意管轄裁判所とします。</p>
+          </div>
+        </div>
+
+        <div class="legal-section">
+          <h3>プライバシーポリシー</h3>
+
+          <div class="legal-block">
+            <h4>収集する情報</h4>
+            <p>本サービスはサーバーを持たず、以下の情報をお使いのデバイスのlocalStorageにのみ保存します。</p>
+            <ul>
+              <li>Gemini APIキー（AI分析機能を使用する場合）</li>
+              <li>選択したAIモデル</li>
+              <li>ポートフォリオ情報（URLパラメータとして保存）</li>
+              <li>表示設定（指標説明のON/OFF等）</li>
+            </ul>
+            <p>これらの情報は運営者のサーバーには送信されません。</p>
+          </div>
+
+          <div class="legal-block">
+            <h4>外部サービスの利用</h4>
+            <ul>
+              <li><strong>GitHub Pages</strong>：本サービスのホスティングに使用</li>
+              <li><strong>EDINET（金融庁）</strong>：財務データの取得に使用</li>
+              <li><strong>Google Gemini API</strong>：AI分析機能に使用（ユーザーが設定したAPIキーを使用）</li>
+              <li><strong>Yahoo Finance</strong>：株価データの取得に使用</li>
+            </ul>
+          </div>
+
+          <div class="legal-block">
+            <h4>APIキーの取り扱い</h4>
+            <p>Gemini APIキーはお使いのデバイスのlocalStorageにのみ保存され、Google Gemini APIへのリクエスト時のみ使用されます。運営者はAPIキーにアクセスすることはできません。</p>
+          </div>
+
+          <div class="legal-block">
+            <h4>Cookieについて</h4>
+            <p>本サービスはCookieを使用していません。</p>
+          </div>
+
+          <div class="legal-block">
+            <h4>お問い合わせ</h4>
+            <p>本サービスに関するお問い合わせは、noteまたはXにてkabu-mineまでご連絡ください。</p>
+          </div>
+        </div>
+
+        <div class="legal-updated">最終更新日：2026年7月8日</div>
+      </div>
+    </div>
+
   <!-- 下部タブ -->
   <nav id="bottom-nav">
     <button onclick="switchTab('home')" class="nav-btn" id="nav-home">
@@ -374,6 +468,7 @@
       <span class="nav-icon">📈</span>
       <span class="nav-label">戦略</span>
     </button>
+    
     <button onclick="switchTab('settings')" class="nav-btn" id="nav-settings">
       <span class="nav-icon">⚙️</span>
       <span class="nav-label">設定</span>
@@ -382,6 +477,11 @@
       <span class="nav-icon">📖</span>
       <span class="nav-label">用語</span>
     </button>
+
+    <button onclick="switchTab('legal')" class="nav-btn" id="nav-legal">
+      <span class="nav-icon">📋</span>
+      <span class="nav-label">規約</span>
+    
   </nav>
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
