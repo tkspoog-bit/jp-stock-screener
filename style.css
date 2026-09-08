@@ -306,6 +306,7 @@ body {
   font-size: 0.9rem;
   padding: 4px 0;
   border-bottom: 1px solid #f5f5f5;
+  cursor: pointer;
 }
 
 .financial-label {
@@ -314,7 +315,6 @@ body {
 
 .financial-value {
   font-weight: 500;
-  cursor: pointer;
 }
 
 .market-cap .financial-value {
@@ -874,4 +874,56 @@ canvas {
   color: #aaa;
   text-align: right;
   margin-top: 8px;
+}
+/* アクティブフィルターハイライト */
+.filter-group.active {
+  background: #fff8f0;
+  border: 1px solid #e07b3a;
+}
+.filter-group.active .filter-label {
+  color: #e07b3a;
+  font-weight: 600;
+}
+.filter-group.active select,
+.filter-group.active input[type="number"] {
+  border-color: #e07b3a;
+}
+
+/* アクティブフィルターハイライト */
+.filter-group.active {
+  background: #fff8f0;
+  border: 1px solid #e07b3a;
+}
+.filter-group.active .filter-label {
+  color: #e07b3a;
+  font-weight: 600;
+}
+.filter-group.active select,
+.filter-group.active input[type="number"] {
+  border-color: #e07b3a;
+}
+
+/* 結果カードのアクティブフィルターハイライト */
+.metric-item.highlighted {
+  background: #fff3e8;
+  border: 1px solid #e07b3a;
+  border-radius: 8px;
+}
+.metric-item.highlighted .metric-label { color: #e07b3a; }
+.metric-item.highlighted .metric-value { color: #e07b3a; font-weight: 700; }
+.financial-row.highlighted .financial-label { color: #e07b3a; font-weight: 600; }
+.financial-row.highlighted .financial-value { color: #e07b3a; font-weight: 700; }
+
+/* 詳細ボタン */
+.detail-btn {
+  padding: 4px 12px;
+  background: #1a1a2e;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+.detail-btn:hover {
+  background: #e07b3a;
 }

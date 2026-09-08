@@ -22,8 +22,8 @@ function hideLoading() {
 
 // データ読み込み
 Promise.all([
-  fetch('./data/fundamentals.json').then(r => r.json()),
-  fetch('./data/prices.json').then(r => r.json())
+  fetch('./data/fundamentals.json?v=' + Date.now()).then(r => r.json()),
+  fetch('./data/prices.json?v=' + Date.now()).then(r => r.json())
 ])
 .then(([fundamentals, prices]) => {
   pricesData = prices;
@@ -44,7 +44,8 @@ Promise.all([
     const dividend_yield = (f.dividend_per_share && priceData) ? f.dividend_per_share / priceData.price * 100 : null;
     const equity_ratio = f.equity_ratio || null;
     const roic = f.roic || null;
-    return { ...company, marketCap, priceData, per, pbr, roe, roa, operating_margin, net_cash_ratio, net_net_ratio, dividend_yield, equity_ratio, roic };
+    const cf_ratio = (f.operating_cf && f.net_income && f.net_income > 0) ? f.operating_cf / f.net_income : null;
+    return { ...company, marketCap, priceData, per, pbr, roe, roa, operating_margin, net_cash_ratio, net_net_ratio, dividend_yield, equity_ratio, roic, cf_ratio };
   });
 
   // 業種リスト生成
@@ -74,6 +75,18 @@ const HINTS = {
   'NC比率': 'ネットキャッシュ比率。（現金×0.7−有利子負債）÷時価総額。高いほどキャッシュリッチ。清原達郎氏が重視する指標。',
   'ネットネット': 'ネットネット倍率。（流動資産−総負債）÷時価総額。1倍以上は流動資産だけで時価総額を上回る超割安株。',
   '時価総額': '株価×発行済株式数。会社全体の値段。',
+  '参考株価': '直近の株価。Yahoo Financeから取得。',
+  '売上高': '会社が1年間で稼いだ総収入。事業規模の基本指標。',
+  '営業利益': '売上高から原価・販管費を引いた本業の儲け。会社の稼ぐ力を示す。\n\n【取得不可について】\nIFRSを採用している一部の企業（総合商社・金融等）は、営業利益を独自の形式で開示しているため自動取得できない場合があります。\n\n📄 有価証券報告書の確認方法\n① EDINET（https://disclosure.edinet-fsa.go.jp）で企業名を検索\n② 有価証券報告書を開き「連結損益計算書」を確認',
+  '当期純利益': '税金や特別損益を含めた最終的な利益。株主に帰属する利益。',
+  '総資産': '会社が持つ全ての資産の合計。事業規模の目安。',
+  '純資産': '総資産から負債を引いた自己資本。会社の財務的な体力。',
+  '投資CF': '設備投資や株式取得などへの支出。マイナスが大きいほど積極的に投資している。',
+  '1株配当': '1株あたりの年間配当金。株主への還元額。',
+  '営業CF比率（当期）': '営業CF÷純利益。1以上なら利益が現金として実現している証拠。',
+  '営業CF比率（3年累計）': '3年分の営業CF合計÷純利益合計。単年のブレを除いた安定的なCF品質。',
+  'CFトレンド': '前期比でCF比率が改善しているか悪化しているかを示す。',
+  'CF分析対象外': '銀行・保険・証券などの金融業は、預金の増減など本業以外の巨額の現金移動が営業CFに含まれるため、一般企業と同じCF比率で比較することができません。\n\n金融業を分析する際は、NIM（純利鞘）・不良債権比率・自己資本比率（BIS基準）など、金融業専用の指標を使います。',
   '営業CF': '営業活動によるキャッシュフロー。本業で現金をどれだけ稼いだか。',
   '投資CF': '投資活動によるキャッシュフロー。設備投資などへの支出。マイナスが多いほど積極投資。',
   '配当利回り': '1株配当÷株価×100。株を持っているだけでもらえる配当金の割合。高いほど株主還元が厚い。',
@@ -338,7 +351,7 @@ const STRATEGIES = [
     name: '🛡️ 生存戦略型',
     desc: '機関投資家の死角で個人投資家が優位に立てる銘柄',
     color: '#c0392b',
-    filters: { 'filter-cap': '100', 'filter-cf': '1', 'filter-ncp': '0' },
+    filters: { 'filter-cap': '100', 'filter-cf': 'positive', 'filter-ncp': '0' },
     calc: (c) => {
       let score = 0;
       const items = [];
@@ -454,6 +467,7 @@ function openDetail(code) {
     <div class="detail-header">
       <div class="detail-name">${company.name}</div>
       <div class="detail-code">${company.code}　${company.market || ''}　${company.industry_name || ''}</div>
+      ${company.tse_unlisted ? '<div style="color:#e74c3c;font-size:0.85rem;margin:8px 0;padding:6px 12px;background:#fef0f0;border-radius:8px;border-left:3px solid #e74c3c">🔴 上場廃止の可能性あり（最新の東証上場リストに未掲載）</div>' : ''}
       ${company.description ? `<div class="company-desc">${company.description}</div>` : ''}
       <div class="company-tags">${generateTags(company)}</div>
     </div>
@@ -482,16 +496,35 @@ function openDetail(code) {
     </div>
 
     <div class="detail-section">
+      <h3>📋 財務データ</h3>
+      <div class="financials">
+        ${company.marketCap !== null ? `<div class="financial-row market-cap" onclick="showHint('時価総額')" style="cursor:pointer"><span class="financial-label">時価総額 📖</span><span class="financial-value" onclick="showHint('時価総額')">${formatAmount(company.marketCap)}（${company.priceData ? company.priceData.date : ""}）</span></div><div class="financial-row" onclick="showHint('参考株価')" style="cursor:pointer"><span class="financial-label">参考株価 📖</span><span class="financial-value">${company.priceData ? company.priceData.price.toLocaleString() + " 円（" + company.priceData.date + "）" : "不明"}</span></div>` : ''}
+        ${f.sales ? `<div class="financial-row" onclick="showHint('売上高')" style="cursor:pointer"><span class="financial-label">売上高 📖</span><span class="financial-value">${formatAmount(f.sales)}</span></div>` : ''}
+        ${true ? `<div class="financial-row" onclick="showHint('営業利益')" style="cursor:pointer"><span class="financial-label">営業利益 📖</span><span class="financial-value">${f.operating_profit ? formatAmount(f.operating_profit) : '取得不可（IFRS個別開示）'}</span></div>` : ''}
+        ${f.net_income ? `<div class="financial-row" onclick="showHint('当期純利益')" style="cursor:pointer"><span class="financial-label">当期純利益 📖</span><span class="financial-value">${formatAmount(f.net_income)}</span></div>` : ''}
+        ${f.total_assets ? `<div class="financial-row" onclick="showHint('総資産')" style="cursor:pointer"><span class="financial-label">総資産 📖</span><span class="financial-value">${formatAmount(f.total_assets)}</span></div>` : ''}
+        ${f.equity ? `<div class="financial-row" onclick="showHint('純資産')" style="cursor:pointer"><span class="financial-label">純資産 📖</span><span class="financial-value">${formatAmount(f.equity)}</span></div>` : ''}
+        ${f.operating_cf !== undefined ? `<div class="financial-row" onclick="showHint('営業CF')" style="cursor:pointer"><span class="financial-label">営業CF 📖</span><span class="financial-value">${formatAmount(f.operating_cf)}${FINANCIAL_SECTORS.includes(company.industry_name) ? '<span style="color:#aaa;font-size:0.75rem"> ※他業種との比較には不適</span>' : ''}</span></div>` : ''}
+        ${FINANCIAL_SECTORS.includes(company.industry_name) ? `<div class="financial-row" onclick="showHint('CF分析対象外')" style="cursor:pointer"><span class="financial-label">営業CF比率 📖</span><span class="financial-value" style="color:#aaa;font-size:0.85rem">CF分析対象外業種</span></div>` : `
+        ${(f.cf_ratio_y0 !== undefined) ? `<div class="financial-row" onclick="showHint('営業CF比率（当期）')" style="cursor:pointer"><span class="financial-label">営業CF比率（当期） 📖</span><span class="financial-value">${f.cf_ratio_y0.toFixed(2)}</span></div>` : ''}
+        ${(f.cf_ratio_y1 !== undefined) ? `<div class="financial-row" onclick="showHint('営業CF比率（当期）')" style="cursor:pointer"><span class="financial-label">営業CF比率（1期前） 📖</span><span class="financial-value">${f.cf_ratio_y1.toFixed(2)}</span></div>` : ''}
+        ${(f.cf_ratio_y2 !== undefined) ? `<div class="financial-row" onclick="showHint('営業CF比率（当期）')" style="cursor:pointer"><span class="financial-label">営業CF比率（2期前） 📖</span><span class="financial-value">${f.cf_ratio_y2.toFixed(2)}</span></div>` : ''}
+        ${(f.cf_ratio_3y !== undefined) ? `<div class="financial-row" onclick="showHint('営業CF比率（3年累計）')" style="cursor:pointer"><span class="financial-label">営業CF比率（3年累計） 📖</span><span class="financial-value">${f.cf_ratio_3y.toFixed(2)}</span></div>` : ''}
+        ${(f.cf_trend !== undefined) ? `<div class="financial-row" onclick="showHint('CFトレンド')" style="cursor:pointer"><span class="financial-label">CFトレンド 📖</span><span class="financial-value">${f.cf_trend === 'improving' ? '↑ 改善' : '↓ 悪化'}</span></div>` : ''}`}
+        ${f.dividend_per_share !== undefined ? `<div class="financial-row" onclick="showHint('1株配当')" style="cursor:pointer"><span class="financial-label">1株配当 📖</span><span class="financial-value">${f.dividend_per_share} 円</span></div>` : ''}
+        </div>
+    </div>
+    <div class="detail-section">
       <h3>💰 主要指標</h3>
       <div class="metrics-grid">
-        ${company.per !== null ? `<div class="metric-item"><span class="metric-label">PER</span><span class="metric-value">${company.per.toFixed(1)} 倍</span></div>` : ''}
-        ${company.pbr !== null ? `<div class="metric-item"><span class="metric-label">PBR</span><span class="metric-value">${company.pbr.toFixed(1)} 倍</span></div>` : ''}
-        ${company.roe !== null ? `<div class="metric-item"><span class="metric-label">ROE</span><span class="metric-value">${company.roe.toFixed(1)} %</span></div>` : ''}
-        ${company.roa !== null ? `<div class="metric-item"><span class="metric-label">ROA</span><span class="metric-value">${company.roa.toFixed(1)} %</span></div>` : ''}
-        ${company.operating_margin !== null ? `<div class="metric-item"><span class="metric-label">営業利益率</span><span class="metric-value">${company.operating_margin.toFixed(1)} %</span></div>` : ''}
-        ${company.net_cash_ratio !== null ? `<div class="metric-item"><span class="metric-label">NC比率</span><span class="metric-value">${company.net_cash_ratio.toFixed(1)} %</span></div>` : ''}
-        ${company.net_net_ratio !== null ? `<div class="metric-item"><span class="metric-label">ネットネット</span><span class="metric-value">${company.net_net_ratio.toFixed(2)} 倍</span></div>` : ''}
-        ${company.dividend_yield !== null ? `<div class="metric-item"><span class="metric-label">配当利回り</span><span class="metric-value">${company.dividend_yield.toFixed(2)} %</span></div>` : ''}
+        ${company.per !== null ? `<div class="metric-item" onclick="showHint('PER')"><span class="metric-label">PER 📖</span><span class="metric-value">${company.per.toFixed(1)} 倍</span></div>` : ''}
+        ${company.pbr !== null ? `<div class="metric-item" onclick="showHint('PBR')"><span class="metric-label">PBR 📖</span><span class="metric-value">${company.pbr.toFixed(1)} 倍</span></div>` : ''}
+        ${company.roe !== null ? `<div class="metric-item" onclick="showHint('ROE')"><span class="metric-label">ROE 📖</span><span class="metric-value">${company.roe.toFixed(1)} %</span></div>` : ''}
+        ${company.roa !== null ? `<div class="metric-item" onclick="showHint('ROA')"><span class="metric-label">ROA 📖</span><span class="metric-value">${company.roa.toFixed(1)} %</span></div>` : ''}
+        ${company.operating_margin !== null ? `<div class="metric-item" onclick="showHint('営業利益率')"><span class="metric-label">営業利益率 📖</span><span class="metric-value">${company.operating_margin.toFixed(1)} %</span></div>` : ''}
+        ${company.net_cash_ratio !== null ? `<div class="metric-item" onclick="showHint('NC比率')"><span class="metric-label">NC比率 📖</span><span class="metric-value">${company.net_cash_ratio.toFixed(1)} %</span></div>` : ''}
+        ${company.net_net_ratio !== null ? `<div class="metric-item" onclick="showHint('ネットネット')"><span class="metric-label">ネットネット 📖</span><span class="metric-value">${company.net_net_ratio.toFixed(2)} 倍</span></div>` : ''}
+        ${company.dividend_yield !== null ? `<div class="metric-item" onclick="showHint('配当利回り')"><span class="metric-label">配当利回り 📖</span><span class="metric-value">${company.dividend_yield.toFixed(2)} %</span></div>` : ''}
       </div>
     </div>
   `;
@@ -607,6 +640,20 @@ function drawEpsChart(history) {
 
 async function generateAISummary(company) {
   const requestId = ++aiRequestId;
+  // キャッシュ確認（30日間保持）
+  const cacheKey = 'ai_summary_' + company.code;
+  const cached = localStorage.getItem(cacheKey);
+  if (cached) {
+    try {
+      const { text, timestamp } = JSON.parse(cached);
+      const age = Date.now() - timestamp;
+      if (age < 30 * 24 * 60 * 60 * 1000) {
+        document.getElementById('ai-summary').innerHTML = text.replace(/\n/g, '<br>');
+        document.getElementById('ai-summary').className = 'detail-ai-text';
+        return;
+      }
+    } catch(e) {}
+  }
   showLoading('AI分析中...');
   const f = company.financials;
   const history = company.history || [];
@@ -653,7 +700,9 @@ ${texts?.management_analysis ? '【経営者の財務分析】' + texts.manageme
     const text = data.candidates[0].content.parts[0].text;
     if (requestId !== aiRequestId) return;
     hideLoading();
-    document.getElementById('ai-summary').innerHTML = text.replace(/\n/g, '<br>');
+    // キャッシュ保存
+    localStorage.setItem(cacheKey, JSON.stringify({ text, timestamp: Date.now() }));
+    document.getElementById('ai-summary').innerHTML = text.replace(/\n\n/g, '<br>');
     document.getElementById('ai-summary').className = 'detail-ai-text';
   } catch (e) {
     if (requestId !== aiRequestId) return;
@@ -672,7 +721,36 @@ function showHint(key) {
   if (!showHints) return;
   const desc = HINTS[key];
   if (!desc) return;
-  alert(`${key}\n\n${desc}`);
+
+  // 既存モーダルを削除
+  const existing = document.getElementById('hint-modal');
+  if (existing) existing.remove();
+
+  // URL検出してリンク化
+  const linkedDesc = desc.replace(
+    /(https?:\/\/[^\s）]+)/g,
+    '<a href="$1" target="_blank" style="color:#e07b3a">$1</a>'
+  );
+
+  const modal = document.createElement('div');
+  modal.id = 'hint-modal';
+  modal.style.cssText = `
+    position:fixed; top:0; left:0; width:100%; height:100%;
+    background:rgba(0,0,0,0.5); z-index:9999;
+    display:flex; align-items:center; justify-content:center;
+  `;
+  modal.innerHTML = `
+    <div style="background:white; border-radius:16px; padding:24px; max-width:320px; width:90%; box-shadow:0 8px 32px rgba(0,0,0,0.2);">
+      <div style="font-weight:700; font-size:1rem; margin-bottom:12px; color:#1a1a2e">${key}</div>
+      <div style="font-size:0.9rem; color:#444; line-height:1.6; white-space:pre-line">${linkedDesc}</div>
+      <button onclick="document.getElementById('hint-modal').remove()"
+        style="margin-top:16px; width:100%; padding:10px; background:#1a1a2e; color:white; border:none; border-radius:8px; font-size:0.9rem; cursor:pointer;">
+        閉じる
+      </button>
+    </div>
+  `;
+  modal.onclick = (e) => { if (e.target === modal) modal.remove(); };
+  document.body.appendChild(modal);
 }
 
 
@@ -779,8 +857,11 @@ function applyFilters() {
     else if (equityRatioMin <= 30) filtered = filtered.filter(c => c.equity_ratio !== null && c.equity_ratio <= equityRatioMin);
     else filtered = filtered.filter(c => c.equity_ratio !== null && c.equity_ratio >= equityRatioMin);
   }
-  if (cfFilter === '1') {
+  if (cfFilter === 'positive') {
     filtered = filtered.filter(c => c.financials.operating_cf && c.financials.operating_cf > 0);
+  } else if (cfFilter && cfFilter !== 'positive') {
+    const minRatio = parseFloat(cfFilter);
+    filtered = filtered.filter(c => c.cf_ratio !== null && c.cf_ratio >= minRatio);
   }
   if (!isNaN(yieldMin)) {
     if (yieldMin <= 1) filtered = filtered.filter(c => c.dividend_yield !== null && c.dividend_yield <= yieldMin);
@@ -792,6 +873,7 @@ function applyFilters() {
   }
 
   filteredData = filtered;
+  updateFilterHighlights();
 }
 
 // 結果画面のフィルタ（検索）
@@ -844,6 +926,31 @@ function sortBy(key) {
   renderList();
 }
 
+function updateFilterHighlights() {
+  const filterIds = ["filter-per","filter-roe","filter-margin","filter-roic","filter-cap","filter-ncp","filter-nn","filter-yield","filter-equity-ratio","filter-cf","industry-select"];
+  filterIds.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) {
+      const group = el.closest(".filter-group");
+      if (group) el.value ? group.classList.add("active") : group.classList.remove("active");
+    }
+  });
+  const searchEl = document.getElementById("screen-search");
+  if (searchEl) {
+    const group = searchEl.closest(".filter-group");
+    if (group) searchEl.value.trim() ? group.classList.add("active") : group.classList.remove("active");
+  }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const filterIds = ["filter-per","filter-roe","filter-margin","filter-roic","filter-cap","filter-ncp","filter-nn","filter-yield","filter-equity-ratio","filter-cf","industry-select","screen-search"];
+  filterIds.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.addEventListener("change", updateFilterHighlights);
+    if (el && id === "screen-search") el.addEventListener("input", updateFilterHighlights);
+  });
+});
+
 function clearScreenFilter() {
   currentStrategy = null;
   currentMarketFilters = [];
@@ -862,6 +969,7 @@ function clearScreenFilter() {
   document.getElementById('filter-equity-ratio').value = '';
   document.getElementById('filter-cf').value = '';
   document.getElementById('screen-search').value = '';
+  updateFilterHighlights();
 }
 
 // 結果描画
@@ -890,7 +998,7 @@ const sorted = [...displayData].sort((a, b) => {
       return scoreB - scoreA;
     }
     let valA, valB;
-    if (['per','pbr','roe','roa','operating_margin','net_cash_ratio','net_net_ratio','dividend_yield','roic','equity_ratio'].includes(currentSort)) {
+    if (['per','pbr','roe','roa','operating_margin','net_cash_ratio','net_net_ratio','dividend_yield','roic','equity_ratio','cf_ratio'].includes(currentSort)) {
       valA = a[currentSort] !== null ? a[currentSort] : -Infinity;
       valB = b[currentSort] !== null ? b[currentSort] : -Infinity;
     } else if (currentSort === 'market_cap') {
@@ -911,6 +1019,7 @@ const sorted = [...displayData].sort((a, b) => {
   const list = document.getElementById('company-list');
   list.innerHTML = '';
 
+  const af = getActiveFilters();
   sorted.forEach(company => {
     const f = company.financials;
     const filing = company.latest_filing || {};
@@ -918,17 +1027,14 @@ const sorted = [...displayData].sort((a, b) => {
     const inPf = Object.values(portfolios).some(pf => pf.codes.includes(company.code));
     const card = document.createElement('div');
     card.className = 'company-card';
-    card.style.cursor = 'pointer';
-    card.onclick = (e) => {
-      if (e.target.classList.contains('pf-btn') || e.target.classList.contains('company-tag')) return;
-      openDetail(company.code);
-    };
+
     card.innerHTML = `
       <div class="company-header">
         <div class="company-name">${company.name}</div>
-        <button class="pf-btn ${inPf ? 'in-pf' : ''}" onclick="togglePortfolio('${company.code}')">${inPf ? '★' : '☆'}</button>
+        <button class="pf-btn ${inPf ? 'in-pf' : ''}" onclick="togglePortfolio('${company.code}')">${inPf ? '★' : '☆'}</button><button class="detail-btn" onclick="openDetail('${company.code}')">詳細 →</button>
       </div>
       <div class="company-code">証券コード：${company.code}${company.market ? `　${company.market}` : ''}${company.industry_name ? `　${company.industry_name}` : ''}</div>
+      ${company.tse_unlisted ? '<div style="color:#e74c3c;font-size:0.8rem;margin:4px 0;padding:4px 8px;background:#fef0f0;border-radius:6px;border-left:3px solid #e74c3c">🔴 上場廃止の可能性あり（最新の東証上場リストに未掲載）</div>' : ''}
       <div class="company-tags">${generateTags(company)}</div>
       ${company.description ? `<div class="company-desc">${company.description}</div>` : ''}
       <div class="filing-info">
@@ -938,36 +1044,57 @@ const sorted = [...displayData].sort((a, b) => {
       <div class="financials">
         ${company.marketCap !== null ? `
         <div class="financial-row market-cap">
-          <span class="financial-label">時価総額</span>
+          <span class="financial-label" onclick="showHint('時価総額')" style="cursor:pointer">時価総額 📖</span>
           <span class="financial-value">${formatAmount(company.marketCap)}</span>
         </div>` : ''}
-        <div class="financial-row"><span class="financial-label">売上高</span><span class="financial-value">${formatAmount(f.sales)}</span></div>
-        <div class="financial-row"><span class="financial-label">営業利益</span><span class="financial-value">${formatAmount(f.operating_profit)}</span></div>
-        <div class="financial-row"><span class="financial-label">当期純利益</span><span class="financial-value">${formatAmount(f.net_income)}</span></div>
-        <div class="financial-row"><span class="financial-label">総資産</span><span class="financial-value">${formatAmount(f.total_assets)}</span></div>
-        <div class="financial-row"><span class="financial-label">純資産</span><span class="financial-value">${formatAmount(f.equity)}</span></div>
-        ${f.operating_cf !== undefined ? `<div class="financial-row"><span class="financial-label">営業CF</span><span class="financial-value">${formatAmount(f.operating_cf)}</span></div>` : ''}
-        ${f.investing_cf !== undefined ? `<div class="financial-row"><span class="financial-label">投資CF</span><span class="financial-value">${formatAmount(f.investing_cf)}</span></div>` : ''}
-        ${f.dividend_per_share !== undefined ? `<div class="financial-row"><span class="financial-label">1株配当</span><span class="financial-value">${f.dividend_per_share} 円</span></div>` : ''}
+        <div class="financial-row" onclick="showHint('売上高')" style="cursor:pointer"><span class="financial-label">売上高 📖</span><span class="financial-value">${formatAmount(f.sales)}</span></div>
+        <div class="financial-row" onclick="showHint('営業利益')" style="cursor:pointer"><span class="financial-label">営業利益 📖</span><span class="financial-value">${formatAmount(f.operating_profit)}</span></div>
+        <div class="financial-row" onclick="showHint('当期純利益')" style="cursor:pointer"><span class="financial-label">当期純利益 📖</span><span class="financial-value">${formatAmount(f.net_income)}</span></div>
+        <div class="financial-row" onclick="showHint('総資産')" style="cursor:pointer"><span class="financial-label">総資産 📖</span><span class="financial-value">${formatAmount(f.total_assets)}</span></div>
+        <div class="financial-row" onclick="showHint('純資産')" style="cursor:pointer"><span class="financial-label">純資産 📖</span><span class="financial-value">${formatAmount(f.equity)}</span></div>
+        ${f.operating_cf !== undefined ? `<div class="financial-row" onclick="showHint('営業CF')"><span class="financial-label${hl(af.cf && f.operating_cf !== null)}">営業CF 📖</span><span class="financial-value">${formatAmount(f.operating_cf)}${FINANCIAL_SECTORS.includes(company.industry_name) ? '<span style="color:#aaa;font-size:0.75rem"> ※他業種との比較には不適</span>' : ''}</span></div>` : ''}
+        
+        ${f.investing_cf !== undefined ? `<div class="financial-row" onclick="showHint('投資CF')" style="cursor:pointer"><span class="financial-label">投資CF 📖</span><span class="financial-value">${formatAmount(f.investing_cf)}</span></div>` : ''}
+        ${f.dividend_per_share !== undefined ? `<div class="financial-row" onclick="showHint('1株配当')" style="cursor:pointer"><span class="financial-label">1株配当 📖</span><span class="financial-value">${f.dividend_per_share} 円</span></div>` : ''}
         <div class="metrics-grid">
-          ${company.per !== null ? `<div class="metric-item" onclick="showHint('PER')"><span class="metric-label">PER ？</span><span class="metric-value">${company.per.toFixed(1)} 倍</span></div>` : ''}
-          ${company.pbr !== null ? `<div class="metric-item" onclick="showHint('PBR')"><span class="metric-label">PBR ？</span><span class="metric-value">${company.pbr.toFixed(1)} 倍</span></div>` : ''}
-          ${company.roe !== null ? `<div class="metric-item" onclick="showHint('ROE')"><span class="metric-label">ROE ？</span><span class="metric-value">${company.roe.toFixed(1)} %</span></div>` : ''}
-          ${company.roa !== null ? `<div class="metric-item" onclick="showHint('ROA')"><span class="metric-label">ROA ？</span><span class="metric-value">${company.roa.toFixed(1)} %</span></div>` : ''}
-          ${company.operating_margin !== null ? `<div class="metric-item" onclick="showHint('営業利益率')"><span class="metric-label">営業利益率 ？</span><span class="metric-value">${company.operating_margin.toFixed(1)} %</span></div>` : ''}
-          ${company.net_cash_ratio !== null ? `<div class="metric-item" onclick="showHint('NC比率')"><span class="metric-label">NC比率 ？</span><span class="metric-value">${company.net_cash_ratio.toFixed(1)} %</span></div>` : ''}
-          ${company.net_net_ratio !== null ? `<div class="metric-item" onclick="showHint('ネットネット')"><span class="metric-label">ネットネット ？</span><span class="metric-value">${company.net_net_ratio.toFixed(2)} 倍</span></div>` : ''}
-          ${company.dividend_yield !== null ? `<div class="metric-item" onclick="showHint('配当利回り')"><span class="metric-label">配当利回り ？</span><span class="metric-value">${company.dividend_yield.toFixed(2)} %</span></div>` : ''}
-          ${company.equity_ratio !== null ? `<div class="metric-item" onclick="showHint('自己資本比率')"><span class="metric-label">自己資本比率 ？</span><span class="metric-value">${company.equity_ratio.toFixed(1)} %</span></div>` : ''}
-          ${company.roic !== null ? `<div class="metric-item" onclick="showHint('ROIC')"><span class="metric-label">ROIC ？</span><span class="metric-value">${company.roic.toFixed(1)} %</span></div>` : ''}
+          ${company.per !== null ? `<div class="metric-item${hl(af.per && company.per !== null && company.per <= af.per)}" onclick="showHint('PER')"><span class="metric-label">PER 📖</span><span class="metric-value">${company.per.toFixed(1)} 倍</span></div>` : ''}
+          ${company.pbr !== null ? `<div class="metric-item" onclick="showHint('PBR')"><span class="metric-label">PBR 📖</span><span class="metric-value">${company.pbr.toFixed(1)} 倍</span></div>` : ''}
+          ${company.roe !== null ? `<div class="metric-item${hl(af.roe && company.roe !== null && company.roe >= af.roe)}" onclick="showHint('ROE')"><span class="metric-label">ROE 📖</span><span class="metric-value">${company.roe.toFixed(1)} %</span></div>` : ''}
+          ${company.roa !== null ? `<div class="metric-item" onclick="showHint('ROA')"><span class="metric-label">ROA 📖</span><span class="metric-value">${company.roa.toFixed(1)} %</span></div>` : ''}
+          ${company.operating_margin !== null ? `<div class="metric-item${hl(af.margin && company.operating_margin !== null && company.operating_margin >= af.margin)}" onclick="showHint('営業利益率')"><span class="metric-label">営業利益率 📖</span><span class="metric-value">${company.operating_margin.toFixed(1)} %</span></div>` : ''}
+          ${company.net_cash_ratio !== null ? `<div class="metric-item${hl(af.ncp && company.net_cash_ratio !== null && company.net_cash_ratio >= af.ncp)}" onclick="showHint('NC比率')"><span class="metric-label">NC比率 📖</span><span class="metric-value">${company.net_cash_ratio.toFixed(1)} %</span></div>` : ''}
+          ${company.net_net_ratio !== null ? `<div class="metric-item${hl(af.nn && company.net_net_ratio !== null && company.net_net_ratio >= af.nn)}" onclick="showHint('ネットネット')"><span class="metric-label">ネットネット 📖</span><span class="metric-value">${company.net_net_ratio.toFixed(2)} 倍</span></div>` : ''}
+          ${company.dividend_yield !== null ? `<div class="metric-item${hl(af.yld && company.dividend_yield !== null && company.dividend_yield >= af.yld)}" onclick="showHint('配当利回り')"><span class="metric-label">配当利回り 📖</span><span class="metric-value">${company.dividend_yield.toFixed(2)} %</span></div>` : ''}
+          ${company.equity_ratio !== null ? `<div class="metric-item${hl(af.equityRatio && company.equity_ratio !== null && company.equity_ratio >= af.equityRatio)}" onclick="showHint('自己資本比率')"><span class="metric-label">自己資本比率 📖</span><span class="metric-value">${company.equity_ratio.toFixed(1)} %</span></div>` : ''}
+          ${company.roic !== null ? `<div class="metric-item${hl(af.roic && company.roic !== null && company.roic >= af.roic)}" onclick="showHint('ROIC')"><span class="metric-label">ROIC 📖</span><span class="metric-value">${company.roic.toFixed(1)} %</span></div>` : ''}
+          ${FINANCIAL_SECTORS.includes(company.industry_name) ? `<div class="metric-item" onclick="showHint('CF分析対象外')"><span class="metric-label">営業CF比率 📖</span><span class="metric-value" style="color:#aaa;font-size:0.8rem">対象外</span></div>` : (f.cf_ratio_y0 !== undefined && f.cf_ratio_y0 !== null) ? `<div class="metric-item${hl(af.cf && af.cf !== 'positive' && f.cf_ratio_y0 >= parseFloat(af.cf))}" onclick="showHint('営業CF比率')"><span class="metric-label">営業CF比率 📖</span><span class="metric-value">${f.cf_ratio_y0.toFixed(2)}</span></div>` : ''}
         </div>
-        <div class="financial-row"><span class="financial-label">参考株価</span><span class="financial-value">${company.priceData ? company.priceData.price.toLocaleString() + ' 円（' + company.priceData.date + '）' : '不明'}</span></div>
+        <div class="financial-row" onclick="showHint('参考株価')" style="cursor:pointer"><span class="financial-label">参考株価 📖</span><span class="financial-value">${company.priceData ? company.priceData.price.toLocaleString() + ' 円（' + company.priceData.date + '）' : '不明'}</span></div>
         <div class="financial-row"><span class="financial-label">発行済株式数</span><span class="financial-value">${formatShares(f.shares_issued)}</span></div>
       </div>
     `;
     list.appendChild(card);
   });
 }
+
+
+const FINANCIAL_SECTORS = ['銀行業', '保険業', 'その他金融業', '証券、商品先物取引業'];
+
+
+function getActiveFilters() {
+  return {
+    per:         parseFloat(document.getElementById('filter-per').value) || null,
+    roe:         parseFloat(document.getElementById('filter-roe').value) || null,
+    margin:      parseFloat(document.getElementById('filter-margin').value) || null,
+    roic:        parseFloat(document.getElementById('filter-roic').value) || null,
+    ncp:         parseFloat(document.getElementById('filter-ncp').value) || null,
+    nn:          parseFloat(document.getElementById('filter-nn').value) || null,
+    yld:         parseFloat(document.getElementById('filter-yield').value) || null,
+    equityRatio: parseFloat(document.getElementById('filter-equity-ratio').value) || null,
+    cf:          document.getElementById('filter-cf').value || null,
+  };
+}
+function hl(cond) { return cond ? ' highlighted' : ''; }
 
 // ポートフォリオ画面描画
 function renderPortfolioScreen() {

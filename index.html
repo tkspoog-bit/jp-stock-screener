@@ -6,8 +6,10 @@
   <title>日本株財務指標スクリーナー</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="manifest" href="manifest.json" />
+  <link rel="icon" href="icons/icon-192.png" />
   <meta name="theme-color" content="#1a1a2e" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="apple-mobile-web-app-title" content="株スクリーナー" />
 </head>
@@ -22,6 +24,7 @@
     <header id="top-header">
       <h1>日本株スクリーナー</h1>
       <p id="updated-at">読み込み中...</p>
+      <button onclick="location.reload(true)" style="font-size:0.75rem;padding:3px 10px;background:rgba(255,255,255,0.2);color:white;border:1px solid rgba(255,255,255,0.4);border-radius:12px;cursor:pointer;">🔄 更新</button>
     </header>
 
     <!-- ホーム画面 -->
@@ -228,10 +231,14 @@
             </select>
           </div>
           <div class="filter-group">
-            <label class="filter-label">営業CF（黒字のみ）</label>
+            <label class="filter-label">営業CF比率（以上）</label>
             <select id="filter-cf">
               <option value="">指定なし</option>
-              <option value="1">黒字のみ</option>
+              <option value="positive">黒字（0以上）</option>
+              <option value="0.5">0.5以上</option>
+              <option value="0.8">0.8以上</option>
+              <option value="1.0">1.0以上</option>
+              <option value="1.2">1.2以上</option>
             </select>
           </div>
           
@@ -255,7 +262,7 @@
     <!-- 結果画面 -->
     <div id="result-screen" class="screen">
       <div id="result-toolbar">
-        <input type="text" id="search-input" placeholder="会社名・証券コード" oninput="filterList()" />
+        <input type="text" id="search-input" placeholder="結果内を絞り込む（会社名・証券コード）" oninput="filterList()" />
         <div class="toolbar-right">
           <select id="sort-select" onchange="sortBy(this.value)">
             <option value="market_cap">時価総額</option>
@@ -269,6 +276,7 @@
             <option value="net_cash_ratio">NC比率</option>
             <option value="net_net_ratio">ネットネット</option>
             <option value="dividend_yield">配当利回り</option>
+            <option value="cf_ratio">営業CF比率</option>
           </select>
           <button onclick="exportCSV()">CSV</button>
         </div>
