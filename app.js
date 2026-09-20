@@ -20,6 +20,25 @@ function hideLoading() {
   document.getElementById('global-loading').style.display = 'none';
 }
 
+// リアルタイム株価取得（ローカルAPIサーバー経由）
+async function fetchRealtimePrice(code) {
+  try {
+    const r = await fetch(`http://localhost:5001/price?code=${code}`, { signal: AbortSignal.timeout(3000) });
+    if (!r.ok) return null;
+    const data = await r.json();
+    if (data.price) {
+      return {
+        price: data.price,
+        shares: data.shares,
+        date: data.date || new Date().toISOString().split('T')[0]
+      };
+    }
+  } catch (e) {
+    // ローカルサーバーが起動していない場合はスキップ
+  }
+  return null;
+}
+
 // データ読み込み
 Promise.all([
   fetch('./data/fundamentals.json?v=' + Date.now()).then(r => r.json()),
@@ -439,11 +458,22 @@ function applyStrategyFilter(key) {
 }
 
 
-function openDetail(code) {
+async function openDetail(code) {
   const company = allData.find(c => c.code === code);
   if (!company) return;
 
   switchTab('detail');
+
+  // リアルタイム株価取得（ローカルAPIが起動中の場合）
+  const realtimePrice = await fetchRealtimePrice(code);
+  if (realtimePrice && realtimePrice.price) {
+    company.priceData = {
+      price: realtimePrice.price,
+      date: realtimePrice.date || new Date().toISOString().split('T')[0]
+    };
+    const shares = realtimePrice.shares || company.financials.shares_issued;
+    company.marketCap = shares ? realtimePrice.price * shares : company.marketCap;
+  }
 
   const content = document.getElementById('detail-content');
   const f = company.financials;
